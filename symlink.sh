@@ -13,8 +13,7 @@ then
 fi
 ln -s $DIR/.zshrc ~/.zshrc
 
-if [ -e ~/.oh-my-zsh/custom ]
-then
-  trash -v ~/.oh-my-zsh/custom
-fi
-ln -s $DIR/.oh-my-zsh/custom ~/.oh-my-zsh/custom
+# Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
+# also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:
+find ~/.oh-my-zsh/custom/themes -type l -exec trash -f {} +
+ln -s $DIR/.oh-my-zsh/custom/themes/* ~/.oh-my-zsh/custom/themes
