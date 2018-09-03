@@ -12,3 +12,9 @@ then
   trash -v ~/.zshrc
 fi
 ln -s $DIR/.zshrc ~/.zshrc
+
+if [ -e ~/.oh-my-zsh/custom ]
+then
+  trash -v ~/.oh-my-zsh/custom
+fi
+ln -s $DIR/.oh-my-zsh/custom ~/.oh-my-zsh/custom
