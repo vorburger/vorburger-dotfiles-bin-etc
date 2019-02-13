@@ -55,8 +55,8 @@ plugins=(git repo zsh-completions history-substring-search kubectl command-not-f
 
 # User configuration
 
-HISTFILE=~/.zsh_history-$$
-HISTSIZE=256
+HISTFILE=~/.zsh_history
+HISTSIZE=1024
 
 export EDITOR=nano
 
@@ -65,7 +65,8 @@ export EDITOR=nano
 # export ANT_HOME=/home/vorburger/bin/ant_athome
 # export M2_HOME=/home/vorburger/bin/apache-maven-3.3.9
 export M2_HOME=/home/vorburger/bin/apache-maven-3.5.2
-export GRADLE_HOME=/home/vorburger/bin/gradle-3.2.1
+export GRADLE_HOME=/home/vorburger/bin/gradle-5.1.1
+export GRAALVM_HOME=/home/vorburger/bin/graalvm-ce-1.0.0-rc12
 # export GOROOT=/home/vorburger/bin/golang
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$NPM_PACKAGES/bin:/home/vorburger/.cargo/bin
@@ -73,6 +74,9 @@ export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$NP
 # only suitable for single artifact JAR quick builds; not for full multi module project 
 # export MAVEN_OPTS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xverify:none"
 MAVEN_OPTS="-Xmx4096m -Xverify:none"
+
+export GOPATH=/home/vorburger/dev/Go
+export PATH=$PATH:$GOPATH/bin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -107,10 +111,13 @@ unsetopt correct
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias mvnp='mvn -s ~/.m2/settings-protean.xml'
 alias mvno='mvn -s ~/.m2/settings-odl.xml'
+alias mvnoa='mvn -s ~/.m2/settings-odl.xml -Dmaven.repo.local=/home/vorburger/.m2/repository-alternative'
 alias pssx='pss --ignore-dir=target --ignore-dir=target-ide'
 
 alias gcmp='git checkout master && git pull'
+alias moociq='mvn -s ~/.m2/settings-odl.xml -Pq -o clean install'
 alias mooci='mvn -s ~/.m2/settings-odl.xml -o clean install'
 alias moci='mvn -s ~/.m2/settings-odl.xml clean install'
 
@@ -187,5 +194,5 @@ export SDKMAN_DIR="/home/vorburger/.sdkman"
 # added by travis gem
 [ -f /home/vorburger/.travis/travis.sh ] && source /home/vorburger/.travis/travis.sh
 
-# source <(/home/vorburger/bin/oc completion zsh)
-source <(/usr/bin/oc completion zsh)
+source <(/home/vorburger/bin/oc completion zsh)
+# source <(/usr/bin/oc completion zsh)
