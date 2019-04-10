@@ -66,12 +66,12 @@ export EDITOR=nano
 # export M2_HOME=/home/vorburger/bin/apache-maven-3.3.9
 export M2_HOME=/home/vorburger/bin/apache-maven-3.5.2
 export GRADLE_HOME=/home/vorburger/bin/gradle-5.1.1
-export GRAALVM_HOME=/home/vorburger/bin/graalvm-ce-1.0.0-rc12
+export GRAALVM_HOME=/home/vorburger/bin/graalvm-ce-1.0.0-rc14
 # export GOROOT=/home/vorburger/bin/golang
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$NPM_PACKAGES/bin:/home/vorburger/.cargo/bin
 
-# only suitable for single artifact JAR quick builds; not for full multi module project 
+# only suitable for single artifact JAR quick builds; not for full multi module project
 # export MAVEN_OPTS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xverify:none"
 MAVEN_OPTS="-Xmx4096m -Xverify:none"
 
@@ -122,7 +122,7 @@ alias mooci='mvn -s ~/.m2/settings-odl.xml -o clean install'
 alias moci='mvn -s ~/.m2/settings-odl.xml clean install'
 
 # https://dev.to/sarathsantoshdamaraju/git-aliases-that-could-be-helpful-5bdp
-alias g!='git init' 
+alias g!='git init'
 alias g.='git add .'
 alias g.-file='git add'
 alias gb='git branch'
@@ -154,7 +154,7 @@ alias gsh-p='git stash pop'
 # todo.txt
 # inspired by https://github.com/fixlr/dotfiles/blob/master/todo.txt/aliases.zsh
 TODO="/home/vorburger/bin/todo.txt-cli/todo.sh -d /home/vorburger/dev/todo.txt-vorburger/todo.cfg"
-function t() { 
+function t() {
   if [ $# -eq 0 ]; then
     eval $TODO ls
   else
