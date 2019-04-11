@@ -13,12 +13,12 @@
         creates: /usr/bin/trash
     - name: Symlink ~/.gitconfig
       file:
-        src: "{{playbook_dir}}/../../etc/gitconfig"
+        src: "{{playbook_dir}}/../../dotfiles/gitconfig"
         path: ~/.gitconfig
         state: link
     - name: Symlink ~/.zshrc
       file:
-        src: "{{playbook_dir}}/../../etc/zshrc"
+        src: "{{playbook_dir}}/../../dotfiles/zshrc"
         path: ~/.zshrc
         state: link
 
