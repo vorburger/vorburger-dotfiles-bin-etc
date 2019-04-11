@@ -16,3 +16,9 @@
         src: "{{playbook_dir}}/../../etc/gitconfig"
         path: ~/.gitconfig
         state: link
+    - name: Symlink ~/.zshrc
+      file:
+        src: "{{playbook_dir}}/../../etc/zshrc"
+        path: ~/.zshrc
+        state: link
+
