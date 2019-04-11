@@ -16,11 +16,6 @@
         src: "{{playbook_dir}}/../../dotfiles/gitconfig"
         path: ~/.gitconfig
         state: link
-    - name: Change your default shell to Zsh
-      become: yes
-      user:
-        name: vorburger
-        shell: /bin/zsh
     - name: Install Oh-My-Zsh
       # NOK: command: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
       git:
@@ -31,4 +26,8 @@
         src: "{{playbook_dir}}/../../dotfiles/zshrc"
         path: ~/.zshrc
         state: link
-
+    - name: Change your default shell to Zsh
+      become: yes
+      user:
+        name: vorburger
+        shell: /bin/zsh
