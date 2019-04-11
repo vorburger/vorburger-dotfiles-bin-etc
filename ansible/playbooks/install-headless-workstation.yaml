@@ -22,9 +22,10 @@
         name: vorburger
         shell: /bin/zsh
     - name: Install Oh-My-Zsh
-      command: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-      args:
-        creates: ~/.oh-my-zsh/
+      # NOK: command: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      git:
+        repo=https://github.com/robbyrussell/oh-my-zsh
+        dest=~/.oh-my-zsh
     - name: Symlink ~/.zshrc
       file:
         src: "{{playbook_dir}}/../../dotfiles/zshrc"
