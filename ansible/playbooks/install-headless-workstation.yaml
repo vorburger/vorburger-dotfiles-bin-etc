@@ -13,6 +13,6 @@
         creates: /usr/bin/trash
     - name: Symlink ~/.gitconfig
       file:
-        src: "{{playbook_dir}}/../../etc/.gitconfig"
+        src: "{{playbook_dir}}/../../etc/gitconfig"
         path: ~/.gitconfig
         state: link
