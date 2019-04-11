@@ -1,0 +1,37 @@
+[user]
+	name = Michael Vorburger
+	email = mike@vorburger.ch
+[credential]
+	helper = store
+#[url "https://"]
+#	insteadOf = git://
+[core]
+	autocrlf = input
+	eol = native
+	excludesfile = /home/vorburger/.gitignore_global
+[apply]
+	whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
+[log]
+	date = relative
+	decorate = true
+[diff]
+	renames = true
+	submodule = log
+[diff "zip"]
+	textconv = unzip -c -a
+[color]
+	# provides handy visual cues
+	ui = auto
+[merge]
+	log = true
+[rerere]
+	enabled = true
+[branch]
+	autosetuprebase = always
+	autosetupmerge = true
+[push]
+	default = current
+[hub]
+#	protocol = https
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
