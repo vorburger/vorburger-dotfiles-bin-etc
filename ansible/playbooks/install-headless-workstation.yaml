@@ -17,8 +17,10 @@
         path: ~/.gitconfig
         state: link
     - name: Change your default shell to Zsh
-      command: chsh -s /bin/zsh vorburger
       become: yes
+      user:
+        name: vorburger
+        shell: /bin/zsh
     - name: Install Oh-My-Zsh
       command: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
       args:
