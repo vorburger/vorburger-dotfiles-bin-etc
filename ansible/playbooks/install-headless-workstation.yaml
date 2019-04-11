@@ -1,7 +1,17 @@
 - hosts: all
   tasks:
 
-    - name: Install git
+    - name: Install Packages
       package:
-        name: git
+        name: "git,python-setuptools"
         state: present
+    - name: Install trash-cli
+      command: easy_install trash-cli
+      become: yes
+      args:
+        creates: /usr/bin/trash
+    - name: Symlink ~/.gitconfig
+      file:
+        src: "{{playbook_dir}}/../../etc/.gitconfig"
+        path: ~/.gitconfig
+        state: link
