@@ -4,7 +4,7 @@
     - name: Install Packages
       become: yes
       package:
-        name: "nano,htop,git,python-setuptools,java-11-openjdk-devel,java-11-openjdk-src,java-11-openjdk-jmods,mc,zsh,autojump-zsh,fortune-mod,p7zip,p7zip-plugins,asciinema,kernel-tools"
+        name: "nano,htop,git,hub,python-setuptools,java-11-openjdk-devel,java-11-openjdk-src,java-11-openjdk-jmods,mc,zsh,autojump-zsh,fortune-mod,p7zip,p7zip-plugins,asciinema,kernel-tools"
         state: present
     - name: Install trash-cli
       command: easy_install trash-cli
