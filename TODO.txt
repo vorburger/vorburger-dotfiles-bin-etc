@@ -1,3 +1,5 @@
 - hub
 
 - https://github.com/nachoparker/dutree
+
+- install-workstation-gui.yaml: powerline-fonts

@@ -7,7 +7,7 @@ mkdir -p ~/dev/github/vorburger ; cd ~/dev/github/vorburger
 git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc.git
 cd vorburger-dotfiles-bin-etc/ansible
 
-ansible-playbook -i hosts --become playbooks/all.yaml
+ansible-playbook -i hosts playbooks/all.yaml
 ```
 
 ## Develop
