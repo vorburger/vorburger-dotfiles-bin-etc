@@ -3,7 +3,7 @@
 
     - name: Install Packages
       package:
-        name: "git,python-setuptools"
+        name: "nano,git,python-setuptools,java-11-openjdk-devel,java-11-openjdk-src,java-11-openjdk-jmods,mc,zsh,p7zip,p7zip-plugins,powerline-fonts,asciinema,kernel-tools"
         state: present
     - name: Install trash-cli
       command: easy_install trash-cli
