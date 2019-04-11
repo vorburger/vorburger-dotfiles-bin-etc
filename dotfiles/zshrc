@@ -194,5 +194,5 @@ export SDKMAN_DIR="/home/vorburger/.sdkman"
 # added by travis gem
 [ -f /home/vorburger/.travis/travis.sh ] && source /home/vorburger/.travis/travis.sh
 
-source <(/home/vorburger/bin/oc completion zsh)
+# source <(/home/vorburger/bin/oc completion zsh)
 # source <(/usr/bin/oc completion zsh)
