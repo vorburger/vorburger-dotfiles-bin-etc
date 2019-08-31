@@ -1,14 +1,13 @@
-# .bashrc
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+MYPATH="$HOME/.local/bin:$HOME/bin:"
+if ! [[ "$PATH" =~ "$MYPATH" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+    PATH="$MYPATH:$PATH"
 fi
 export PATH
 
