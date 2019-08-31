@@ -11,6 +11,8 @@ l() {
   fi
 }
 
+# TODO auto-l all dotfiles/*
+l .bashrc dotfiles/bashrc
 l .zshrc dotfiles/zshrc
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
