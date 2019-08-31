@@ -14,6 +14,7 @@ l() {
 # TODO auto-l all dotfiles/*
 l .bashrc dotfiles/bashrc
 l .zshrc dotfiles/zshrc
+l .gitconfig dotfiles/gitconfig
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
 # also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:
