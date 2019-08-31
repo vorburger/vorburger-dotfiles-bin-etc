@@ -16,3 +16,4 @@ export PATH
 
 # User specific aliases and functions
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export EDITOR=nano
