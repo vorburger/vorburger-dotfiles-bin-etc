@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # -x to print all commands as they are executed (helpful for debugging)
 set -euo pipefail
 
