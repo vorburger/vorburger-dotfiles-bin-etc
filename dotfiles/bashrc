@@ -4,7 +4,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-MYPATH="$HOME/dev/vorburger-dotfiles-bin-etc/bin:$HOME/.local/bin:$HOME/bin:"
+DOTFILES="$HOME/dev/vorburger-dotfiles-bin-etc"
+MYPATH="$DOTFILES/bin:$HOME/.local/bin:$HOME/bin:"
 if ! [[ "$PATH" =~ "$MYPATH" ]]
 then
     PATH="$MYPATH:$PATH"
@@ -17,3 +18,5 @@ export PATH
 # User specific aliases and functions
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export EDITOR=nano
+
+. $DOTFILES/dotfiles/alias
