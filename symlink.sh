@@ -14,6 +14,10 @@ l() {
 # TODO auto-l all dotfiles/*
 l .bashrc dotfiles/bashrc
 l .zshrc dotfiles/zshrc
+# TODO which is right?
+l gpg.conf dotfiles/gpg.conf
+l .gnupg/gpg.conf dotfiles/gpg.conf
+l .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 l .gitconfig dotfiles/gitconfig
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
