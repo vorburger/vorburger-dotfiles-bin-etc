@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-MYPATH="$HOME/.local/bin:$HOME/bin:"
+MYPATH="$HOME/dev/vorburger-dotfiles-bin-etc/bin:$HOME/.local/bin:$HOME/bin:"
 if ! [[ "$PATH" =~ "$MYPATH" ]]
 then
     PATH="$MYPATH:$PATH"
