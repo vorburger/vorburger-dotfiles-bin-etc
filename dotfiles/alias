@@ -1,3 +1,10 @@
 alias t="ssh mcs.vorburger.ch"
 
+# Git
+alias gst="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
+alias gsy="git pull --rebase && git push"
+
 # TODO dotfiles/zshrc
