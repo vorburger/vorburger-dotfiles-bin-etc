@@ -19,4 +19,9 @@ export PATH
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export EDITOR=nano
 
+if hash kubectl 2>/dev/null; then
+  source <(kubectl completion bash)
+  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
 . $DOTFILES/dotfiles/alias

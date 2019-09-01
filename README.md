@@ -8,3 +8,5 @@
     ./dnf-install.sh
     ./symlink.sh
     ./gnome-settings.sh
+
+NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
