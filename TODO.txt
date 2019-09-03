@@ -1,3 +1,5 @@
+- less with colours
+
 - build containerized Fedora with this (add install-dnf-automatic & secure-ssh from https://github.com/labs-learn-study/labs.learn.study/tree/master/playbooks/roles)
 
 - GitHub hub
@@ -5,3 +7,5 @@
 - https://github.com/nachoparker/dutree
 
 - install-workstation-gui.yaml: powerline-fonts
+
+- ~/Notes/ToDo/shell-todo.txt
