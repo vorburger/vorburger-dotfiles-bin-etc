@@ -11,8 +11,15 @@ l() {
   fi
 }
 
+x() {
+  find $DIR/$2* -exec ln -sfn {} ~/$1 \;
+}
+
+mkdir -p ~/.bash.d/
+
 # TODO auto-l all dotfiles/*
 l .bashrc dotfiles/bashrc
+x .bash.d/ dotfiles/bash.d/
 l .zshrc dotfiles/zshrc
 # TODO which is right?
 l gpg.conf dotfiles/gpg.conf

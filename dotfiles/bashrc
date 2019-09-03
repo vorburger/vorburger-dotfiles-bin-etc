@@ -1,9 +1,13 @@
-# Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# User specific environment
+for i in ~/.bash.d/* ; do
+  if [ -r "$i" ]; then
+    . $i
+  fi
+done
+
 DOTFILES="$HOME/dev/vorburger-dotfiles-bin-etc"
 MYPATH="$DOTFILES/bin:$HOME/.local/bin:$HOME/bin:"
 if ! [[ "$PATH" =~ "$MYPATH" ]]
@@ -23,5 +27,3 @@ if hash kubectl 2>/dev/null; then
   source <(kubectl completion bash)
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
-
-. $DOTFILES/dotfiles/alias
