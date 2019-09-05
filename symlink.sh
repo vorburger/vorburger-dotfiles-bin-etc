@@ -21,8 +21,6 @@ mkdir -p ~/.bash.d/
 l .bashrc dotfiles/bashrc
 x .bash.d/ dotfiles/bash.d/
 l .zshrc dotfiles/zshrc
-# TODO which is right?
-l gpg.conf dotfiles/gpg.conf
 l .gnupg/gpg.conf dotfiles/gpg.conf
 l .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 l .gitconfig dotfiles/gitconfig
