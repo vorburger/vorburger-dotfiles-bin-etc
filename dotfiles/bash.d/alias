@@ -6,5 +6,6 @@ alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
 alias gsy="git pull --rebase && git push"
+alias gp="git push"
 
 # TODO dotfiles/zshrc
