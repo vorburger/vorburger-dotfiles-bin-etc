@@ -10,6 +10,6 @@
 
 - https://github.com/nachoparker/dutree
 
-- install-workstation-gui.yaml: powerline-fonts
+- install-workstation-gui.yaml: powerline-fonts ?
 
 - ~/Notes/ToDo/shell-todo.txt
