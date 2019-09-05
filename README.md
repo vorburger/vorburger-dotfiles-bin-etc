@@ -24,3 +24,8 @@ Launch `gnome-tweaks`, _Startup Applications_, `+` Terminal and Firefox.
 This puts (copies of, not symlinks to) `firefox.desktop` and `org.gnome.Terminal.desktop` into `~/.config/autostart/`.
 
 Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-terminal` append `--full-screen` (or just `--window --maximize`).
+
+
+## Containers
+
+See [containers/](containers/).
