@@ -21,4 +21,6 @@ RUN /usr/libexec/openssh/sshd-keygen rsa \
 
 # https://docs.docker.com/engine/examples/running_ssh_service/
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+
+# -D for production, or -eddd for debug
+CMD ["/usr/sbin/sshd", "-eddd"]
