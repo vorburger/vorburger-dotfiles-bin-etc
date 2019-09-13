@@ -8,9 +8,9 @@ PORT="$(docker port test-sshd | sed 's/22\/tcp -> 0.0.0.0://')"
 
 # TODO use another uid than vorburger
 # TODO create a key pair on the fly
-./add-uid-key vorburger ~/.ssh/my_public_key
-ssh -o "StrictHostKeyChecking=no" -p $PORT localhost echo "1. hello, world."
-ssh -o "StrictHostKeyChecking=no" -p $PORT localhost echo "2. hello, world."
+./add-uid-key fooba ~/.ssh/my_public_key
+ssh -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "1. hello, world."
+ssh -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "2. hello, world."
 # intentionally testing twice, to make sure that ssdh isn't in debugging mode and quit after first use
 
 docker rm -f test-sshd
