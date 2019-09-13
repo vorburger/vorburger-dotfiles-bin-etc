@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euox pipefail
+
+docker exec test-sshd useradd vorburger
+docker cp ~/.ssh/my_public_key test-sshd:/home/vorburger/.ssh/authorized_keys
+docker exec test-sshd chown -R vorburger:vorburger /home/vorburger/.ssh
+docker exec test-sshd chmod 700 /home/vorburger/.ssh
