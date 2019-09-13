@@ -14,3 +14,6 @@ ssh -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "1. hello, world
 ssh -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "2. hello, world."
 
 docker rm -f test-sshd
+
+echo Test successful.
+

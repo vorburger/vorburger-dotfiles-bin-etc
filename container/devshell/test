@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euox pipefail
+cd "$(dirname "$0")"
+
+# TODO instead of copy/paste from ../sshd/test, share common test harness structure..
+
+docker rm -f test-devshell || true
+docker run -d -p 22 --name test-devshell devshell
+PORT="$(docker port test-devshell | sed 's/22\/tcp -> 0.0.0.0://')"
+
+# TODO create a key pair on the fly
+docker exec test-devshell /usr/local/sbin/add-uid-key tester "$(cat ~/.ssh/my_public_key)"
+
+# NB -A for Agent Forwarding!
+ssh -A -o "StrictHostKeyChecking=no" -p $PORT tester@localhost ssh-add -l
+
+# TODO fire up another sshd container, and "cross hop" into it by agent forwarding
+
+docker rm -f test-devshell
+
+echo Test successful.
