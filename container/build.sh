@@ -8,4 +8,5 @@ build() {
 }
 
 build fedora-updated
+build sshd
 build gcloud
