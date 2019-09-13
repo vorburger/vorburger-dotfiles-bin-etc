@@ -8,6 +8,8 @@ docker run -d -p 2222:22 --name test-sshd sshd
 # TODO use another uid than vorburger
 # TODO create a key pair on the fly
 ./add-uid-key vorburger ~/.ssh/my_public_key
-ssh -p 2222 localhost echo "hello, world."
+ssh -p 2222 localhost echo "1. hello, world."
+ssh -p 2222 localhost echo "2. hello, world."
+# intentionally testing twice, to make sure that ssdh isn't in debugging mode and quit after first use
 
 docker rm -f test-sshd
