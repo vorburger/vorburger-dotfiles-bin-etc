@@ -15,3 +15,4 @@ the container has to be re-started after every test.
 1. resolve all pending _TODO_ in `Dockerfile`
 1. automate user creation and pub key steps from `test.sh`, for arbitrary users - but without hard-coding them into the Dockerfile.
 1. better create hostkeys dynamically on first use in script instead of during Dockerfile?
+1. add-uid-key better while baking container, or as script in container called on use?

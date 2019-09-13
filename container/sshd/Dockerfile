@@ -17,6 +17,8 @@ RUN yum install -y openssh-server \
 # TODO source /etc/crypto-policies/back-ends/opensshserver.config
 # TODO sshd $CRYPTO_POLICY
 
+ADD add-uid-key /usr/local/sbin/
+
 # https://docs.docker.com/engine/examples/running_ssh_service/
 EXPOSE 22
 

@@ -4,7 +4,8 @@ set -euox pipefail
 NEW_UID=$1
 AUTHORIZED_KEYS=$2
 
-docker exec test-sshd useradd $NEW_UID
-docker cp ~/.ssh/my_public_key test-sshd:/home/$NEW_UID/.ssh/authorized_keys
-docker exec test-sshd chown -R $NEW_UID:$NEW_UID /home/$NEW_UID/.ssh
-docker exec test-sshd chmod 700 /home/$NEW_UID/.ssh
+useradd $NEW_UID
+mkdir /home/$NEW_UID/.ssh/
+echo "$AUTHORIZED_KEYS" > /home/$NEW_UID/.ssh/authorized_keys
+chown -R $NEW_UID:$NEW_UID /home/$NEW_UID/.ssh
+chmod 700 /home/$NEW_UID/.ssh
