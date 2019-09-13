@@ -1,6 +1,6 @@
 # Usage
 
-see [`test.sh`](test.sh).
+see [`test.sh`](test.sh), and also the [`devshell`](../devshell/).
 
 
 ## Troubleshooting
