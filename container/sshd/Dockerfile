@@ -1,15 +1,13 @@
 FROM fedora-updated
 
-RUN yum install -y openssh-server
+RUN yum install -y openssh-server \
 
-# TODO merge below and above!
-
-RUN /usr/libexec/openssh/sshd-keygen rsa \
+ && /usr/libexec/openssh/sshd-keygen rsa \
  && /usr/libexec/openssh/sshd-keygen ecdsa \
  && /usr/libexec/openssh/sshd-keygen ed25519 \
 
  && sed -i 's/^PermitRootLogin yes$/PermitRootLogin no/' /etc/ssh/sshd_config \
-# TODO && sed -i 's/^PasswordAuthentication yes$/PasswordAuthentication no/' /etc/ssh/sshd_config \
+ && sed -i 's/^PasswordAuthentication yes$/PasswordAuthentication no/' /etc/ssh/sshd_config \
  && sed -i 's/^X11Forwarding yes$/X11Forwarding no/' /etc/ssh/sshd_config
 
 # sshd-keygen as in /usr/lib/systemd/system/sshd-keygen@.service
