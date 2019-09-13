@@ -23,4 +23,4 @@ RUN /usr/libexec/openssh/sshd-keygen rsa \
 EXPOSE 22
 
 # -D for production, or -eddd for debug
-CMD ["/usr/sbin/sshd", "-eddd"]
+CMD ["/usr/sbin/sshd", "-D"]
