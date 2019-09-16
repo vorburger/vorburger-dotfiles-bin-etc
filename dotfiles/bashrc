@@ -19,8 +19,14 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+
 # User specific aliases and functions
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+# FUCK NO, DONT EVER MANUALLY SET THE 'SSH_AUTH_SOCK' LIKE THIS EVER ANYMORE AGAIN...
+# Instead of enabling SSH Agent Forwarding for YubiKey via GPG, it *BREAKS* it!! :-((
+# At least on Fedora 30, it actually works just fine out of the box without this.
+### export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
 export EDITOR=nano
 
 if hash kubectl 2>/dev/null; then
