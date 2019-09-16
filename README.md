@@ -30,6 +30,10 @@ Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-term
 Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to Click.
 
 
-## Containers
+## Container/s
 
-See [containers/](containers/).
+See [containers/](containers/), but in short:
+
+    ./container/build.sh
+    docker run -d -p 2222:22 --name vorburger vorburger
+    ssh -A -p 2222 localhost

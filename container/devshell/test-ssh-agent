@@ -2,6 +2,12 @@
 set -euox pipefail
 cd "$(dirname "$0")"
 
+# TODO this should be changed to test SSH from one container, with an agent, into another..
+# currently that is not what this tests: instead it's testing SSH from where this runs into a container, with an agent.
+
+# Test that the local SSH Agent works (on the laptop/build server, where this script runs; NOT in container)
+ssh-add -l
+
 # TODO instead of copy/paste from ../sshd/test, share common test harness structure..
 
 docker rm -f test-$1 || true

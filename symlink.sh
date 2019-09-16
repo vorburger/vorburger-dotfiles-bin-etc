@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # -x to print all commands as they are executed (helpful for debugging)
-set -euo pipefail
+set -euox pipefail
 
 DIR="$(realpath $(dirname $0))"
 
 l() {
   if [ ! -e ~/$1 ]
   then
+    mkdir -p $(dirname ~/$1)
     ln -s $DIR/$2 ~/$1
   fi
 }
