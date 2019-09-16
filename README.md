@@ -11,6 +11,8 @@
 
 NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
 
+Edit ~/.ssh/config and list required hosts.  _(TODO test if that is actually really still needed...)_
+
 
 ## Manual
 

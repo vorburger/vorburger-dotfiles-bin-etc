@@ -1,0 +1,7 @@
+
+Host CHANGEME
+  Hostname CHANGEME
+  ForwardAgent yes
+  RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
+
+# Note .extra at the end of RemoteForward (but not in the first occurence)

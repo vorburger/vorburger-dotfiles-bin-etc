@@ -23,6 +23,7 @@ x .bash.d/ dotfiles/bash.d/
 l .zshrc dotfiles/zshrc
 l .gnupg/gpg.conf dotfiles/gpg.conf
 l .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
+l .ssh/config dotfiles/ssh-config
 l .gitconfig dotfiles/gitconfig
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
