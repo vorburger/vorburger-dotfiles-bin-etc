@@ -1,4 +1,3 @@
-- TODO, NB those in sshd
 
 - test if most of GPG etc. customizations can actually be removed, as SSH Agent forwarding seems to work just perfectly fine even without it?
 
@@ -11,5 +10,7 @@
 - https://github.com/nachoparker/dutree
 
 - install-workstation-gui.yaml: powerline-fonts ?
+
+- clean up any remaining TODO (`findx TODO`)
 
 - ~/Notes/ToDo/shell-todo.txt

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euox pipefail
+
+# As in /usr/lib/systemd/system/sshd.service ...
+
+source /etc/crypto-policies/back-ends/opensshserver.config
+
+# -D for production, or -eddd for debug
+/usr/sbin/sshd -D $CRYPTO_POLICY
