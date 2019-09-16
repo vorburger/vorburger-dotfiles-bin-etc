@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+sudo dnf install -y dnf-automatic
+
+sudo systemctl enable --now dnf-automatic-install.timer
+systemctl status dnf-automatic-install.timer
+
+sudo dnf update -y
