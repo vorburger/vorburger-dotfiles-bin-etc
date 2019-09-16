@@ -1,8 +1,12 @@
-- less with colours
+- TODO, NB those in sshd
 
-- build containerized Fedora with this (add install-dnf-automatic & secure-ssh from https://github.com/labs-learn-study/labs.learn.study/tree/master/playbooks/roles)
+- test if most of GPG etc. customizations can actually be removed, as SSH Agent forwarding seems to work just perfectly fine even without it?
 
 - GitHub hub
+
+- less with colours
+
+- add secure-ssh from https://github.com/labs-learn-study/labs.learn.study/tree/master/playbooks/roles
 
 - https://github.com/nachoparker/dutree
 
