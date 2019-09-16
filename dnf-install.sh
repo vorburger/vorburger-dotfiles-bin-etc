@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# Install desktop UI stuff;
-# aim to containerize everything else.
-
 sudo dnf install -y \
         golang-bin git hub htop \
 	java-1.8.0-openjdk-devel java-1.8.0-openjdk-src \
