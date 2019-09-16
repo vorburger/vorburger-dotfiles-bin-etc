@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euox pipefail
+cd "$(dirname "$0")"
+
+./container/devshell/test-ssh-agent vorburger
