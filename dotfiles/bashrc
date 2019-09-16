@@ -20,7 +20,8 @@ export PATH
 # export SYSTEMD_PAGER=
 
 
-# User specific aliases and functions
+# User specific aliases and functions should go into dotfiles/bash.d/ instead of being appended here!
+
 
 # FUCK NO, DONT EVER MANUALLY SET THE 'SSH_AUTH_SOCK' LIKE THIS EVER ANYMORE AGAIN...
 # Instead of enabling SSH Agent Forwarding for YubiKey via GPG, it *BREAKS* it!! :-((
@@ -28,8 +29,3 @@ export PATH
 ### export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 export EDITOR=nano
-
-if hash kubectl 2>/dev/null; then
-  source <(kubectl completion bash)
-  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-fi
