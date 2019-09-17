@@ -8,11 +8,10 @@ for i in ~/.bash.d/* ; do
   fi
 done
 
-DOTFILES="$HOME/dev/vorburger-dotfiles-bin-etc"
-MYPATH="$DOTFILES/bin:$HOME/.local/bin:$HOME/bin:"
-if ! [[ "$PATH" =~ "$MYPATH" ]]
+# kept as in original Fedora /etc/skel/.bashrc (additional PATHs should go into dotfiles/bash.d & ~/.bash.d)
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$MYPATH:$PATH"
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
