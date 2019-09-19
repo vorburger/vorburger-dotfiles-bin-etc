@@ -1,0 +1,39 @@
+# Customize some options, see /etc/nanorc for defaults and explanations
+
+set autoindent
+set matchbrackets "(<[{)>]}"
+set morespace
+set nohelp # use ctrl-G to show Help...
+# Mouse prevents marking text for copy/paste elsewhere, so nope
+# set mouse
+set positionlog
+set smarthome
+set smooth
+set linenumbers
+
+bind ^H help main
+bind ^S writeout main
+
+
+# Customize default to show trailing whitespace
+#
+# NB: Unfortunately we cannot just do:
+#   include "/usr/share/nano/default.nanorc"
+# and then add e.g. use:
+#   colour ...
+# because that fails with:
+#   A 'color' command requires a preceding 'syntax' command"
+#
+# Therefore we just copy/paste all of /usr/share/nano/default.nanorc ...
+
+syntax default
+comment "#"
+color cyan "^[[:space:]]*#.*"
+color ,red " +	+"
+color brightred "(GNU )?nano [1-9]\.[0-9]\.[^[:space:][:punct:]]+"
+color magenta "<[[:alnum:].%_+-]+@[[:alnum:].-]+\.[[:alpha:]]{2,}>"
+
+# ... and then customize it:
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
