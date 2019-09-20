@@ -14,3 +14,7 @@
 - clean up any remaining TODO (`findx TODO`)
 
 - ~/Notes/ToDo/shell-todo.txt
+
+- devshell: sl, fortune and cowsay
+  maybe every ... 13th ;) login?
+  https://www.digitalocean.com/community/tutorials/top-10-linux-easter-eggs

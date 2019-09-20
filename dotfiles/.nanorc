@@ -1,19 +1,53 @@
 # Customize some options, see /etc/nanorc for defaults and explanations
 
+set afterends
 set autoindent
 set matchbrackets "(<[{)>]}"
 set morespace
-set nohelp # use ctrl-G to show Help...
+set nohelp # use F1 to show Help...
 # Mouse prevents marking text for copy/paste elsewhere, so nope
-# set mouse
+set mouse
 set positionlog
 set smarthome
 set smooth
+set trimblanks
 set linenumbers
+set historylog
+set tabsize 4
+set tabstospaces
+set zap
+set softwrap
+set atblanks
+set cutfromcursor
+set multibuffer
+set wordchars "<>()[]{}_-#.,;:"
+set guidestripe 120
 
-bind ^H help main
-bind ^S writeout main
+set titlecolor cyan,black
+set numbercolor magenta,black
+set stripecolor brightred,black
+set errorcolor brightred,black
+set selectedcolor white,magenta
 
+bind ^C copy all
+bind ^D zap all
+bind ^F whereis all
+bind ^G findnext all
+bind ^B wherewas all
+bind ^E findprevious all  # TODO what's findprevious typically bound to, e.g. in Eclipse, or Chrome?  (other than Shift-F3)
+bind ^R replace main
+bind ^H chopwordleft main
+bind ^O insert main
+bind ^S savefile main
+bind ^T gotoline main
+bind ^T gotodir browser
+bind ^P curpos main
+bind ^Q exit all
+bind ^V paste all
+bind ^W cancel all
+bind ^X cut all
+bind ^Y redo main
+bind ^Z undo all
 
 # Customize default to show trailing whitespace
 #
@@ -35,5 +69,5 @@ color magenta "<[[:alnum:].%_+-]+@[[:alnum:].-]+\.[[:alpha:]]{2,}>"
 
 # ... and then customize it:
 
-# Trailing whitespace.
-color ,green "[[:space:]]+$"
+# Trailing whitespace. 
+color ,red "[[:space:]]+$"
