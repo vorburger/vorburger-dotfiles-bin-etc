@@ -52,6 +52,9 @@ bind ^X cut all
 bind ^Y redo main
 bind ^Z undo all
 
+unbind ^A all   # tmux
+
+
 # Customize default to show trailing whitespace
 #
 # NB: Unfortunately we cannot just do:
