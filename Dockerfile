@@ -15,7 +15,8 @@ COPY symlink.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
 COPY dotfiles/ /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
 
 # as per ./README.md
-RUN rm /home/vorburger/.bashrc \
+RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git && cd .. \
+ && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
 
 # We have to reset the user to root so that sshd (FROM parent images) will start (as intended)

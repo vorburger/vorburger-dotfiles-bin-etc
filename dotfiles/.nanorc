@@ -1,3 +1,6 @@
+# cd ~/nanorc ; git clone https://github.com/scopatz/nanorc
+include ~/dev/nanorc/*.nanorc
+
 # Customize some options, see /etc/nanorc for defaults and explanations
 
 set afterends

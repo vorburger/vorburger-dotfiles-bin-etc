@@ -2,6 +2,7 @@
 
     mkdir ~/dev/
     cd ~/dev/
+    git clone https://github.com/scopatz/nanorc.git
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 

@@ -6,4 +6,4 @@
 * [`sshd`](sshd/): SSH Server
 * [`devshell`](devshell/): General purpose any-user Development Shell
 * [`gcloud`](gcloud/): Google Cloud CLI
-* [`vorburger`](vorburger/): Personalized customized Development Shell
+* [`vorburger`](../): Personalized customized Development Shell with the dotfiles and everything that's in this repo
