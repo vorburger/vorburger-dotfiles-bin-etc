@@ -58,6 +58,23 @@ Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-term
 Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to Click.
 
 
+### Power Saving
+
+    sudo dnf install -y powertop
+    sudo systemctl enable --now powertop.service
+    sudo powertop  # make all Tunables (Tab) “Bad” to “Good” (Enter) ...
+    sudo powertop --calibrate
+
+    sudo dnf install -y kernel-tools
+    cpupower frequency-info --governors   # powersave performance  <== see below...
+    sudo cpupower frequency-info
+    sudo cpupower frequency-set --governor powersave
+    cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+**TODO** Test if the additional governors (conservative userspace powersave ondemand performance schedutil)
+which should appear after _booting with the kernel parameter `intel_pstate=disable`_ help with increased battery life..
+
+
 ## Container/s
 
 See [containers/](containers/), but in short:
