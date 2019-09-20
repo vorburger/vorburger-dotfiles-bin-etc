@@ -2,7 +2,7 @@
 set -euxo pipefail
 
 sudo dnf install -y \
-    bash-completion
+    bash-completion \
     golang-bin git hub htop \
     java-1.8.0-openjdk-devel java-1.8.0-openjdk-src \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
