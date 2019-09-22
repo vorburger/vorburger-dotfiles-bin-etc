@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# This script is VERY similar to my notes-sync... remember to port any changes.
+
+# SSH_AUTH_SOCK=$(/usr/bin/gpgconf --list-dirs agent-ssh-socket)
+# This is *NOT* required anymore, since we now set SSH_AUTH_SOCK in the ~/bin/git wrapper script (see ../README.md)
+# Setting it here *BROKE* this script when it ran on remote host/VM/container into which we SSH Agent forward!
+
 pushd .
 cd ~/.password-store/
 git pull --rebase

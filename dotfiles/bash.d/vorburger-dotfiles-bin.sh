@@ -1,4 +1,4 @@
-DOTFILES_BIN="$HOME/dev/vorburger-dotfiles-bin-etc/bin:"
+DOTFILES_BIN="$HOME/dev/vorburger-dotfiles-bin-etc/bin"
 
 if ! [[ "$PATH" =~ "$DOTFILES_BIN" ]]
 then

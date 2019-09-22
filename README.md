@@ -24,10 +24,13 @@ sources), so that **ALL** `ssh` and `git` invocations use this:
     echo "export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)" > ~/.bash.d/SSH_AUTH_SOCK
     echo 'alias t="ssh -A server.domain.tld"' > ~/.bash.d/alias-t
 
-**OR**, alternatively, e.g. if we use different SSH keys and/or agents, we directly set `SSH_AUTH_SOCK` only in some cases:
+**OR**, alternatively, e.g. if we use different SSH keys and/or agents, we directly set `SSH_AUTH_SOCK` only for specific SSH:
 
     echo 'alias t="SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ssh -A server.domain.tld"' > ~/.bash.d/alias-t
-    echo 'alias ggit="SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) git "' > ~/.bash.d/alias-ggit
+
+and to make `git` "just work" we do the following (which is better than an alias, because a script in PATH works in scripts as well):
+
+    echo 'SSH_AUTH_SOCK=$(/usr/bin/gpgconf --list-dirs agent-ssh-socket) /usr/bin/git "$@"' > ~/bin/git
 
 The `gpgconf --list-dirs agent-ssh-socket` will set `SSH_AUTH_SOCK` on (only!!) the *laptop* (*workstation*)
 to something like `/run/user/1000/gnupg/S.gpg-agent.ssh`.  On a (Fedora 30) *server* that we connect to, `ssh` will
