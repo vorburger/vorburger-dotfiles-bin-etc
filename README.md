@@ -22,20 +22,26 @@ to do this:  **EITHER** we set this on (only!!) the laptop in a `~/.bash.d/` (wh
 sources), so that **ALL** `ssh` and `git` invocations use this:
 
     echo "export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)" > ~/.bash.d/SSH_AUTH_SOCK
+    chmod +x ~/.bash.d/SSH_AUTH_SOCK
+
     echo 'alias t="ssh -A server.domain.tld"' > ~/.bash.d/alias-t
+
+respectively for tmux, something like (NB use of our [`tmux2`](bin/tmux2)):
+
+    echo 'alias t="ssh -At server.domain.tld -- tmux2 new -A -s dev"' > ~/.bash.d/alias-t
 
 **OR**, alternatively, e.g. if we use different SSH keys and/or agents, we directly set `SSH_AUTH_SOCK` only for specific SSH:
 
     echo 'alias t="SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ssh -A server.domain.tld"' > ~/.bash.d/alias-t
 
-and to make `git` "just work" we do the following (which is better than an alias, because a script in PATH works in scripts as well):
+and to make `git` "just work" we do the following (which is better than an alias, because a script in PATH works in other scripts as well):
 
     echo 'SSH_AUTH_SOCK=$(/usr/bin/gpgconf --list-dirs agent-ssh-socket) /usr/bin/git "$@"' > ~/bin/git
 
-The `gpgconf --list-dirs agent-ssh-socket` will set `SSH_AUTH_SOCK` on (only!!) the *laptop* (*workstation*)
+These `gpgconf --list-dirs agent-ssh-socket` will set `SSH_AUTH_SOCK` on (only!!) the *laptop* (*workstation*)
 to something like `/run/user/1000/gnupg/S.gpg-agent.ssh`.  On a (Fedora 30) *server* that we connect to, `ssh` will
-set `SSH_AUTH_SOCK` to something like `/tmp/ssh-mXzCzYT2Np/agent.7541` when we connect.  We therefore
-**CANNOT** set `SSH_AUTH_SOCK` in a [`.bashrc`](dotfiles/bashrc) which is shared on both the *laptop*
+correctly set `SSH_AUTH_SOCK` to something like `/tmp/ssh-mXzCzYT2Np/agent.7541` when we connect (baring [`tmux2`](bin/tmux2)).  
+We therefore **CANNOT** set `SSH_AUTH_SOCK` in a [`.bashrc`](dotfiles/bashrc) which is shared on both the *laptop*
 (*workstation*) **and** the *server*!  (That would break SSH Agent forwarding.)
 
 In both of cases above, note and remember to use `ssh -A` to enable Agent Forwarding.
@@ -84,4 +90,4 @@ See [containers/](containers/), but in short:
 
     ./container/build.sh
     docker run -d -p 2222:22 --name vorburger vorburger
-    ssh -A -p 2222 localhost
+    ssh -At -p 2222 localhost -- tmux2 new -A -s dev
