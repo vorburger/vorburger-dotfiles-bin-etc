@@ -6,7 +6,7 @@ sudo dnf install -y \
     golang-bin git hub htop \
     java-1.8.0-openjdk-devel java-1.8.0-openjdk-src \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
-    nano mosh powerline-fonts trash-cli tmux wipe
+    nano mosh powerline-fonts trash-cli ShellCheck tmux wipe
 
 sudo dnf remove "libreoffice*"
 
