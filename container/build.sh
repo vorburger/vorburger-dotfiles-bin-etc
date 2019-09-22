@@ -9,7 +9,7 @@ build() {
 }
 
 build fedora-updated fedora-updated
-build sshd           ssh
+build sshd           sshd
 build devshell       devshell
 build gcloud         gcloud
 build ..             vorburger
