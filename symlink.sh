@@ -24,7 +24,7 @@ x .bash.d/ dotfiles/bash.d/
 l .inputrc dotfiles/.inputrc
 l .nanorc  dotfiles/.nanorc
 l .tmux.conf dotfiles/.tmux.conf
-l .zshrc   dotfiles/.zshrc
+# l .zshrc   dotfiles/.zshrc
 l .gnupg/gpg.conf dotfiles/gpg.conf
 l .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 l .gitconfig dotfiles/gitconfig
