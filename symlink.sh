@@ -8,12 +8,12 @@ l() {
   if [ ! -e ~/$1 ]
   then
     mkdir -p $(dirname ~/$1)
-    ln -s $DIR/$2 ~/$1
+    ln --symbolic --relative $DIR/$2 ~/$1
   fi
 }
 
 x() {
-  find $DIR/$2* -exec ln -sfn {} ~/$1 \;
+  find $DIR/$2* -exec ln -sfnr {} ~/$1 \;
 }
 
 mkdir -p ~/.bash.d/
