@@ -12,6 +12,8 @@ RUN yum makecache -y \
 # cannot: gcloud components install docker-credential-gcr
 # TODO nok: RUN yum install -y google-cloud-sdk-docker-credential-gcr
 
+ADD _gcloud /usr/local/bin/
+
 RUN gcloud version
 
 CMD gcloud beta interactive

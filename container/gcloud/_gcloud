@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# https://cloud.google.com/sdk/gcloud/reference/deployment-manager/
+# https://cloud.google.com/deployment-manager/docs/
+
+PROJECT_ID="${1:?first argument must be PROJECT_ID}"
+echo PROJECT_ID = "$PROJECT_ID"
+shift
+set -euox pipefail
+
+gcloud --project "$PROJECT_ID" auth activate-service-account --key-file=/tmp/key.json
+gcloud $@

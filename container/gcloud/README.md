@@ -24,11 +24,16 @@ You also have to enable the APIs you'd like to use on the respective project onc
 e.g. by visiting the Compute Engine > VM Instances once in the UI, clicking, and
 waiting a minute to get ready.  You now can e.g do:
 
-    docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud bash -c "gcloud --project YOURPROJECT auth activate-service-account YOURSERVICEACCOUNT@YOURPROJECT.iam.gserviceaccount.com --key-file=/tmp/YOURKEY.json && gcloud compute zones list"
+    docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud bash -c "gcloud --project YOURPROJECT auth activate-service-account --key-file=/tmp/YOURKEY.json && gcloud compute zones list"
 
-Using https://cloud.google.com/deployment-manager/docs/quickstart :
+The built-in [`deploy`](deploy) script assumes the key files is named `key.json` and lets us simplify above to:
 
-    docker run --rm --mount=type=bind,source=test/,destination=/tmp,z gcloud bash -c "gcloud --project YOURPROJECT auth activate-service-account YOURSERVICEACCOUNT@YOURPROJECT.iam.gserviceaccount.com --key-file=/tmp/YOURKEY.json && gcloud deployment-manager deployments create quickstart-deployment --config /tmp/sample-deploy.yaml"
+    docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud _gcloud YOURPROJECT compute zones list
 
-_TODO The built-in [`deploy`](deploy) script for
-[Google Cloud Deployment Manager](https://cloud.google.com/deployment-manager/) can be used like this:_
+So e.g. the [Google Cloud Deployment Manager Quickstart](https://cloud.google.com/deployment-manager/) can be used like this:
+
+    docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud _gcloud YOURPROJECT \
+      deployment-manager deployments create quickstart-deployment --config /tmp/sample-deploy.yaml
+
+    docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud _gcloud YOURPROJECT \
+      deployment-manager deployments delete quickstart-deployment -q

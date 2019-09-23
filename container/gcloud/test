@@ -2,6 +2,8 @@
 set -euox pipefail
 cd "$(dirname "$0")"
 
+# TODO shellcheck _gcloud
+
 docker run --rm gcloud gcloud version
 
 docker run --rm gcloud gsutil ls gs://gcp-public-data-landsat
