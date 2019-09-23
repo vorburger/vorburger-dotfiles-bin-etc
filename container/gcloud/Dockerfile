@@ -12,10 +12,6 @@ RUN yum makecache -y \
 # cannot: gcloud components install docker-credential-gcr
 # TODO nok: RUN yum install -y google-cloud-sdk-docker-credential-gcr
 
-# TODO how to initialize using an ENV variable instead of interactive?
-# RUN gcloud init --console-only
-
-# TODO nok: RUN kubectl version
 RUN gcloud version
 
 CMD gcloud beta interactive
