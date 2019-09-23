@@ -15,6 +15,7 @@ RUN yum install -y openssh-server \
 
 ADD add-uid-key /usr/local/sbin/
 ADD sshd-start /usr/local/sbin/
+RUN chmod +x /usr/local/sbin/sshd-start
 
 # https://docs.docker.com/engine/examples/running_ssh_service/
 EXPOSE 22
