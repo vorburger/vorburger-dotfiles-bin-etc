@@ -1,14 +1,12 @@
 # Based on https://cloud.google.com/deployment-manager/docs/quickstart
 # see https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types.
 
-# TODO variables instead of hard coded project vorburger in machineType and network
-
 resources:
 - type: compute.v1.instance
   name: quickstart-deployment-vm
   properties:
     zone: us-central1-f
-    machineType: https://www.googleapis.com/compute/v1/projects/vorburger/zones/us-central1-f/machineTypes/f1-micro
+    machineType: zones/us-central1-f/machineTypes/f1-micro
     disks:
     - deviceName: boot
       type: PERSISTENT
@@ -17,7 +15,7 @@ resources:
       initializeParams:
         sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/family/debian-9
     networkInterfaces:
-    - network: https://www.googleapis.com/compute/v1/projects/vorburger/global/networks/default
+    - network: global/networks/default
       accessConfigs:
       - name: External NAT
         type: ONE_TO_ONE_NAT

@@ -26,7 +26,7 @@ waiting a minute to get ready.  You now can e.g do:
 
     docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud bash -c "gcloud --project YOURPROJECT auth activate-service-account --key-file=/tmp/YOURKEY.json && gcloud compute zones list"
 
-The built-in [`deploy`](deploy) script assumes the key files is named `key.json` and lets us simplify above to:
+The built-in [`_gcloud`](_gcloud) script assumes the key files is named `key.json` and lets us simplify above to:
 
     docker run --rm --mount=type=bind,source=token/,destination=/tmp,z gcloud _gcloud YOURPROJECT compute zones list
 
