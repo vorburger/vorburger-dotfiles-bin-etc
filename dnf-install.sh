@@ -2,6 +2,7 @@
 set -euxo pipefail
 
 sudo dnf install -y \
+    asciinema \
     bash-completion \
     golang-bin git hub htop \
     java-1.8.0-openjdk-devel java-1.8.0-openjdk-src \
