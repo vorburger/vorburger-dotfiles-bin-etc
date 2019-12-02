@@ -84,9 +84,9 @@ Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to C
 which should appear after _booting with the kernel parameter `intel_pstate=disable`_ help with increased battery life..
 
 
-## Container/s
+## Containers
 
-See [containers/](containers/), but in short:
+See [container/](container/), but in short:
 
     ./container/build.sh
     docker run -d -p 2222:22 --name vorburger vorburger
