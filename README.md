@@ -66,6 +66,9 @@ Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-term
 
 Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to Click.
 
+Settings > Keyboard Shortcuts: Delete (Backspace) Alt-ESC to Switch Windows Directly
+(because we use that in TMUX).
+
 
 ### Power Saving
 
