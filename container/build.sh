@@ -4,6 +4,7 @@ set -euox pipefail
 cd "$(dirname "$0")"
 
 build() {
+  # docker build --no-cache=true --pull -t $2 $1/
   docker build -t $2 $1/
   $1/test
 }

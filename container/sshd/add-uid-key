@@ -2,7 +2,7 @@
 set -euox pipefail
 
 NEW_UID=$1
-AUTHORIZED_KEYS=$2
+AUTHORIZED_KEYS="${*:2}"
 
 useradd "$NEW_UID"
 mkdir /home/"$NEW_UID"/.ssh/
