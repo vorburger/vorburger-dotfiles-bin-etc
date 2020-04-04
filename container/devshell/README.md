@@ -11,4 +11,4 @@ _TODO volume mapping to persist ongoing dev work._
 
 ## Troubleshooting
 
-see the [sshd container](../sssh/).
+see the [sshd container](../sshd/).

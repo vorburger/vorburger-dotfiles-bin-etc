@@ -1,0 +1,21 @@
+FROM cloudshell-fedora
+
+COPY dnf-install.sh /tmp/
+RUN /tmp/dnf-install.sh
+
+RUN useradd -G wheel vorburger
+USER vorburger
+WORKDIR /home/vorburger/
+
+# Do NOT do this, because then any time you touch any file during dev, it will redo above:
+#   COPY . /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+COPY symlink.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+COPY dotfiles/ /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
+
+# as per ./README.md
+RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git && cd .. \
+ && rm /home/vorburger/.bashrc \
+ && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
+
+# We have to reset the user to root so that parent image will work as intended
+USER root

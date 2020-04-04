@@ -89,7 +89,12 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
 ## Containers
 
-See [container/](container/), but in short:
+Using https://github.com/vorburger/cloudshell for a customized web shell on http://localhost:8080 :
+
+    podman build -t vorburger-cloud -f Dockerfile-cloudshell .
+    podman run --hostname=cloud -eUSER_ID=vorburger -eUSER_PWD=THEPWD --rm -p 8080:8080 vorburger-cloud
+
+Also (previous generation, older) see [container/](container/), but in short:
 
     ./container/build.sh
     docker run -d -p 2222:22 --name vorburger vorburger

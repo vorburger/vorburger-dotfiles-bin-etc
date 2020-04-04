@@ -7,3 +7,5 @@
 * [`devshell`](devshell/): General purpose any-user Development Shell
 * [`gcloud`](gcloud/): Google Cloud CLI
 * [`vorburger`](../): Personalized customized Development Shell with the dotfiles and everything that's in this repo
+
+See also https://github.com/vorburger/cloudshell
