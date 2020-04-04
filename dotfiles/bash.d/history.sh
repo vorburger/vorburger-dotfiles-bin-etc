@@ -13,4 +13,4 @@ shopt -s histappend
 export HISTTIMEFORMAT=""
 
 # Alt+up and Alt+down complete the last appearance of an argument
-bind '"\e[1;3A": dabbrev-expand' '"\e[1;3B": "\e-\e[1;3A"'
+# bind '"\e[1;3A": dabbrev-expand' '"\e[1;3B": "\e-\e[1;3A"'
