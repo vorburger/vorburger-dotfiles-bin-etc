@@ -4,6 +4,8 @@ alias gd="git diff"
 alias ga="git add"
 alias gc="git commit -m "
 alias gca="git commit --amend"
+alias gpu="git push "
+alias gpl="git pull "
 alias gsy="git pull --rebase && git push"
 
 # TODO dotfiles/zshrc
