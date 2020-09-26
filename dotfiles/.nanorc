@@ -26,11 +26,11 @@ set multibuffer
 set wordchars "<>()[]{}_-#.,;:"
 set guidestripe 120
 
-set titlecolor cyan,black
-set numbercolor magenta,black
+set titlecolor bold,lagoon,black
+set numbercolor italic,latte,black
 set stripecolor brightred,black
 set errorcolor brightred,black
-set selectedcolor white,magenta
+set selectedcolor mint,magenta
 
 # New options which requires latest Nano version
 set saveonexit
