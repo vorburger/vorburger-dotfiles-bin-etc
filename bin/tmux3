@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ $# -eq 0 ]; then
+  echo "USAGE: $0 SSH Auth Socket path (e.g. /run/user/1000/gnupg/S.gpg-agent.ssh for local use, or /tmp/ssh-*/agent.* for remote)"
+  exit 1
+fi
+
+# Setting SSH_AUTH_SOCK to a fixed path instead of a variable path is required
+# so that upon re-attaching to tmux, the SSH Agent forwarding still works.
+
+if [[ ! -v TMUX ]] && [[ -v SSH_AUTH_SOCK ]]; then
+  # SILENCE! ;) echo "$0: Not running in tmux yet, so changing SSH_AUTH_SOCK to a fixed path..."
+  ln --symbolic --force --no-dereference --backup=none "$1" "${HOME}/.ssh.agent"
+  exec env SSH_AUTH_SOCK="${HOME}/.ssh.agent" tmux "${@:2}"
+else
+  echo "$0: Already running in tmux, or SSH_AUTH_SOCK not set (either way, not changing SSH_AUTH_SOCK)"
+  exec tmux "${@:2}"
+fi

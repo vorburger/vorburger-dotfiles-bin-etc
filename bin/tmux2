@@ -1,14 +1,1 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-# Setting SSH_AUTH_SOCK to a fixed path instead of a variable (/tmp/ssh-.../agent....) path is required
-# so that upon re-attaching to tmux, the SSH Agent forwarding still works
-
-if [[ ! -v TMUX ]] && [[ -v SSH_AUTH_SOCK ]]; then
-  # SILENCE! ;) echo "tmux2: Not running in tmux yet, so changing SSH_AUTH_SOCK to a fixed path..."
-  ln --symbolic --force --no-dereference --backup=none "${SSH_AUTH_SOCK}" "${HOME}/.ssh.agent"
-  exec env SSH_AUTH_SOCK="${HOME}/.ssh.agent" tmux "$@"
-else
-  echo "tmux2: Already running in tmux, or SSH_AUTH_SOCK not set (either way, not changing SSH_AUTH_SOCK)"
-  exec tmux "$@"
-fi
+tmux-ssh

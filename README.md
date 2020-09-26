@@ -14,41 +14,33 @@
 NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
 
 
-## `ssh` (incl. `git`) with YubiKey
+## `ssh` (incl. `git`) Agent incl. Forwarding with YubiKey
 
 As e.g. per https://github.com/drduh/YubiKey-Guide#replace-agents, we need to appropriately set
-the `SSH_AUTH_SOCK` environment variable on the laptop (workstation) that we work on.  There are 2 ways
-to do this:  **EITHER** we set this on (only!!) the laptop in a `~/.bash.d/` (which [our `.bashrc`](dotfiles/bashrc)
-sources), so that **ALL** `ssh` and `git` invocations use this:
+the `SSH_AUTH_SOCK` environment variable.  You could be tempted to do something like the following:
 
     echo "export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)" > ~/.bash.d/SSH_AUTH_SOCK
-    chmod +x ~/.bash.d/SSH_AUTH_SOCK
 
-    echo 'alias t="ssh -A server.domain.tld"' > ~/.bash.d/alias-t
+Doing this on a sever is not required, but doing this on a workstation prevents remote SSH login to the workstation.
+Instead, the [`bin/tmux*`](bin/) scripts very nicely automate and correctly integrate this with TMUX:
 
-respectively for tmux, something like (NB use of our [`tmux2`](bin/tmux2)):
+    [you@desktop ~]$ tmux-local new -A -X -s MAKEx
 
-    echo 'alias t="ssh -At server.domain.tld -- tmux2 new -A -s dev"' > ~/.bash.d/alias-t
+    [you@laptop ~]$ ssh -At desktop -- tmux-ssh new -A -X -s MAKEx
 
-**OR**, alternatively, e.g. if we use different SSH keys and/or agents, we directly set `SSH_AUTH_SOCK` only for specific SSH:
+You probably want to put the desktop command into a launch command for your Terminal,
+and `echo` the laptop command into an `~/.bash.d/alias-h`.
 
-    echo 'alias t="SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ssh -A server.domain.tld"' > ~/.bash.d/alias-t
-
-and to make `git` "just work" we do the following (which is better than an alias, because a script in PATH works in other scripts as well):
-
-    echo 'SSH_AUTH_SOCK=$(/usr/bin/gpgconf --list-dirs agent-ssh-socket) /usr/bin/git "$@"' > ~/bin/git
-
-These `gpgconf --list-dirs agent-ssh-socket` will set `SSH_AUTH_SOCK` on (only!!) the *laptop* (*workstation*)
-to something like `/run/user/1000/gnupg/S.gpg-agent.ssh`.  On a (Fedora 30) *server* that we connect to, `ssh` will
-correctly set `SSH_AUTH_SOCK` to something like `/tmp/ssh-mXzCzYT2Np/agent.7541` when we connect (baring [`tmux2`](bin/tmux2)).  
-We therefore **CANNOT** set `SSH_AUTH_SOCK` in a [`.bashrc`](dotfiles/bashrc) which is shared on both the *laptop*
-(*workstation*) **and** the *server*!  (That would break SSH Agent forwarding.)
-
-In both of cases above, note and remember to use `ssh -A` to enable Agent Forwarding.
+Remember to always use `ssh -A` to enable Agent Forwarding, as above.
 We could alternatively use `ForwardAgent yes` in our `~/.ssh/config`, but as a security best practice,
 always *only for a SINGLE Hostname*_, never for all servers.
 
 BTW: `RemoteForward` in `~/.ssh/config` is not actually required (at least with Fedora 30).
+
+
+## `gpg` Agent Forwarding
+
+_TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SSH'ing remotely._
 
 
 ## Manual Settings
