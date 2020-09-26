@@ -32,6 +32,10 @@ set stripecolor brightred,black
 set errorcolor brightred,black
 set selectedcolor white,magenta
 
+# New options which requires latest Nano version
+set saveonexit
+set indicator
+
 bind ^C copy all
 bind ^D zap all
 bind ^F whereis all
@@ -42,8 +46,8 @@ bind ^R replace main
 bind ^H chopwordleft main
 bind ^O insert main
 bind ^S savefile main
-bind ^T gotoline main
-bind ^T gotodir browser
+bind ^L gotoline main
+bind ^L gotodir browser
 bind ^P curpos main
 bind ^Q exit all
 bind ^V paste all
@@ -51,6 +55,8 @@ bind ^W cancel all
 bind ^X cut all
 bind ^Y redo main
 bind ^Z undo all
+bind ^Space complete main
+bind ^/ comment all
 
 unbind ^A all   # tmux
 
