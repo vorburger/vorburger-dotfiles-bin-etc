@@ -41,7 +41,8 @@ bind ^D zap all
 bind ^F whereis all
 bind ^G findnext all
 bind ^B wherewas all
-bind ^E findprevious all  # TODO what's findprevious typically bound to, e.g. in Eclipse, or Chrome?  (other than Shift-F3)
+# TODO what's findprevious typically bound to, e.g. in Eclipse, or Chrome?  (other than Shift-F3)
+bind ^E findprevious all
 bind ^R replace main
 bind ^H chopwordleft main
 bind ^O insert main
@@ -58,8 +59,8 @@ bind ^Z undo all
 bind ^Space complete main
 bind ^/ comment all
 
-unbind ^A all   # tmux
-
+# Unbind keys used by my Tmux configuration
+unbind ^A all
 
 # Customize default to show trailing whitespace
 #
