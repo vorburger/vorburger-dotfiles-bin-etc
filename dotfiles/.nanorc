@@ -23,7 +23,6 @@ set softwrap
 set atblanks
 set cutfromcursor
 set multibuffer
-set wordchars "<>()[]{}_-#.,;:"
 set guidestripe 120
 
 set titlecolor bold,lagoon,black
