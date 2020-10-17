@@ -1,6 +1,6 @@
 [user]
-	name = Michael Vorburger
-	email = mike@vorburger.ch
+    name = Michael Vorburger
+    email = mike@vorburger.ch
     signingkey = 0x4DD7EC29BB91D899
 
 [commit]
@@ -10,53 +10,53 @@
     forceSignAnnotated = true
 
 # [credential]
-#	helper = store
+#   helper = store
 
 #[url "https://"]
-#	insteadOf = git://
+#   insteadOf = git://
 
 [core]
-	autocrlf = input
-	eol = native
-	pager = less -S
+    autocrlf = input
+    eol = native
+    pager = less -S
 
 [apply]
-	whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
+    whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
 
 [log]
-	date = relative
-	decorate = true
+    date = relative
+    decorate = true
 
 [diff]
-	renames = true
-	submodule = log
+    renames = true
+    submodule = log
 
 [diff "zip"]
-	textconv = unzip -c -a
+    textconv = unzip -c -a
 
 [color]
-	# provides handy visual cues
-	ui = auto
+    # provides handy visual cues
+    ui = auto
 
 [merge]
-	log = true
+    log = true
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [branch]
-	autosetuprebase = always
-	autosetupmerge = true
+    autosetuprebase = always
+    autosetupmerge = true
 
 [push]
-	default = current
+    default = current
 
 [hub]
-#	protocol = https
+#   protocol = https
 
 [grep]
-	extendRegexp = true
-	lineNumber = true
+    extendRegexp = true
+    lineNumber = true
 
 [alias]
     ls = log --color --pretty=format:'%C(magenta)%h%Creset %C(white)%s%Creset %C(bold blue)<%aN>%Creset %C(dim blue)(%cN)%Creset%C(auto)%d%Creset'
