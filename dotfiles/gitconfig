@@ -11,7 +11,7 @@
 [core]
 	autocrlf = input
 	eol = native
-#	excludesfile = /home/vorburger/.gitignore_global
+	pager = less -S
 
 [apply]
 	whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
@@ -52,4 +52,8 @@
 	lineNumber = true
 
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ls = log --color --pretty=format:'%C(magenta)%h%Creset %C(white)%s%Creset %C(bold blue)<%aN>%Creset %C(dim blue)(%cN)%Creset%C(auto)%d%Creset'
+    ll = log --color --format=full --compact-summary
+    lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset %C(dim blue)(%cN)%Creset %C(green)(%cr)' --abbrev-commit
+
+# `tig` is a useful git log TUI alternative

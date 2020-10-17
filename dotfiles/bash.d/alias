@@ -1,13 +1,21 @@
 alias e="nano "
 
 # Git
+alias gl="git ls"
+alias gll="git ll"
+alias glg="git lg"
 alias gst="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit -m "
 alias gca="git commit --amend"
+alias gco="git checkout "
 alias gpu="git push "
 alias gpl="git pull "
 alias gsy="git pull --rebase && git push"
+
+# https://stackoverflow.com/a/24665529/421602
+source /usr/share/bash-completion/completions/git
+__git_complete gco _git_checkout
 
 # TODO dotfiles/zshrc
