@@ -35,7 +35,6 @@
     textconv = unzip -c -a
 
 [color]
-    # provides handy visual cues
     ui = auto
 
 [merge]
@@ -61,6 +60,7 @@
 [alias]
     ls = log --color --pretty=format:'%C(magenta)%h%Creset %C(white)%s%Creset %C(bold blue)<%aN>%Creset %C(dim blue)(%cN)%Creset%C(auto)%d%Creset'
     ll = log --color --format=full --compact-summary
-    lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset %C(dim blue)(%cN)%Creset %C(green)(%cr)' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset%C(auto)%d%Creset %s %C(bold blue)<%aN>%Creset %C(dim blue)(%cN)%Creset %C(green)(%cr)' --abbrev-commit
+    wdiff = diff --word-diff --word-diff-regex='\\w+'
 
 # `tig` is a useful git log TUI alternative
