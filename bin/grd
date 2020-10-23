@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# See ../.bash.d/alias for more Git tools
+set -euxo pipefail
+
+CURRENT_BRANCH=$(git branch --show-current)
+git stash
+git checkout develop
+git pull
+git checkout "$CURRENT_BRANCH"
+git rebase develop
+git stash apply
+
+# TODO should remember if there actually was anything stashed, not (possibly wrong!) stash apply

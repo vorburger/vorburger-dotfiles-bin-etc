@@ -12,7 +12,9 @@ alias gca="git commit --amend"
 alias gco="git checkout "
 alias gpu="git push "
 alias gpl="git pull "
+alias gpf="git push --force vorburger"
 alias gsy="git pull --rebase && git push"
+# see ../bin/g* for more Git tools
 
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git
