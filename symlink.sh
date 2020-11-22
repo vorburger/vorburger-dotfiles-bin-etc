@@ -28,6 +28,7 @@ l .tmux.conf dotfiles/.tmux.conf
 l .gnupg/gpg.conf dotfiles/gpg.conf
 l .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 l .gitconfig dotfiles/gitconfig
+x .local/share/applications/ dotfiles/desktop/
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
 # also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:

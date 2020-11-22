@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name[en_IN.UTF-8]=Eclipse
+X-GNOME-FullName[en_IN.UTF-8]=Eclipse
+Comment[en_IN.UTF-8]=
+Icon=/home/vorburger/bin/eclipses/java-latest-released/eclipse/icon.xpm
+NoDisplay=false
+Exec=/home/vorburger/bin/eclipses/java-latest-released/eclipse/eclipse
+Path=/home/vorburger/
+Terminal=false
+X-GNOME-UsesNotifications=true
+Categories=Development;
