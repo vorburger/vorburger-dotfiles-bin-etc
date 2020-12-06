@@ -47,7 +47,7 @@ _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SS
 
 ### Terminals
 
-From https://github.com/tonsky/FiraCode#terminal-support:
+From https://github.com/tonsky/FiraCode#terminal-support :
 
 * [Kitty](https://sw.kovidgoyal.net/kitty) (at [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) on GitHub) is nicely minimalistic, no Settings UI.  It duplicates `tmux`, but never mind.  Very actively maintained, Fedora package à jour.
 * [Hyper](https://hyper.is) looks interesting too, but bloated? Has RPM, but not Fedora packaged; it's fallback from Kitty.

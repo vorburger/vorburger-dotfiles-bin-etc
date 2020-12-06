@@ -27,3 +27,5 @@ export EDITOR=nano
 
 # added by travis gem
 [ ! -s /home/vorburger/.travis/travis.sh ] || source /home/vorburger/.travis/travis.sh
+
+source <(kitty + complete setup bash)
