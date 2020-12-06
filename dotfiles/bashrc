@@ -24,3 +24,6 @@ export PATH
 export EDITOR=nano
 
 # Do *NOT* set 'SSH_AUTH_SOCK' here; see README for details.
+
+# added by travis gem
+[ ! -s /home/vorburger/.travis/travis.sh ] || source /home/vorburger/.travis/travis.sh
