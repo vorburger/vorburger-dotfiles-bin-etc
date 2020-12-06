@@ -50,7 +50,7 @@ _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SS
 From https://github.com/tonsky/FiraCode#terminal-support :
 
 * [Kitty](https://sw.kovidgoyal.net/kitty) (at [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) on GitHub) is nicely minimalistic, no Settings UI.  It duplicates `tmux`, but never mind.  Very actively maintained, Fedora package à jour.
-* [Hyper](https://hyper.is) looks interesting too, but bloated? Has RPM, but not Fedora packaged; it's fallback from Kitty.
+* [Hyper](https://hyper.is) looks interesting too, but more "bloated". Has RPM, but not Fedora packaged. [Font ligatures don't work in v3](https://github.com/vercel/hyper/issues/3607).
 * [QTerminal](https://github.com/lxqt/qterminal) does not list `Fira Code` in File > Settings > Font, so nope.
 * [Konsole](https://konsole.kde.org) drags KDE along, so no thanks.
 
@@ -74,7 +74,7 @@ Launch `gnome-tweaks` and configure:
 * Windows Focus on Hover
 
 In _Gnome Terminal's Preferences_, add a new `tmux` Profile, and _Set as default_, with:
-* Text _Custom Font_ `Fira Code Retina` Size 20. NB: [Fira Code's README](https://github.com/tonsky/FiraCode#terminal-support) lists GNOME Terminal as not supported, and the fancy Ligatures indeed don't work (like they do e.g. in Eclipse after changing the ), but I'm not actually seeing any real problems such as [issue #162](https://github.com/tonsky/FiraCode/issues/162), so keeping it, just for consistency. (The alternative would be to just use `Fira Mono` from `mozilla-fira-mono-fonts` instead.)
+* Text _Custom Font_ `Fira Code Retina` Size 20. NB: [Fira Code's README](https://github.com/tonsky/FiraCode#terminal-support) lists GNOME Terminal as not supported, and the fancy Ligatures indeed don't work (like they do e.g. in Eclipse after changing the ), but I'm not actually seeing any real problems such as [issue #162](https://github.com/tonsky/FiraCode/issues/162), so it, just for consistency. (The alternative would be to just use `Fira Mono` from `mozilla-fira-mono-fonts` instead.)
 * Scrolling disable _Show scrollbar_ and _Scroll on output_, but enable _Scroll on keystroke_, and _Limit scrollback to: 10'000 lines_
 * Command: Replace initial title, Run a custom command instead of my shell: `tmux-local new -A -X -s MAKEx`
 
