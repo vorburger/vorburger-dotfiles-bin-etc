@@ -29,3 +29,5 @@ export EDITOR=nano
 [ ! -s /home/vorburger/.travis/travis.sh ] || source /home/vorburger/.travis/travis.sh
 
 source <(kitty + complete setup bash)
+
+eval "$(gh completion -s bash)"
