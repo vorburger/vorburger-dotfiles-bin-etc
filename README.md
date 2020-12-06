@@ -45,6 +45,23 @@ _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SS
 
 ## Manual Settings
 
+### Terminals
+
+From https://github.com/tonsky/FiraCode#terminal-support:
+
+* [Kitty](https://sw.kovidgoyal.net/kitty) (at [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) on GitHub) is nicely minimalistic, no Settings UI.  It duplicates `tmux`, but never mind.  Very actively maintained, Fedora package à jour.
+* [Hyper](https://hyper.is) looks interesting too, but bloated? Has RPM, but not Fedora packaged; it's fallback from Kitty.
+* [QTerminal](https://github.com/lxqt/qterminal) does not list `Fira Code` in File > Settings > Font, so nope.
+* [Konsole](https://konsole.kde.org) drags KDE along, so no thanks.
+
+https://github.com/topics/terminal-emulators has moar... ;-)
+
+
+### Eclipse
+
+Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Code 12.
+
+
 ### GNOME
 
     ./gnome-settings.sh
@@ -55,6 +72,11 @@ Launch `gnome-tweaks`, _Startup Applications_, `+` Terminal and Chrome/Firefox.
 This puts (copies of, not symlinks to) `firefox.desktop` and `org.gnome.Terminal.desktop` into `~/.config/autostart/`.
 
 Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-terminal` append `--full-screen` (or just `--window --maximize`).
+
+In _Gnome Terminal's Preferences_, add a new `tmux` Profile, and _Set as default_, with:
+* Text _Custom Font_ `Fira Code Retina` Size 20. NB: [Fira Code's README](https://github.com/tonsky/FiraCode#terminal-support) lists GNOME Terminal as not supported, and the fancy Ligatures indeed don't work (like they do e.g. in Eclipse after changing the ), but I'm not actually seeing any real problems such as [issue #162](https://github.com/tonsky/FiraCode/issues/162), so keeping it, just for consistency. (The alternative would be to just use `Fira Mono` from `mozilla-fira-mono-fonts` instead.)
+* Scrolling disable _Show scrollbar_ and _Scroll on output_, but enable _Scroll on keystroke_, and _Limit scrollback to: 10'000 lines_
+* Command: Replace initial title, Run a custom command instead of my shell: `tmux-local new -A -X -s MAKEx`
 
 Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to Click.
 
