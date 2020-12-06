@@ -9,7 +9,8 @@ sudo dnf install -y \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
     nano mosh powerline-fonts trash-cli ShellCheck tmux wipe \
     fira-code-fonts mozilla-fira-mono-fonts \
-    kitty ImageMagick
+    kitty ImageMagick \
+    gnome-tweak-tool
 
 sudo dnf remove "libreoffice*"
 

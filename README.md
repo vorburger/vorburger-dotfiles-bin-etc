@@ -66,12 +66,12 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
     ./gnome-settings.sh
 
-    sudo dnf install gnome-tweak-tool
+Launch `gnome-tweaks` and configure:
 
-Launch `gnome-tweaks`, _Startup Applications_, `+` Terminal and Chrome/Firefox.
-This puts (copies of, not symlinks to) `firefox.desktop` and `org.gnome.Terminal.desktop` into `~/.config/autostart/`.
-
-Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-terminal` append `--full-screen` (or just `--window --maximize`).
+* _Startup Applications_, `+` Terminal and Chrome/Firefox.
+  This puts (copies of, not symlinks to) `firefox.desktop` and `org.gnome.Terminal.desktop` into `~/.config/autostart/`.
+  Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-terminal` append `--full-screen` (or just `--window --maximize`).
+* Windows Focus on Hover
 
 In _Gnome Terminal's Preferences_, add a new `tmux` Profile, and _Set as default_, with:
 * Text _Custom Font_ `Fira Code Retina` Size 20. NB: [Fira Code's README](https://github.com/tonsky/FiraCode#terminal-support) lists GNOME Terminal as not supported, and the fancy Ligatures indeed don't work (like they do e.g. in Eclipse after changing the ), but I'm not actually seeing any real problems such as [issue #162](https://github.com/tonsky/FiraCode/issues/162), so keeping it, just for consistency. (The alternative would be to just use `Fira Mono` from `mozilla-fira-mono-fonts` instead.)
