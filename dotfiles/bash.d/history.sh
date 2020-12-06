@@ -1,4 +1,5 @@
-gh() {
+# grep history
+ghi() {
   history | cut -c8- | grep "$@" | uniq
 }
 
