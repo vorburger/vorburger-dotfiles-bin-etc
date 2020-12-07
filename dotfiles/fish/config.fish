@@ -1,1 +1,3 @@
-/home/vorburger/.bash.d/alias
+source ~/.config/fish/alias.fish
+
+starship init fish | source
