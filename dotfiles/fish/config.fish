@@ -1,0 +1,1 @@
+/home/vorburger/.bash.d/alias

@@ -32,6 +32,8 @@ l .gitconfig dotfiles/gitconfig
 x .local/share/applications/ dotfiles/desktop/
 x .config/kitty/ dotfiles/kitty/
 l .hyper.js dotfiles/hyper.js
+# x .config/fish/functions/ dotfiles/fish/functions/
+x .config/fish/ dotfiles/fish/
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
 # also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:
