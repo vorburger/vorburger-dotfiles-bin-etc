@@ -45,6 +45,19 @@ _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SS
 
 ## Manual Settings
 
+### Fonts
+
+From https://www.nerdfonts.com/font-downloads (based on https://github.com/ryanoasis/nerd-fonts),
+download https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip (or later)
+and unzip and double-click on _Fira Code Retina Nerd Font Complete.otf_
+
+    lsd
+
+    wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/bin/scripts/lib/i_linux.sh -P ~/.local/share/fonts/
+    source ~/.local/share/fonts/i_linux.sh
+    echo $i_linux_fedora
+
+
 ### Terminals
 
 From https://github.com/tonsky/FiraCode#terminal-support :

@@ -10,7 +10,8 @@ sudo dnf install -y \
     nano mosh powerline-fonts trash-cli ShellCheck tmux wipe \
     fira-code-fonts mozilla-fira-mono-fonts \
     kitty ImageMagick \
-    gnome-tweak-tool
+    gnome-tweak-tool \
+    lsd fish
 
 sudo dnf remove "libreoffice*"
 

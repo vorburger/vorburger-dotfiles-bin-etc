@@ -1,5 +1,6 @@
 # These aliases are shared between Bash and Fish
 
+alias ls="lsd "
 alias e="nano "
 
 # Git
