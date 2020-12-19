@@ -11,7 +11,7 @@ sudo dnf install -y \
     fira-code-fonts mozilla-fira-mono-fonts \
     kitty ImageMagick \
     gnome-tweak-tool \
-    lsd fish autojump-fish autojump-zsh autojump
+    lsd fish autojump-fish autojump-zsh autojump bat
 
 [ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | bash
 

@@ -2,6 +2,7 @@
 # Common ones are in dotfiles/alias (fish specific in dotfiles/fish/alias.fish)
 
 [ -s /usr/bin/lsd ] && alias l="lsd "
+[ -s /usr/bin/bat ] && alias c="bat "
 
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git
