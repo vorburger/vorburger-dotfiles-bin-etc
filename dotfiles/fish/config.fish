@@ -4,3 +4,10 @@ source ~/.config/fish/alias.fish
 source /usr/share/autojump/autojump.fish
 
 starship init fish | source
+
+# Keyboard bindings
+# fish_key_reader is great to find the appropriate keyboard escape sequence!
+# see https://fishshell.com/docs/current/cmds/bind.html#special-input-functions
+# https://fishshell.com/docs/current/#escaping-characters is useful
+# bind \b e.g. shows current binding
+bind \b backward-kill-path-component
