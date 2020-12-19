@@ -1,0 +1,13 @@
+# https://starship.rs/config/
+
+# This does NOT avoid line break in the prompt; see https://github.com/starship/starship/issues/1987
+# add_newline = false
+
+[line_break]
+# change this to false for single line break
+disabled = false
+
+[java]
+# drop Java version from prompt; format default = "via [${symbol}${version}]($style) "
+format = "via [${symbol}]($style)"
+disabled = false
