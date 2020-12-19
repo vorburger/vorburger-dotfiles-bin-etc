@@ -1,1 +1,1 @@
-eval "$(starship init bash)"
+[ -s /usr/bin/starshpi ] && eval "$(starship init bash)"
