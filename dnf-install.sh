@@ -11,9 +11,9 @@ sudo dnf install -y \
     fira-code-fonts mozilla-fira-mono-fonts \
     kitty ImageMagick \
     gnome-tweak-tool \
-    lsd fish
+    lsd fish autojump-fish autojump-zsh autojump
 
-curl -fsSL https://starship.rs/install.sh | bash
+[ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | bash
 
 sudo dnf remove "libreoffice*"
 
