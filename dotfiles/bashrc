@@ -32,3 +32,7 @@ export EDITOR=nano
 [ -s /usr/bin/kitty ] && source <(kitty + complete setup bash)
 
 [ -s /usr/bin/gh ] && eval "$(gh completion -s bash)"
+
+# NB: "chsh -s /bin/fish" doesn't work (for some unclear reason), but this works, from:
+# https://wiki.archlinux.org/index.php/Fish#Modify_.bashrc_to_drop_into_fish
+[ -s /usr/bin/fish ] && [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
