@@ -1,5 +1,7 @@
 # These aliases are Bash specific (not shared with Fish)
 
+[ -s /usr/bin/lsd ] && alias ls="lsd "
+
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git
 __git_complete gl  _git_log
