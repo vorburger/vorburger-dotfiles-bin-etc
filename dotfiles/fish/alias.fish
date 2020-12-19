@@ -1,1 +1,4 @@
-/home/vorburger/.bash.d/alias
+# These aliases are Fish specific
+# Common ones are in dotfiles/alias (bash specific in dotfiles/bash.d/alias.bash)
+
+test -f /usr/bin/lsd && alias l="lsd "

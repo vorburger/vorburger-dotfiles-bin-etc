@@ -1,3 +1,4 @@
+source ~/.alias
 source ~/.config/fish/alias.fish
 
 # autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package

@@ -1,6 +1,7 @@
 # These aliases are Bash specific (not shared with Fish)
+# Common ones are in dotfiles/alias (fish specific in dotfiles/fish/alias.fish)
 
-[ -s /usr/bin/lsd ] && alias ls="lsd "
+[ -s /usr/bin/lsd ] && alias l="lsd "
 
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git

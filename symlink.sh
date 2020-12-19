@@ -20,6 +20,7 @@ x() {
 mkdir -p ~/.bash.d/
 
 # TODO auto-l all dotfiles/*
+l .alias dotfiles/alias
 l .bashrc dotfiles/bashrc
 x .bash.d/ dotfiles/bash.d/
 l .inputrc dotfiles/.inputrc
