@@ -64,3 +64,5 @@
     wdiff = diff --word-diff --word-diff-regex='\\w+'
 
 # `tig` is a useful git log TUI alternative
+[pull]
+	ff = only
