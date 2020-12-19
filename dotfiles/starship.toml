@@ -10,4 +10,11 @@ disabled = false
 [java]
 # drop Java version from prompt; format default = "via [${symbol}${version}]($style) "
 format = "via [${symbol}]($style)"
-disabled = false
+style = "bold blue"
+# symbol = " " # cute, but too faint
+
+[username]
+format = "[$user]($style) on "  # use 'on' instead of default 'in'
+
+[gcloud]
+style = "dimmed blue"
