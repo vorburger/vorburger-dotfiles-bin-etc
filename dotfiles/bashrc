@@ -26,8 +26,9 @@ export EDITOR=nano
 # Do *NOT* set 'SSH_AUTH_SOCK' here; see README for details.
 
 # added by travis gem
-[ ! -s /home/vorburger/.travis/travis.sh ] || source /home/vorburger/.travis/travis.sh
+# [ ! -s /home/vorburger/.travis/travis.sh ] || source /home/vorburger/.travis/travis.sh
+[ -s /home/vorburger/.travis/travis.sh ] && source /home/vorburger/.travis/travis.sh
 
-source <(kitty + complete setup bash)
+[ -s /usr/bin/kitty ] && source <(kitty + complete setup bash)
 
-eval "$(gh completion -s bash)"
+[ -s /usr/bin/gh ] && eval "$(gh completion -s bash)"
