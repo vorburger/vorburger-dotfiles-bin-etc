@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # find . -name .svn -a -type d -prune -o -type f -print0 |  xargs -0 grep "$*"
 # find   . -name .git -a -type d -prune -o -type f -print0 |  xargs -0 grep "$*"
 find   . -name .git -a -type d -prune -o -type f -print0 |  xargs -0 grep "$*" | grep -v "/build/" | grep -v "/target/" | grep -v "/bin/" | grep -v "/.tox/" | grep -v ".o matches"
