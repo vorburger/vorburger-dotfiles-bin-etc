@@ -9,6 +9,6 @@ else
 fi
 
 git add .
-git commit -m $MESSAGE
+git commit -m "$MESSAGE"
 git pull --rebase
 git push
