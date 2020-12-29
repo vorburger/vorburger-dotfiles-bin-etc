@@ -19,6 +19,7 @@
     autocrlf = input
     eol = native
     pager = less -S
+    editor = nano
 
 [apply]
     whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
