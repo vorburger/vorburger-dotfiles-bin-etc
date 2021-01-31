@@ -1,6 +1,8 @@
 # These aliases are Bash specific (not shared with Fish)
 # Common ones are in dotfiles/alias (fish specific in dotfiles/fish/alias.fish)
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 [ -s /usr/bin/lsd ] && alias l="lsd "
 [ -s /usr/bin/bat ] && alias c="bat "
 
@@ -14,3 +16,7 @@ __git_complete ga  _git_add
 __git_complete gco _git_checkout
 __git_complete gpu _git_push
 __git_complete gpl _git_pull
+
+# https://github.com/cykerway/complete-alias
+source $DIR/cykerway_complete-alias
+complete -F _complete_alias kc

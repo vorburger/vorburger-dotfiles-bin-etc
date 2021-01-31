@@ -5,7 +5,7 @@ fi
 . ~/.alias
 
 for i in ~/.bash.d/* ; do
-  if [ -r "$i" ]; then
+  if [ -x "$i" ]; then
     . $i
   fi
 done

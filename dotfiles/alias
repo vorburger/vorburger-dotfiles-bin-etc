@@ -2,6 +2,7 @@
 # Bash specific in dotfiles/bash.d/alias.bash, fish specific in dotfiles/fish/alias.fish
 
 alias e="nano "
+alias kc="kubectl "
 
 # Git
 alias gl="git ls"
