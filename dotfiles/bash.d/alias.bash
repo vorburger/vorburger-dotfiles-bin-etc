@@ -22,9 +22,12 @@ if hash kubectl 2>/dev/null; then
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
 
-# Rust Cargo
-export PATH="${HOME}/.cargo/bin:$PATH"
-
 # https://github.com/cykerway/complete-alias
 source $DIR/cykerway_complete-alias
 complete -F _complete_alias kc
+
+# Rust Cargo
+export PATH="${HOME}/.cargo/bin:$PATH"
+
+# Go
+export PATH="${HOME}/go/bin:$PATH"

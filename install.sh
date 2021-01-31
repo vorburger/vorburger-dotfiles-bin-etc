@@ -5,6 +5,9 @@ set -euxo pipefail
 
 [ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | bash
 
+# https://github.com/mikefarah/yq#go-get
+GO111MODULE=on go get github.com/mikefarah/yq/v4
+
 # https://github.com/jez/as-tree
 cargo install -f --git https://github.com/jez/as-tree
 
