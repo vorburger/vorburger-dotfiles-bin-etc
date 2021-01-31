@@ -8,6 +8,7 @@ set -euxo pipefail
 # https://github.com/jez/as-tree
 cargo install -f --git https://github.com/jez/as-tree
 
+
 # https://github.com/jorgebucaran/fisher
 fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 
@@ -28,3 +29,5 @@ fish -c "fisher install jorgebucaran/autopair.fish"
 fish -c "fisher install gazorby/fish-abbreviation-tips"
 
 fish -c "fisher update"
+
+# ADD ALL fisher generated fish functions to .gitignore instead of committing them
