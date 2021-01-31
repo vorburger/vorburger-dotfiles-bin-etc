@@ -5,6 +5,9 @@ set -euxo pipefail
 
 [ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | bash
 
+# https://github.com/jez/as-tree
+cargo install -f --git https://github.com/jez/as-tree
+
 # https://github.com/jorgebucaran/fisher
 fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 

@@ -11,7 +11,8 @@ sudo dnf install -y \
     fira-code-fonts mozilla-fira-mono-fonts \
     kitty ImageMagick \
     gnome-tweak-tool \
-    lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat
+    lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat \
+    cargo
 
 sudo dnf remove "libreoffice*"
 
