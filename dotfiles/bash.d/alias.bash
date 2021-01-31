@@ -17,6 +17,11 @@ __git_complete gco _git_checkout
 __git_complete gpu _git_push
 __git_complete gpl _git_pull
 
+if hash kubectl 2>/dev/null; then
+  source <(kubectl completion bash)
+  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
 # https://github.com/cykerway/complete-alias
 source $DIR/cykerway_complete-alias
 complete -F _complete_alias kc
