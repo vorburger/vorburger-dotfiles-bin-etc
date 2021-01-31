@@ -3,3 +3,5 @@
 
 test -f /usr/bin/lsd && alias l="lsd "
 test -f /usr/bin/bat && alias c="bat "
+
+complete --command kc --wraps kubectl
