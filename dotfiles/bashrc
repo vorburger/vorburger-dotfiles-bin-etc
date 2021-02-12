@@ -39,3 +39,16 @@ export EDITOR=nano
 # https://wiki.archlinux.org/index.php/Fish#Modify_.bashrc_to_drop_into_fish
 # NO!!! https://bugzilla.redhat.com/show_bug.cgi?id=1910424
 # [ -s /usr/bin/fish ] && [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
+
+# Following is copy/paste from Debian's default .bashrc
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
