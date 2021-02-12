@@ -8,7 +8,7 @@
 
     ./dnf-automatic-setup
     ./dnf-install.sh
-    rm ~/.bashrc
+    mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
 NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.

@@ -3,13 +3,18 @@ set -euxo pipefail
 
 # dnf-install.sh has DNF packages, this is everything else
 
-[ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | bash
+[ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | sudo bash
 
 # NB alias b="bazelisk " in dotfiles/alias
 go get github.com/bazelbuild/bazelisk
 
+# TODO untested.. only required by yq - ignore
+# go get golang.org/dl/go1.15.8
+# eval $(go1.15.8 env GOROOT)
+
 # https://github.com/mikefarah/yq#go-get
-GO111MODULE=on go get github.com/mikefarah/yq/v4
+# TODO requires recent Go version - use above?
+# go get github.com/mikefarah/yq/v4
 
 # https://github.com/jez/as-tree
 cargo install -f --git https://github.com/jez/as-tree
