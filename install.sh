@@ -5,6 +5,9 @@ set -euxo pipefail
 
 [ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | bash
 
+# NB alias b="bazelisk " in dotfiles/alias
+go get github.com/bazelbuild/bazelisk
+
 # https://github.com/mikefarah/yq#go-get
 GO111MODULE=on go get github.com/mikefarah/yq/v4
 

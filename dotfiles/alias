@@ -3,6 +3,7 @@
 
 alias e="nano "
 alias kc="kubectl "
+alias b="bazelisk "
 
 # Git
 alias gl="git ls"
