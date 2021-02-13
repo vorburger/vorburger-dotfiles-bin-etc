@@ -1,3 +1,10 @@
+# from Debian's default .bashrc:
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
@@ -40,8 +47,7 @@ export EDITOR=nano
 # NO!!! https://bugzilla.redhat.com/show_bug.cgi?id=1910424
 # [ -s /usr/bin/fish ] && [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]] && exec fish
 
-# Following is copy/paste from Debian's default .bashrc
-
+# from Debian's default .bashrc:
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
