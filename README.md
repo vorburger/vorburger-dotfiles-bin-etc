@@ -13,6 +13,27 @@
 
 NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
 
+## `ssh` Agent 101 Intro
+
+    $ ssh git@github.com
+    Enter passphrase for key '/home/vorburger/.ssh/id_ed25519': 
+    $ ssh git@github.com
+    Enter passphrase for key '/home/vorburger/.ssh/id_ed25519': 
+    $ ssh-add -l
+    Could not open a connection to your authentication agent.
+    # Simply means that there is no SSH_AUTH_SOCK environment variable
+    $ eval $(ssh-agent)
+    Agent pid 1234
+    $ echo $SSH_AUTH_SOCK 
+    /tmp/ssh-AqnT5yXiLt1X/agent.1234
+    $ ssh-add -l
+    The agent has no identities.
+    $ ssh-add .ssh/id_ed25519
+    Enter passphrase for .ssh/id_ed25519: 
+    $ ssh-add -l
+    256 SHA256: ...
+    $ ssh git@github.com
+    # does not ask for passphrase anymore!
 
 ## `ssh` (incl. `git`) Agent incl. Forwarding with YubiKey
 
