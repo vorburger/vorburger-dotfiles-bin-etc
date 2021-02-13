@@ -7,7 +7,7 @@ sudo dnf install -y \
     golang git hub htop \
     java-1.8.0-openjdk-devel java-1.8.0-openjdk-src \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
-    nano mosh powerline-fonts trash-cli ShellCheck tmux wipe \
+    powerline-fonts trash-cli ShellCheck tmux wipe \
     fira-code-fonts mozilla-fira-mono-fonts \
     kitty ImageMagick \
     gnome-tweak-tool \

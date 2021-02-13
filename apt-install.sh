@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+sudo apt-get update && sudo apt-get dist-upgrade
+
 sudo apt install -y \
     bash-completion \
     golang git hub htop \
-    nano mosh trash-cli shellcheck tmux wipe \
+    trash-cli shellcheck tmux wipe \
     fish autojump fzf fd-find \
-    cargo
+    cargo \
+    autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
 # TODO https://github.com/wting/autojump#linux /usr/share/doc/autojump/README.Debian
 # TODO https://github.com/Peltoche/lsd
