@@ -102,9 +102,9 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
 Launch `gnome-tweaks` and configure:
 
-* _Startup Applications_, `+` Terminal and Chrome/Firefox.
-  This puts (copies of, not symlinks to) `firefox.desktop` and `org.gnome.Terminal.desktop` into `~/.config/autostart/`.
-  Edit `~/.config/autostart/org.gnome.Terminal.desktop` and after `Exec=gnome-terminal` append `--full-screen` (or just `--window --maximize`).
+* _Startup Applications_, `+` _Kitty_ and _Chrome/Firefox_.
+  This puts (copies of, not symlinks to) `firefox.desktop` and `kitty.desktop` into `~/.config/autostart/`.
+* Edit ~~`~/.config/autostart/kitty.desktop` and after `Exec=kitty` append `--start-as=fullscreen`.
 * Windows Focus on Hover
 
 In _Gnome Terminal's Preferences_, add a new `tmux` Profile, and _Set as default_, with:
