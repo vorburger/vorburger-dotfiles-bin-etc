@@ -12,6 +12,7 @@ sudo dnf install -y \
     kitty ImageMagick \
     gnome-tweak-tool \
     lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat \
+    automake autoconf texinfo gettext-devel ncurses-devel \
     cargo
 
 sudo dnf remove "libreoffice*"
