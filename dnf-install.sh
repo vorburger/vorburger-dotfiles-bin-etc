@@ -13,7 +13,8 @@ sudo dnf install -y \
     gnome-tweak-tool \
     lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
-    cargo
+    cargo \
+    android-tools
 
 sudo dnf remove "libreoffice*"
 
