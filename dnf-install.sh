@@ -9,12 +9,9 @@ sudo dnf install -y \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
     powerline-fonts trash-cli ShellCheck tmux wipe \
     fira-code-fonts mozilla-fira-mono-fonts \
-    kitty ImageMagick \
-    gnome-tweak-tool \
     lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     cargo \
-    android-tools
 
 sudo dnf remove "libreoffice*"
 
