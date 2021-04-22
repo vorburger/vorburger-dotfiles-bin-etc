@@ -2,19 +2,7 @@ FROM registry.fedoraproject.org/f33/fedora-toolbox
 
 RUN sudo dnf update -y
 
-# Do NOT do this, because then any time you touch any file during dev, it will redo above:
-#   COPY . /home/vorburger/dev/vorburger-dotfiles-bin-etc/
-COPY *.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
-COPY dotfiles/ /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
+COPY dnf-install.sh /tmp/
 
+RUN /tmp/dnf-install.sh
 
-# Now as per ./README.md:
-
-RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git
-
-# RUN cd vorburger-dotfiles-bin-etc && ./dnf-install.sh
-
-# RUN rm /home/vorburger/.bashrc \
-# && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
-
-# TODO ./dnf-automatic-setup ?  (Is systemd running inside Toolbox?)
