@@ -10,5 +10,5 @@ cd ../nano.git
 ./configure
 make
 
-make -p ~/bin/
+mkdir -p ~/bin/
 ln -s ~/dev/nano.git/src/nano ~/bin/
