@@ -9,6 +9,7 @@
     ./dnf-automatic-setup
     ./dnf-install.sh
     ./dnf-install-gui.sh
+    ./install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
