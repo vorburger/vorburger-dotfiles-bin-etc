@@ -17,3 +17,6 @@ RUN cp /etc/nanorc /etc/nanorc.original && \
     grep -v "#" /etc/nanorc.original | uniq >>/etc/nanorc
 
 COPY dotfiles/gitconfig /etc/gitconfig
+
+COPY bin/findx /usr/local/bin/
+COPY bin/g*    /usr/local/bin/

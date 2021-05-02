@@ -19,7 +19,7 @@ x() {
 l .alias dotfiles/alias
 # l .bashrc dotfiles/bashrc
 # x .bash.d/ dotfiles/bash.d/
-# l .inputrc dotfiles/.inputrc
+l .inputrc dotfiles/.inputrc
 l .tmux.conf dotfiles/.tmux.conf
 ## x .config/fish/functions/ dotfiles/fish/functions/
 x .config/fish/ dotfiles/fish/

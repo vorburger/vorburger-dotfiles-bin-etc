@@ -1,4 +1,6 @@
 
+- finish full Toolbox support; see README.md
+
 - test if most of GPG etc. customizations can actually be removed, as SSH Agent forwarding seems to work just perfectly fine even without it?
 
 - GitHub hub
