@@ -3,7 +3,7 @@ set -euxo pipefail
 
 # apt|dnf-install.sh has DNF packages, this is everything else
 
-./install-nano.sh
+[ -s /usr/bin/nano ] || ./install-nano.sh
 
 [ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | sudo bash
 
