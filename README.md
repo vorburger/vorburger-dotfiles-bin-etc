@@ -7,6 +7,15 @@
     ./gnome-settings.sh
     ./toolbox.sh
 
+These should later be more nicely integrated into the Toolbox container (not ~):
+
+    ./install.sh
+    ./symlink-toolbox.sh
+
+Also, automatically start Toolbox in Fish instead of Bash...
+and `./gnome-settings.sh` autostart Terminal Session TMUX, with Toolbox.
+And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
+
 
 ## Fedora Workstation
 
