@@ -17,6 +17,13 @@ NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in
 
 ## `ssh` Agent 101 Intro
 
+    sudo dnf install -y pwgen diceware ; pip install xkcdpass
+    pwgen -y 239 1 | diceware -n 12 -d " " --no-caps | xkcdpass -n 12
+    ssh-keygen -t ed25519 -C $(id -un)@$(hostname)
+    cat ~/.ssh/id_ed25519.pub
+
+Copy/paste `~/.ssh/id_ed25519.pub` into https://github.com/settings/keys.
+
     $ ssh git@github.com
     Enter passphrase for key '/home/vorburger/.ssh/id_ed25519':
     $ ssh git@github.com
