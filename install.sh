@@ -5,7 +5,9 @@ set -euxo pipefail
 
 [ -s /usr/bin/nano ] || ./install-nano.sh
 
-[ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh | sudo bash
+[ -s /usr/local/bin/starship ] || curl -fsSL https://starship.rs/install.sh -o /tmp/starship-install.sh && \
+                                  chmod +x /tmp/starship-install.sh && \
+                                  sudo /tmp/starship-install.sh --yes
 
 # NB alias b="bazelisk " in dotfiles/alias
 go get github.com/bazelbuild/bazelisk
