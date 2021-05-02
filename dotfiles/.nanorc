@@ -1,6 +1,3 @@
-# This is also in /etc/nanorc (on Fedora) but we replace (instead of append to) that in Dockerfile-toolbox
-include "/usr/share/nano/*.nanorc"
-
 # cd ~/nanorc ; git clone https://github.com/scopatz/nanorc
 include ~/dev/nanorc/*.nanorc
 
