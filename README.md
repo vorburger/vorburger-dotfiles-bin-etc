@@ -9,7 +9,6 @@
 
 These should later be more nicely integrated into the Toolbox container (not ~):
 
-    ./install.sh
     ./symlink-toolbox.sh
 
 Also, automatically start Toolbox in Fish instead of Bash...
