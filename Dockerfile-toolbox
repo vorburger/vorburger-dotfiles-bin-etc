@@ -15,3 +15,5 @@ RUN cp /etc/nanorc /etc/nanorc.original && \
     sed -i 's!~/dev/nanorc!/usr/share/nano-scopatz!g' /etc/nanorc && \
     git clone https://github.com/scopatz/nanorc.git /usr/share/nano-scopatz && \
     grep -v "#" /etc/nanorc.original | uniq >>/etc/nanorc
+
+COPY dotfiles/gitconfig /etc/gitconfig
