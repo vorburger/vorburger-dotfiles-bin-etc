@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/f33/fedora-toolbox
+FROM registry.fedoraproject.org/fedora-toolbox:34
 
 RUN sudo dnf update -y
 
@@ -6,3 +6,13 @@ COPY dnf-install.sh /tmp/
 
 RUN /tmp/dnf-install.sh
 
+# Nota bene that the ~ home directory has to remain empty
+# in a toolbox container (because the host's is mounted)
+
+# Because /etc/nanorc is virtually empty, replace it (at least on Fedora;
+# the only not commented out lines are un-used 'set speller "hunspell"'
+# and 'include "/usr/share/nano/*.nanorc"' which we also have in ours)
+# COPY /etc/nanorc /etc/nanorc.original
+COPY dotfiles/.nanorc /etc/nanorc
+RUN sed -i 's!~/dev/nanorc!/usr/share/nano-scopatz!g' /etc/nanorc
+RUN git clone https://github.com/scopatz/nanorc.git /usr/share/nano-scopatz

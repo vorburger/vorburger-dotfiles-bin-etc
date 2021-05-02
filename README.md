@@ -1,5 +1,19 @@
 # Usage
 
+## Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
+
+    mkdir ~/git/github.com/vorburger && cd ~/git/github.com/vorburger/
+    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    ./gnome-settings.sh
+
+    podman build -t vorburger-toolbox -f Dockerfile-toolbox .
+    podman rm -f vorburger-toolbox
+    toolbox create -i vorburger-toolbox
+    toolbox enter vorburger-toolbox
+
+
+## Fedora Workstation
+
     mkdir ~/dev/
     cd ~/dev/
     git clone https://github.com/scopatz/nanorc.git
@@ -15,7 +29,8 @@
 
 NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
 
-## `ssh` Agent 101 Intro
+
+## `ssh` 101
 
     sudo dnf install -y pwgen diceware ; pip install xkcdpass
     pwgen -y 239 1 | diceware -n 12 -d " " --no-caps | xkcdpass -n 12
@@ -148,12 +163,7 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
 ### Toolbox
 
-Using https://github.com/containers/toolbox:
-
-    podman build -t vorburger-toolbox -f Dockerfile-toolbox .
-    podman rm -f vorburger-toolbox
-    toolbox create -i vorburger-toolbox
-    toolbox enter vorburger-toolbox
+See above for usage with https://github.com/containers/toolbox.
 
 
 ### Cloudshell
