@@ -8,11 +8,13 @@ sudo apt remove -y nano
 
 sudo apt install -y \
     bash-completion \
-    golang git hub htop \
+    git hub htop \
     trash-cli shellcheck tmux wipe \
     fish autojump fzf fd-find \
     cargo \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
+
+# NOT golang, as it's too old on Debian Stable; better always grab a fixed version from golang.org in install.sh
 
 # TODO https://github.com/wting/autojump#linux /usr/share/doc/autojump/README.Debian
 

@@ -29,5 +29,6 @@ complete -F _complete_alias kc
 # Rust Cargo
 export PATH="${HOME}/.cargo/bin:$PATH"
 
-# Go
+# Go built binaries
+# This isn't the `go` binary itself; that's added to the PATH in go-path.sh
 export PATH="${HOME}/go/bin:$PATH"
