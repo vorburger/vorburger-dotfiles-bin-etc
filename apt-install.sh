@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt-get update && sudo apt-get dist-upgrade -y
 
 sudo apt install -y \
     bash-completion \
