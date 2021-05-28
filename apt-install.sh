@@ -3,6 +3,9 @@ set -euxo pipefail
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
+# see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
+sudo apt remove -y nano
+
 sudo apt install -y \
     bash-completion \
     golang git hub htop \
