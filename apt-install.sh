@@ -18,11 +18,17 @@ sudo apt install -y \
 
 # https://github.com/Peltoche/lsd
 # TODO automatically download latest version instead of hard-coding
-[ -s /usr/bin/lsd ] || \
-    wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb && \
+if [ ! -f /usr/bin/lsd ]; then
+    wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb
     sudo dpkg -i lsd_0.20.1_amd64.deb
+fi
 
-# TODO https://github.com/sharkdp/bat#on-ubuntu-using-apt
+# https://github.com/sharkdp/bat
+# TODO automatically download latest version instead of hard-coding
+if [ ! -f /usr/bin/bat ]; then
+    wget https://github.com/sharkdp/bat/releases/download/v0.18.1/bat_0.18.1_amd64.deb
+    sudo dpkg -i bat_0.18.1_amd64.deb
+fi
 
 # only DNF is here, other installations are in install.sh
 ./install.sh
