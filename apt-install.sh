@@ -15,9 +15,14 @@ sudo apt install -y \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
 # TODO https://github.com/wting/autojump#linux /usr/share/doc/autojump/README.Debian
-# TODO https://github.com/Peltoche/lsd
+
+# https://github.com/Peltoche/lsd
+# TODO automatically download latest version instead of hard-coding
+[ -s /usr/bin/lsd ] || \
+    wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb && \
+    sudo dpkg -i lsd_0.20.1_amd64.deb
+
 # TODO https://github.com/sharkdp/bat#on-ubuntu-using-apt
 
 # only DNF is here, other installations are in install.sh
 ./install.sh
-
