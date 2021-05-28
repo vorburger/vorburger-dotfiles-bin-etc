@@ -48,6 +48,25 @@ NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
+
+### Google Cloud Shell
+
+https://shell.cloud.google.com, see https://cloud.google.com/shell, is handy (but limited to a `du -h ~` 5 GB `$HOME`..), especially with the web-based [Google Cloud Code](https://cloud.google.com/code), based on [Eclipse Theia](https://theia-ide.org) (also available on [Gitpod](https://www.gitpod.io)). To be able to connect to other servers from Google Cloud Shell, notably GitHub, login to it using:
+
+    gcloud cloud-shell ssh --ssh-flag="-A"
+
+This obviously requires a local Terminal, or a Browser-based [Secure Shell App](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en) (based on https://hterm.org), and wont' work from within Google Cloud Shell's Terminal; you still get to use the great Web IDE though, and have the terminal separately and in fullscreen is a feature, not a bug... ;-)
+
+Alternatively, you COULD `ssh-keygen` and having something like the following in your `~/.ssh/config`, as per [this](https://github.com/aubort/google-cloud-shell-tutorial) or [this](https://vincentteo.com/2018/01/07/private-github-repos-google-cloud-shell/) guide, but security wise it's much better to keep your private SSH key e.g. a HSM YubiKey in your desktop/laptop, than having it on the cloud, so don't this but use the approach above instead:
+
+    Host github.com
+	    Hostname github.com
+	    PreferredAuthentications publickey
+	    IdentityFile ~/.ssh/id_rsa
+
+_TODO get my `dotfiles` configuration from here into Google Cloud Shell..._
+
+
 ## Security
 
 ### `ssh` 101
