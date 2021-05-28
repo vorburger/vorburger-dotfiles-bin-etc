@@ -6,13 +6,11 @@ include ~/dev/nanorc/*.nanorc
 set afterends
 set autoindent
 set matchbrackets "(<[{)>]}"
-set morespace
 set nohelp # use F1 to show Help...
 # Mouse prevents marking text for copy/paste elsewhere, so nope
 set mouse
 set positionlog
 set smarthome
-set smooth
 set trimblanks
 set linenumbers
 set historylog
