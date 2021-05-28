@@ -1,6 +1,8 @@
-# Usage
+# Vorburger.ch's Dotfiles
 
-## Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
+## Installation
+
+### Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
 
     mkdir ~/git/github.com/vorburger && cd ~/git/github.com/vorburger/
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
@@ -16,7 +18,7 @@ and `./gnome-settings.sh` autostart Terminal Session TMUX, with Toolbox.
 And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 
 
-## Fedora Workstation
+### Fedora Workstation
 
     mkdir ~/dev/
     cd ~/dev/
@@ -34,7 +36,21 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
 
 
-## `ssh` 101
+### Debian / Ubuntu Servers
+
+    mkdir ~/dev/
+    cd ~/dev/
+    git clone https://github.com/scopatz/nanorc.git
+    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    cd vorburger-dotfiles-bin-etc
+
+    ./apt-install.sh
+    mv ~/.bashrc ~/.bashrc.original
+    ./symlink.sh
+
+## Security
+
+### `ssh` 101
 
     sudo dnf install -y pwgen diceware ; pip install xkcdpass
     pwgen -y 239 1 | diceware -n 12 -d " " --no-caps | xkcdpass -n 12
@@ -63,7 +79,7 @@ Copy/paste `~/.ssh/id_ed25519.pub` into https://github.com/settings/keys.
     $ ssh git@github.com
     # does not ask for passphrase anymore!
 
-## `ssh` (incl. `git`) Agent incl. Forwarding with YubiKey
+### `ssh` (incl. `git`) Agent incl. Forwarding with YubiKey
 
 As e.g. per https://github.com/drduh/YubiKey-Guide#replace-agents, we need to appropriately set
 the `SSH_AUTH_SOCK` environment variable.  You could be tempted to do something like the following:
@@ -87,7 +103,7 @@ always *only for a SINGLE Hostname*_, never for all servers.
 BTW: `RemoteForward` in `~/.ssh/config` is not actually required (at least with Fedora 30).
 
 
-## `gpg` Agent Forwarding
+### `gpg` Agent Forwarding
 
 _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SSH'ing remotely._
 
