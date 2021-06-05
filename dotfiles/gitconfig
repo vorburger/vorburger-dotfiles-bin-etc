@@ -67,3 +67,7 @@
 # `tig` is a useful git log TUI alternative
 [pull]
 	ff = only
+
+[init]
+    defaultBranch = main
+ 
