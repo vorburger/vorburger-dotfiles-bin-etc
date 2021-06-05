@@ -72,6 +72,12 @@ _TODO get my `dotfiles` configuration from here into Google Cloud Shell..._
 
 ## Security
 
+### SSH for multiple GitHub accounts
+
+    git config core.sshCommand "ssh -i ~/.ssh/id_ecdsa_sk"
+
+possibly with `[includeIf "gitdir:~/work/"]` in `~/.gitconfig`, as per https://dev.to/arnellebalane/setting-up-multiple-github-accounts-the-nicer-way-1m5m.
+
 ### `ssh` 101
 
     sudo dnf install -y pwgen diceware ; pip install xkcdpass
