@@ -5,7 +5,8 @@
 ### Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
 
     mkdir ~/git/github.com/vorburger && cd ~/git/github.com/vorburger/
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc && cd vorburger-dotfiles-bin-etc
+    ./setup.sh
     ./gnome-settings.sh
     ./toolbox.sh
 
@@ -26,6 +27,7 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
+    ./setup.sh
     ./dnf-automatic-setup
     ./dnf-install.sh
     ./dnf-install-gui.sh
@@ -47,6 +49,7 @@ NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in
     ./apt-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
+    ./setup.sh
 
 
 ### Google Cloud Shell
