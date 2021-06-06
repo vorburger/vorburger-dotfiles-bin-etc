@@ -11,6 +11,7 @@ sudo dnf install -y \
     fira-code-fonts mozilla-fira-mono-fonts \
     lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
+    pwgen diceware \
     cargo \
 
 sudo dnf remove "libreoffice*"

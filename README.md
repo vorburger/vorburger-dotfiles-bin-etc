@@ -81,7 +81,11 @@ possibly with `[includeIf "gitdir:~/work/"]` in `~/.gitconfig`, as per https://d
 ### `ssh` 101
 
     sudo dnf install -y pwgen diceware ; pip install xkcdpass
-    pwgen -y 239 1 | diceware -n 12 -d " " --no-caps | xkcdpass -n 12
+    # Generate a password/passphrase
+    pwgen -y 239 1
+    diceware -n 24 -d " " --no-caps
+    xkcdpass -n 24
+
     ssh-keygen -t ed25519 -C $(id -un)@$(hostname)
     cat ~/.ssh/id_ed25519.pub
 
