@@ -35,8 +35,6 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
-NB: The `~/dev/vorburger-dotfiles-bin-etc/` path is currently hard-coded e.g. in `dotfiles/bashrc`.
-
 
 ### Debian / Ubuntu Servers
 

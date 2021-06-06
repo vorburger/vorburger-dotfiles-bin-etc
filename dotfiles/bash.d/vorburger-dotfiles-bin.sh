@@ -1,6 +1,7 @@
-# similar in newer-GOROOT.sh
+#!/usr/bin/env bash
 
-DOTFILES_BIN="$HOME/dev/vorburger-dotfiles-bin-etc/bin"
+DIR=$(dirname $(realpath "${BASH_SOURCE[0]}"))
+DOTFILES_BIN=$(realpath "$DIR/../../bin")
 
 if ! [[ "$PATH" =~ "$DOTFILES_BIN" ]]
 then
