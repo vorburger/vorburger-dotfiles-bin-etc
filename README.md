@@ -9,6 +9,7 @@
     ./setup.sh
     ./gnome-settings.sh
     ./toolbox.sh
+    mux
 
 These should later be more nicely integrated into the Toolbox container (not ~):
 
@@ -174,6 +175,14 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
     ./gnome-settings.sh
 
+#### On Fedora Silverblue
+
+1. In _Gnome Terminal's Preferences_, add a new Profile as below,
+   BUT name it `toolbox` and as Command, use: 
+   `sh -c 'echo "Type mux..." && toolbox enter vorburger-toolbox'`
+
+#### On Fedora Workstation
+
 Launch `gnome-tweaks` and configure:
 
 * _Startup Applications_, `+` _Kitty_ and _Chrome/Firefox_.
@@ -184,7 +193,7 @@ Launch `gnome-tweaks` and configure:
 In _Gnome Terminal's Preferences_, add a new `tmux` Profile, and _Set as default_, with:
 * Text _Custom Font_ `Fira Code Retina` Size 20. NB: [Fira Code's README](https://github.com/tonsky/FiraCode#terminal-support) lists GNOME Terminal as not supported, and the fancy Ligatures indeed don't work (like they do e.g. in Eclipse after changing the ), but I'm not actually seeing any real problems such as [issue #162](https://github.com/tonsky/FiraCode/issues/162), so it, just for consistency. (The alternative would be to just use `Fira Mono` from `mozilla-fira-mono-fonts` instead.)
 * Scrolling disable _Show scrollbar_ and _Scroll on output_, but enable _Scroll on keystroke_, and _Limit scrollback to: 10'000 lines_
-* Command: Replace initial title, Run a custom command instead of my shell: `tmux-local new -A -X -s MAKEx`
+* Command: Replace initial title, Run a custom command instead of my shell: `mux`
 
 Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to Click.
 

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+DIR="$(realpath $(dirname $0))"
+
+$DIR/tmux-local new -A -X -s MAKEx
