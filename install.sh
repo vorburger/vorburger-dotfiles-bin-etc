@@ -15,10 +15,10 @@ fi
 #   go get golang.org/dl/go1.15.8
 #   eval $(go1.15.8 env GOROOT)
 # https://golang.org/doc/install
-if [ ! -f /usr/local/go/bin/go ]; then
-  wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
-  sudo tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
-fi
+# if [ ! -f /usr/local/go/bin/go ]; then
+#   wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
+#   sudo tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
+# fi
 
 # NB alias b="bazelisk " in dotfiles/alias
 [ -s $HOME/go/bin/bazelisk ] || /usr/local/go/bin/go get github.com/bazelbuild/bazelisk
