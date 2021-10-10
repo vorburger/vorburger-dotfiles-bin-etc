@@ -58,3 +58,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+[ -s "/home/vorburger/.web3j/source.sh" ] && source "/home/vorburger/.web3j/source.sh"
