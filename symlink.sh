@@ -37,6 +37,10 @@ l .hyper.js dotfiles/hyper.js
 x .config/fish/ dotfiles/fish/
 l .config/starship.toml dotfiles/starship.toml
 
+desktop-file-validate ~/.local/share/applications/*.desktop
+# desktop-file-install --dir=~/.local/share/applications/ ~/.local/share/applications/*.desktop
+update-desktop-database ~/.local/share/applications
+
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
 # also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:
 # if [ -e ~/.oh-my-zsh/custom/themes ]

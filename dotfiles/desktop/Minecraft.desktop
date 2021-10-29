@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Minecraft
+Name[en_IN.UTF-8]=Minecraft
+X-GNOME-FullName[en_IN.UTF-8]=Minecraft
+Icon=/usr/share/icons/gnome/256x256/apps/web-browser.png
+NoDisplay=false
+Exec=/home/vorburger/bin/minecraft-launcher/minecraft-launcher
+Path=/home/vorburger/
+Terminal=false
+X-GNOME-UsesNotifications=true
+Categories=Development;
