@@ -24,7 +24,7 @@ fi
 
 # https://github.com/cykerway/complete-alias
 source $DIR/cykerway_complete-alias
-complete -F _complete_alias kc
+complete -F _complete_alias k
 
 # Rust Cargo
 export PATH="${HOME}/.cargo/bin:$PATH"
