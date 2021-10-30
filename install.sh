@@ -36,18 +36,18 @@ fi
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/112 how to hide . files/dirs?
 # TODO [ -s $HOME/.config/fish/functions/__fzf* ] || ...
-fish -c "fisher install PatrickF1/fzf.fish"
+[ -s $HOME/.config/fish/conf.d/fzf.fish ] || fish -c "fisher install PatrickF1/fzf.fish"
 
 # https://github.com/evanlucas/fish-kubectl-completions
 # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
 # see https://github.com/evanlucas/fish-kubectl-completions/issues/33
-fish -c "fisher install evanlucas/fish-kubectl-completions"
+[ -s $HOME/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions"
 
 # https://github.com/jorgebucaran/autopair.fish
-fish -c "fisher install jorgebucaran/autopair.fish"
+[ -s $HOME/.config/fish/conf.d/autopair.fish ] || fish -c "fisher install jorgebucaran/autopair.fish"
 
 # https://github.com/Gazorby/fish-abbreviation-tips
-fish -c "fisher install gazorby/fish-abbreviation-tips"
+[ -s $HOME/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips"
 
 fish -c "fisher update"
 

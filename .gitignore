@@ -3,5 +3,7 @@
 # install.sh's fisher generated fish functions
 __abbr_tips*.fish
 __fzf*.fish
+_fzf*.fish
+fzf_configure_bindings.fish
 _autopair*.fish
 fisher.fish

@@ -12,7 +12,7 @@ sudo dnf install -y \
     lsd fish autojump-fish autojump-zsh autojump fzf fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
-    cargo \
+    cargo
 
 sudo dnf remove "libreoffice*"
 
