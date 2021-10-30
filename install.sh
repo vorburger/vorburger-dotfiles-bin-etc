@@ -21,10 +21,13 @@ fi
 # fi
 
 # NB alias b="bazelisk " in dotfiles/alias
-[ -s $HOME/go/bin/bazelisk ] || /usr/local/go/bin/go get github.com/bazelbuild/bazelisk
+[ -s $HOME/go/bin/bazelisk ] || go get github.com/bazelbuild/bazelisk
 
 # https://github.com/mikefarah/yq#go-get
-[ -s $HOME/go/bin/yq ] || /usr/local/go/bin/go get github.com/mikefarah/yq/v4
+[ -s $HOME/go/bin/yq ] || go get github.com/mikefarah/yq/v4
+
+# https://github.com/dty1er/kubecolor
+[ -s $HOME/go/bin/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 
 # https://github.com/jez/as-tree
 [ -s $HOME/.cargo/bin/as-tree ] || cargo install -f --git https://github.com/jez/as-tree
