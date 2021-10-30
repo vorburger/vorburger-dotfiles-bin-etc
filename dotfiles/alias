@@ -3,7 +3,7 @@
 
 alias n="nix "
 alias e="nano "
-alias kc="kubectl "
+alias kc="kubecolor "
 alias b="bazelisk "
 
 # https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-shell

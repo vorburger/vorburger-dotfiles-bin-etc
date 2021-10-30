@@ -4,4 +4,5 @@
 test -f /usr/bin/lsd && alias l="lsd "
 test -f /usr/bin/bat && alias c="bat "
 
-complete --command kc --wraps kubectl
+complete --command kubecolor --wraps kubectl
+complete --command kc --wraps kubecolor

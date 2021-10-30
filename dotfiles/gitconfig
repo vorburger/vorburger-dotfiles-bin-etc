@@ -7,7 +7,7 @@
 #   gpgsign = true
 
 [tag]
-    forceSignAnnotated = true
+#    forceSignAnnotated = true
 
 # [credential]
 #   helper = store
