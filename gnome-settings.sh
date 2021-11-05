@@ -6,3 +6,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab', '<Alt>Above_Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
+
+# Seconds ticking at the top of the screen are very annoying - it's a desktop environment, not a time bomb! ;-)
+gsettings set org.gnome.desktop.interface clock-show-seconds false
