@@ -81,7 +81,7 @@ possibly with `[includeIf "gitdir:~/work/"]` in `~/.gitconfig`, as per https://d
 
     sudo dnf install -y pwgen diceware ; pip install xkcdpass
     # Generate a password/passphrase
-    pwgen -y 239 1
+    pwgen -s -y 239 1
     diceware -n 24 -d " " --no-caps
     xkcdpass -n 24
 
