@@ -4,9 +4,9 @@
   "userConfigPatchVersion": 0,
   "deviceName": "MiVo's UHK",
   "doubleTapSwitchLayerTimeout": 250,
-  "iconsAndLayerTextsBrightness": 127,
-  "alphanumericSegmentsBrightness": 255,
-  "keyBacklightBrightness": 255,
+  "iconsAndLayerTextsBrightness": 255,
+  "alphanumericSegmentsBrightness": 32,
+  "keyBacklightBrightness": 207,
   "mouseMoveInitialSpeed": 4,
   "mouseMoveAcceleration": 68,
   "mouseMoveDeceleratedSpeed": 8,
@@ -60,11 +60,7 @@
                   "type": "basic",
                   "scancode": 46
                 },
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 42
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -209,7 +205,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 53
+                  "scancode": 41
                 },
                 {
                   "keyActionType": "keystroke",
@@ -338,7 +334,11 @@
                   "type": "basic",
                   "scancode": 5
                 },
-                null,
+                {
+                  "keyActionType": "switchLayer",
+                  "layer": "mod",
+                  "switchLayerMode": "holdAndDoubleTapToggle"
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -422,8 +422,8 @@
                 },
                 {
                   "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 76
+                  "type": "system",
+                  "scancode": 130
                 },
                 {
                   "keyActionType": "keystroke",
@@ -440,11 +440,7 @@
                   "type": "basic",
                   "scancode": 77
                 },
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 76
-                },
+                null,
                 null,
                 null,
                 null,
@@ -468,11 +464,7 @@
                   "type": "basic",
                   "scancode": 79
                 },
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 73
-                },
+                null,
                 null,
                 null,
                 {
@@ -480,11 +472,7 @@
                   "type": "basic",
                   "scancode": 78
                 },
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 41
-                },
+                null,
                 null,
                 null,
                 null,
@@ -499,7 +487,12 @@
                   "modifierMask": 32
                 },
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "basic",
+                  "scancode": 44,
+                  "modifierMask": 2
+                },
                 {
                   "keyActionType": "switchLayer",
                   "layer": "mod",
@@ -558,23 +551,14 @@
                   "scancode": 63
                 },
                 null,
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 41
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
                   "scancode": 75,
                   "modifierMask": 1
                 },
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 23,
-                  "modifierMask": 1
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -584,11 +568,7 @@
                 null,
                 null,
                 null,
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 57
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -622,12 +602,7 @@
                   "scancode": 75,
                   "modifierMask": 3
                 },
-                {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 26,
-                  "modifierMask": 1
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -635,7 +610,11 @@
                   "modifierMask": 3
                 },
                 null,
-                null,
+                {
+                  "keyActionType": "switchLayer",
+                  "layer": "mod",
+                  "switchLayerMode": "holdAndDoubleTapToggle"
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -653,9 +632,8 @@
                 },
                 null,
                 {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "modifierMask": 4
+                  "keyActionType": "mouse",
+                  "mouseAction": "leftClick"
                 },
                 null
               ]
@@ -810,9 +788,8 @@
                 },
                 null,
                 {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "modifierMask": 4
+                  "keyActionType": "mouse",
+                  "mouseAction": "leftClick"
                 },
                 null
               ]
@@ -981,9 +958,8 @@
                   "mouseAction": "decelerate"
                 },
                 {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "modifierMask": 4
+                  "keyActionType": "mouse",
+                  "mouseAction": "leftClick"
                 },
                 null
               ]
