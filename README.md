@@ -36,6 +36,14 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
+#### UHK
+
+    ./etc.sh
+
+Install _latest_ https://github.com/UltimateHackingKeyboard/agent/releases/,
+and fix up path in [`UHK.desktop`](dotfiles/desktop/UHK.desktop).  Upgrade Firmware.
+Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserConfiguration.json).
+
 
 ### Debian / Ubuntu Servers
 

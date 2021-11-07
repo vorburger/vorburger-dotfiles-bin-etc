@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=UHK
+Icon=/usr/share/icons/gnome/256x256/devices/input-keyboard.png
+NoDisplay=false
+Exec=/home/vorburger/bin/UHK.Agent-1.5.16-linux-x86_64.AppImage
+Path=/home/vorburger/
+Terminal=true
+X-GNOME-UsesNotifications=true
+Categories=Development;
