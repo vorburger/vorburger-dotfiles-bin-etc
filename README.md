@@ -193,6 +193,7 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
 Launch `gnome-tweaks` and configure:
 
+* _Appearance > Themes > Applications_ switch to _Adwaita-**dark**_ mode for night mode
 * _Startup Applications_, `+` _Kitty_ and _Chrome/Firefox_.
   This puts (copies of, not symlinks to) `firefox.desktop` and `kitty.desktop` into `~/.config/autostart/`.
 * Edit ~~`~/.config/autostart/kitty.desktop` and after `Exec=kitty` append `--start-as=fullscreen`.
