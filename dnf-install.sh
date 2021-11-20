@@ -25,7 +25,7 @@ sudo dnf install -y \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
     cargo \
-    kubernetes-client google-cloud-sdk
+    kubernetes-client google-cloud-sdk google-cloud-sdk-skaffold
 
 sudo dnf remove "libreoffice*"
 
