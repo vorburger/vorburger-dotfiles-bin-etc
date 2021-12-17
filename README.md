@@ -231,8 +231,7 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
 ### Debian
 
-    podman build -t vorburger-debian -f Dockerfile-debian .
-    podman run -it --hostname=debian --rm vorburger-debian fish
+    clear; time podman build -t vorburger-debian -f Dockerfile-debian . && podman run -it --hostname=debian --rm vorburger-debian
 
 
 ### Toolbox
