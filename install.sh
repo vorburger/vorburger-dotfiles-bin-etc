@@ -3,7 +3,7 @@ set -euxo pipefail
 
 # apt|dnf-install.sh has DNF packages, this is everything else
 
-[ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || ./install-nano.sh
+[ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
 if [ ! -f /usr/local/bin/starship ]; then
   curl -fsSL https://starship.rs/install.sh -o /tmp/starship-install.sh
@@ -15,13 +15,16 @@ fi
 #   go get golang.org/dl/go1.15.8
 #   eval $(go1.15.8 env GOROOT)
 # https://golang.org/doc/install
-# if [ ! -f /usr/local/go/bin/go ]; then
-#   wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
-#   sudo tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
-# fi
+if [ ! $(command -v go) ]; then
+  curl -fsSL https://golang.org/dl/go1.17.5.linux-amd64.tar.gz -o /tmp/go.tgz
+  sudo tar -C /usr/local -xzf /tmp/go.tgz
+  sudo ln -s /usr/local/go/bin/go* /usr/local/bin/
+fi
+go version
 
 # https://github.com/apache/maven-mvnd/
-[ -s $HOME/bin/mvnd ] || ./install-github.sh apache/maven-mvnd mvnd-0.7.1-linux-amd64 mvnd
+mkdir $HOME/.m2/
+[ -s $HOME/bin/mvnd ] || "$(dirname "$0")"/install-github.sh apache/maven-mvnd mvnd-0.7.1-linux-amd64 mvnd
 [ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
 # NB alias b="bazelisk " in dotfiles/alias

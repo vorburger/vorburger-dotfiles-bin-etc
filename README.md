@@ -229,6 +229,12 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
 ## Containers
 
+### Debian
+
+    podman build -t vorburger-debian -f Dockerfile-debian .
+    podman run -it --hostname=debian --rm vorburger-debian fish
+
+
 ### Toolbox
 
 See above for usage with https://github.com/containers/toolbox.

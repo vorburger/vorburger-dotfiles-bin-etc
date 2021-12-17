@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-sudo apt-get update && sudo apt-get dist-upgrade -y
+# TODO re-enable this later... (it's just faster to develop without it)
+# sudo apt-get update && sudo apt-get dist-upgrade -y
 
 # see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
 
 sudo apt install -y \
-    bash-completion \
-    git hub htop \
+    bash-completion file git hub htop procps unzip \
     trash-cli shellcheck tmux wipe \
     fish autojump fzf fd-find \
-    cargo \
+    cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
 sudo apt autoremove
@@ -35,4 +35,4 @@ if [ ! -f /usr/bin/bat ]; then
 fi
 
 # only DNF is here, other installations are in install.sh
-./install.sh
+"$(dirname "$0")"/install.sh

@@ -1,0 +1,9 @@
+FROM debian
+
+# The debian container doesn't come with sudo, so for apt-install.sh which uses sudo to work as everywhere else we install it:
+RUN apt-get update
+RUN apt install sudo
+
+COPY . /tmp/vorburger-dotfiles/
+
+RUN /tmp/vorburger-dotfiles/apt-install.sh
