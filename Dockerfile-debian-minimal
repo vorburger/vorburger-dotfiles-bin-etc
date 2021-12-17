@@ -5,8 +5,10 @@ RUN apt-get update && apt install -y fish
 
 COPY *.sh /tmp/vorburger-dotfiles/
 
+
+
 # COPY etc/profile.d/* /tmp/vorburger-dotfiles/etc/profile.d/
 # RUN echo "hello, world from /etc/profile" >>/etc/profile
-# RUN /tmp/vorburger-dotfiles/setup-homeless.sh
+# RUN /tmp/vorburger-dotfiles/setup-homefree.sh
 
 ENTRYPOINT fish

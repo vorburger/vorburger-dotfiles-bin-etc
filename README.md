@@ -233,6 +233,8 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
     clear; time podman build -t vorburger-debian -f Dockerfile-debian . && podman run -it --hostname=debian --rm vorburger-debian
 
+The `Dockerfile-debian-minimal` is used instead of `Dockerfile-debian` to rebuild faster with less for quick local iterative development.
+
 
 ### Toolbox
 
