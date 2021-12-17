@@ -1,3 +1,4 @@
+# see ./container/devshell
 FROM devshell
 
 COPY dnf-install.sh /tmp/
