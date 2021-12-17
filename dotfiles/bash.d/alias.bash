@@ -9,6 +9,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git
+__git_complete g   _git
 __git_complete gl  _git_log
 __git_complete gll _git_log
 __git_complete glg _git_log

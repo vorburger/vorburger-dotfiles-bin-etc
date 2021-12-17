@@ -11,6 +11,7 @@ alias b="bazelisk "
 alias cloud="gcloud cloud-shell ssh --ssh-flag=-A"
 
 # Git
+alias g="git "
 alias gl="git ls"
 alias gll="git ll"
 alias glg="git lg"
