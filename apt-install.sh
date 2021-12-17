@@ -13,7 +13,7 @@ sudo apt install -y \
     cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
-sudo apt autoremove
+sudo apt autoremove -y
 
 # NOT golang, as it's too old on Debian Stable; better always grab a fixed version from golang.org in install.sh
 

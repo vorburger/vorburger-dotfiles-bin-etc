@@ -23,7 +23,7 @@ fi
 go version
 
 # https://github.com/apache/maven-mvnd/
-mkdir $HOME/.m2/
+mkdir -p $HOME/.m2/
 [ -s $HOME/bin/mvnd ] || "$(dirname "$0")"/install-github.sh apache/maven-mvnd mvnd-0.7.1-linux-amd64 mvnd
 [ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
@@ -37,7 +37,8 @@ mkdir $HOME/.m2/
 [ -s $HOME/go/bin/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 
 # https://github.com/jez/as-tree
-[ -s $HOME/.cargo/bin/as-tree ] || cargo install -f --git https://github.com/jez/as-tree
+# cargo install core dumps (at least in Debian, at least sometimes)
+# [ -s $HOME/.cargo/bin/as-tree ] || cargo install -f --git https://github.com/jez/as-tree
 
 # https://github.com/jorgebucaran/fisher
 [ -s $HOME/.config/fish/functions/fisher.fish ] || fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
