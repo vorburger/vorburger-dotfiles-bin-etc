@@ -4,6 +4,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 [ -s /usr/bin/lsd ] && alias l="lsd "
+[ -s /usr/bin/lsd ] && alias ll="lsd -l "
 [ -s /usr/bin/bat ] && alias c="bat "
 
 # https://stackoverflow.com/a/24665529/421602
