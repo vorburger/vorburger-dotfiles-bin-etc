@@ -245,6 +245,9 @@ See above for usage with https://github.com/containers/toolbox.
 
 See above for usage as a https://cloud.google.com/shell/docs/customizing-container-image.
 
+To local build test, try: `time podman build -t vorburger-google-cloudshell -f Dockerfile .` but it fails with:
+`Error: error creating build container: writing blob: adding layer with blob "sha256:73b906f329a9204f69c7efa86428158811067503ffa65431ca008c8015ce7871": Error processing tar file(exit status 1): potentially insufficient UIDs or GIDs available in user namespace (requested 150328:89939 for /tinkey.bat): Check /etc/subuid and /etc/subgid: lchown /tinkey.bat: invalid argument`
+
 
 ### Vorburger's _DeCe_ Cloudshell
 

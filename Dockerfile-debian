@@ -7,7 +7,7 @@ RUN apt install sudo
 
 COPY . /var/local/vorburger-dotfiles/
 
-RUN /var/local/vorburger-dotfiles/apt-install.sh
+RUN /var/local/vorburger-dotfiles/apt-install.sh 11
 RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
 
 ENTRYPOINT fish

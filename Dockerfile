@@ -4,5 +4,5 @@ FROM gcr.io/cloudshell-images/cloudshell:latest
 
 COPY . /var/local/vorburger-dotfiles/
 
-RUN /var/local/vorburger-dotfiles/apt-install.sh
+RUN /var/local/vorburger-dotfiles/apt-install.sh 10
 RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
