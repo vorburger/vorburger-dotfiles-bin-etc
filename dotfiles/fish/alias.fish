@@ -6,3 +6,4 @@ test -f /usr/bin/bat && alias c="bat "
 
 complete --command kubecolor --wraps kubectl
 complete --command k --wraps kubecolor
+complete --command m --wraps mvn
