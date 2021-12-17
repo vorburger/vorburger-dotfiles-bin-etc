@@ -1,6 +1,5 @@
 # In 'homefree' containers the aliases are in /etc/fish/ instead of $HOME
 test -f ~/.alias && source ~/.alias
-test -f ~/.config/fish/alias.fish && source ~/.config/fish/alias.fish
 
 fish_add_path $HOME/bin $HOME/dev/vorburger-dotfiles-bin-etc/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
 

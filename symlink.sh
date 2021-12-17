@@ -34,8 +34,9 @@ f .gitconfig dotfiles/gitconfig
 d .local/share/applications/ dotfiles/desktop/
 d .config/kitty/ dotfiles/kitty/
 f .hyper.js dotfiles/hyper.js
-d .config/fish/functions/ dotfiles/fish/functions/
 d .config/fish/ dotfiles/fish/
+d .config/fish/conf.d/ dotfiles/fish/conf.d/
+d .config/fish/functions/ dotfiles/fish/functions/
 f .config/starship.toml dotfiles/starship.toml
 
 desktop-file-validate ~/.local/share/applications/*.desktop
