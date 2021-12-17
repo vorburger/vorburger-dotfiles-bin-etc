@@ -16,7 +16,7 @@ f() {
 
 d() {
   mkdir -p ~/$1
-  find $DIR/$2 -maxdepth 1 -type f -exec ln -sfnr {} ~/$1 \;
+  find $DIR/$2 -maxdepth 1 -type f,l -exec ln -sfnr {} ~/$1 \;
 }
 
 # TODO auto-l all dotfiles/*

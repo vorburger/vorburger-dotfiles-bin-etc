@@ -1,6 +1,3 @@
-# In 'homefree' containers the aliases are in /etc/fish/ instead of $HOME
-test -f ~/.alias && source ~/.alias
-
 fish_add_path $HOME/bin $HOME/dev/vorburger-dotfiles-bin-etc/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
 
 # TODO only if $JAVA_HOME is not already set?
