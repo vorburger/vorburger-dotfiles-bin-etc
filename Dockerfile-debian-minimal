@@ -8,12 +8,12 @@ RUN curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/
 
 RUN apt-get update && apt install -y fish
 
-COPY *.sh /tmp/vorburger-dotfiles/
-COPY dotfiles /tmp/vorburger-dotfiles/dotfiles/
+COPY *.sh /var/local/vorburger-dotfiles/
+COPY dotfiles /var/local/vorburger-dotfiles/dotfiles/
 
-RUN /tmp/vorburger-dotfiles/symlink-homefree.sh
+RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
 
-# COPY etc/profile.d/* /tmp/vorburger-dotfiles/etc/profile.d/
+# COPY etc/profile.d/* /var/local/vorburger-dotfiles/etc/profile.d/
 # RUN echo "hello, world from /etc/profile" >>/etc/profile
 
 ENTRYPOINT fish

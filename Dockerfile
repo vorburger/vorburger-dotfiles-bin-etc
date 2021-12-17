@@ -2,7 +2,7 @@
 # see https://cloud.google.com/shell/docs/customizing-container-image
 FROM gcr.io/cloudshell-images/cloudshell:latest
 
-COPY . /tmp/vorburger-dotfiles/
+COPY . /var/local/vorburger-dotfiles/
 
-RUN /tmp/vorburger-dotfiles/apt-install.sh
-RUN /tmp/vorburger-dotfiles/symlink-homefree.sh
+RUN /var/local/vorburger-dotfiles/apt-install.sh
+RUN /var/local/vorburger-dotfiles/symlink-homefree.sh

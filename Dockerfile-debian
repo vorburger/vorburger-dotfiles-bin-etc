@@ -5,9 +5,9 @@ FROM debian:bullseye
 RUN apt-get update
 RUN apt install sudo
 
-COPY . /tmp/vorburger-dotfiles/
+COPY . /var/local/vorburger-dotfiles/
 
-RUN /tmp/vorburger-dotfiles/apt-install.sh
-RUN /tmp/vorburger-dotfiles/symlink-homefree.sh
+RUN /var/local/vorburger-dotfiles/apt-install.sh
+RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
 
 ENTRYPOINT fish
