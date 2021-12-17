@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
+# See also ./symlink-homefree.sh for an equivalent which does not use $HOME
+
 DIR="$(realpath $(dirname $0))"
 
-l() {
+# TODO avoid copy/paste between here and ./symlink.sh
+f() {
   if [ ! -e ~/$1 ]
   then
     mkdir -p $(dirname ~/$1)
@@ -11,30 +14,29 @@ l() {
   fi
 }
 
-x() {
+d() {
   mkdir -p ~/$1
-  find $DIR/$2* -exec ln -sfnr {} ~/$1 \;
+  find $DIR/$2 -maxdepth 1 -type f -exec ln -sfnr {} ~/$1 \;
 }
 
-mkdir -p ~/.bash.d/
-
 # TODO auto-l all dotfiles/*
-l .alias dotfiles/alias
-l .bashrc dotfiles/bashrc
-x .bash.d/ dotfiles/bash.d/
-l .inputrc dotfiles/.inputrc
-l .nanorc  dotfiles/.nanorc
-l .tmux.conf dotfiles/.tmux.conf
-# l .zshrc   dotfiles/.zshrc
-l .gnupg/gpg.conf dotfiles/gpg.conf
-l .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
-l .gitconfig dotfiles/gitconfig
-x .local/share/applications/ dotfiles/desktop/
-x .config/kitty/ dotfiles/kitty/
-l .hyper.js dotfiles/hyper.js
-# x .config/fish/functions/ dotfiles/fish/functions/
-x .config/fish/ dotfiles/fish/
-l .config/starship.toml dotfiles/starship.toml
+
+f .alias dotfiles/alias
+f .bashrc dotfiles/bashrc
+d .bash.d/ dotfiles/bash.d/
+f .inputrc dotfiles/.inputrc
+f .nanorc  dotfiles/.nanorc
+f .tmux.conf dotfiles/.tmux.conf
+# f .zshrc   dotfiles/.zshrc
+f .gnupg/gpg.conf dotfiles/gpg.conf
+f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
+f .gitconfig dotfiles/gitconfig
+d .local/share/applications/ dotfiles/desktop/
+d .config/kitty/ dotfiles/kitty/
+f .hyper.js dotfiles/hyper.js
+d .config/fish/functions/ dotfiles/fish/functions/
+d .config/fish/ dotfiles/fish/
+f .config/starship.toml dotfiles/starship.toml
 
 desktop-file-validate ~/.local/share/applications/*.desktop
 # desktop-file-install --dir=~/.local/share/applications/ ~/.local/share/applications/*.desktop

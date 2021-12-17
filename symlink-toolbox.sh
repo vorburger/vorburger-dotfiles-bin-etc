@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
+# TODO Replace this older approach with the newer ./symlink-homefree.sh idea and remove this
+
 DIR="$(realpath $(dirname $0))"
 
 l() {
