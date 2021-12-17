@@ -11,7 +11,7 @@ RUN apt-get update && apt install -y fish
 COPY *.sh /tmp/vorburger-dotfiles/
 COPY dotfiles /tmp/vorburger-dotfiles/dotfiles/
 
-RUN /tmp/vorburger-dotfiles/setup-homefree.sh
+RUN /tmp/vorburger-dotfiles/symlink-homefree.sh
 
 # COPY etc/profile.d/* /tmp/vorburger-dotfiles/etc/profile.d/
 # RUN echo "hello, world from /etc/profile" >>/etc/profile

@@ -5,4 +5,4 @@ FROM gcr.io/cloudshell-images/cloudshell:latest
 COPY . /tmp/vorburger-dotfiles/
 
 RUN /tmp/vorburger-dotfiles/apt-install.sh
-RUN /tmp/vorburger-dotfiles/setup-homefree.sh
+RUN /tmp/vorburger-dotfiles/symlink-homefree.sh

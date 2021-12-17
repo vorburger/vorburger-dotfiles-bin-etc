@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# -x to print all commands as they are executed (helpful for debugging)
 set -euox pipefail
 
 DIR="$(realpath $(dirname $0))"

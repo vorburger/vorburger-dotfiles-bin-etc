@@ -1,3 +1,4 @@
+# In 'homefree' containers the aliases are in /etc/fish/ instead of $HOME
 test -f ~/.alias && source ~/.alias
 test -f ~/.config/fish/alias.fish && source ~/.config/fish/alias.fish
 
