@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-if ! [[ -e ../nano.git ]]; then
-  git clone git://git.savannah.gnu.org/nano.git ../nano.git
+NANO="$HOME/git/git.savannah.gnu.org/nano"
+if ! [[ -e "$NANO" ]]; then
+  mkdir -p "$NANO"
+  git clone git://git.savannah.gnu.org/nano.git "$NANO"
 fi
 
-cd ../nano.git
+cd "$NANO"
 ./autogen.sh
 ./configure
 make
 
 mkdir -p ~/bin/
-ln -s ~/dev/nano.git/src/nano ~/bin/
+ln -s "$NANO"/src/nano ~/bin/
