@@ -14,6 +14,8 @@ sudo apt install -y \
     cargo \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
+sudo apt autoremove
+
 # NOT golang, as it's too old on Debian Stable; better always grab a fixed version from golang.org in install.sh
 
 # TODO https://github.com/wting/autojump#linux /usr/share/doc/autojump/README.Debian
@@ -28,8 +30,8 @@ fi
 # https://github.com/sharkdp/bat
 # TODO automatically download latest version instead of hard-coding
 if [ ! -f /usr/bin/bat ]; then
-    wget https://github.com/sharkdp/bat/releases/download/v0.18.1/bat_0.18.1_amd64.deb
-    sudo dpkg -i bat_0.18.1_amd64.deb
+    wget https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
+    sudo dpkg -i bat_0.18.3_amd64.deb
 fi
 
 # only DNF is here, other installations are in install.sh
