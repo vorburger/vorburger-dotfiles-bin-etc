@@ -1,14 +1,19 @@
 # This is a "minimal" variant of ./Dockerfile-debian that is only used for testing during fast iterative development.
-FROM debian
+# Remember to update SUSE repository when upgrading :bullseye
+FROM debian:bullseye
+
+RUN apt-get update && apt install -y curl gpg
+RUN echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+RUN curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
 
 RUN apt-get update && apt install -y fish
 
 COPY *.sh /tmp/vorburger-dotfiles/
+COPY dotfiles /tmp/vorburger-dotfiles/dotfiles/
 
-
+RUN /tmp/vorburger-dotfiles/setup-homefree.sh
 
 # COPY etc/profile.d/* /tmp/vorburger-dotfiles/etc/profile.d/
 # RUN echo "hello, world from /etc/profile" >>/etc/profile
-# RUN /tmp/vorburger-dotfiles/setup-homefree.sh
 
 ENTRYPOINT fish

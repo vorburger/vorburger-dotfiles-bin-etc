@@ -1,5 +1,5 @@
-source ~/.alias
-source ~/.config/fish/alias.fish
+test -f ~/.alias && source ~/.alias
+test -f ~/.config/fish/alias.fish && source ~/.config/fish/alias.fish
 
 fish_add_path $HOME/bin $HOME/dev/vorburger-dotfiles-bin-etc/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
 
@@ -7,9 +7,9 @@ fish_add_path $HOME/bin $HOME/dev/vorburger-dotfiles-bin-etc/bin $HOME/go/bin $H
 set -xg JAVA_HOME /etc/alternatives/java_sdk/
 
 # autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package
-source /usr/share/autojump/autojump.fish
+test -f /usr/share/autojump/autojump.fish && source /usr/share/autojump/autojump.fish
 
-starship init fish | source
+test -f /usr/local/bin/starship && starship init fish | source
 
 # Keyboard bindings
 # fish_key_reader is great to find the appropriate keyboard escape sequence!
