@@ -22,6 +22,7 @@ fi
 
 # https://github.com/apache/maven-mvnd/
 [ -s $HOME/bin/mvnd ] || ./install-github.sh apache/maven-mvnd mvnd-0.7.1-linux-amd64 mvnd
+[ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
 # NB alias b="bazelisk " in dotfiles/alias
 [ -s $HOME/go/bin/bazelisk ] || go get github.com/bazelbuild/bazelisk
