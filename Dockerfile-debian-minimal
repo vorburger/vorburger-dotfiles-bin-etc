@@ -1,0 +1,12 @@
+# This is a "minimal" variant of ./Dockerfile-debian that is only used for testing during fast iterative development.
+FROM debian
+
+RUN apt-get update && apt install -y fish
+
+COPY *.sh /tmp/vorburger-dotfiles/
+
+# COPY etc/profile.d/* /tmp/vorburger-dotfiles/etc/profile.d/
+# RUN echo "hello, world from /etc/profile" >>/etc/profile
+# RUN /tmp/vorburger-dotfiles/setup-homeless.sh
+
+ENTRYPOINT fish
