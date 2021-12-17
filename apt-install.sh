@@ -4,7 +4,7 @@ set -euxo pipefail
 # https://fishshell.com =>
 # https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A3&package=fish
 # (because Debian 11 packages an ancient Fish v3.1.2 which is 1.5 years behind)
-sudo install -y curl gpg
+sudo apt install -y curl gpg
 echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
 curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
 
