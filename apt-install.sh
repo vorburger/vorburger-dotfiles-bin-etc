@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# TODO re-enable this later... (it's just faster to develop without it)
-# sudo apt-get update && sudo apt-get dist-upgrade -y
+sudo apt-get update && sudo apt-get dist-upgrade -y
 
 # see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
