@@ -1,7 +1,11 @@
+# Customize Nano options; see /etc/nanorc for defaults and explanations.
+# Beware that recent Nano v6.0 self built from source instead of installed from a package manager
+# by default reads /usr/local/etc/nanorc instead of /etc/nanorc.  (nano --rcfile ... overwrites it.)
+
 # cd ~/nanorc ; git clone https://github.com/scopatz/nanorc
 include ~/dev/nanorc/*.nanorc
 
-# Customize some options, see /etc/nanorc for defaults and explanations
+# See fish/conf.d/TERM.fish for a note about colours in Nano.
 
 set afterends
 set autoindent

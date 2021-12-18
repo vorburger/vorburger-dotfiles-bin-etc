@@ -27,7 +27,7 @@ cp -R /etc/fish /etc/fish.original
 # f .bashrc dotfiles/bashrc
 # d .bash.d/ dotfiles/bash.d/
 # f .inputrc dotfiles/.inputrc
-f /etc/nanorc  dotfiles/.nanorc
+f /usr/local/etc/nanorc  dotfiles/.nanorc
 # f .tmux.conf dotfiles/.tmux.conf
 # f .zshrc   dotfiles/.zshrc
 # f .gnupg/gpg.conf dotfiles/gpg.conf
