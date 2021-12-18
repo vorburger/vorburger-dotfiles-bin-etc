@@ -5,3 +5,6 @@ steps:
   args: ['image_test.py', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME']
 images: ['gcr.io/$PROJECT_ID/$REPO_NAME']
 timeout: '3600s'
+options:
+  machineType: 'e2-highcpu-32'
+# machineType default is e2-medium with 1 vCPU and 4 GB memory, see https://cloud.google.com/build/pricing
