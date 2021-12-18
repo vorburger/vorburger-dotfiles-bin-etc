@@ -12,8 +12,8 @@ f() {
     mkdir -p $(dirname $1)
     ln --symbolic --relative $DIR/$2 $1
   else
-    ls -l ~/$1
-    echo "~/$1 ALREADY EXISTS, so NO NEW DOTFILES SYMLINK CREATED (rm it first to create)"
+    ls -l $1
+    echo "$1 ALREADY EXISTS, so NO NEW DOTFILES SYMLINK CREATED (rm it first to create)"
   fi
 }
 
