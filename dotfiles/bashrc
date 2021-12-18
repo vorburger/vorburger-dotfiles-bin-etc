@@ -9,8 +9,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-. ~/.alias
-
 for i in ~/.bash.d/* ; do
   if [ -x "$i" ]; then
     . $i

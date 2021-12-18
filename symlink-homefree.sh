@@ -24,7 +24,6 @@ d() {
 
 cp -R /etc/fish /etc/fish.original
 
-# f .alias dotfiles/alias
 # f .bashrc dotfiles/bashrc
 # d .bash.d/ dotfiles/bash.d/
 # f .inputrc dotfiles/.inputrc
