@@ -11,6 +11,9 @@ f() {
   then
     mkdir -p $(dirname ~/$1)
     ln --symbolic --relative $DIR/$2 ~/$1
+  else
+    ls -l ~/$1
+    echo "~/$1 ALREADY EXISTS, so NO NEW DOTFILES SYMLINK CREATED (rm it first to create)"
   fi
 }
 
@@ -39,9 +42,11 @@ d .config/fish/conf.d/ dotfiles/fish/conf.d/
 d .config/fish/functions/ dotfiles/fish/functions/
 f .config/starship.toml dotfiles/starship.toml
 
-desktop-file-validate ~/.local/share/applications/*.desktop
-# desktop-file-install --dir=~/.local/share/applications/ ~/.local/share/applications/*.desktop
-update-desktop-database ~/.local/share/applications
+if [ $(command -v desktop-file-validate) ]; then
+  desktop-file-validate ~/.local/share/applications/*.desktop
+  # desktop-file-install --dir=~/.local/share/applications/ ~/.local/share/applications/*.desktop
+  update-desktop-database ~/.local/share/applications
+fi
 
 # Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
 # also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:
