@@ -4,7 +4,7 @@ FROM debian:bullseye
 
 ## The debian container doesn't come with sudo, so for apt-install.sh which uses sudo to work as everywhere else we install it:
 # RUN apt-get update
-# RUN apt install sudo
+# RUN apt install -y sudo
 # COPY *.sh /var/local/vorburger-dotfiles/
 # RUN /var/local/vorburger-dotfiles/apt-install.sh 11
 
