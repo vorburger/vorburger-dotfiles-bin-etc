@@ -4,4 +4,4 @@ steps:
 - name: 'gcr.io/cloudshell-images/custom-image-validation'
   args: ['image_test.py', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME']
 images: ['gcr.io/$PROJECT_ID/$REPO_NAME']
-timeout: '1200s'
+timeout: '3600s'
