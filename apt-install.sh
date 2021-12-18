@@ -24,9 +24,10 @@ sudo apt --allow-releaseinfo-change update
 ## E: Failed to fetch http://deb.debian.org/debian/pool/main/libw/libwebp/libwebpmux3_0.6.1-2_amd64.deb  404  Not Found [IP: 199.232.126.132 80]
 ## E: Failed to fetch http://deb.debian.org/debian/pool/main/h/http-parser/libhttp-parser2.8_2.8.1-1_amd64.deb  404  Not Found [IP: 199.232.126.132 80]
 
+# TODO add tmux back in - it was temporarily removed to see if that is what breaks gcr.io/cloudshell-images/cloudshell:latest
 sudo apt install -y \
     bash-completion file git hub htop lsb-release procps unzip \
-    trash-cli shellcheck tmux wipe \
+    trash-cli shellcheck wipe \
     fish autojump fzf fd-find \
     cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
