@@ -27,19 +27,20 @@ cp -R /etc/fish /etc/fish.original
 # f .bashrc dotfiles/bashrc
 # d .bash.d/ dotfiles/bash.d/
 # f .inputrc dotfiles/.inputrc
-# f .nanorc  dotfiles/.nanorc
+f /etc/nanorc  dotfiles/.nanorc
 # f .tmux.conf dotfiles/.tmux.conf
 # f .zshrc   dotfiles/.zshrc
 # f .gnupg/gpg.conf dotfiles/gpg.conf
 # f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
-# f .gitconfig dotfiles/gitconfig
+f /etc/gitconfig dotfiles/gitconfig
 # d .local/share/applications/ dotfiles/desktop/
 # d .config/kitty/ dotfiles/kitty/
 # f .hyper.js dotfiles/hyper.js
 d /etc/fish/ dotfiles/fish/
 d /etc/fish/conf.d/ dotfiles/fish/conf.d/
 d /etc/fish/functions/ dotfiles/fish/functions/
-# f .config/starship.toml dotfiles/starship.toml
+f /etc/starship.toml dotfiles/starship.toml
+# This ^^^ only works because `STARSHIP_CONFIG` is set to use it in fish/conf.d/starship.fish
 
 # This ^^^ sets up the "homefree" config for containers with dotfiles in / instead of /home
 # so that it works for all and any users and with an empty host-mounted $HOME.
