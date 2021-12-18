@@ -46,3 +46,5 @@ d /etc/fish/functions/ dotfiles/fish/functions/
 # This is useful e.g. in Toolbox and Google Cloud Shell and similar.
 
 # NOT WORKING: cp "$(dirname "$0")"/etc/profile.d/PATH_HOME-bin.sh /etc/profile.d/
+
+cat "$DIR/dotfiles/.inputrc" >>/etc/inputrc

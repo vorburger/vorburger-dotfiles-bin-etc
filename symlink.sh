@@ -22,7 +22,7 @@ d() {
   find $DIR/$2 -maxdepth 1 -type f,l -exec ln -sfnr {} ~/$1 \;
 }
 
-# TODO auto-l all dotfiles/*
+
 
 f .bashrc dotfiles/bashrc
 d .bash.d/ dotfiles/bash.d/
