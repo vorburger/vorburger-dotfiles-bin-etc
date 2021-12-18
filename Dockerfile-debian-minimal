@@ -17,11 +17,9 @@ RUN apt-get update && apt install -y fish git
 COPY *.sh /var/local/vorburger-dotfiles/
 COPY dotfiles /var/local/vorburger-dotfiles/dotfiles/
 
-RUN mv /root/.bashrc /root/.bashrc.original
-RUN /var/local/vorburger-dotfiles/symlink.sh
-# RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
+RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
 
 # COPY etc/profile.d/* /var/local/vorburger-dotfiles/etc/profile.d/
 # RUN echo "hello, world from /etc/profile" >>/etc/profile
 
-# ENTRYPOINT fish
+ENTRYPOINT fish
