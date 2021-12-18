@@ -18,7 +18,7 @@ curl -fsSL "https://download.opensuse.org/repositories/shells:fish:release:3/Deb
 # see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
 
-sudo apt-get update && sudo apt-get dist-upgrade -y
+sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
 
 sudo apt install -y \
     bash-completion file git hub htop lsb-release procps unzip \
