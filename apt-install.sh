@@ -14,11 +14,14 @@ DEBIAN_VERSION=$1
 sudo apt install -y curl gpg
 echo "deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_$DEBIAN_VERSION/ /" | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
 curl -fsSL "https://download.opensuse.org/repositories/shells:fish:release:3/Debian_$DEBIAN_VERSION/Release.key" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+# NB this ^^^ must be done BEFORE the apt update that comes NEXT
 
-# see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
-sudo apt remove -y nano
-
-sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
+# sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
+sudo apt-get update --fix-missing && sudo apt-get clean && sudo apt-get clean && sudo apt-get install -f && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
+## update --fix-missing && install -f fixes these problems on the Debian 10 (Buster) gcr.io/cloudshell-images/cloudshell:latest
+## E: Failed to fetch https://packages.sury.org/php/pool/main/p/pcre2/libpcre2-32-0_10.36-2+0~20210212.6+debian10~1.gbp6138a4_amd64.deb  404  Not Found [IP: 104.21.18.148 443]
+## E: Failed to fetch http://deb.debian.org/debian/pool/main/libw/libwebp/libwebpmux3_0.6.1-2_amd64.deb  404  Not Found [IP: 199.232.126.132 80]
+## E: Failed to fetch http://deb.debian.org/debian/pool/main/h/http-parser/libhttp-parser2.8_2.8.1-1_amd64.deb  404  Not Found [IP: 199.232.126.132 80]
 
 sudo apt install -y \
     bash-completion file git hub htop lsb-release procps unzip \
@@ -27,6 +30,8 @@ sudo apt install -y \
     cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
+# see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
+sudo apt remove -y nano
 sudo apt autoremove -y
 
 lsb_release -a
