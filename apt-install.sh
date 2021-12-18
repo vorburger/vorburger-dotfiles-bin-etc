@@ -16,7 +16,7 @@ echo "deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Deb
 curl -fsSL "https://download.opensuse.org/repositories/shells:fish:release:3/Debian_$DEBIAN_VERSION/Release.key" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
 # NB this ^^^ must be done BEFORE the apt update that comes NEXT
 
-sudo apt update
+sudo apt --allow-releaseinfo-change update
 # sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
 # sudo apt-get update --fix-missing && sudo apt-get clean && sudo apt-get clean && sudo apt-get install -f && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
 ## Something above causes these problems on the Debian 10 (Buster)-based gcr.io/cloudshell-images/cloudshell:latest
