@@ -61,6 +61,8 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
 
 ### Google Cloud Shell
 
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/vorburger/vorburger-dotfiles-bin-etc&cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)
+
 https://shell.cloud.google.com, see https://cloud.google.com/shell, is handy (but limited to a `du -h ~` 5 GB `$HOME`..), especially with the web-based [Google Cloud Code](https://cloud.google.com/code), based on [Eclipse Theia](https://theia-ide.org) (also available on [Gitpod](https://www.gitpod.io)). To be able to connect to other servers from Google Cloud Shell, notably GitHub, login to it from a local Terminal like this (or use a Browser-based [Secure Shell App](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en), based on https://hterm.org):
 
     gcloud cloud-shell ssh --ssh-flag="-A"
