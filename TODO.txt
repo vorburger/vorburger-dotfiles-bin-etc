@@ -1,17 +1,16 @@
+- ./container/build.sh must pass again locally
 
-- cloudbuild multiple images (*-google-cloudshell, -github, -debian)
+- ./container/build.sh must not depend on user presence SK touch to build
+
+- ./container/build.sh in cloudbuild.yaml, with push vorburger-dotfiles-fedora
+
+- remove Java 8 from dnf-install, add Java 17 instead
+
+- GitHub Codespaces support
 
 - finish full Toolbox support; see README.md
 
-- test if most of GPG etc. customizations can actually be removed, as SSH Agent forwarding seems to work just perfectly fine even without it?
-
-- GitHub hub
-
 - add secure-ssh from https://github.com/labs-learn-study/labs.learn.study/tree/master/playbooks/roles
-
-- https://github.com/nachoparker/dutree
-
-- install-workstation-gui.yaml: powerline-fonts ?
 
 - clean up any remaining TODO (`findx TODO`)
 
