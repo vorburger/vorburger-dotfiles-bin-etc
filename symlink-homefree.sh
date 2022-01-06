@@ -30,14 +30,8 @@ mv /etc/gitconfig /etc/gitconfig.original
 # d .bash.d/ dotfiles/bash.d/
 f /etc/inputrc dotfiles/.inputrc
 f /usr/local/etc/nanorc  dotfiles/.nanorc
-# f .tmux.conf dotfiles/.tmux.conf
 # f .zshrc   dotfiles/.zshrc
-# f .gnupg/gpg.conf dotfiles/gpg.conf
-# f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 f /etc/gitconfig dotfiles/gitconfig
-# d .local/share/applications/ dotfiles/desktop/
-# d .config/kitty/ dotfiles/kitty/
-# f .hyper.js dotfiles/hyper.js
 d /etc/fish/ dotfiles/fish/
 d /etc/fish/conf.d/ dotfiles/fish/conf.d/
 d /etc/fish/functions/ dotfiles/fish/functions/
