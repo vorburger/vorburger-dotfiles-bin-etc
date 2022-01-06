@@ -1,9 +1,12 @@
 
 - GCE, works? Doc in README. BUT that's not with a persistent $HOME! Use symlink-homefree.sh now?
+  Add an additional disk.
 
 - GitHub Codespaces support
 
 - remove Java 8 from dnf-install, add Java 17 instead
+
+- https://cloud.google.com/build/docs/kaniko-cache#docker-build
 
 - ./container/build.sh must not depend on user presence SK touch to build,
   and uncomment test in container/build.sh, and unify or remove root ./test script.
