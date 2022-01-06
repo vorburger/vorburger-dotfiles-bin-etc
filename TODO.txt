@@ -1,4 +1,3 @@
-- ./container/build.sh in cloudbuild.yaml, with push vorburger-dotfiles-fedora
 
 - GCE, works? Doc in README. BUT that's not with a persistent $HOME! Use symlink-homefree.sh now?
 
