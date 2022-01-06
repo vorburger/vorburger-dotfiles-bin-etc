@@ -8,7 +8,9 @@ steps:
 #images: ['gcr.io/$PROJECT_ID/$REPO_NAME']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-f', 'Dockerfile-fedora', '-t', 'gcr.io/$PROJECT_ID/dotfiles-fedora', '.']
+  entrypoint: 'bash'
+  args: ['container/build.sh']
+  # TODO script must tag the dotfiles-fedora image as gcr.io/$PROJECT_ID/dotfiles-fedora?
 images: ['gcr.io/$PROJECT_ID/dotfiles-fedora']
 
 timeout: '3600s'
