@@ -1,11 +1,15 @@
 
+- Google Cloud Shell re-test, README document & feedback
+
+
+
+- cloudbuild multiple images (*-google-cloudshell, -github, -debian)
+
 - finish full Toolbox support; see README.md
 
 - test if most of GPG etc. customizations can actually be removed, as SSH Agent forwarding seems to work just perfectly fine even without it?
 
 - GitHub hub
-
-- less with colours
 
 - add secure-ssh from https://github.com/labs-learn-study/labs.learn.study/tree/master/playbooks/roles
 
