@@ -23,10 +23,12 @@ d() {
 }
 
 cp -R /etc/fish /etc/fish.original
+mv /etc/inputrc /etc/inputrc.original
+mv /etc/gitconfig /etc/gitconfig.original
 
 # f .bashrc dotfiles/bashrc
 # d .bash.d/ dotfiles/bash.d/
-# f .inputrc dotfiles/.inputrc
+f /etc/inputrc dotfiles/.inputrc
 f /usr/local/etc/nanorc  dotfiles/.nanorc
 # f .tmux.conf dotfiles/.tmux.conf
 # f .zshrc   dotfiles/.zshrc
@@ -48,4 +50,5 @@ f /etc/starship.toml dotfiles/starship.toml
 
 # NOT WORKING: cp "$(dirname "$0")"/etc/profile.d/PATH_HOME-bin.sh /etc/profile.d/
 
-cat "$DIR/dotfiles/.inputrc" >>/etc/inputrc
+# BEWARE of an an infinite loop in `/etc/inputrc` with its `$include /etc/inputrc`; replace that:
+sed -i 's/inputrc/inputrc.original/' /etc/inputrc

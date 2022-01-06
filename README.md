@@ -79,6 +79,11 @@ To use the many configurations from this repo in Google Cloud Shell, use https:/
     cloudshell env build-local
     cloudshell env run
 
+Watch out for `Connection to localhost closed.` after `env run` - it means that the container
+cannot be SSH into, just like when "gcr.io/cloudshell-image/custom-image-validation" failed on a build,
+e.g. due to a newer TMUX having been installed, or e.g. an infinite loop by
+`/etc/inputrc` doing an `$include /etc/inputrc` by `symlink-homefree.sh`.
+
 ## Security
 
 ### SSH for multiple GitHub accounts

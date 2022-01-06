@@ -2,6 +2,7 @@
 # Run "bind -f ~/.inputrc" to source changes made to this file immediately.
 
 # THIS IS SUPER IMPORTANT, ELSE YOU BREAK THE DEFAULTS
+# symlink-homefree.sh replaces /etc/inputrc with /etc/inputrc.original to avoid an infinite loop
 $include /etc/inputrc
 
 set show-all-if-ambiguous on
