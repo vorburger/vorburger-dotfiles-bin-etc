@@ -29,7 +29,6 @@ d .bash.d/ dotfiles/bash.d/
 f .inputrc dotfiles/.inputrc
 f .nanorc  dotfiles/.nanorc
 f .tmux.conf dotfiles/.tmux.conf
-# f .zshrc   dotfiles/.zshrc
 f .gnupg/gpg.conf dotfiles/gpg.conf
 f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 f .gitconfig dotfiles/gitconfig
@@ -46,11 +45,3 @@ if [ $(command -v desktop-file-validate) ]; then
   # desktop-file-install --dir=~/.local/share/applications/ ~/.local/share/applications/*.desktop
   update-desktop-database ~/.local/share/applications
 fi
-
-# Don't symlink entire $ZSH_CUSTOM, as that will break ~/.oh-my-zsh/.git repo upgrades;
-# also must preserve default example.zsh-theme, so just trash our own symlinks, and relink:
-# if [ -e ~/.oh-my-zsh/custom/themes ]
-# then
-#  find ~/.oh-my-zsh/custom/themes -type l -exec trash -f {} +
-#  ln -s $DIR/dotfiles/oh-my-zsh/custom/themes/* ~/.oh-my-zsh/custom/themes
-# fi

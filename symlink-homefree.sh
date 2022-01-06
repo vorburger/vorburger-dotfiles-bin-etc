@@ -31,7 +31,6 @@ mv /etc/gitconfig /etc/gitconfig.original
 # d .bash.d/ dotfiles/bash.d/
 f /etc/inputrc dotfiles/.inputrc
 f /usr/local/etc/nanorc  dotfiles/.nanorc
-# f .zshrc   dotfiles/.zshrc
 f /etc/gitconfig dotfiles/gitconfig
 d /etc/fish/ dotfiles/fish/
 d /etc/fish/conf.d/ dotfiles/fish/conf.d/
