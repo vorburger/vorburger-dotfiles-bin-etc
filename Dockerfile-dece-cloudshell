@@ -1,4 +1,5 @@
 FROM cloudshell-fedora
+# see https://github.com/vorburger/cloudshell
 
 COPY dnf-install.sh /tmp/
 RUN /tmp/dnf-install.sh

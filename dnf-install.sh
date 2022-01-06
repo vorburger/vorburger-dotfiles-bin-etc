@@ -25,7 +25,11 @@ sudo dnf install -y \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
     cargo \
-    kubernetes-client google-cloud-sdk google-cloud-sdk-skaffold
+    google-cloud-sdk google-cloud-sdk-skaffold
+
+# Do NOT add the "kubernetes-client" package above, but it causes this error:
+# file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64
+# (at least when run as part of ./container/build.sh which is FROM fedora:35 in container/fedora-updated/Dockerfile)
 
 sudo dnf remove "libreoffice*"
 

@@ -5,12 +5,13 @@ cd "$(dirname "$0")"
 
 build() {
   # podman build --no-cache=true --pull -t $2 $1/
-  podman build -t $2 $1/
-  $1/test
+  podman build -t $3 -f $2 $1/
+  ## $/test TODO re-enable once it not depend on user presence SK touch
 }
 
-build fedora-updated fedora-updated
-build sshd           sshd
-build devshell       devshell
-build gcloud         gcloud
-build ..             vorburger
+#     Directory      Dockerfile        Image Tag Name
+build fedora-updated Dockerfile        fedora-updated
+build sshd           Dockerfile        sshd
+build devshell       Dockerfile        devshell
+build ..             Dockerfile-fedora vorburger-dotfiles-fedora
+## build gcloud         Dockerfile        gcloud

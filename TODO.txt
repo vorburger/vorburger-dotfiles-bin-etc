@@ -1,12 +1,15 @@
-- ./container/build.sh must pass again locally
-
-- ./container/build.sh must not depend on user presence SK touch to build
-
 - ./container/build.sh in cloudbuild.yaml, with push vorburger-dotfiles-fedora
+
+- GCE, works? Doc in README. BUT that's not with a persistent $HOME! Use symlink-homefree.sh now?
+
+- GitHub Codespaces support
 
 - remove Java 8 from dnf-install, add Java 17 instead
 
-- GitHub Codespaces support
+- ./container/build.sh must not depend on user presence SK touch to build,
+  and uncomment test in container/build.sh
+
+- scopatz/nanorc.git should be centralized in install.sh instead of spread all over (findx nanorc)
 
 - finish full Toolbox support; see README.md
 
