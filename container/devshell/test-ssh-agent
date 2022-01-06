@@ -10,19 +10,19 @@ ssh-add -l
 
 # TODO instead of copy/paste from ../sshd/test, share common test harness structure..
 
-podman rm -f test-$1 || true
-podman run -d -p 22 --name test-$1 $1
-PORT="$(podman port test-$1 | sed 's/22\/tcp -> 0.0.0.0://')"
+docker rm -f test-$1 || true
+docker run -d -p 22 --name test-$1 $1
+PORT="$(docker port test-$1 | sed 's/22\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
-podman exec test-$1 /usr/local/sbin/add-uid-key tester "$(cat /tmp/test-$$-id_rsa.pub)"
+docker exec test-$1 /usr/local/sbin/add-uid-key tester "$(cat /tmp/test-$$-id_rsa.pub)"
 
 # NB -A for Agent Forwarding!
 ssh -A -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT tester@localhost ssh-add -l
 
 # TODO fire up another sshd container, and "cross hop" into it by agent forwarding
 
-podman rm -f test-$1
+docker rm -f test-$1
 
 echo Test successful.

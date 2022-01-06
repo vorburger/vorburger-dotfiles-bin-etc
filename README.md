@@ -245,7 +245,7 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
 ### Debian
 
-    clear; time podman build -t vorburger-debian -f Dockerfile-debian . && podman run -it --hostname=debian --rm vorburger-debian
+    clear; time docker build -t vorburger-debian -f Dockerfile-debian . && docker run -it --hostname=debian --rm vorburger-debian
 
 The `Dockerfile-debian-minimal` is used instead of `Dockerfile-debian` to rebuild faster with less for quick local iterative development.
 
@@ -259,7 +259,7 @@ See above for usage with https://github.com/containers/toolbox.
 
 See above for usage as a https://cloud.google.com/shell/docs/customizing-container-image.
 
-To local build test, try: `time podman build -t vorburger-google-cloudshell -f Dockerfile .` but it fails with:
+To local build test, try: `time docker build -t vorburger-google-cloudshell -f Dockerfile .` but it fails with:
 `Error: error creating build container: writing blob: adding layer with blob "sha256:73b906f329a9204f69c7efa86428158811067503ffa65431ca008c8015ce7871": Error processing tar file(exit status 1): potentially insufficient UIDs or GIDs available in user namespace (requested 150328:89939 for /tinkey.bat): Check /etc/subuid and /etc/subgid: lchown /tinkey.bat: invalid argument`
 
 
@@ -267,8 +267,8 @@ To local build test, try: `time podman build -t vorburger-google-cloudshell -f D
 
 Using https://github.com/vorburger/cloudshell for a customized web shell on http://localhost:8080 :
 
-    podman build -t vorburger-cloud -f Dockerfile-dece-cloudshell .
-    podman run --hostname=cloud -eUSER_ID=vorburger -eUSER_PWD=THEPWD --rm -p 8080:8080 vorburger-cloud
+    docker build -t vorburger-cloud -f Dockerfile-dece-cloudshell .
+    docker run --hostname=cloud -eUSER_ID=vorburger -eUSER_PWD=THEPWD --rm -p 8080:8080 vorburger-cloud
 
 
 ### Original

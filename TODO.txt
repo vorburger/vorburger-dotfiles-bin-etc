@@ -6,7 +6,7 @@
 - remove Java 8 from dnf-install, add Java 17 instead
 
 - ./container/build.sh must not depend on user presence SK touch to build,
-  and uncomment test in container/build.sh
+  and uncomment test in container/build.sh, and unify or remove root ./test script.
 
 - scopatz/nanorc.git should be centralized in install.sh instead of spread all over (findx nanorc)
 

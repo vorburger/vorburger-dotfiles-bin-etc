@@ -4,8 +4,8 @@ cd "$(dirname "$0")"
 
 # TODO shellcheck _gcloud
 
-podman run --rm gcloud gcloud version
+docker run --rm gcloud gcloud version
 
-podman run --rm gcloud gsutil ls gs://gcp-public-data-landsat
+docker run --rm gcloud gsutil ls gs://gcp-public-data-landsat
 
 # TODO test our deploy script which we added to the container
