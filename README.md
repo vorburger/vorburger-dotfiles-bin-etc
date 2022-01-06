@@ -61,7 +61,9 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
 
 ### Google Cloud Shell
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/vorburger/vorburger-dotfiles-bin-etc&cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)
+
+_TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70612890/non-ephemeral-google-cloud-shell-with-custom-container-image) about Google Cloud Shell Custom Images always lauched ephemeral; which makes it a No-Go for this project. (Simply running a dotfile devshell container on a GCE VM is much easier)._
 
 https://shell.cloud.google.com, see https://cloud.google.com/shell, is handy (but limited to a `du -h ~` 5 GB `$HOME`..), especially with the web-based [Google Cloud Code](https://cloud.google.com/code), based on [Eclipse Theia](https://theia-ide.org) (also available on [Gitpod](https://www.gitpod.io)). To be able to connect to other servers from Google Cloud Shell, notably GitHub, login to it from a local Terminal like this (or use a Browser-based [Secure Shell App](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en), based on https://hterm.org):
 
@@ -73,6 +75,8 @@ Alternatively, you COULD `ssh-keygen` and have something like the following in y
 	    Hostname github.com
 	    PreferredAuthentications publickey
 	    IdentityFile ~/.ssh/id_rsa
+
+_TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70612636/google-cloud-shell-ssh-with-customer-container-image) re. how to SSH login to Google Cloud Shell using a customer container image._
 
 _TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70608840/how-to-ssh-login-to-google-cloud-shell-using-an-existing-private-key-on-a-yubike) re. how to SSH login to Google Cloud Shell using an existing private key on a YubiKey security key._
 
