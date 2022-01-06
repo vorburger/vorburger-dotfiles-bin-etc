@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 
 build() {
   # docker build --no-cache=true --pull -t $2 $1/
-  docker build -t $3 -f $2 $1/
+  docker build -t $3 -f $1/$2 $1/
   ## $/test TODO re-enable once it not depend on user presence SK touch
 }
 
