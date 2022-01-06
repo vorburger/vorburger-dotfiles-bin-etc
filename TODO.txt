@@ -1,8 +1,4 @@
 
-- Google Cloud Shell re-test, README document & feedback
-
-
-
 - cloudbuild multiple images (*-google-cloudshell, -github, -debian)
 
 - finish full Toolbox support; see README.md

@@ -74,8 +74,11 @@ Alternatively, you COULD `ssh-keygen` and have something like the following in y
 	    PreferredAuthentications publickey
 	    IdentityFile ~/.ssh/id_rsa
 
-To use the many configurations from this repo in Google Cloud Shell, use https://cloud.google.com/shell/docs/customizing-container-image like this:
+_TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70608840/how-to-ssh-login-to-google-cloud-shell-using-an-existing-private-key-on-a-yubike) re. how to SSH login to Google Cloud Shell using an existing private key on a YubiKey security key._
 
+To use the many configurations from this repo in Google Cloud Shell, simply use the big blue _"Open in Google Cloud Shell"_ above. This is [based on a customized image](https://cloud.google.com/shell/docs/customizing-container-image) available on [gcr.io/vorburger](https://gcr.io/vorburger). Here is how to "locally" build it for improvements to it:
+
+    cd ~/git/github.com/vorburger/vorburger-dotfiles-bin-etc/
     cloudshell env build-local
     cloudshell env run
 
