@@ -1,15 +1,20 @@
 
-- GCE, works? Doc in README. BUT that's not with a persistent $HOME! Use symlink-homefree.sh now?
-  Add an additional disk.
+- Make SSH to container work on GCE
+
+- Figure out why SSH Agent Forwarding doesn't work (anymore, used to), even locally
+
+- persistent $HOME! Use symlink-homefree.sh now? Add an additional disk on GCE.
 
 - GitHub Codespaces support
 
 - remove Java 8 from dnf-install, add Java 17 instead
 
-- https://cloud.google.com/build/docs/kaniko-cache#docker-build
-
 - ./container/build.sh must not depend on user presence SK touch to build,
   and uncomment test in container/build.sh, and unify or remove root ./test script.
+
+- https://cloud.google.com/build/docs/kaniko-cache#docker-build?
+
+- https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
 
 - scopatz/nanorc.git should be centralized in install.sh instead of spread all over (findx nanorc)
 

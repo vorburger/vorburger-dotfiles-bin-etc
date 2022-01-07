@@ -3,4 +3,4 @@ set -euox pipefail
 
 # As in /usr/lib/systemd/system/sshd.service ...
 # -D for production, or -eddd for debug
-/usr/sbin/sshd -D
+/usr/sbin/sshd -p 2222 -D

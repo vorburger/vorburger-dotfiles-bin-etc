@@ -59,6 +59,22 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     ./setup.sh
 
 
+### Google Cloud COS VM with this container
+
+
+```
+gcloud compute instances create-with-container dotfiles-fedora --project=vorburger --zone=europe-west6-a --machine-type=e2-medium --network-interface=network-tier=PREMIUM,subnet=default --maintenance-policy=MIGRATE --service-account=646827272154-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --image=projects/cos-cloud/global/images/cos-stable-93-16623-39-30 --boot-disk-size=10GB --boot-disk-type=pd-balanced --boot-disk-device-name=dotfiles-fedora2 --container-image=gcr.io/vorburger/dotfiles-fedora --container-restart-policy=always --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=container-vm=cos-stable-93-16623-39-30
+```
+
+_TODO `gcloud beta compute disks create home --project=vorburger --type=pd-ssd --size=10GB --zone=europe-west6-a`,
+and then mount that into the container (above) - and switch to **`symlink-homefree.sh`** that doesn't use $HOME in container._
+
+To enable SSH login to the host (not container) do:
+
+    gcloud --project=vorburger compute project-info add-metadata --metadata enable-oslogin=TRUE
+    gcloud --project=vorburger compute os-login ssh-keys add --key-file=/home/vorburger/.ssh/id_ecdsa_sk.pub
+    ssh -A michael_vorburger@34.65.149.231
+
 ### Google Cloud Shell
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)
@@ -271,10 +287,11 @@ Using https://github.com/vorburger/cloudshell for a customized web shell on http
     docker run --hostname=cloud -eUSER_ID=vorburger -eUSER_PWD=THEPWD --rm -p 8080:8080 vorburger-cloud
 
 
-### Original
+### Fedora Container, with SSH
 
-Also (previous generation, older) see [container/](container/), but in short:
+Also (previous generation, older), based on [container/devshell](container/devshell):
 
     ./container/build.sh
-    docker run -d -p 2222:22 --name vorburger vorburger
+    podman run -it --rm -p 2222:2222 gcr.io/vorburger/dotfiles-fedora:latest
+    ssh -A -p 2222 localhost
     ssh -At -p 2222 localhost -- tmux2 new -A -s dev

@@ -5,8 +5,8 @@ cd "$(dirname "$0")"
 shellcheck add-uid-key
 
 docker rm -f test-sshd || true
-docker run -d -p 22 --name test-sshd sshd
-PORT="$(docker port test-sshd | sed 's/22\/tcp -> 0.0.0.0://')"
+docker run -d -p 2222 --name test-sshd sshd
+PORT="$(docker port test-sshd | sed 's/2222\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test

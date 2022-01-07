@@ -9,3 +9,7 @@ mkdir /home/"$NEW_UID"/.ssh/
 echo "$AUTHORIZED_KEYS" > /home/"$NEW_UID"/.ssh/authorized_keys
 chown -R "$NEW_UID":"$NEW_UID" /home/"$NEW_UID"/.ssh
 chmod 700 /home/"$NEW_UID"/.ssh
+
+# sudo WITHOUT (!) a password
+# Requires the change to /etc/sudoers which the Dockerfile makes
+sudo usermod -aG wheel "$NEW_UID"

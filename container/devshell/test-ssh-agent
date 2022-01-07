@@ -11,8 +11,8 @@ ssh-add -l
 # TODO instead of copy/paste from ../sshd/test, share common test harness structure..
 
 docker rm -f test-$1 || true
-docker run -d -p 22 --name test-$1 $1
-PORT="$(docker port test-$1 | sed 's/22\/tcp -> 0.0.0.0://')"
+docker run -d -p 2222 --name test-$1 $1
+PORT="$(docker port test-$1 | sed 's/2222\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
