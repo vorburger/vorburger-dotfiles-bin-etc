@@ -1,7 +1,5 @@
 
-- Make SSH to container work on GCE
-
-- Figure out why SSH Agent Forwarding doesn't work (anymore, used to), even locally
+- nano does not work (is not present) in fedora container
 
 - persistent $HOME! Use symlink-homefree.sh now? Add an additional disk on GCE.
 

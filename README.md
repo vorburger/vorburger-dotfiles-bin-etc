@@ -69,11 +69,16 @@ gcloud compute instances create-with-container dotfiles-fedora --project=vorburg
 _TODO `gcloud beta compute disks create home --project=vorburger --type=pd-ssd --size=10GB --zone=europe-west6-a`,
 and then mount that into the container (above) - and switch to **`symlink-homefree.sh`** that doesn't use $HOME in container._
 
-To enable SSH login to the host (not container) do:
+To login to the dotfiles container:
+
+    ssh-add -L # MUST show local key/s, NOT "The agent has no identities"
+    ssh -p 2222 -A vorburger@1.2.3.4
+
+To enable SSH login to the host, not container, typically only required to check the container:
 
     gcloud --project=vorburger compute project-info add-metadata --metadata enable-oslogin=TRUE
     gcloud --project=vorburger compute os-login ssh-keys add --key-file=/home/vorburger/.ssh/id_ecdsa_sk.pub
-    ssh -A michael_vorburger@34.65.149.231
+    ssh michael_vorburger@1.2.3.4
 
 ### Google Cloud Shell
 
@@ -216,7 +221,7 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 #### On Fedora Silverblue
 
 1. In _Gnome Terminal's Preferences_, add a new Profile as below,
-   BUT name it `toolbox` and as Command, use: 
+   BUT name it `toolbox` and as Command, use:
    `sh -c 'echo "Type mux..." && toolbox enter vorburger-toolbox'`
 
 #### On Fedora Workstation
