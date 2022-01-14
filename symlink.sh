@@ -39,6 +39,7 @@ d .config/fish/ dotfiles/fish/
 d .config/fish/conf.d/ dotfiles/fish/conf.d/
 d .config/fish/functions/ dotfiles/fish/functions/
 f .config/starship.toml dotfiles/starship.toml
+f .m2/toolchains.xml dotfiles/m2/toolchains.xml
 
 if [ $(command -v desktop-file-validate) ]; then
   desktop-file-validate ~/.local/share/applications/*.desktop
