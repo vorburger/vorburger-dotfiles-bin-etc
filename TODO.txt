@@ -7,6 +7,8 @@
 
 - remove Java 8 from dnf-install, add Java 17 instead
 
+- findx with fzf and open in nano at the matched line
+
 - ./container/build.sh must not depend on user presence SK touch to build,
   and uncomment test in container/build.sh, and unify or remove root ./test script.
 

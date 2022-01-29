@@ -29,7 +29,6 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     cd vorburger-dotfiles-bin-etc
 
     ./setup.sh
-    ./dnf-automatic-setup
     ./dnf-install.sh
     ./dnf-install-gui.sh
     ./install.sh
