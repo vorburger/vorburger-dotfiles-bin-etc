@@ -3,9 +3,14 @@
 # This does NOT avoid line break in the prompt; see https://github.com/starship/starship/issues/1987
 # add_newline = false
 
+# Move Kubernetes to end instead of start as per default
+format="$all$kubernetes$cmd_duration$character"
+
 [line_break]
-# change this to false for single line break
-disabled = false
+disabled = true
+
+[directory]
+truncation_symbol = "…/"
 
 [java]
 # drop Java version from prompt; format default = "via [${symbol}${version}]($style) "
@@ -16,5 +21,29 @@ style = "bold blue"
 [username]
 format = "[$user]($style) on "  # use 'on' instead of default 'in'
 
+[cmd_duration]
+show_notifications = true
+
 [gcloud]
 style = "dimmed blue"
+# drop account from prompt; format default = 'on [$symbol$account(@$domain)(\($region\))]($style) '
+# format = 'on [$symbol$project(\($region\))]($style) '
+format = 'on [$symbol(\($region\))]($style) '
+symbol = '☁️'
+# https://github.com/starship/starship/issues/3538
+# [gcloud.project_aliases]
+# "vorburger-learn-appengin" = "learn"
+
+[kubernetes]
+disabled = false
+[kubernetes.context_aliases]
+"gke_oasis-learn-study_europe-west4_cluster1" = "oasis"
+
+[git_metrics]
+disabled = false
+
+[status]
+disabled = false
+
+[sudo]
+disabled = false
