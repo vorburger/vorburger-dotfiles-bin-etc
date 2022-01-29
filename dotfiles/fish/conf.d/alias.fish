@@ -1,6 +1,8 @@
 # These aliases are Fish specific
 # Common ones are in dotfiles/alias (bash specific in dotfiles/bash.d/alias.bash)
 
+status is-interactive || exit
+
 test -f /usr/bin/lsd && alias l="lsd "
 test -f /usr/bin/lsd && alias ll="lsd -l "
 test -f /usr/bin/bat && alias c="bat "
