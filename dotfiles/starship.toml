@@ -47,3 +47,6 @@ disabled = false
 
 [sudo]
 disabled = false
+
+[[battery.display]]
+threshold = 30
