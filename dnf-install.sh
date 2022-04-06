@@ -33,6 +33,11 @@ sudo dnf install -y \
 # file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64
 # (at least when run as part of ./container/build.sh which is FROM fedora:35 in container/fedora-updated/Dockerfile)
 
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md#fedora-centos-red-hat-enterprise-linux-dnf
+sudo dnf install 'dnf-command(config-manager)'
+sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh
+
 if [ $(ps --no-headers -o comm 1) = "systemd" ]; then
   sudo systemctl enable --now dnf-automatic-install.timer
   systemctl status dnf-automatic-install.timer
