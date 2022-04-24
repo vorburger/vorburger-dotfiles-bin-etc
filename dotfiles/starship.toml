@@ -50,3 +50,6 @@ disabled = false
 
 [[battery.display]]
 threshold = 30
+
+[docker_context]
+disabled = true

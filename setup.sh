@@ -5,3 +5,6 @@ set -euxo pipefail
 
 sudo sh -c 'echo "PasswordAuthentication no" >/etc/ssh/sshd_config.d/99-nopwd.conf'
 sudo systemctl restart sshd
+
+# https://buildpacks.io/docs/app-developer-guide/building-on-podman/
+systemctl enable --now --user podman.socket
