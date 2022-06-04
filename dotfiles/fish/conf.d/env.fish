@@ -4,8 +4,9 @@
 
 set -Ux EDITOR nano
 
-# TODO only if $JAVA_HOME is not already set?
-set -gx JAVA_HOME /etc/alternatives/java_sdk/
+if test ! -n "$JAVA_HOME"
+    set -gx JAVA_HOME /etc/alternatives/java_sdk/
+end
 
 # Pretty output, notably for bin/findx
 set -Ux GREP_OPTIONS --color=auto
