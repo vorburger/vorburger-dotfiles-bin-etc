@@ -8,4 +8,4 @@ set -euxo pipefail
 ./all-install.sh
 ./symlink.sh
 
-# TODO alias e open Codespace editor (how?), instead of nano?
+alias e="code "
