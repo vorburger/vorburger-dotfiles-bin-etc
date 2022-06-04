@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# apt|dnf-install.sh has DNF packages, this is everything else
+# apt|dnf-install.sh has DNF RPM / APT DEB packages, this is everything else
 
 [ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
@@ -28,10 +28,10 @@ mkdir -p $HOME/.m2/
 [ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
 # NB alias b="bazelisk " in dotfiles/alias
-[ -s $HOME/go/bin/bazelisk ] || go get github.com/bazelbuild/bazelisk
+[ -s $HOME/go/bin/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
 
 # https://github.com/mikefarah/yq#go-get
-[ -s $HOME/go/bin/yq ] || go get github.com/mikefarah/yq/v4
+[ -s $HOME/go/bin/yq ] || go install github.com/mikefarah/yq/v4@latest
 
 # https://github.com/dty1er/kubecolor
 [ -s $HOME/go/bin/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
