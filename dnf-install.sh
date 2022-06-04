@@ -36,7 +36,7 @@ sudo dnf install -y \
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md#fedora-centos-red-hat-enterprise-linux-dnf
 sudo dnf install 'dnf-command(config-manager)'
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
+sudo dnf install -y gh
 
 if [ $(ps --no-headers -o comm 1) = "systemd" ]; then
   sudo systemctl enable --now dnf-automatic-install.timer
@@ -47,7 +47,7 @@ fi
 
 sudo dnf update -y
 
-sudo dnf remove "libreoffice*"
+sudo dnf remove -y "libreoffice*"
 
 # sudo alternatives --config java
 # sudo alternatives --config javac
