@@ -5,6 +5,7 @@ alias d="cd "
 alias n="nix "
 alias m="mvn "
 alias e="nano "
+alias r="./gradlew "
 alias k="kubecolor "
 alias b="bazelisk "
 
