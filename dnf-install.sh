@@ -14,7 +14,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
 EOM
 
 sudo dnf install -y \
-    psmisc procps-ng \
+    rpl psmisc procps-ng \
     asciinema \
     bash-completion \
     dnf-automatic dnf-plugins-core \

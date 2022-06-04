@@ -15,9 +15,9 @@ sudo apt --allow-releaseinfo-change update
 # which breaks the gcr.io/cloudshell-images/custom-image-validation:latest test_ssh (__main__.CloudDevshellTests)
 
 sudo apt install -y \
-    bash-completion file git hub htop lsb-release procps unzip \
+    bash-completion file git hub htop lsb-release procps rpl unzip \
     trash-cli shellcheck wipe \
-    fish autojump fd-find \
+    autojump fd-find \
     cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
