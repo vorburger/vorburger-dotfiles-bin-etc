@@ -11,4 +11,6 @@ set -gx JAVA_HOME /etc/alternatives/java_sdk/
 set -Ux GREP_OPTIONS --color=auto
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
-set -Ux DOCKER_HOST unix://(podman info -f "{{.Host.RemoteSocket.Path}}")
+if test -f /usr/bin/podman
+    set -Ux DOCKER_HOST unix://(podman info -f "{{.Host.RemoteSocket.Path}}")
+end
