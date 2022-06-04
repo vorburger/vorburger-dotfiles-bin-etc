@@ -5,7 +5,7 @@ set -euxo pipefail
 
 DIR="$(realpath $(dirname $0))"
 
-# TODO avoid copy/paste between here and ./symlink-homefree.sh
+# TODO avoid copy/paste between here and ./symlink.sh
 f() {
   if [ ! -e $1 ]
   then
