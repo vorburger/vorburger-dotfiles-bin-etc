@@ -18,7 +18,7 @@
 
 - https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
 
-- scopatz/nanorc.git should be centralized in install.sh instead of spread all over (findx nanorc)
+- scopatz/nanorc.git should be centralized in all-install.sh instead of spread all over (findx nanorc)
 
 - finish full Toolbox support; see README.md
 

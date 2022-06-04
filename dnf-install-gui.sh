@@ -8,8 +8,8 @@ sudo dnf install -y \
 
 sudo dnf remove "libreoffice*"
 
-# only DNF is here, other installations are in install.sh
-./install.sh
+# only DNF is here, other installations are in all-install.sh
+./all-install.sh
 
 # sudo alternatives --config java
 # sudo alternatives --config javac

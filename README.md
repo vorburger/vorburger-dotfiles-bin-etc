@@ -31,7 +31,7 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     ./setup.sh
     ./dnf-install.sh
     ./dnf-install-gui.sh
-    ./install.sh
+    ./all-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
@@ -52,7 +52,7 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
-    ./apt-install.sh
+    ./apt-install.sh 11
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./setup.sh

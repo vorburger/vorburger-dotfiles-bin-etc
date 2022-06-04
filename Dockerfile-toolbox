@@ -21,5 +21,5 @@ COPY dotfiles/gitconfig /etc/gitconfig
 COPY bin/findx /usr/local/bin/
 COPY bin/g*    /usr/local/bin/
 
-COPY install.sh /tmp/
-RUN  /tmp/install.sh
+COPY all-install.sh /tmp/
+RUN  /tmp/all-install.sh

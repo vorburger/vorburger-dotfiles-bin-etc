@@ -34,13 +34,13 @@ sudo apt install -y \
     cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
-# see install-nano.sh (which install.sh only invokes if there is no /usr/bin/nano)
+# see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
 sudo apt autoremove -y
 
 lsb_release -a
 
-# NOT golang, as it's too old on Debian Stable; better always grab a fixed version from golang.org in install.sh
+# NOT golang, as it's too old on Debian Stable; better always grab a fixed version from golang.org in all-install.sh
 
 # TODO https://github.com/wting/autojump#linux /usr/share/doc/autojump/README.Debian
 
@@ -58,5 +58,5 @@ if [ ! -f /usr/bin/bat ]; then
     sudo dpkg -i bat_0.18.3_amd64.deb
 fi
 
-# only DNF is here, other installations are in install.sh
+# only DNF is here, other installations are in all-install.sh
 "$(dirname "$0")"/install.sh
