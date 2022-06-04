@@ -11,6 +11,13 @@ if [ ! -f /usr/local/bin/starship ]; then
   sudo /tmp/starship-install.sh --yes
 fi
 
+# https://github.com/junegunn/fzf#using-git
+if [ ! $(command -v fzf) ]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install --all
+fi
+fzf --version
+
 # Go NOT like this, because this assumes we have an older golang system package, which is confusing:
 #   go get golang.org/dl/go1.15.8
 #   eval $(go1.15.8 env GOROOT)

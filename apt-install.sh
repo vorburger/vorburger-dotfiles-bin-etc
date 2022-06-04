@@ -17,7 +17,7 @@ sudo apt --allow-releaseinfo-change update
 sudo apt install -y \
     bash-completion file git hub htop lsb-release procps unzip \
     trash-cli shellcheck wipe \
-    fish autojump fzf fd-find \
+    fish autojump fd-find \
     cargo curl wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 

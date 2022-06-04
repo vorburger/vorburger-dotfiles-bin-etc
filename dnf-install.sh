@@ -23,7 +23,7 @@ sudo dnf install -y \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
     powerline-fonts trash-cli ShellCheck tmux wipe wl-clipboard \
     fira-code-fonts mozilla-fira-mono-fonts \
-    lsd fish autojump-fish autojump fzf fd-find bat \
+    lsd fish autojump-fish autojump fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
     cargo \
