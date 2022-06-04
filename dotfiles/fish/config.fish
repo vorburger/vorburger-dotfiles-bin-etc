@@ -1,4 +1,8 @@
-fish_add_path $HOME/bin $HOME/dev/vorburger-dotfiles-bin-etc/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
+set DOTFILES (dirname (realpath (status --current-filename)))/../..
+
+fish_add_path $DOTFILES/bin $HOME/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
+
+echo Hi $DOTFILES/bin
 
 # autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package
 test -f /usr/share/autojump/autojump.fish && source /usr/share/autojump/autojump.fish
