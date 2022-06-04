@@ -8,6 +8,8 @@ Enable _Automatically install dotfiles_ from this repository in [your GitHub Set
 
 [Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh).
 
+Testing during development is by simply creating a codespace for this repo, and manually invoking `./bootstrap.sh`.
+
 
 ### Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
 
