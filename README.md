@@ -59,7 +59,7 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
-    ./apt-install.sh 11
+    ./debian-install.sh 11 # or ./ubuntu-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./setup.sh

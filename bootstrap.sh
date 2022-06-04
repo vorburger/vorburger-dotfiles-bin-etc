@@ -11,6 +11,7 @@ set -euxo pipefail
 
 # TODO factor out lsd and bat installation from ./apt-install.sh?
 
+./ubuntu-install.sh
 ./all-install.sh
 
 # TODO alias e open Codespace editor (how?), instead of nano?
