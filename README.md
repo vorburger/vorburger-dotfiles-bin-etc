@@ -11,7 +11,7 @@ Enable _Automatically install dotfiles_ from this repository in [your GitHub Set
     cd /workspaces/.codespaces/.persistedshare/dotfiles/
     ./bootstrap.sh
 
-[Here are useful troubleshooting infos](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-dotfiles-for-codespaces). For testing during development is by simply creating a codespace for this repo, and manually invoking `./bootstrap.sh`. ([My personal notes](https://github.com/vorburger/Notes/blob/master/Reference/github-codespaces.md) have some remaining TODOs.)
+`git push` in `/workspaces/.codespaces/.persistedshare/dotfiles/` won't succeed while working in another repo; one way to still be able to push changes to dotfiles in this case is to [create a short-lived temporary personal access token](https://github.com/settings/tokens) and do `GITHUB_TOKEN=ghp_... git push`. [Here are other useful troubleshooting infos](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-dotfiles-for-codespaces). Testing during development is simplest by creating a codespace for this repo, and manually invoking `./bootstrap.sh`. ([My personal notes](https://github.com/vorburger/Notes/blob/master/Reference/github-codespaces.md) have some remaining TODOs.)
 
 
 ### Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
