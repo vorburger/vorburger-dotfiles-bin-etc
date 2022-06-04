@@ -6,9 +6,12 @@
 
 Enable _Automatically install dotfiles_ from this repository in [your GitHub Settings](https://github.com/settings/codespaces).
 
-[Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh).
+[Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh). If NOK, or to update:
 
-Testing during development is by simply creating a codespace for this repo, and manually invoking `./bootstrap.sh`.
+    cd /workspaces/.codespaces/.persistedshare/dotfiles/
+    ./bootstrap.sh
+
+[Here are useful troubleshooting infos](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-dotfiles-for-codespaces). For testing during development is by simply creating a codespace for this repo, and manually invoking `./bootstrap.sh`. ([My personal notes](https://github.com/vorburger/Notes/blob/master/Reference/github-codespaces.md) have some remaining TODOs.)
 
 
 ### Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
