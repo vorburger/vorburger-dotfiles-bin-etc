@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+# This script installs packages from GitHub releases.
+# This is NOT directly related GitHub Codespaces - that's bootstrap.sh
+
 DIR="/tmp/install-github/$1/"
 ZIP="$DIR/$2.zip"
 SHA="$DIR/$2.zip.sha256"

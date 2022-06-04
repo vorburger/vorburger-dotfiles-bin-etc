@@ -4,8 +4,9 @@ set -euxo pipefail
 # This sets up dotfiles in GitHub Codespaces, see
 # https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles
 
-# ./apt-install.sh is intentionally *NOT* invoked here, because the GitHub Codespace default dev container
-# (https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers)
+# ./apt-install.sh is intentionally *NOT* invoked here, because the GitHub Codespace default dev container (see
+# https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers
+# and https://github.com/microsoft/vscode-dev-containers/tree/main/containers/codespaces-linux)
 # already includes some of what apt-install.sh would re-install.
 
 # TODO factor out lsd and bat installation from ./apt-install.sh?
