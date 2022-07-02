@@ -80,6 +80,14 @@ so that one can login with an agent instead of keeping private keys in the conta
     ./container/build.sh
     ./container/run.sh
     ./container/ssh.sh
+    sudo chown vorburger:vorburger git/
+    cd git
+    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc.git
+    cd vorburger-dotfiles-bin-etc
+    ./container/build.sh
+    exit
+    ./container/run.sh
+    ./container/ssh.sh
 
 _TODO `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`_
 
