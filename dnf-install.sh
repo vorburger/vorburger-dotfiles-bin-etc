@@ -38,6 +38,7 @@ sudo dnf install 'dnf-command(config-manager)'
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install -y gh
 
+# Also in setup.sh
 if [ $(ps --no-headers -o comm 1) = "systemd" ]; then
   sudo systemctl enable --now dnf-automatic-install.timer
   systemctl status dnf-automatic-install.timer

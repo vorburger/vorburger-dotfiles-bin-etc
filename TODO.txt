@@ -1,9 +1,9 @@
 
+- "My Home Lab Data Center can be yours too!"
+
 - nano does not work (is not present) in fedora container
 
 - persistent $HOME! Use symlink-homefree.sh now? Add an additional disk on GCE.
-
-- GitHub Codespaces support
 
 - remove Java 8 from dnf-install, add Java 17 instead
 

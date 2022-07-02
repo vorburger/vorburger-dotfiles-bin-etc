@@ -79,6 +79,10 @@ so that one can login with an agent instead of keeping private keys in the conta
 
     ./container/build.sh
     podman run -d --rm --name dotfiles -p 2222:2222 gcr.io/vorburger/dotfiles-fedora:latest
+    podman exec -it -u vorburger dotfiles fish
+    # OR (better)
+    podman cp ~/.ssh/id_ed25519.pub dotfiles:/tmp/
+    podman exec -it -u vorburger dotfiles bash -c "cat /tmp/id_ed25519.pub >>/home/vorburger/.ssh/authorized_keys"
     ssh -At -p 2222 -o "StrictHostKeyChecking=no" -o UserKnownHostsFile=/dev/null vorburger@localhost -- fish
     podman rm -f dotfiles
 
