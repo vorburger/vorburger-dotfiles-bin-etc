@@ -159,6 +159,8 @@ possibly with `[includeIf "gitdir:~/work/"]` in `~/.gitconfig`, as per https://d
 
 Copy/paste `~/.ssh/id_ed25519.pub` into https://github.com/settings/keys.
 
+Now `sudo dnf install seahorse` (GNOME's Passwords and Keys) and when prompted, tick the checkbox about "unlocking keyring when logging in".
+
     $ ssh git@github.com
     Enter passphrase for key '/home/vorburger/.ssh/id_ed25519':
     $ ssh git@github.com
