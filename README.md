@@ -292,6 +292,11 @@ which should appear after _booting with the kernel parameter `intel_pstate=disab
 
 ## Containers
 
+### _"Podman-in-Podman"_
+
+see [doc](docs/podman.md)
+
+
 ### Debian
 
     clear; time docker build -t vorburger-debian -f Dockerfile-debian . && docker run -it --hostname=debian --rm vorburger-debian
