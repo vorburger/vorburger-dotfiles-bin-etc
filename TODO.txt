@@ -1,9 +1,23 @@
 
-- "My Home Lab Data Center can be yours too!"
+- Dockerfile-fedora: Just use https://github.com/vorburger.keys
+  instead of https://www.vorburger.ch/gpg/ssh-authorized_keys
+  and remove the `podman cp` on https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#local-dev
+
+- document `podman volume create home-git`, mount it as ~/git, manual one time (NOT start-up script)
+  must `chown vorburger:vorburger -R /home/vorburger/git`, and `git clone ... dotfiles` into it.
+
+- install podman-remote into container, and set it up, see
+  https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/docs/podman.md#podman-in-podman
+  and now bootstrap the inception - rebuild, relaunch.
 
 - nano does not work (is not present) in fedora container
 
-- persistent $HOME! Use symlink-homefree.sh now? Add an additional disk on GCE.
+- "My Home Lab Data Center can be yours too!"
+
+- https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
+  with persistence on an additional disk attached to the GCE VM...
+  Either the entire $HOME with symlink-homefree.sh now, if that works.
+  Alternatively, only $HOME/git - similar to https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#local-dev
 
 - remove Java 8 from dnf-install, add Java 17 instead
 
