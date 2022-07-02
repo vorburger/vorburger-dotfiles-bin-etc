@@ -4,9 +4,9 @@ FROM devshell
 COPY dnf-install.sh /tmp/
 RUN /tmp/dnf-install.sh
 
-# NB also https://github.com/vorburger.keys
-ADD https://www.vorburger.ch/gpg/ssh-authorized_keys /tmp/authorized_keys
-RUN /usr/local/sbin/add-uid-key vorburger "$(cat /tmp/authorized_keys)"
+ADD https://www.vorburger.ch/gpg/ssh-authorized_keys /tmp/vorburger.ch_keys
+ADD https://github.com/vorburger.keys /tmp/vorburger_github_keys
+RUN /usr/local/sbin/add-uid-key vorburger "$(cat /tmp/vorburger.ch_keys /tmp/vorburger_github_keys)"
 
 USER vorburger
 WORKDIR /home/vorburger/
