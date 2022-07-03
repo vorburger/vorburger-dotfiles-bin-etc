@@ -3,7 +3,7 @@ set -euxo pipefail
 
 # *install.sh package and other software installation, this is config (non-UI only; UI is in gnome-settings.sh)
 
-sudo dnf install -y dnf-automatic podman-docker
+sudo dnf install -y dnf-automatic podman-docker toolbox
 
 # also in dnf-install.sh
 sudo systemctl enable --now dnf-automatic-install.timer
