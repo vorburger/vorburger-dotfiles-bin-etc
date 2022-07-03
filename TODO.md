@@ -1,8 +1,4 @@
 
-- install podman-remote into container, and set it up, see
-  https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/docs/podman.md#podman-in-podman
-  and now bootstrap the inception - rebuild, relaunch.
-
 - nano does not work (is not present) in fedora container
 
 - use podman generate kube / systemd

@@ -11,3 +11,8 @@ complete --command g --wraps git
 complete --command kubecolor --wraps kubectl
 complete --command k --wraps kubecolor
 complete --command m --wraps mvn
+
+# see docs/podman.md
+test -f /usr/bin/podman-remote && \
+  complete --command podman --wraps podman-remote && \
+  complete --command docker --wraps podman-remote

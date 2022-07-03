@@ -80,14 +80,23 @@ so that one can login with an agent instead of keeping private keys in the conta
     ./container/build.sh
     ./container/run.sh
     ./container/ssh.sh
+
+We can now work on this project in that container, like so:
+
     sudo chown vorburger:vorburger git/
     cd git
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc.git
     cd vorburger-dotfiles-bin-etc
+
+    sudo chown vorburger:vorburger /run/user/1000/podman/podman.sock
     ./container/build.sh
     exit
     ./container/run.sh
     ./container/ssh.sh
+
+NB that this will modify the ownership of `/run/user/1000/podman/podman.sock` on the host filesystem,
+not only in the container. As long as we don't need to use `podman-remote` on the host, that shouldn't cause problems.
+
 
 _TODO `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`_
 
