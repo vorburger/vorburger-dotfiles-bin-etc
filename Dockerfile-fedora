@@ -10,13 +10,14 @@ RUN /usr/local/sbin/add-uid-key vorburger "$(cat /tmp/vorburger.ch_keys /tmp/vor
 
 USER vorburger
 WORKDIR /home/vorburger/
-RUN mkdir -p dev/vorburger-dotfiles-bin-etc
+RUN mkdir -p dev/vorburger-dotfiles-bin-etc git/github.com/scopatz/
 
 # This is slower than the rest, so do this first so that's cached and skipped when make other changes
-RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git && cd ..
-COPY --chown=vorburger:vorburger install-nano.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
-RUN /home/vorburger/dev/vorburger-dotfiles-bin-etc/install-nano.sh
+RUN cd /home/vorburger/git/github.com/scopatz/ && git clone https://github.com/scopatz/nanorc.git && cd
+COPY --chown=vorburger:vorburger install-nano.sh /tmp/
+RUN /tmp/install-nano.sh && rm /tmp/install-nano.sh
 
+# TODO see TODO.MD: "clone" to ~/.git - how to COPY with .git ??)
 # Do NOT do this, because then any time you touch any file during dev, it will redo above:
 #   COPY . /home/vorburger/dev/vorburger-dotfiles-bin-etc/
 COPY --chown=vorburger:vorburger *.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/

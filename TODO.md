@@ -1,5 +1,5 @@
 
-- clone nanorc and dotfiles to ~/git/ instead of ~/dev/
+- clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
 
 - use podman generate kube / systemd
 

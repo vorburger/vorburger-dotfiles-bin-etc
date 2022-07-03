@@ -5,6 +5,9 @@ NANO="$HOME/git/git.savannah.gnu.org/nano"
 if ! [[ -e "$NANO" ]]; then
   mkdir -p "$NANO"
   git clone git://git.savannah.gnu.org/nano.git "$NANO"
+else
+  cd $NANO
+  git pull
 fi
 
 cd "$NANO"
@@ -13,4 +16,5 @@ cd "$NANO"
 make
 
 mkdir -p ~/bin/
-ln -s "$NANO"/src/nano ~/bin/
+# cp instead of ln -s so that we have the latest in ~/bin in the container image even if ~/git is a volume with an older one
+cp "$NANO"/src/nano ~/bin/
