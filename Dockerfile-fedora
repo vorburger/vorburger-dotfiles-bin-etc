@@ -12,14 +12,18 @@ USER vorburger
 WORKDIR /home/vorburger/
 RUN mkdir -p dev/vorburger-dotfiles-bin-etc
 
+# This is slower than the rest, so do this first so that's cached and skipped when make other changes
+RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git && cd ..
+COPY --chown=vorburger:vorburger install-nano.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+RUN /home/vorburger/dev/vorburger-dotfiles-bin-etc/install-nano.sh
+
 # Do NOT do this, because then any time you touch any file during dev, it will redo above:
 #   COPY . /home/vorburger/dev/vorburger-dotfiles-bin-etc/
-COPY --chown=vorburger:vorburger symlink.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+COPY --chown=vorburger:vorburger *.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
 COPY --chown=vorburger:vorburger dotfiles/  /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
 COPY --chown=vorburger:vorburger bin/       /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/
 
-# as per ./README.md
-RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git && cd .. \
+RUN /home/vorburger/dev/vorburger-dotfiles-bin-etc/all-install.sh \
  && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
 

@@ -1,5 +1,5 @@
 
-- nano does not work (is not present) in fedora container
+- clone dotfiles to ~/git/... and remove explicit volume creation - does implicit creation copy it out?
 
 - use podman generate kube / systemd
 

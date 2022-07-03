@@ -16,7 +16,7 @@ if [ ! $(command -v fzf) ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install --all
 fi
-fzf --version
+~/.fzf/bin/fzf --version
 
 # Go NOT like this, because this assumes we have an older golang system package, which is confusing:
 #   go get golang.org/dl/go1.15.8
@@ -31,7 +31,9 @@ go version
 
 # https://github.com/apache/maven-mvnd/
 mkdir -p $HOME/.m2/
-[ -s $HOME/bin/mvnd ] || "$(dirname "$0")"/install-github.sh apache/maven-mvnd mvnd-0.7.1-linux-amd64 mvnd
+[ -s $HOME/bin/mvnd ] || "$(dirname "$0")"/install-github.sh apache/maven-mvnd 0.8.0 maven-mvnd-0.8.0-linux-amd64 mvnd && \
+  mv /tmp/install-github/apache/maven-mvnd/mvnd-0.8.0-linux-amd64 /home/vorburger/bin/
+# ln -s "$HOME/bin/$3/bin/$4" "$HOME/bin/$4"
 [ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
 # NB alias b="bazelisk " in dotfiles/alias

@@ -4,7 +4,7 @@ FROM gcr.io/cloudshell-images/cloudshell:latest
 
 COPY . /var/local/vorburger-dotfiles/
 
-# RUN sudo apt install -y bash-completion file git procps unzip fish autojump fzf fd-find
+# RUN sudo apt install -y bash-completion file git procps unzip fish autojump fd-find
 RUN /var/local/vorburger-dotfiles/apt-install.sh 10
 
 RUN /var/local/vorburger-dotfiles/symlink-homefree.sh
