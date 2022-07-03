@@ -1,5 +1,5 @@
 
-- clone dotfiles to ~/git/... and remove explicit volume creation - does implicit creation copy it out?
+- clone nanorc and dotfiles to ~/git/ instead of ~/dev/
 
 - use podman generate kube / systemd
 
