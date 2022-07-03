@@ -34,9 +34,10 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 
 ### Fedora Workstation
 
-    mkdir ~/dev/
-    cd ~/dev/
+    mkdir -p ~/git/github.com/vorburger/ ~/git/github.com/scopatz/
+    cd ~/git/github.com/scopatz/
     git clone https://github.com/scopatz/nanorc.git
+    cd ~/git/github.com/vorburger/
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
