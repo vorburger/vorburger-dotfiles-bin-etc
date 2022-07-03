@@ -23,6 +23,9 @@ RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git &
  && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
 
+# see docs/podman.md
+RUN sudo dnf install -y podman-remote
+
 # We have to reset the user to root so that sshd (FROM parent images) will start (as intended)
 USER root
 WORKDIR /
