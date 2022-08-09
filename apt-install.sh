@@ -18,7 +18,7 @@ sudo apt install -y \
     bash-completion file git hub htop lsb-release procps rpl unzip \
     trash-cli shellcheck wipe \
     autojump fd-find \
-    cargo curl wget \
+    cargo curl graphviz wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
 
 # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)

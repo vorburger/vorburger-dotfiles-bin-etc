@@ -26,7 +26,7 @@ sudo dnf install -y \
     lsd fish autojump-fish autojump fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
-    cargo \
+    cargo graphviz \
     google-cloud-sdk google-cloud-sdk-skaffold
 
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
