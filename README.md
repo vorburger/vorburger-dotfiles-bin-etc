@@ -10,10 +10,9 @@ Press _Ctrl-Shift-P_ to _Turn on [Settings Sync](https://docs.github.com/en/code
 
 To fix _Error loading webview: Error: Could not register service workers: NotSupportedError: Failed to register a ServiceWorker for scope ('...'): The user denied permission to use Service Worker_, [allow third-party cookies](https://stackoverflow.com/q/72498891/421602); e.g. on Chrome, add `[*.]github.dev` _Including third-party cookies_ on chrome://settings/cookies.
 
-[Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh). If NOK, or to update:
+[Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh). Check if it is still running with `tail -f /workspaces/.codespaces/.persistedshare/creation.log`. If NOK, or to update:
 
     cd /workspaces/.codespaces/.persistedshare/dotfiles/
-    tail -f ../creation.log   # still running?!
     ./bootstrap.sh
 
 `git push` in `/workspaces/.codespaces/.persistedshare/dotfiles/` won't succeed while working in another repo; one way to still be able to push changes to dotfiles in this case is to [create a short-lived temporary personal access token](https://github.com/settings/tokens) and do `GITHUB_TOKEN=ghp_... git push`. [Here are other useful troubleshooting infos](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-dotfiles-for-codespaces). Testing during development is simplest by creating a codespace for this repo, and manually invoking `./bootstrap.sh`. ([My personal notes](https://github.com/vorburger/Notes/blob/master/Reference/github-codespaces.md) have some remaining TODOs.)
