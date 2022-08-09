@@ -9,6 +9,7 @@ Enable _Automatically install dotfiles_ from this repository in [your GitHub Set
 [Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh). If NOK, or to update:
 
     cd /workspaces/.codespaces/.persistedshare/dotfiles/
+    tail -f ../creation.log   # still running?!
     ./bootstrap.sh
 
 `git push` in `/workspaces/.codespaces/.persistedshare/dotfiles/` won't succeed while working in another repo; one way to still be able to push changes to dotfiles in this case is to [create a short-lived temporary personal access token](https://github.com/settings/tokens) and do `GITHUB_TOKEN=ghp_... git push`. [Here are other useful troubleshooting infos](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-dotfiles-for-codespaces). Testing during development is simplest by creating a codespace for this repo, and manually invoking `./bootstrap.sh`. ([My personal notes](https://github.com/vorburger/Notes/blob/master/Reference/github-codespaces.md) have some remaining TODOs.)
