@@ -270,6 +270,13 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
 #### On Fedora Silverblue
 
+1. Install [Brave Flatpack from FlatHub](https://flathub.org/apps/details/com.brave.Browser) (but [YK SK won't work](https://github.com/flathub/com.brave.Browser/issues/126)):
+
+       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+       flatpak install flathub com.brave.Browser
+
+1. Install [Minecraft Flatpack from Flathub](https://flathub.org/apps/details/com.mojang.Minecraft)
+
 1. In _Gnome Terminal's Preferences_, add a new Profile as below,
    BUT name it `toolbox` and as Command, use:
    `sh -c 'echo "Type mux..." && toolbox enter vorburger-toolbox'`
