@@ -23,8 +23,21 @@ The `CODESPACES` [environment variable](https://docs.github.com/en/codespaces/de
 
     mkdir ~/git/github.com/vorburger && cd ~/git/github.com/vorburger/
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc && cd vorburger-dotfiles-bin-etc
-    ./setup.sh
+
     ./gnome-settings.sh
+    ./ostree-install-gui.sh
+    systemctl reboot
+    rpm-ostree status
+
+[My notes about Silverblue](https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/silverblue.md) have debugging tips for _OSTree._
+
+Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below).
+
+
+#### Toolbox Container
+
+The [Toolbox](https://github.com/containers/toolbox)-based container doesn't actually quite work very nicely just yet... :-(
+
     ./toolbox.sh
     mux
 
@@ -87,6 +100,10 @@ so that one can login with an agent instead of keeping private keys in the conta
     ./container/run.sh
     ./container/ssh.sh
 
+Or without SSH, alternatively simply:
+
+    podman exec -it dotfiles bash -c "su - vorburger && fish"
+
 We can now work on this project in that container, like so:
 
     sudo chown vorburger:vorburger git/
@@ -103,8 +120,12 @@ We can now work on this project in that container, like so:
 NB that this will modify the ownership of `/run/user/1000/podman/podman.sock` on the host filesystem,
 not only in the container. As long as we don't need to use `podman-remote` on the host, that shouldn't cause problems.
 
+#### ToDo
 
-_TODO `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`_
+1. mount e.g. ~/work as volume from host
+1. `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
+1. make container not use ~/git but store its files somewhere on / instead of anywhere in $HOME
+
 
 #### Google Cloud COS VM with this container (SSH from outside into container)
 
@@ -335,7 +356,7 @@ The `Dockerfile-debian-minimal` is used instead of `Dockerfile-debian` to rebuil
 
 ### Toolbox
 
-See above for usage with https://github.com/containers/toolbox.
+See the Silverblue section above for usage with Toolbox.
 
 
 ### Google Cloud Shell
