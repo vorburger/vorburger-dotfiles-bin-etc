@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-if ! [[ -z "${CODESPACES}" ]]; then
+if ! [[ -z "${CODESPACES:-}" ]]; then
   echo "Skipping nano installation in GitHub Codespace set-up"
   exit
 fi
