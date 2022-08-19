@@ -7,5 +7,3 @@ set -euxo pipefail
 ./ubuntu-install.sh
 ./all-install.sh
 ./symlink.sh
-
-alias e="code "

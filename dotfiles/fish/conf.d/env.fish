@@ -2,6 +2,7 @@
 # documents the different between -Ux (universal + ENV) and -gx (global + ENV);
 # use U for stuff you will "never" change and g for things you may temporarily change.
 
+# see also ../../alias
 if test ! -n "$CODESPACES"
     set -Ux EDITOR nano
 else
