@@ -1,6 +1,6 @@
 set DOTFILES (dirname (realpath (status --current-filename)))/../..
 
-fish_add_path $DOTFILES/bin $HOME/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
+fish_add_path $DOTFILES/bin $HOME/bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.krew/bin
 
 # autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package
 test -f /usr/share/autojump/autojump.fish && source /usr/share/autojump/autojump.fish
