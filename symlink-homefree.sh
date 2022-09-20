@@ -33,6 +33,7 @@ f /etc/inputrc dotfiles/.inputrc
 f /usr/local/etc/nanorc  dotfiles/.nanorc
 f /etc/gitconfig dotfiles/gitconfig
 d /etc/fish/ dotfiles/fish/
+d /etc/fish/completions/ dotfiles/fish/completions/
 d /etc/fish/conf.d/ dotfiles/fish/conf.d/
 d /etc/fish/functions/ dotfiles/fish/functions/
 f /etc/starship.toml dotfiles/starship.toml

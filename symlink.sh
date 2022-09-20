@@ -36,6 +36,7 @@ d .local/share/applications/ dotfiles/desktop/
 d .config/kitty/ dotfiles/kitty/
 f .hyper.js dotfiles/hyper.js
 d .config/fish/ dotfiles/fish/
+d .config/fish/completions/ dotfiles/fish/completions/
 d .config/fish/conf.d/ dotfiles/fish/conf.d/
 d .config/fish/functions/ dotfiles/fish/functions/
 f .config/starship.toml dotfiles/starship.toml
