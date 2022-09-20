@@ -33,8 +33,8 @@ export EDITOR=nano
 # Do *NOT* set 'SSH_AUTH_SOCK' here; see README for details.
 
 # added by travis gem
-# [ ! -s /home/vorburger/.travis/travis.sh ] || source /home/vorburger/.travis/travis.sh
-[ -s /home/vorburger/.travis/travis.sh ] && source /home/vorburger/.travis/travis.sh
+# [ ! -s $HOME/.travis/travis.sh ] || source $HOME/.travis/travis.sh
+[ -s $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 [ -s /usr/bin/kitty ] && source <(kitty + complete setup bash)
 
@@ -57,7 +57,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -s "/home/vorburger/.web3j/source.sh" ] && source "/home/vorburger/.web3j/source.sh"
+[ -s "$HOME/.web3j/source.sh" ] && source "$HOME/.web3j/source.sh"
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
 export DOCKER_HOST="unix://$(podman info -f "{{.Host.RemoteSocket.Path}}")"
