@@ -36,14 +36,17 @@ mkdir -p $HOME/.m2/ $HOME/bin/
   ln -s $HOME/bin/mvnd-0.8.0-linux-amd64/bin/mvnd $HOME/bin
 [ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
+# GO_BIN_PATH may not match GOPATH (it could be unset)
+GO_BIN_PATH=$(go env GOPATH)/bin
+
 # NB alias b="bazelisk " in dotfiles/alias
-[ -s $HOME/go/bin/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
+[ -s $GO_BIN_PATH/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
 
 # https://github.com/mikefarah/yq#go-get
-[ -s $HOME/go/bin/yq ] || go install github.com/mikefarah/yq/v4@latest
+[ -s $GO_BIN_PATH/yq ] || go install github.com/mikefarah/yq/v4@latest
 
 # https://github.com/dty1er/kubecolor
-[ -s $HOME/go/bin/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
+[ -s $GO_BIN_PATH/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 
 # https://github.com/jez/as-tree
 # cargo install core dumps (at least in Debian, at least sometimes)

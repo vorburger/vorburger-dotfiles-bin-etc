@@ -34,4 +34,4 @@ export PATH="${HOME}/.cargo/bin:$PATH"
 
 # Go built binaries
 # This isn't the `go` binary itself; that's added to the PATH in go-path.sh
-export PATH="${HOME}/go/bin:$PATH"
+export PATH="$(go env GOPATH)/bin:$PATH"
