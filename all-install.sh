@@ -42,6 +42,9 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # NB alias b="bazelisk " in dotfiles/alias
 [ -s $GO_BIN_PATH/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
 
+# https://github.com/bazelbuild/buildtools/tree/master/buildifier
+[ -s $GO_BIN_PATH/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
+
 # https://github.com/mikefarah/yq#go-get
 [ -s $GO_BIN_PATH/yq ] || go install github.com/mikefarah/yq/v4@latest
 
