@@ -1,3 +1,4 @@
+- give talk about this? 1. Blog,  2. Friends,  3. at Work?
 
 - toolbox without mounting $HOME? Create a bug, for discussion.
 
@@ -14,15 +15,16 @@
   see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L5
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
-- container: `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
+- container: fish history should be preserved, mount ~/.local/share/fish/fish_history; see
+  https://fishshell.com/docs/current/cmds/history.html#customizing-the-name-of-the-history-file
 
-- container: missing man pages
+- container: ~/.ssh/known_hosts should be pre-initialized with github.com's
+
+- container: `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
 
 - container: fzf UI is ugly, wrong TERM, or LANG, or something?
 
 - container: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
-
-- give talk about this? 1. Blog,  2. Friends,  3. at Work?
 
 - replace nano with micro
 
@@ -30,6 +32,7 @@
 - container: clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
 
 - sshd doesn't seem to react to kill, so podman stop waits until timeout?
+  Is there an orphan sshd at every restart?!
 
 - "My Home Lab Data Center can be yours too!"
 
