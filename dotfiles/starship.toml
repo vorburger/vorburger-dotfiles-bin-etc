@@ -53,3 +53,6 @@ threshold = 30
 
 [docker_context]
 disabled = true
+
+[container]
+disabled = true
