@@ -1,4 +1,6 @@
-# Make this port activated, start only on first connection?
+# TODO Make this port activated, start only on first connection?
+# If startup fails because /run/user/1000/podman does not exist, then run `systemctl enable --now --user podman.socket` (as setup.sh does)
+# NB --security-opt label=disable is for podman-remote; TODO is there a better way?
 
 [Unit]
 Description=Podman container for dotfiles-fedora
@@ -25,6 +27,7 @@ ExecStart=/usr/bin/podman run \
 	-v /run/user/1000/podman:/run/user/1000/podman \
 	--security-opt label=disable \
 	--log-driver=journald \
+	--pull=always \
 	gcr.io/vorburger/dotfiles-fedora:latest
 ExecStop=/usr/bin/podman stop --ignore --cidfile=%t/%n.ctr-id
 ExecStopPost=/usr/bin/podman rm -f --ignore --cidfile=%t/%n.ctr-id

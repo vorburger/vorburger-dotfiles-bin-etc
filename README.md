@@ -33,6 +33,8 @@ The `CODESPACES` [environment variable](https://docs.github.com/en/codespaces/de
 
 [My notes about Silverblue](https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/silverblue.md) have debugging tips for _OSTree._
 
+If the Silverblue workstation is intended to (also) be used as a server, remember _Settings > Power > Power Mode > Power Saving Options > Automatic Suspend._
+
 Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below).
 
 
