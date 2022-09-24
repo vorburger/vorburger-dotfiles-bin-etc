@@ -99,17 +99,41 @@ so that one can login with an agent instead of keeping private keys in the conta
 
 #### Production
 
-Put the [`systemd` Unit File](systemd/) into `~/.config/systemd/user/` (by simple copy/paste, or e.g.
-via `ln -rs systemd/dotfiles-fedora.service ~/.config/systemd/user/` from here) and then:
+It's better to run the container with _rootless_ Podman under a UID that doesn't have sudo root powers, so:
+
+    sudo useradd dotfiles
+    sudo -iu dotfiles
+    loginctl enable-linger dotfiles
+    # The following fixes "Failed to connect to bus: No medium found"
+    export XDG_RUNTIME_DIR=/run/user/$(id -u)
+    systemctl enable --now --user podman.socket
+    systemctl --user status
+
+Now put the [`systemd` Unit File](systemd/) into `~/.config/systemd/user/` and then run:
+(Use simple copy/paste, or e.g. via `ln -rs systemd/dotfiles-fedora.service ~/.config/systemd/user/`.
+ This pulls the container from `gcr.io/vorburger/dotfiles-fedora`!)
 
     systemctl --user enable dotfiles-fedora
     systemctl --user start  dotfiles-fedora
     systemctl --user status dotfiles-fedora
     journalctl --user -u dotfiles-fedora
+    systemctl --user status
 
-Further information about all this e.g.
-[on my CoreOS Notes](https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/coreos/README.md#containers)
-(that section really isn't CoreOS specific).
+You can now SSH login on port 2222 similarly to how [`ssh.sh`](container/ssh.sh) does.
+
+Restart the dotfiles container for user dotfiles from another user like this:
+
+    sudo -u dotfiles XDG_RUNTIME_DIR=/run/user/$(id -u dotfiles) systemctl --user restart dotfiles-fedora
+
+Remember that if making changes to systemd `*.service` files, while working as user dotfiles, you have to:
+
+    systemctl --user daemon-reload
+    systemctl --user restart dotfiles-fedora
+
+Further information about all this is available e.g. on my CoreOS Notes about
+[Containers with systemd](https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/coreos/README.md#containers) and
+[Additional Users](https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/coreos/README.md#personal-user)
+(both sections aren't really CoreOS specific).
 
 #### Local Dev
 
