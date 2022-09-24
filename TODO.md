@@ -1,9 +1,9 @@
 
-- clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
-
-- use podman generate kube / systemd
-
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
+
+- give talk about this? 1. Blog,  2. Friends,  3. at Work?
+
+- clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
 
 - "My Home Lab Data Center can be yours too!"
 

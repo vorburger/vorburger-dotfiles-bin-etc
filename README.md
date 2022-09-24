@@ -95,6 +95,20 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
 This container includes SSH, based on [container/devshell](container/devshell),
 so that one can login with an agent instead of keeping private keys in the container.
 
+#### Production
+
+Put the [`systemd` Unit File](systemd/) into `~/.config/systemd/user/` (by simple copy/paste, or e.g.
+via `ln -rs systemd/dotfiles-fedora.service ~/.config/systemd/user/` from here) and then:
+
+    systemctl --user enable dotfiles-fedora
+    systemctl --user start  dotfiles-fedora
+    systemctl --user status dotfiles-fedora
+    journalctl --user -u dotfiles-fedora
+
+Further information about all this e.g.
+[on my CoreOS Notes](https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/coreos/README.md#containers)
+(that section really isn't CoreOS specific).
+
 #### Local Dev
 
     ./container/build.sh
