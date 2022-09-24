@@ -24,7 +24,7 @@ ExecStart=/usr/bin/podman run \
 	--name dotfiles \
 	-p 2222:2222 \
 	-v home-git:/home/vorburger/git \
-	-v /run/user/1000/podman:/run/user/1000/podman \
+	-v /run/user/%U/podman:/run/user/1000/podman \
 	--security-opt label=disable \
 	--log-driver=journald \
 	--pull=always \
