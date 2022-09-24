@@ -1,11 +1,24 @@
 
 - toolbox without mounting $HOME? Create a bug, for discussion.
-- 
+
+- container: exercise https://github.com/vorburger/vorburger-dotfiles-bin-etc#local-dev @think
+
+- container: `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
+
+- container: missing man pages
+
+- container: fzf UI is ugly, wrong TERM, or LANG, or something?
+
+- container: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
+
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
 - give talk about this? 1. Blog,  2. Friends,  3. at Work?
 
-- clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
+- replace nano with micro
+
+- container clean-up: make container not use ~/git but store its files somewhere on / instead of anywhere in $HOME
+- container: clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
 
 - sshd doesn't seem to react to kill, so podman stop waits until timeout?
 
@@ -37,7 +50,9 @@
 
 - clean up any remaining TODO (`findx TODO`)
 
-- ~/Notes/ToDo/shell-todo.txt
+- https://github.com/vorburger/Notes/blob/master/ToDo/shell-todo.txt
+
+- https://github.com/vorburger/Notes/blob/master/ToDo/cloudshell-todo.md
 
 - devshell: sl, fortune and cowsay + lolcat
   maybe every ... 13th ;) login?
@@ -45,3 +60,5 @@
   https://github.com/busyloop/lolcat
   https://opensource.com/article/18/12/linux-toy-lolcat
   https://www.tecmint.com/lolcat-command-to-output-rainbow-of-colors-in-linux-terminal/
+
+- container: mount e.g. ~/work as volume from host? Nah, it's a PITA; forged about it.

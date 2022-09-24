@@ -161,12 +161,6 @@ We can now work on this project in that container, like so:
 NB that this will modify the ownership of `/run/user/1000/podman/podman.sock` on the host filesystem,
 not only in the container. As long as we don't need to use `podman-remote` on the host, that shouldn't cause problems.
 
-#### ToDo
-
-1. mount e.g. ~/work as volume from host
-1. `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
-1. make container not use ~/git but store its files somewhere on / instead of anywhere in $HOME
-
 
 #### Google Cloud COS VM with this container (SSH from outside into container)
 
