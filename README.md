@@ -64,7 +64,6 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     ./setup.sh
     ./dnf-install.sh
     ./dnf-install-gui.sh
-    ./all-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
 
