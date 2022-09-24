@@ -3,6 +3,17 @@
 
 - container: exercise https://github.com/vorburger/vorburger-dotfiles-bin-etc#local-dev @think
 
+- container #security: ssh -v client Authentications that can continue include password?!
+  Does https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/sshd-start
+  not read /etc/ssh/sshd_config set in https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile?
+
+- container #security: wheel sudoers shouldn't be in sshd but only in devshell;
+  see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L13
+
+- container #security: openssh/sshd-keygen should happen at first start-up, not during build;
+  see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L5
+- volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
+
 - container: `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
 
 - container: missing man pages
@@ -10,8 +21,6 @@
 - container: fzf UI is ugly, wrong TERM, or LANG, or something?
 
 - container: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
-
-- volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
 - give talk about this? 1. Blog,  2. Friends,  3. at Work?
 
