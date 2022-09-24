@@ -9,7 +9,7 @@ RequiresMountsFor=%t/containers
 
 [Service]
 Environment=PODMAN_SYSTEMD_UNIT=%n
-Restart=on-failure
+Restart=always
 TimeoutStopSec=3
 ExecStartPre=/bin/rm -f %t/%n.ctr-id
 ExecStart=/usr/bin/podman run \
@@ -23,7 +23,9 @@ ExecStart=/usr/bin/podman run \
 	-p 2222:2222 \
 	-v home-git:/home/vorburger/git \
 	-v /run/user/1000/podman:/run/user/1000/podman \
-	--security-opt label=disable gcr.io/vorburger/dotfiles-fedora:latest
+	--security-opt label=disable \
+	--log-driver=journald \
+	gcr.io/vorburger/dotfiles-fedora:latest
 ExecStop=/usr/bin/podman stop --ignore --cidfile=%t/%n.ctr-id
 ExecStopPost=/usr/bin/podman rm -f --ignore --cidfile=%t/%n.ctr-id
 Type=notify

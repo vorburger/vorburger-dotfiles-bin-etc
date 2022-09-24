@@ -5,6 +5,8 @@
 
 - clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
 
+- sshd doesn't seem to react to kill, so podman stop waits until timeout?
+
 - "My Home Lab Data Center can be yours too!"
 
 - https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
