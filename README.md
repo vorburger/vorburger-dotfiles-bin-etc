@@ -2,6 +2,12 @@
 
 ## Installation
 
+## ChromeOS
+
+Set up these dotfiles (in a container) on a server, like below. Then just SSH into it,
+using a [YubiKey with Secure Shell ChromeOS](https://chromium.googlesource.com/apps/libapps/+/HEAD/nassh/docs/hardware-keys.md).
+Using locally in ChromeOS's Debian Linux on ARM arch hasn't been tested.
+
 ### GitHub Codespaces
 
 Enable _Automatically install dotfiles_ from this repository in [your GitHub Settings](https://github.com/settings/codespaces).
