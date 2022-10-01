@@ -17,6 +17,7 @@ sudo systemctl enable --now sshd
 sudo sh -c 'echo "PasswordAuthentication no" >>/etc/ssh/sshd_config.d/01-local.conf'
 sudo sh -c 'echo "KbdInteractiveAuthentication no" >>/etc/ssh/sshd_config.d/01-local.conf'
 sudo sh -c 'echo "GSSAPIAuthentication no" >>/etc/ssh/sshd_config.d/01-local.conf'
+sudo sh -c 'echo "X11Forwarding no" >>/etc/ssh/sshd_config.d/01-local.conf'
 sudo systemctl restart sshd
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
