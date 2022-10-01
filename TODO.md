@@ -1,4 +1,6 @@
 
+- toolbox without mounting $HOME? Create a bug, for discussion.
+- 
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
 - give talk about this? 1. Blog,  2. Friends,  3. at Work?
