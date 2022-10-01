@@ -41,7 +41,7 @@ The `CODESPACES` [environment variable](https://docs.github.com/en/codespaces/de
 
 If the Silverblue workstation is intended to (also) be used as a server, remember _Settings > Power > Power Mode > Power Saving Options > Automatic Suspend._
 
-Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below).
+Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below). Copy [`kitty.conf`](dotfiles/kitty.conf) to `~/.config/kitty/kitty.conf`, and change `shell /home/vorburger/git/github.com/vorburger/vorburger-dotfiles-bin-etc/container/ssh.sh`.
 
 
 #### Toolbox Container
