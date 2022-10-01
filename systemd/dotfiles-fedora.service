@@ -27,7 +27,7 @@ ExecStart=/usr/bin/podman run \
 	-v /run/user/%U/podman:/run/user/1000/podman \
 	--security-opt label=disable \
 	--log-driver=journald \
-	--pull=always \
+	--pull=newer \
 	gcr.io/vorburger/dotfiles-fedora:latest
 ExecStop=/usr/bin/podman stop --ignore --cidfile=%t/%n.ctr-id
 ExecStopPost=/usr/bin/podman rm -f --ignore --cidfile=%t/%n.ctr-id

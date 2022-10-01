@@ -26,6 +26,8 @@
 
 - container: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
 
+- container: https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html ?
+
 - replace nano with micro
 
 - container clean-up: make container not use ~/git but store its files somewhere on / instead of anywhere in $HOME
