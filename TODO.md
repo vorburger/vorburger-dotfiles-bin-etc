@@ -4,10 +4,6 @@
 
 - container: exercise https://github.com/vorburger/vorburger-dotfiles-bin-etc#local-dev @think
 
-- container #security: ssh -v client Authentications that can continue include password?!
-  Does https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/sshd-start
-  not read /etc/ssh/sshd_config set in https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile?
-
 - container #security: wheel sudoers shouldn't be in sshd but only in devshell;
   see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L13
 

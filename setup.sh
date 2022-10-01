@@ -12,12 +12,9 @@ if [ -e /usr/bin/dnf ]; then
     sudo loginctl enable-linger $USER
 fi
 
-# also similar in container/sshd/Dockerfile
+# also used in container/sshd/Dockerfile
+sudo cp container/sshd/01-local.conf /etc/ssh/sshd_config.d/
 sudo systemctl enable --now sshd
-sudo sh -c 'echo "PasswordAuthentication no" >>/etc/ssh/sshd_config.d/01-local.conf'
-sudo sh -c 'echo "KbdInteractiveAuthentication no" >>/etc/ssh/sshd_config.d/01-local.conf'
-sudo sh -c 'echo "GSSAPIAuthentication no" >>/etc/ssh/sshd_config.d/01-local.conf'
-sudo sh -c 'echo "X11Forwarding no" >>/etc/ssh/sshd_config.d/01-local.conf'
 sudo systemctl restart sshd
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
