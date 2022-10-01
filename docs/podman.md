@@ -77,4 +77,4 @@ In the container running on the "client", do e.g. the following if you like ;-) 
     podman-remote info
     podman-remote run -it --rm fedora
 
-_TODO See the TBD container image based on this._
+See the `devshell` container image, based on this.

@@ -14,6 +14,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
 EOM
 
 sudo dnf install -y \
+    glibc-langpack-en glibc-all-langpacks \
     rpl psmisc procps-ng \
     asciinema \
     bash-completion \
