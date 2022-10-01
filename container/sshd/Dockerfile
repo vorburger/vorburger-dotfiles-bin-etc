@@ -1,5 +1,7 @@
 FROM fedora-updated
 
+LABEL maintainer="Michael Vorburger <mike@vorburger.ch>"
+
 # sshd-keygen as in /usr/lib/systemd/system/sshd-keygen@.service
 # NB /usr/libexec/openssh/sshd-keygen is a script != /usr/bin/ssh-keygen binary
 RUN yum install -y openssh-server \
