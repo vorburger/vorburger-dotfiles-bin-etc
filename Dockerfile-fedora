@@ -28,6 +28,8 @@ RUN /home/vorburger/dev/vorburger-dotfiles-bin-etc/all-install.sh \
  && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
 
+COPY .git-described /etc/git-release
+
 # We have to reset the user to root so that sshd (FROM parent images) will start (as intended)
 USER root
 WORKDIR /

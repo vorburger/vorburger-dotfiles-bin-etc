@@ -1,2 +1,3 @@
 *.retry
 *.deb
+/.git-described

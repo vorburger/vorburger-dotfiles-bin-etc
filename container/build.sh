@@ -3,6 +3,8 @@ set -euox pipefail
 
 cd "$(dirname "$0")"
 
+git describe --tags --always --first-parent --match "NOT A TAG" --dirty=".DIRTY" --broken=".BROKEN" >../.git-described
+
 build() {
   # docker build --no-cache=true --pull -t $2 $1/
   docker build -t $3 -f $1/$2 $1/
