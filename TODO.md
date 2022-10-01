@@ -4,9 +4,6 @@
 
 - container: exercise https://github.com/vorburger/vorburger-dotfiles-bin-etc#local-dev @think
 
-- container #security: wheel sudoers shouldn't be in sshd but only in devshell;
-  see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L13
-
 - container #security: openssh/sshd-keygen should happen at first start-up, not during build;
   see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L5
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no

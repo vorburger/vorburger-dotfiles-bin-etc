@@ -7,9 +7,7 @@ LABEL maintainer="Michael Vorburger <mike@vorburger.ch>"
 RUN yum install -y openssh-server \
  && /usr/libexec/openssh/sshd-keygen rsa \
  && /usr/libexec/openssh/sshd-keygen ecdsa \
- && /usr/libexec/openssh/sshd-keygen ed25519 \
- && sed -i 's/# %wheel/%wheel/' /etc/sudoers
-# This ^^^ permits sudo WITHOUT (!) a password for anyone in group wheel (which add-uid-key does)
+ && /usr/libexec/openssh/sshd-keygen ed25519
 
 # 01-local.conf is also used in ../../setup.sh
 ADD 01-local.conf /etc/ssh/sshd_config.d/
