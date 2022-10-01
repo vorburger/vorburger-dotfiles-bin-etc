@@ -44,7 +44,15 @@ If the Silverblue workstation is intended to (also) be used as a server, remembe
 Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below). Copy [`kitty.conf`](dotfiles/kitty.conf) to `~/.config/kitty/kitty.conf`, and change `shell /home/vorburger/git/github.com/vorburger/vorburger-dotfiles-bin-etc/container/ssh.sh`.
 
 
-#### Toolbox Container
+#### Toolbox Container (NEW)
+
+    ./containers/build
+    toolbox create --image gcr.io/vorburger/dotfiles-fedora:latest
+
+    toolbox enter dotfiles-fedora-latest
+
+
+#### Toolbox Container (OLD)
 
 The [Toolbox](https://github.com/containers/toolbox)-based container doesn't actually quite work very nicely just yet... :-(
 
