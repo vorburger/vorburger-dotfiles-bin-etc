@@ -19,7 +19,6 @@ sudo dnf install -y \
     bash-completion \
     dnf-automatic dnf-plugins-core \
     golang git hub htop \
-    java-1.8.0-openjdk-devel java-1.8.0-openjdk-src \
     java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
     powerline-fonts trash-cli ShellCheck tmux wipe wl-clipboard \
     fira-code-fonts mozilla-fira-mono-fonts \
