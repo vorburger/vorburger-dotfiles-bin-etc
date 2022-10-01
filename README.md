@@ -145,7 +145,7 @@ Further information about all this is available e.g. on my CoreOS Notes about
 
     ./container/build.sh
 
-We can it without actually using SSH, which useful for quick itearing during local development:
+We can it without actually using SSH, which useful for quick iterating during local development:
 
     podman run -it --rm gcr.io/vorburger/dotfiles-fedora:latest bash -c "su - --shell=/usr/bin/fish vorburger"
 
@@ -154,7 +154,7 @@ To run it (using the systemd user unit set up above) and SSH into it:
     ./container/run.sh
     ./container/ssh.sh
 
-Wehn the container runs, you can exec into it:
+Once the container runs, you can also exec into it:
 
     podman exec -it dotfiles bash -c "su - vorburger && fish"
 

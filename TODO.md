@@ -23,6 +23,7 @@
 - container: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
 
 - container: https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html ?
+  This is better than --pull=newer, because it's more explicit. Also, newer isn't actually _newer_ but _different,_ which is a PITA during local development.
 
 - replace nano with micro
 
