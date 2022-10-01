@@ -14,4 +14,5 @@ build fedora-updated Dockerfile        fedora-updated
 build sshd           Dockerfile        sshd
 build devshell       Dockerfile        devshell
 build ..             Dockerfile-fedora gcr.io/vorburger/dotfiles-fedora
+build toolbox        Dockerfile        dotfiles-fedora-toolbox
 ## build gcloud         Dockerfile        gcloud
