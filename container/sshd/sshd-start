@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
+# sshd-keygen as in /usr/lib/systemd/system/sshd-keygen@.service
+# as called by /usr/lib/systemd/system/sshd-keygen.target; note
+# how /usr/lib/systemd/system/sshd.service After=network.target sshd-keygen.target,
+# and Wants=sshd-keygen.target;
+# see https://fedoramagazine.org/systemd-converting-sysvinit-scripts/
+# NB /usr/libexec/openssh/sshd-keygen is a script != /usr/bin/ssh-keygen binary
+# NB https://fedoraproject.org/wiki/Changes/Remove_slogin_and_sshd-keygen
+[ ! -s /etc/ssh/ssh_host_rsa_key ]     && /usr/libexec/openssh/sshd-keygen rsa
+[ ! -s /etc/ssh/ssh_host_ecdsa_key ]   && /usr/libexec/openssh/sshd-keygen ecdsa
+[ ! -s /etc/ssh/ssh_host_ed25519_key ] && /usr/libexec/openssh/sshd-keygen ed25519
+
 # As in /usr/lib/systemd/system/sshd.service ...
 # -D for production, or -eddd for debug
 /usr/sbin/sshd -p 2222 -e -D

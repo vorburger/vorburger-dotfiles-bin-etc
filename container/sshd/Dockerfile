@@ -2,12 +2,7 @@ FROM fedora-updated
 
 LABEL maintainer="Michael Vorburger <mike@vorburger.ch>"
 
-# sshd-keygen as in /usr/lib/systemd/system/sshd-keygen@.service
-# NB /usr/libexec/openssh/sshd-keygen is a script != /usr/bin/ssh-keygen binary
-RUN yum install -y openssh-server \
- && /usr/libexec/openssh/sshd-keygen rsa \
- && /usr/libexec/openssh/sshd-keygen ecdsa \
- && /usr/libexec/openssh/sshd-keygen ed25519
+RUN yum install -y openssh-server
 
 # 01-local.conf is also used in ../../setup.sh
 ADD 01-local.conf /etc/ssh/sshd_config.d/

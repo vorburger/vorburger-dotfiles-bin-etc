@@ -1,11 +1,12 @@
+- ./container/build.sh must not depend on user presence SK touch to build,
+  and uncomment test in container/build.sh, and unify or remove root ./test script.
+
 - give talk about this? 1. Blog,  2. Friends,  3. at Work?
 
 - toolbox without mounting $HOME? Create a bug, for discussion.
 
 - container: exercise https://github.com/vorburger/vorburger-dotfiles-bin-etc#local-dev @think
 
-- container #security: openssh/sshd-keygen should happen at first start-up, not during build;
-  see https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/container/sshd/Dockerfile#L5
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
 - container: fish history should be preserved, mount ~/.local/share/fish/fish_history; see
@@ -42,9 +43,6 @@
 - https://github.com/BurntSushi/ripgrep
 
 - findx with fzf and open in nano at the matched line
-
-- ./container/build.sh must not depend on user presence SK touch to build,
-  and uncomment test in container/build.sh, and unify or remove root ./test script.
 
 - https://cloud.google.com/build/docs/kaniko-cache#docker-build?
 

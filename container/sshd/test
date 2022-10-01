@@ -16,7 +16,7 @@ docker exec test-sshd /usr/local/sbin/add-uid-key fooba "$(cat /tmp/test-$$-id_r
 ssh -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "1. hello, world."
 ssh -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "2. hello, world."
 
-docker rm -f test-sshd
+docker rm --force --time=1 test-sshd
 
 echo Test successful.
 

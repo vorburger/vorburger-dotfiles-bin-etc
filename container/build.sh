@@ -8,7 +8,7 @@ git describe --tags --always --first-parent --match "NOT A TAG" --dirty=".DIRTY"
 build() {
   # docker build --no-cache=true --pull -t $2 $1/
   docker build -t $3 -f $1/$2 $1/
-  ## $/test TODO re-enable once it not depend on user presence SK touch
+  ## $1/test TODO re-enable once it does not depend on user presence SK touch anymore
 }
 
 #     Directory      Dockerfile        Image Tag Name
