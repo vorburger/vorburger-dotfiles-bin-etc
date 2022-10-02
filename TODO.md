@@ -9,6 +9,8 @@
   * LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
 
 - make it (even?) easier to "power cycle" the container (script, doc)
+  Perhaps a systemd unit "outside" could watch for a flag/tag file in a mounted directory,
+  which restarts the container? (This overlaps a bit with `toolbox` systemd integration.)
 
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
@@ -21,6 +23,12 @@
 
 - container: https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html ?
   This is better than --pull=newer, because it's more explicit. Also, newer isn't actually _newer_ but _different,_ which is a PITA during local development.
+
+- Kitty NOK: container/ssh.sh says, and likely because of this TMUX then doesn't work:
+    warning: Could not set up terminal.
+    warning: TERM environment variable set to 'xterm-kitty'.
+    warning: Check that this terminal type is supported on this system.
+    warning: Using fallback terminal type 'ansi'.
 
 
 # GCE
