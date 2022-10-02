@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
-set -euox pipefail
+set -eox pipefail
 
-ssh -At -p 2222 -o "StrictHostKeyChecking=no" -o UserKnownHostsFile=/dev/null vorburger@localhost -- fish
+# NOT SSH_COMMAND="${1:-fish}"
+if [ -z "$1" ]; then
+  SSH_COMMAND="fish"
+else
+  SSH_COMMAND="$@"
+fi
+
+ssh -At -p 2222 -o "StrictHostKeyChecking=no" -o UserKnownHostsFile=/dev/null vorburger@localhost -- "$SSH_COMMAND"

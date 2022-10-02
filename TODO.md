@@ -8,9 +8,6 @@
   * develop using `podman machine`, for best isolation?
   * LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
 
-- container: start TMUX in ssh.sh
-  `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
-
 - make it (even?) easier to "power cycle" the container (script, doc)
 
 - make starship prompt much shorter, like on NUC outside of container. Why is it so different?
