@@ -20,6 +20,14 @@ style = "bold blue"
 
 [username]
 format = "[$user]($style) on "  # use 'on' instead of default 'in'
+disabled = true
+# Disabled because otherwise it's always shown in the dotfiles container
+# (because we use it via SSH) and is more in the way than particularly useful,
+# at least in Starship v1.10.3.
+
+[hostname]
+disabled = true
+# same reason as for username, see above
 
 [cmd_duration]
 show_notifications = true
@@ -44,6 +52,14 @@ disabled = false
 
 [status]
 disabled = false
+
+[sudo]
+disabled = true
+# This doesn't appear to work within containers (at least in Starship v1.10.3),
+# and is always shown, even if no sudo was done, and even after "sudo -K" drops it.
+# Or perhaps it's not container related but because the dotfiles devshell container
+# has /etc/sudoers with NOPASSWD for %wheel.   Same in GitHub Codespaces as well.
+# Either way - it's ugly / in the way and useless if it's always shown.
 
 [[battery.display]]
 threshold = 30

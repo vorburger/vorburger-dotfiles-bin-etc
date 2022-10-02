@@ -10,8 +10,6 @@
 
 - make it (even?) easier to "power cycle" the container (script, doc)
 
-- make starship prompt much shorter, like on NUC outside of container. Why is it so different?
-
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
 - container: fish history should be preserved, mount ~/.local/share/fish/fish_history; see
