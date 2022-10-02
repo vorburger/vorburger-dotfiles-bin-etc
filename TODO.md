@@ -1,10 +1,19 @@
-- give talk about this? 1. Blog,  2. Friends,  3. at Work?
+# ToDo
+
+## NeXT
 
 - JUST USE IT, to find gaps
   * initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
   * later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
   * develop using `podman machine`, for best isolation?
   * LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
+
+- container: start TMUX in ssh.sh
+  `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
+
+- make it (even?) easier to "power cycle" the container (script, doc)
+
+- make starship prompt much shorter, like on NUC outside of container. Why is it so different?
 
 - volume for persistent sshd hostkeys, to avoid StrictHostKeyChecking=no
 
@@ -13,17 +22,30 @@
 
 - container: ~/.ssh/known_hosts should be pre-initialized with github.com's
 
-- container: `ssh ... localhost -- /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s dev`
-
-- container: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
+- README clean-up
 
 - container: https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html ?
   This is better than --pull=newer, because it's more explicit. Also, newer isn't actually _newer_ but _different,_ which is a PITA during local development.
 
-- README clean-up
+
+# GCE
+
+- https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
+  with $HOME/git persistence on an additional disk attached to the GCE VM,
+  similar to https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#local-dev
+
+- https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
+
+
+# LATER
 
 - replace nano with micro
+- scopatz/nanorc.git should be centralized in all-install.sh instead of spread all over (findx nanorc)
 
+- finish full Toolbox support; see README.md
+- toolbox: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
+
+- give talk about this? 1. Blog,  2. Friends,  3. at Work? ("My Home Lab Data Center can be yours too!")
 - ./container/build.sh must not depend on user presence SK touch to build,
   and uncomment test in container/build.sh, and unify or remove root ./test script.
 
@@ -33,24 +55,9 @@
 - sshd doesn't seem to react to kill, so podman stop waits until timeout?
   Is there an orphan sshd at every restart?!
 
-- "My Home Lab Data Center can be yours too!"
-
-- https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
-  with persistence on an additional disk attached to the GCE VM...
-  Either the entire $HOME with symlink-homefree.sh now, if that works.
-  Alternatively, only $HOME/git - similar to https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#local-dev
-
-- https://github.com/BurntSushi/ripgrep
+- - https://github.com/BurntSushi/ripgrep
 
 - findx with fzf and open in nano at the matched line
-
-- https://cloud.google.com/build/docs/kaniko-cache#docker-build?
-
-- https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
-
-- scopatz/nanorc.git should be centralized in all-install.sh instead of spread all over (findx nanorc)
-
-- finish full Toolbox support; see README.md
 
 - clean up any remaining TODO (`findx TODO`)
 

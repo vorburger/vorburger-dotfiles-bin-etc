@@ -134,6 +134,7 @@ Now put the [`systemd` Unit File](systemd/) into `~/.config/systemd/user/` and t
     systemctl --user status
 
 You can now SSH login on port 2222 similarly to how [`ssh.sh`](container/ssh.sh) does.
+It's convenient to configure a terminal (Kitty or GNOME Terminal or whatever) to call `ssh.sh`.
 
 Restart the dotfiles container for user dotfiles from another user like this:
 
