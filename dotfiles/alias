@@ -2,11 +2,11 @@
 # Bash specific in dotfiles/bash.d/alias.bash, fish specific in dotfiles/fish/alias.fish
 
 # see also fish/conf.d/env.fish
-if test ! -n "$CODESPACES"
+if test ! -n "$CODESPACES"; then
     alias e="nano "
 else
     alias e="code "
-end
+fi
 
 alias d="cd "
 alias n="nix "
