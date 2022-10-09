@@ -2,6 +2,12 @@
 
 ## NeXT
 
+- GitHub Codespaces Set-Up time
+  * https://support.github.com/ticket/personal/0/1825074 answer?
+  * https://github.com/orgs/community/discussions/35527 answer?
+  * [`apt-install.sh`](https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/apt-install.sh)
+  * Parallelize?! Not sure what if anything could be.
+
 - JUST USE IT, to find gaps
   * initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
   * later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
