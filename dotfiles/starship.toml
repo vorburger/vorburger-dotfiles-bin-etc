@@ -45,9 +45,6 @@ disabled = false
 [status]
 disabled = false
 
-[sudo]
-disabled = false
-
 [[battery.display]]
 threshold = 30
 
@@ -56,3 +53,7 @@ disabled = true
 
 [container]
 disabled = true
+
+[ruby]
+# RUBY_VERSION is *always* set in GitHub Codespaces, so it adds no value
+detect_variables=["RBENV_VERSION"]
