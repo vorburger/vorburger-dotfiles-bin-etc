@@ -7,12 +7,6 @@
 
 # NB: PATH is set in ../config.fish
 
-if test ! -n "$CODESPACES"
-    set -Ux EDITOR nano
-else
-    set -Ux EDITOR "code --wait"
-end
-
 if test ! -n "$JAVA_HOME"
     set -gx JAVA_HOME /etc/alternatives/java_sdk/
 end

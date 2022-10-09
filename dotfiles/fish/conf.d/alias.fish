@@ -3,6 +3,15 @@
 
 status is-interactive || exit
 
+# see also bash.d/alias.bash
+if test ! -n "$CODESPACES"
+    alias e="nano "
+    set -Ux EDITOR nano
+else
+    set -Ux EDITOR "code --wait"
+    alias e="code "
+end
+
 test -f /usr/bin/lsd && alias l="lsd "
 test -f /usr/bin/lsd && alias ll="lsd -l "
 test -f /usr/bin/bat && alias c="bat "

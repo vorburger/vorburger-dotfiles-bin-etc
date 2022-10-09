@@ -28,8 +28,6 @@ export PATH
 
 # User specific aliases and functions should go into dotfiles/bash.d/ instead of being appended here!
 
-export EDITOR=nano
-
 # Do *NOT* set 'SSH_AUTH_SOCK' here; see README for details.
 
 # added by travis gem

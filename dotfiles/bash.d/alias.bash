@@ -3,6 +3,15 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+# see also fish/conf.d/alias.fish
+if test ! -n "$CODESPACES"; then
+    alias e="nano "
+    export EDITOR=nano
+else
+    alias e="code "
+    export EDITOR="code --wait"
+fi
+
 [ -s /usr/bin/lsd ] && alias l="lsd "
 [ -s /usr/bin/lsd ] && alias ll="lsd -l "
 [ -s /usr/bin/bat ] && alias c="bat "
