@@ -5,6 +5,7 @@ set -euxo pipefail
 
 [ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
+# https://starship.rs
 if [ ! -f /usr/local/bin/starship ]; then
   curl -fsSL https://starship.rs/install.sh -o /tmp/starship-install.sh
   chmod +x /tmp/starship-install.sh
@@ -57,7 +58,9 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # [ -s $HOME/.cargo/bin/as-tree ] || cargo install -f --git https://github.com/jez/as-tree
 
 # https://github.com/jorgebucaran/fisher
-[ -s $HOME/.config/fish/functions/fisher.fish ] || fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+[ -s $HOME/.config/fish/functions/fisher.fish ] || \
+  curl -sL https://git.io/fisher -o /tmp/fisher && \
+  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher"
 
 # https://github.com/PatrickF1/fzf.fish
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
