@@ -30,11 +30,12 @@ fi
 go version
 
 # https://github.com/apache/maven-mvnd/
-mkdir -p $HOME/.m2/ $HOME/bin/
-[ -s $HOME/bin/mvnd ] || "$(dirname "$0")"/install-github.sh apache/maven-mvnd 0.8.0 maven-mvnd-0.8.0-linux-amd64 mvnd && \
-  mv /tmp/install-github/apache/maven-mvnd/mvnd-0.8.0-linux-amd64 $HOME/bin/ && \
-  ln -s $HOME/bin/mvnd-0.8.0-linux-amd64/bin/mvnd $HOME/bin
-[ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
+# TODO Fix broken installation on GitHub Codespaces (but I currently don't use it anyway)
+# mkdir -p $HOME/.m2/ $HOME/bin/
+# [ -s $HOME/bin/mvnd ] || "$(dirname "$0")"/install-github.sh apache/maven-mvnd 0.8.0 maven-mvnd-0.8.0-linux-amd64 mvnd && \
+#   mv /tmp/install-github/apache/maven-mvnd/mvnd-0.8.0-linux-amd64 $HOME/bin/ && \
+#   ln -s $HOME/bin/mvnd-0.8.0-linux-amd64/bin/mvnd $HOME/bin
+# [ -s $HOME/.m2/mvnd.properties ] || echo "java.home=/etc/alternatives/java_sdk/" >$HOME/.m2/mvnd.properties
 
 # GO_BIN_PATH may not match GOPATH (it could be unset)
 GO_BIN_PATH=$(go env GOPATH)/bin
