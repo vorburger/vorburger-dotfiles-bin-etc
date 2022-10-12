@@ -23,7 +23,8 @@
 - container: fish history should be preserved, mount ~/.local/share/fish/fish_history; see
   https://fishshell.com/docs/current/cmds/history.html#customizing-the-name-of-the-history-file
 
-- container: ~/.ssh/known_hosts should be pre-initialized with github.com's
+- container: ~/.ssh/known_hosts should be pre-initialized with github.com's:
+  `ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts`
 
 - README clean-up
 
