@@ -14,6 +14,8 @@
   * develop using `podman machine`, for best isolation?
   * LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
 
+- set -x LC_ALL en_US.UTF-8, set -x LANG en_US.UTF-8; check Arch Wiki?
+
 - make it (even?) easier to "power cycle" the container (script, doc)
   Perhaps a systemd unit "outside" could watch for a flag/tag file in a mounted directory,
   which restarts the container? (This overlaps a bit with `toolbox` systemd integration.)
