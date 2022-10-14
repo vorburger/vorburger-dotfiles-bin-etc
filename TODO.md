@@ -2,8 +2,6 @@
 
 ## NeXT
 
-- [GCP cost check](Reference/gcp-google-cloud-costs.md)
-
 - GitHub Codespaces Set-Up time
   * https://support.github.com/ticket/personal/0/1825074 answer?
   * https://github.com/orgs/community/discussions/35527 answer?
