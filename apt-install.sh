@@ -3,17 +3,6 @@ set -euxo pipefail
 
 # This is for anything that's common to Ubuntu and Debian; see debian|ubuntu-install.sh for Debian respectively Ubuntu specific stuff.
 
-# TODO This GitHub Codespace acceleration optimization is a little bit ridiculous,
-# and can perhaps be removed again after https://github.com/orgs/community/discussions/35527 is resolved?
-if test -n "$CODESPACES"; then
-
-sudo apt install -y \
-    shellcheck \
-    autojump fd-find \
-    cargo curl wget
-
-else
-
 sudo apt --allow-releaseinfo-change update
 # sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
 # sudo apt-get update --fix-missing && sudo apt-get clean && sudo apt-get clean && sudo apt-get install -f && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
@@ -35,8 +24,6 @@ sudo apt install -y \
 # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
 sudo apt autoremove -y
-
-fi
 
 lsb_release -a
 
