@@ -2,12 +2,6 @@
 
 ## NeXT
 
-- GitHub Codespaces Set-Up time
-  * https://support.github.com/ticket/personal/0/1825074 answer?
-  * https://github.com/orgs/community/discussions/35527 answer?
-  * [`apt-install.sh`](https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/develop/apt-install.sh)
-  * Parallelize?! Not sure what if anything could be.
-
 - JUST USE IT, to find gaps
   * initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
   * later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
@@ -67,7 +61,11 @@
 - sshd doesn't seem to react to kill, so podman stop waits until timeout?
   Is there an orphan sshd at every restart?!
 
-- - https://github.com/BurntSushi/ripgrep
+- https://github.com/franciscolourenco/done
+
+- https://github.com/meaningful-ooo/sponge
+
+- https://github.com/BurntSushi/ripgrep
 
 - findx with fzf and open in nano at the matched line
 
