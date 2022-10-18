@@ -5,12 +5,15 @@ set -euxo pipefail
 
 [ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
-# https://github.com/jorgebucaran/fisher, with </dev/null
 # see https://github.com/jorgebucaran/fisher/issues/742
 # and https://github.com/vorburger/dotfiles-reproduce-problem
+# and https://github.com/orgs/community/discussions/35527
+exec </dev/null
+
+# https://github.com/jorgebucaran/fisher
 [ -s $HOME/.config/fish/functions/fisher.fish ] || \
   curl -sL https://git.io/fisher -o /tmp/fisher && \
-  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher </dev/null"
+  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher"
 
 # https://starship.rs
 if [ ! -f /usr/local/bin/starship ]; then
@@ -68,18 +71,18 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/112 how to hide . files/dirs?
 # TODO [ -s $HOME/.config/fish/functions/__fzf* ] || ...
-[ -s $HOME/.config/fish/conf.d/fzf.fish ] || fish -c "fisher install PatrickF1/fzf.fish </dev/null"
+[ -s $HOME/.config/fish/conf.d/fzf.fish ] || fish -c "fisher install PatrickF1/fzf.fish"
 
 # https://github.com/evanlucas/fish-kubectl-completions
 # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
 # see https://github.com/evanlucas/fish-kubectl-completions/issues/33
-[ -s $HOME/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions </dev/null"
+[ -s $HOME/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions"
 
 # https://github.com/jorgebucaran/autopair.fish
-[ -s $HOME/.config/fish/conf.d/autopair.fish ] || fish -c "fisher install jorgebucaran/autopair.fish </dev/null"
+[ -s $HOME/.config/fish/conf.d/autopair.fish ] || fish -c "fisher install jorgebucaran/autopair.fish"
 
 # https://github.com/Gazorby/fish-abbreviation-tips
-[ -s $HOME/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips </dev/null"
+[ -s $HOME/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips"
 
 fish -c "fisher update"
 
