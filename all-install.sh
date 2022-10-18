@@ -84,6 +84,9 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/Gazorby/fish-abbreviation-tips
 [ -s $HOME/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips"
 
+# https://github.com/nickeb96/puffer-fish
+[ -s $HOME/.config/fish/conf.d/puffer_fish_key_bindings.fish ] || fish -c "fisher install nickeb96/puffer-fish"
+
 fish -c "fisher update"
 
 # ADD ALL fisher generated fish functions to .gitignore instead of committing them
