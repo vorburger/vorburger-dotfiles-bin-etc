@@ -5,10 +5,12 @@ set -euxo pipefail
 
 [ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
-# https://github.com/jorgebucaran/fisher
+# https://github.com/jorgebucaran/fisher, with </dev/null
+# see https://github.com/jorgebucaran/fisher/issues/742
+# and https://github.com/vorburger/dotfiles-reproduce-problem
 [ -s $HOME/.config/fish/functions/fisher.fish ] || \
   curl -sL https://git.io/fisher -o /tmp/fisher && \
-  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher"
+  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher </dev/null"
 
 # https://starship.rs
 if [ ! -f /usr/local/bin/starship ]; then
