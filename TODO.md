@@ -2,6 +2,8 @@
 
 ## NeXT
 
+- Activate `venv venv` whenever there is one in the current directory, with a Fish `cd` "event" (?) hook thing
+
 - JUST USE IT, to find gaps
   * initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
   * later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
