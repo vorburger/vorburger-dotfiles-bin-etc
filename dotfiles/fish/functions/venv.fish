@@ -6,7 +6,7 @@ function venv -a DIR -d "Create or Enter Python Virtual Environment"
   if not set -q argv[1]
     # echo "USAGE: venv <Python-Virtual-Env-Directory>"
     # return
-    set DIR = "venv"
+    set DIR "venv"
   end
 
   if [ ! -d "$DIR" ]
