@@ -10,6 +10,8 @@ set -euxo pipefail
 # and https://github.com/orgs/community/discussions/35527
 exec </dev/null
 
+fish fish-install.fish
+
 # https://github.com/jorgebucaran/fisher
 [ -s $HOME/.config/fish/functions/fisher.fish ] || ( \
   curl -sL https://git.io/fisher -o /tmp/fisher && \

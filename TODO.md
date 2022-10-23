@@ -35,6 +35,8 @@
     warning: Check that this terminal type is supported on this system.
     warning: Using fallback terminal type 'ansi'.
 
+- https://krew.sigs.k8s.io/plugins/
+
 
 # GCE
 
