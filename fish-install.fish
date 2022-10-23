@@ -15,12 +15,20 @@ if test ! -e $HOME/.krew/bin/kubectl-krew
   cd -
 end
 
+grep -v "#" packages/krew.txt > /tmp/krew-packages.txt
+$HOME/.krew/bin/kubectl-krew install < /tmp/krew-packages.txt
+
 # see https://github.com/kubernetes-sigs/krew/pull/811
 # and https://github.com/kubernetes-sigs/krew/issues/810
 $HOME/.krew/bin/kubectl-krew completion fish > $HOME/.config/fish/completions/kubectl-krew.fish
-if test ! -e $HOME/.krew/bin/krew
-  ln -s $HOME/.krew/bin/kubectl-krew $HOME/.krew/bin/krew
-end
+ln -fs $HOME/.krew/bin/kubectl-krew $HOME/.krew/bin/krew
 
-grep -v "#" packages/krew.txt > /tmp/krew-packages.txt
-$HOME/.krew/bin/kubectl-krew install < /tmp/krew-packages.txt
+# ToDo: It is a shame that krew doesn't automatically install shell completion for plugins
+pushd .
+cd $HOME/.config/fish/completions/
+curl -fsSLO "https://raw.githubusercontent.com/ahmetb/kubectx/master/completion/kubectx.fish"
+curl -fsSLO "https://raw.githubusercontent.com/ahmetb/kubectx/master/completion/kubens.fish"
+popd
+
+ln -fs $HOME/.krew/bin/kubectl-ctx $HOME/.krew/bin/kubectx
+ln -fs $HOME/.krew/bin/kubectl-ns $HOME/.krew/bin/kubens
