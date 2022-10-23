@@ -84,8 +84,13 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/Gazorby/fish-abbreviation-tips
 [ -s $HOME/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips"
 
-# https://github.com/nickeb96/puffer-fish
+# https://github.com/nickeb96/puffer-fish for ... to ../.. and !! to inline previous command and !$ prev. arg
 [ -s $HOME/.config/fish/conf.d/puffer_fish_key_bindings.fish ] || fish -c "fisher install nickeb96/puffer-fish"
+
+# https://github.com/lgathy/google-cloud-sdk-fish-completion for gcloud
+[ -s $HOME/.config/fish/completions/gcloud.fish ] || fish -c "fisher install lgathy/google-cloud-sdk-fish-completion"
+
+# ToDo: https://github.com/edc/bass ?
 
 fish -c "fisher update"
 
