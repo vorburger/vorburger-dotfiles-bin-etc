@@ -1,0 +1,3 @@
+# https://github.com/ahmetb/kubectx#kubectl-plugins-macos-and-linux
+ctx
+ns
