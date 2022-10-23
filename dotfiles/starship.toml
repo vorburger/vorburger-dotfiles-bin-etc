@@ -32,6 +32,8 @@ disabled = true
 
 [cmd_duration]
 show_notifications = true
+# https://github.com/starship/starship/issues/1933 (TL;DR it's annoying to get/see this for every $EDITOR use)
+disabled = true
 
 [gcloud]
 style = "dimmed blue"
