@@ -34,13 +34,10 @@ show_notifications = true
 
 [gcloud]
 style = "dimmed blue"
-# drop account from prompt; format default = 'on [$symbol$account(@$domain)(\($region\))]($style) '
-# format = 'on [$symbol$project(\($region\))]($style) '
-format = 'on [$symbol(\($region\))]($style) '
-symbol = '☁️'
-# https://github.com/starship/starship/issues/3538
-# [gcloud.project_aliases]
-# "vorburger-learn-appengin" = "learn"
+# drop stuff for shorter prompt; default https://starship.rs/config/#google-cloud-gcloud
+format = '[$symbol(\($region\))]($style)'
+[gcloud.project_aliases]
+"vorburger-learn-appengin" = "learn"
 
 [kubernetes]
 disabled = false
