@@ -11,9 +11,9 @@ set -euxo pipefail
 exec </dev/null
 
 # https://github.com/jorgebucaran/fisher
-[ -s $HOME/.config/fish/functions/fisher.fish ] || \
+[ -s $HOME/.config/fish/functions/fisher.fish ] || ( \
   curl -sL https://git.io/fisher -o /tmp/fisher && \
-  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher"
+  fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher")
 
 # https://starship.rs
 if [ ! -f /usr/local/bin/starship ]; then
