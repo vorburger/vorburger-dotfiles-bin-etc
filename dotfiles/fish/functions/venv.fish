@@ -17,8 +17,10 @@ function venv -a DIR -d "Create or Enter Python Virtual Environment"
 end
 
 function on_pwd --on-variable PWD
-   echo Reacting to PWD changing to $PWD...
+   # echo Reacting to PWD changing to $PWD...
    if [ -d  "$PWD/venv" ]
+     set_color -i -u -d magenta
+     echo "Activating Python Virtual Env for Fish Shell"
      source "$PWD/venv/bin/activate.fish"
    end
 end
