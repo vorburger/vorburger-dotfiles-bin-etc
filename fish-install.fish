@@ -14,3 +14,8 @@ if test ! -e $HOME/.krew/bin/kubectl-krew
   set -e KREW temp_dir &&
   cd -
 end
+
+# see https://github.com/kubernetes-sigs/krew/pull/811
+# and https://github.com/kubernetes-sigs/krew/issues/810
+$HOME/.krew/bin/kubectl-krew completion fish > $HOME/.config/fish/completions/kubectl-krew.fish
+ln -s $HOME/.krew/bin/kubectl-krew $HOME/.krew/bin/krew
