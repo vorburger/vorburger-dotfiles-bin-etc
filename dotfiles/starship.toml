@@ -73,3 +73,7 @@ disabled = true
 [ruby]
 # RUBY_VERSION is *always* set in GitHub Codespaces, so it adds no value
 detect_variables=["RBENV_VERSION"]
+
+[python]
+# I like the cute yellow duck but don't need to always see the version everywhere
+version_format = ''
