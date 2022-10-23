@@ -3,8 +3,9 @@
 # This does NOT avoid line break in the prompt; see https://github.com/starship/starship/issues/1987
 # add_newline = false
 
+# https://starship.rs/config/#prompt
 # Move Kubernetes to end instead of start as per default
-format="$all$kubernetes$cmd_duration$character"
+# format="$all$kubernetes$cmd_duration$character"
 
 [line_break]
 disabled = true
