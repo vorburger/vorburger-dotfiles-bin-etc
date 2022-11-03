@@ -8,11 +8,11 @@ RUN useradd -G wheel vorburger
 USER vorburger
 WORKDIR /home/vorburger/
 
-COPY symlink.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+COPY git-install.sh symlink.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
 COPY dotfiles/ /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
 
 # as per ./README.md
-RUN cd /home/vorburger/dev/ && git clone https://github.com/scopatz/nanorc.git && cd .. \
+RUN /home/vorburger/dev/vorburger-dotfiles-bin-etc/git-intstall.sh \
  && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
 

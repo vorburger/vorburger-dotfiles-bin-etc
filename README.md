@@ -70,14 +70,13 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 
 ### Fedora Workstation
 
-    mkdir -p ~/git/github.com/vorburger/ ~/git/github.com/scopatz/
-    cd ~/git/github.com/scopatz/
-    git clone https://github.com/scopatz/nanorc.git
+    mkdir -p ~/git/github.com/vorburger/
     cd ~/git/github.com/vorburger/
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
     ./setup.sh
+    ./git-install.sh
     ./dnf-install.sh
     ./dnf-install-gui.sh
     mv ~/.bashrc ~/.bashrc.original
@@ -94,12 +93,12 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
 
 ### Debian / Ubuntu Servers
 
-    mkdir ~/dev/
-    cd ~/dev/
-    git clone https://github.com/scopatz/nanorc.git
+    mkdir -p ~/git/github.com/vorburger/
+    cd ~/git/github.com/vorburger/
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
+    ./git-install.sh
     ./debian-install.sh 11 # or ./ubuntu-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh

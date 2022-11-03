@@ -50,7 +50,6 @@
 # LATER
 
 - replace nano with micro
-- scopatz/nanorc.git should be centralized in all-install.sh instead of spread all over (findx nanorc)
 
 - finish full Toolbox support; see README.md
 - toolbox: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
