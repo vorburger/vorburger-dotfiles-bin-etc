@@ -2,6 +2,20 @@
 
 ## Installation
 
+## ArchLinux
+
+    mkdir -p ~/git/github.com/vorburger/
+    cd ~/git/github.com/vorburger/
+    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    cd vorburger-dotfiles-bin-etc
+
+    ./setup.sh
+    ./git-install.sh
+    ./pacman-install.sh
+    ./pacman-install-gui.sh
+    mv ~/.bashrc ~/.bashrc.original
+    ./symlink.sh
+
 ## ChromeOS
 
 Set up these dotfiles (in a container) on a server, like below. Then just SSH into it,
