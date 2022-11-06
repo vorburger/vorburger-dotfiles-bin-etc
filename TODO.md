@@ -2,6 +2,8 @@
 
 ## NeXT
 
+- https://magefile.org?
+
 - Activate `venv venv` whenever there is one in the current directory, with a Fish `cd` "event" (?) hook thing
 
 - JUST USE IT, to find gaps
