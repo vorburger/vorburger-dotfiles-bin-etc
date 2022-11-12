@@ -24,7 +24,7 @@ set softwrap
 set atblanks
 set cutfromcursor
 set multibuffer
-set guidestripe 120
+# set guidestripe 120
 
 set titlecolor bold,lagoon,black
 set numbercolor italic,latte,black
