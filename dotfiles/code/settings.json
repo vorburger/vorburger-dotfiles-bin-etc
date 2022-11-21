@@ -1,41 +1,41 @@
 {
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.project.importOnFirstTimeStartup": "automatic",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "files.autoSave": "afterDelay",
-    "editor.fontSize": 18,
-    "window.zoomLevel": 3,
-    "terminal.integrated.shell.linux": "/usr/bin/fish",
-    "explorer.confirmDragAndDrop": false,
-    "redhat.telemetry.enabled": true,
-    "java.saveActions.organizeImports": true,
-    "window.menuBarVisibility": "classic",
-    "go.toolsManagement.autoUpdate": true,
-    "editor.inlineSuggest.enabled": true,
-    "[beancount]": {},
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "remoteHub.commitDirectlyWarning": "off",
-    "markdown.validate.fileLinks.enabled": "error",
-    "markdown.validate.enabled": true,
-    "markdown.validate.fragmentLinks.enabled": "error",
-    "markdown.validate.fileLinks.markdownFragmentLinks": "error",
-    "security.workspace.trust.untrustedFiles": "open",
-    "files.insertFinalNewline": true,
-    "markdownlint.config": {
-        "MD034": false
-    },
-    "workbench.startupEditor": "none",
-    "gitlens.codeLens.scopes": [
-        "document"
-    ],
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "files.autoSaveDelay": 500,
-    "window.restoreFullscreen": true
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 18,
+  "window.zoomLevel": 3,
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "explorer.confirmDragAndDrop": false,
+  "redhat.telemetry.enabled": true,
+  "java.saveActions.organizeImports": true,
+  "window.menuBarVisibility": "classic",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.inlineSuggest.enabled": true,
+  "[beancount]": {},
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "remoteHub.commitDirectlyWarning": "off",
+  "markdown.validate.fileLinks.enabled": "error",
+  "markdown.validate.enabled": true,
+  "markdown.validate.fragmentLinks.enabled": "error",
+  "markdown.validate.fileLinks.markdownFragmentLinks": "error",
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.insertFinalNewline": true,
+  "markdownlint.config": {
+      "MD034": false
+  },
+  "workbench.startupEditor": "none",
+  "gitlens.codeLens.scopes": [
+    "document"
+  ],
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "files.autoSaveDelay": 500,
+  "window.restoreFullscreen": true
 }
