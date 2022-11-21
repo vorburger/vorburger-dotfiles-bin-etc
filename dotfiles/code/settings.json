@@ -31,5 +31,8 @@
     "markdownlint.config": {
         "MD034": false
     },
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "gitlens.codeLens.scopes": [
+        "document"
+    ]
 }
