@@ -29,13 +29,17 @@
   "security.workspace.trust.untrustedFiles": "open",
   "files.insertFinalNewline": true,
   "markdownlint.config": {
-      "MD034": false
+    "MD034": false
   },
   "workbench.startupEditor": "none",
-  "gitlens.codeLens.scopes": [
-    "document"
-  ],
+  "gitlens.codeLens.scopes": ["document"],
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "files.autoSaveDelay": 500,
-  "window.restoreFullscreen": true
+  "window.restoreFullscreen": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  }
 }
