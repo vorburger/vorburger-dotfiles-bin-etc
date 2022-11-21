@@ -28,7 +28,8 @@ sudo dnf install -y \
     pwgen diceware \
     cargo graphviz \
     google-cloud-sdk google-cloud-sdk-skaffold \
-    python3-devel portaudio-devel
+    python3-devel portaudio-devel \
+    git-delta
 
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
 # file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64

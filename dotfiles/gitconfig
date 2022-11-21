@@ -18,7 +18,14 @@
 [core]
     autocrlf = input
     eol = native
-    pager = less -S
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
 [apply]
     whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
@@ -30,6 +37,7 @@
 [diff]
     renames = true
     submodule = log
+    colorMoved = default
 
 [diff "zip"]
     textconv = unzip -c -a
@@ -39,6 +47,7 @@
 
 [merge]
     log = true
+    conflictstyle = diff3
 
 [rerere]
     enabled = true
@@ -61,7 +70,6 @@
     ls = log --color --pretty=format:'%C(magenta)%h%Creset %C(white)%s%Creset %C(bold blue)<%aN>%Creset %C(dim blue)(%cN)%Creset%C(auto)%d%Creset'
     ll = log --color --format=full --compact-summary
     lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset%C(auto)%d%Creset %s %C(bold blue)<%aN>%Creset %C(dim blue)(%cN)%Creset %C(green)(%cr)' --abbrev-commit
-    wdiff = diff --word-diff --word-diff-regex='\\w+'
 
 # `tig` is a useful git log TUI alternative
 [pull]
