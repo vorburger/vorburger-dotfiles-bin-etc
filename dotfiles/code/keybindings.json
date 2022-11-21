@@ -61,5 +61,10 @@
             "snippet": "[${TM_SELECTED_TEXT}]($0)"
         },
         "when": "editorHasSelection && editorLangId == markdown "
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "true"
     }
 ]
