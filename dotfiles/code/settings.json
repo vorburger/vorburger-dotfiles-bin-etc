@@ -34,5 +34,8 @@
     "workbench.startupEditor": "none",
     "gitlens.codeLens.scopes": [
         "document"
-    ]
+    ],
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "files.autoSaveDelay": 500,
+    "window.restoreFullscreen": true
 }
