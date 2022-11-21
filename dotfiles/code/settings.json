@@ -41,5 +41,23 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  }
+  },
+  // https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight
+  // successor of https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
+  // Possible alternative, if NOK: https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight
+  "todohighlight.keywords": ["TODO"],
+  "todohighlight.include": [
+    "**/*.java",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.md",
+    "**/*.txt",
+    "**/*.rb",
+    "**/*.go"
+  ]
 }
