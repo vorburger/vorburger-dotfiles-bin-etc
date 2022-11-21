@@ -53,5 +53,13 @@
     {
         "key": "f12",
         "command": "editor.action.openLink"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "editor.action.insertSnippet",
+        "args": {
+            "snippet": "[${TM_SELECTED_TEXT}]($0)"
+        },
+        "when": "editorHasSelection && editorLangId == markdown "
     }
 ]
