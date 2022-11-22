@@ -29,6 +29,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "files.insertFinalNewline": true,
   "markdownlint.config": {
+    "MD026": { "punctuation": ",;:。，；：" },
     "MD034": false
   },
   "workbench.startupEditor": "none",
