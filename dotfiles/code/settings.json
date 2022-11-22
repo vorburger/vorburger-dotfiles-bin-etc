@@ -36,6 +36,7 @@
   "gitlens.codeLens.scopes": ["document"],
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "files.autoSaveDelay": 500,
+  "files.autoGuessEncoding": true,
   "window.restoreFullscreen": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
