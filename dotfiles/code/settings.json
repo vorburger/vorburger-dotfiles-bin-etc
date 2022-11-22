@@ -62,5 +62,10 @@
     "**/*.go"
   ],
   "workbench.iconTheme": "vscode-icons",
-  "diffEditor.ignoreTrimWhitespace": true
+  "cSpell.userWords": [],
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.renderWhitespace": "none",
+  "editor.lineNumbers": "off",
+  "search.showLineNumbers": true,
+  "github.gitProtocol": "ssh"
 }
