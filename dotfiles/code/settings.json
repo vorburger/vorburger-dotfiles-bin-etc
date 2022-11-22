@@ -61,5 +61,6 @@
     "**/*.rb",
     "**/*.go"
   ],
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "diffEditor.ignoreTrimWhitespace": true
 }
