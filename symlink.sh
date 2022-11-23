@@ -44,6 +44,7 @@ f .config/weston.ini dotfiles/.config/weston.ini
 f .m2/toolchains.xml dotfiles/m2/toolchains.xml
 f .config/Code/User/settings.json dotfiles/code/settings.json
 f .config/Code/User/keybindings.json dotfiles/code/keybindings.json
+f .config/Code/User/snippets/personal.code-snippets dotfiles/code/personal.code-snippets
 
 if [ $(command -v desktop-file-validate) ]; then
   desktop-file-validate ~/.local/share/applications/*.desktop
