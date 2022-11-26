@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+./setup.sh
+
+./git-install.sh
+
+./dnf-install.sh
+
 sudo dnf install -y \
     kitty ImageMagick \
     gnome-tweak-tool \
@@ -8,8 +14,9 @@ sudo dnf install -y \
 
 sudo dnf remove "libreoffice*"
 
-# only DNF is here, other installations are in all-install.sh
 ./all-install.sh
+
+./symlink.sh
 
 # sudo alternatives --config java
 # sudo alternatives --config javac

@@ -57,14 +57,12 @@ If the Silverblue workstation is intended to (also) be used as a server, remembe
 
 Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below). Copy [`kitty.conf`](dotfiles/kitty.conf) to `~/.config/kitty/kitty.conf`, and change `shell /home/vorburger/git/github.com/vorburger/vorburger-dotfiles-bin-etc/container/ssh.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s MAKE`.
 
-
 #### Toolbox Container (NEW)
 
     ./containers/build
     toolbox create --image gcr.io/vorburger/dotfiles-fedora:latest
 
     toolbox enter dotfiles-fedora-latest
-
 
 #### Toolbox Container (OLD)
 
@@ -81,7 +79,6 @@ Also, automatically start Toolbox in Fish instead of Bash...
 and `./gnome-settings.sh` autostart Terminal Session TMUX, with Toolbox.
 And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 
-
 ### Fedora Workstation
 
     mkdir -p ~/git/github.com/vorburger/
@@ -89,12 +86,8 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
-    ./setup.sh
-    ./git-install.sh
-    ./dnf-install.sh
-    ./dnf-install-gui.sh
     mv ~/.bashrc ~/.bashrc.original
-    ./symlink.sh
+    ./dnf-install-gui.sh
 
 #### UHK
 
@@ -103,7 +96,6 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 Install _latest_ https://github.com/UltimateHackingKeyboard/agent/releases/,
 and fix up path in [`UHK.desktop`](dotfiles/desktop/UHK.desktop).  Upgrade Firmware.
 Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserConfiguration.json).
-
 
 ### Debian / Ubuntu Servers
 
@@ -117,7 +109,6 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./setup.sh
-
 
 ### Fedora-based Container (with SSH)
 
@@ -197,7 +188,6 @@ We can now work on this project in that container, like so:
 NB that this will modify the ownership of `/run/user/1000/podman/podman.sock` on the host filesystem,
 not only in the container. As long as we don't need to use `podman-remote` on the host, that shouldn't cause problems.
 
-
 #### Google Cloud COS VM with this container (SSH from outside into container)
 
 [Set up a Cloud Build](cloudbuild.yaml), and then:
@@ -233,9 +223,9 @@ https://shell.cloud.google.com, see https://cloud.google.com/shell, is handy (bu
 Alternatively, you COULD `ssh-keygen` and have something like the following in your `~/.ssh/config`, as per [this](https://github.com/aubort/google-cloud-shell-tutorial) or [this](https://vincentteo.com/2018/01/07/private-github-repos-google-cloud-shell/) guide, but security wise it's much better to keep your private SSH key e.g. a HSM YubiKey in your desktop/laptop, than having it on the cloud, so better don't this but use the approach above instead:
 
     Host github.com
-	    Hostname github.com
-	    PreferredAuthentications publickey
-	    IdentityFile ~/.ssh/id_rsa
+        Hostname github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/id_rsa
 
 _TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70612636/google-cloud-shell-ssh-with-customer-container-image) re. how to SSH login to Google Cloud Shell using a customer container image._
 
@@ -314,15 +304,13 @@ and `echo` the laptop command into an `~/.bash.d/alias-h`.
 
 Remember to always use `ssh -A` to enable Agent Forwarding, as above.
 We could alternatively use `ForwardAgent yes` in our `~/.ssh/config`, but as a security best practice,
-always *only for a SINGLE Hostname*_, never for all servers.
+always _only for a SINGLE Hostname__, never for all servers.
 
 BTW: `RemoteForward` in `~/.ssh/config` is not actually required (at least with Fedora 30).
-
 
 ### `gpg` Agent Forwarding
 
 _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SSH'ing remotely._
-
 
 ## Manual Settings
 
@@ -338,7 +326,6 @@ and unzip and double-click on _Fira Code Retina Nerd Font Complete.otf_
     source ~/.local/share/fonts/i_linux.sh
     echo $i_linux_fedora
 
-
 ### Terminals
 
 From https://github.com/tonsky/FiraCode#terminal-support :
@@ -350,11 +337,9 @@ From https://github.com/tonsky/FiraCode#terminal-support :
 
 https://github.com/topics/terminal-emulators has moar... ;-)
 
-
 ### Eclipse
 
 Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Code 12.
-
 
 ### GNOME
 
@@ -384,6 +369,7 @@ Launch `gnome-tweaks` and configure:
 * Windows Focus on Hover
 
 In _Gnome Terminal's Preferences_, add a new `tmux` Profile, and _Set as default_, with:
+
 * Text _Custom Font_ `Fira Code Retina` Size 20. NB: [Fira Code's README](https://github.com/tonsky/FiraCode#terminal-support) lists GNOME Terminal as not supported, and the fancy Ligatures indeed don't work (like they do e.g. in Eclipse after changing the ), but I'm not actually seeing any real problems such as [issue #162](https://github.com/tonsky/FiraCode/issues/162), so it, just for consistency. (The alternative would be to just use `Fira Mono` from `mozilla-fira-mono-fonts` instead.)
 * Scrolling disable _Show scrollbar_ and _Scroll on output_, but enable _Scroll on keystroke_, and _Limit scrollback to: 10'000 lines_
 * Command: Replace initial title, Run a custom command instead of my shell: `mux`
@@ -392,7 +378,6 @@ Settings > Mouse & Touchpad : Touchpad > Natural Scrolling enabled  &&  Tap to C
 
 Settings > Keyboard Shortcuts: Delete (Backspace) Alt-ESC to Switch Windows Directly
 (because we use that in TMUX).
-
 
 ### Power Saving
 
@@ -410,13 +395,11 @@ Settings > Keyboard Shortcuts: Delete (Backspace) Alt-ESC to Switch Windows Dire
 **TODO** Test if the additional governors (conservative userspace powersave ondemand performance schedutil)
 which should appear after _booting with the kernel parameter `intel_pstate=disable`_ help with increased battery life..
 
-
 ## Containers
 
 ### _"Podman-in-Podman"_
 
 see [doc](docs/podman.md)
-
 
 ### Debian
 
@@ -424,11 +407,9 @@ see [doc](docs/podman.md)
 
 The `Dockerfile-debian-minimal` is used instead of `Dockerfile-debian` to rebuild faster with less for quick local iterative development.
 
-
 ### Toolbox
 
 See the Silverblue section above for usage with Toolbox.
-
 
 ### Google Cloud Shell
 
@@ -436,7 +417,6 @@ See above for usage as a https://cloud.google.com/shell/docs/customizing-contain
 
 To local build test, try: `time docker build -t vorburger-google-cloudshell -f Dockerfile .` but it fails with:
 `Error: error creating build container: writing blob: adding layer with blob "sha256:73b906f329a9204f69c7efa86428158811067503ffa65431ca008c8015ce7871": Error processing tar file(exit status 1): potentially insufficient UIDs or GIDs available in user namespace (requested 150328:89939 for /tinkey.bat): Check /etc/subuid and /etc/subgid: lchown /tinkey.bat: invalid argument`
-
 
 ### Vorburger's _DeCe_ Cloudshell
 
