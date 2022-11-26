@@ -65,6 +65,9 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/dty1er/kubecolor
 [ -s $GO_BIN_PATH/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 
+# https://github.com/yannh/kubeconform#Installation
+[ -s $GO_BIN_PATH/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
+
 # https://github.com/jez/as-tree
 # cargo install core dumps (at least in Debian, at least sometimes)
 # [ -s $HOME/.cargo/bin/as-tree ] || cargo install -f --git https://github.com/jez/as-tree
