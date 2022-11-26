@@ -1,3 +1,5 @@
 # https://github.com/ahmetb/kubectx#kubectl-plugins-macos-and-linux
 ctx
 ns
+# https://github.com/tohjustin/kube-lineage#installation
+lineage
