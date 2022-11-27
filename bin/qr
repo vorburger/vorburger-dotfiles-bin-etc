@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+QR=/run/user/$(id -u)/tmp/ytqr.png
+mkdir -p $(dirname "$QR")
+qrencode -l H -o "$QR" "$*"
+timeout 30s display -resize 400 -border 150 "$QR";
+rm "$QR"
