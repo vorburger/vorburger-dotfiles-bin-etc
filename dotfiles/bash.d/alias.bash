@@ -4,6 +4,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # see also fish/conf.d/alias.fish
+# TODO Add the missing $SSH_CONNECTION + $TERM_PROGRAM magic from alias.fish here also
 if command -v code; then
     alias e="code "
     export EDITOR="code --wait"

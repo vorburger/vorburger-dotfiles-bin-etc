@@ -4,7 +4,7 @@
 status is-interactive || exit
 
 # see also bash.d/alias.bash
-if type -q code
+if type -q code && test -z "$SSH_CONNECTION"; or string match -q "$TERM_PROGRAM" "vscode"
     set -Ux EDITOR "code --wait"
     alias e="code "
 else
