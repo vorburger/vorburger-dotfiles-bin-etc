@@ -7,6 +7,11 @@ test -f /usr/share/autojump/autojump.fish && source /usr/share/autojump/autojump
 
 test -f /usr/local/bin/starship && starship init fish | source
 
+# https://github.com/sharkdp/bat#man
+# NOT https://github.com/eth-p/bat-extras/blob/master/doc/batman.md
+# For alternatives, see https://wiki.archlinux.org/title/Color_output_in_console#man
+test -f /usr/bin/bat && set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'" && set -Ux MANROFFOPT "-c"
+
 # Keyboard bindings
 # fish_key_reader is great to find the appropriate keyboard escape sequence! See
 # https://fishshell.com/docs/current/cmds/bind.html#special-input-functions, also

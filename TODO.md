@@ -2,15 +2,19 @@
 
 ## NeXT
 
+- https://wiki.archlinux.org/title/Color_output_in_console
+
+- https://github.com/sharkdp/fd
+
 - https://magefile.org?
 
 - Activate `venv venv` whenever there is one in the current directory, with a Fish `cd` "event" (?) hook thing
 
 - JUST USE IT, to find gaps
-  * initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
-  * later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
-  * develop using `podman machine`, for best isolation?
-  * LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
+  - initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
+  - later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
+  - develop using `podman machine`, for best isolation?
+  - LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
 
 - set -x LC_ALL en_US.UTF-8, set -x LANG en_US.UTF-8; check Arch Wiki?
 
@@ -39,7 +43,6 @@
 
 - https://krew.sigs.k8s.io/plugins/
 
-
 # GCE
 
 - https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
@@ -47,7 +50,6 @@
   similar to https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#local-dev
 
 - https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
-
 
 # LATER
 
