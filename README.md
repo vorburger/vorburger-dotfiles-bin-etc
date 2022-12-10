@@ -22,11 +22,15 @@ Set up these dotfiles (in a container) on a server, like below. Then just SSH in
 using a [YubiKey with Secure Shell ChromeOS](https://chromium.googlesource.com/apps/libapps/+/HEAD/nassh/docs/hardware-keys.md).
 Using locally in ChromeOS's Debian Linux on ARM arch hasn't been tested.
 
+### Visual Studio Code
+
+Install https://code.visualstudio.com and press _Ctrl-Shift-P_ to [Enable _Settings Sync_](https://code.visualstudio.com/docs/editor/settings-sync) (also [GitHub](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync)) (and, if prompted, choose _[Merge](https://code.visualstudio.com/docs/editor/settings-sync#_merge-or-replace)_). (Use [Settings Sync: Show Synced Data](https://code.visualstudio.com/docs/editor/settings-sync#_restoring-data) to view Synced Machines etc.)
+
 ### GitHub Codespaces
 
-Enable _Automatically install dotfiles_ from this repository in [your GitHub Settings](https://github.com/settings/codespaces).
+Enable _Settings Sync_ as described above.
 
-Press _Ctrl-Shift-P_ to _Turn on [Settings Sync](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync)_ and _[Merge](https://code.visualstudio.com/docs/editor/settings-sync#_merge-or-replace)_. (Use [Settings Sync: Show Synced Data](https://code.visualstudio.com/docs/editor/settings-sync#_restoring-data) to view Synced Machines etc.)
+Enable _Automatically install dotfiles_ from this repository in [your GitHub Settings](https://github.com/settings/codespaces).
 
 To fix _Error loading webview: Error: Could not register service workers: NotSupportedError: Failed to register a ServiceWorker for scope ('...'): The user denied permission to use Service Worker_, [allow third-party cookies](https://stackoverflow.com/q/72498891/421602); e.g. on Chrome, add `[*.]github.dev` _Including third-party cookies_ on chrome://settings/cookies.
 

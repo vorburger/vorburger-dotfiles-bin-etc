@@ -68,5 +68,6 @@
   "editor.renderWhitespace": "none",
   "editor.lineNumbers": "off",
   "search.showLineNumbers": true,
-  "github.gitProtocol": "ssh"
+  "github.gitProtocol": "ssh",
+  "vsicons.dontShowNewVersionMessage": true
 }
