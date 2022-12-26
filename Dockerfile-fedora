@@ -4,6 +4,7 @@ FROM devshell
 COPY dnf-install.sh /tmp/
 RUN /tmp/dnf-install.sh
 
+# TODO Replace this with a ~vorburger/.ssh/ volume mount (like in git-server/Dockerfile)
 ADD https://www.vorburger.ch/gpg/ssh-authorized_keys /tmp/vorburger.ch_keys
 ADD https://github.com/vorburger.keys /tmp/vorburger_github_keys
 RUN /usr/local/sbin/add-uid-key vorburger "$(cat /tmp/vorburger.ch_keys /tmp/vorburger_github_keys)"
