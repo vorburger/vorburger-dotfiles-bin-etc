@@ -12,6 +12,9 @@ disabled = true
 
 [directory]
 truncation_symbol = "…/"
+fish_style_pwd_dir_length = 1
+[directory.substitutions]
+'vorburger-dotfiles-bin-etc' = 'v…d'
 
 [java]
 # drop Java version from prompt; format default = "via [${symbol}${version}]($style) "
@@ -27,7 +30,7 @@ disabled = true
 # at least in Starship v1.10.3.
 
 [hostname]
-disabled = true
+# disabled = true
 # same reason as for username, see above
 
 [cmd_duration]
