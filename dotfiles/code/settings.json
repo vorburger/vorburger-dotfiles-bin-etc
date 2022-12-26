@@ -20,7 +20,6 @@
   "editor.inlineSuggest.enabled": true,
   "[beancount]": {},
   "git.confirmSync": false,
-  "git.autofetch": true,
   "remoteHub.commitDirectlyWarning": "off",
   "markdown.validate.fileLinks.enabled": "error",
   "markdown.validate.enabled": true,
