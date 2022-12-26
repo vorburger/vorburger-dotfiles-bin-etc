@@ -14,12 +14,22 @@ docker exec test-git-server /usr/local/sbin/add-uid-key git "$(cat /tmp/test-$$-
 
 docker exec test-git-server /usr/bin/chsh -s /usr/bin/git-shell git
 
+# TODO Test this fails::
+# ssh -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT git@localhost "echo hi"
+
 # TODO How to script creating repo in container?
-docker exec test-git-server bash -c "mkdir /git && mkdir /git/test-repo && cd /git/test-repo && git init --bare"
+docker exec test-git-server bash -c "mkdir /git && mkdir /git/test-repo && cd /git/test-repo && git init --bare && chown -R git:git /git/"
 
 # $GIT_SSH_COMMAND takes precedence over $GIT_SSH, and is interpreted by the shell, which allows additional arguments to be included.
 # GIT_TRACE=1 
 GIT_SSH_COMMAND="ssh -i /tmp/test-$$-id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $PORT" git clone git@localhost:/git/test-repo
+
+cd test-repo/
+echo "hello, world" > hello.txt
+git add hello.txt
+git commit -m "Add initial greeting."
+GIT_TRACE=1 GIT_SSH_COMMAND="ssh -i /tmp/test-$$-id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $PORT" git push
+cd ..
 
 docker rm --force --time=1 test-git-server
 rm -f /tmp/test-$$-id_rsa*
