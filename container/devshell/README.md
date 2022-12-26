@@ -5,7 +5,7 @@
     ssh -A -p 2222 localhost
     container$ ssh git@github.com
 
-    docker rm -f devshell
+    docker rm --force --time=1 devshell
 
 _TODO volume mapping to persist ongoing dev work._
 

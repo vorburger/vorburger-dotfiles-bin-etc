@@ -8,7 +8,7 @@ ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
 mkdir /tmp/test-$$-id_rsa.ssh
 cp /tmp/test-$$-id_rsa.pub  /tmp/test-$$-id_rsa.ssh/authorized_keys
 
-docker rm -f -t=1 test-git-server || true
+docker rm --force --time=1 test-git-server || true
 docker run -d -p 2222 -v /tmp/test-$$-id_rsa.ssh/:/home/git/.ssh/:ro,Z --name test-git-server git-server
 PORT="$(docker port test-git-server | sed 's/2222\/tcp -> 0.0.0.0://')"
 sleep 2
