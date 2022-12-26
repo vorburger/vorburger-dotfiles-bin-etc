@@ -10,7 +10,9 @@ PORT="$(docker port test-sshd | sed 's/2222\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
-docker exec test-sshd /usr/local/sbin/add-uid-key fooba "$(cat /tmp/test-$$-id_rsa.pub)"
+docker exec test-sshd /usr/local/sbin/add-uid-key fooba /bin/bash "$(cat /tmp/test-$$-id_rsa.pub)"
+
+sleep 2
 
 # intentionally testing twice, just to make sure that ssdh isn't in debugging mode and quit after first use
 ssh -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "1. hello, world."

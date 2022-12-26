@@ -10,9 +10,12 @@ the container has to be re-started after every test.
 
 ## TODO
 
-1. automate user creation and pub key steps from `test.sh`, for arbitrary users - but without hard-coding them into the Dockerfile.
+1. Replace hard-coded `vorburger` public keys in `Dockerfile` with volume mounting ~vorburger/.ssh, like in `git-server`,
+   to automate user creation and pub key steps from `test.sh`, for arbitrary users - but without hard-coding them into the Dockerfile,
+   instead of calling add-uid-key with keys while baking container. Even better, make the the script in container that's called on use
+   create the home user? This is alluded to but currently commented out because not finished and properly tested in sshd-test.
+
 1. better create hostkeys dynamically on first use in script instead of during Dockerfile?
-1. add-uid-key better while baking container, or as script in container called on use?
 
 ## An Alternative
 

@@ -16,7 +16,7 @@ PORT="$(docker port test-$1 | sed 's/2222\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
-docker exec test-$1 /usr/local/sbin/add-uid-key tester "$(cat /tmp/test-$$-id_rsa.pub)"
+docker exec test-$1 /usr/local/sbin/add-uid-key tester /bin/bash "$(cat /tmp/test-$$-id_rsa.pub)"
 
 # NB -A for Agent Forwarding!
 ssh -A -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT tester@localhost ssh-add -l

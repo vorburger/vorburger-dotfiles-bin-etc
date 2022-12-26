@@ -1,7 +1,7 @@
 # Usage
 
     docker run -d --name devshell devshell
-    docker exec devshell add-uid-key $USERNAME "$(cat ~/.ssh/authorized_keys)"
+    docker exec devshell add-uid-key $USERNAME /bin/bash "$(cat ~/.ssh/authorized_keys)"
     ssh -A -p 2222 localhost
     container$ ssh git@github.com
 

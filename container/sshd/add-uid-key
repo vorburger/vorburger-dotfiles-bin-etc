@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
-NEW_UID=$1
-AUTHORIZED_KEYS="${*:2}"
+NEW_UID="$1"
+SHELL="$2"
+AUTHORIZED_KEYS="${*:3}"
 
-useradd "$NEW_UID"
+useradd --shell "$SHELL" "$NEW_UID"
 mkdir /home/"$NEW_UID"/.ssh/
 echo "$AUTHORIZED_KEYS" > /home/"$NEW_UID"/.ssh/authorized_keys
 chown -R "$NEW_UID":"$NEW_UID" /home/"$NEW_UID"/.ssh
