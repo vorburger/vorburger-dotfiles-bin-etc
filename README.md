@@ -85,13 +85,19 @@ And run `~/.install-nano.sh` during `Dockerfile-toolbox`.
 
 ### Fedora Workstation
 
+Unless you already have GitHub auth working, we may have a "chicken and egg" problem with [the YubiKey configuration](docs/yubikey.md), so it's simplest to start with an anon clone:
+
     mkdir -p ~/git/github.com/vorburger/
     cd ~/git/github.com/vorburger/
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    git clone https://github.com/vorburger/vorburger-dotfiles-bin-etc.git
     cd vorburger-dotfiles-bin-etc
 
     mv ~/.bashrc ~/.bashrc.original
     ./dnf-install-gui.sh
+
+If it all works, you can now open _Kitty_ (not _GNOME Terminal)_, [test the YubiKey](docs/yubikey.md), and then change the remote:
+
+    git remote set-url origin git@github.com:vorburger/vorburger-dotfiles-bin-etc
 
 #### UHK
 
