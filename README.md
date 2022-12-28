@@ -15,6 +15,7 @@
     ./pacman-install-gui.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
+    ./authorized_keys.sh
 
 ## ChromeOS
 
@@ -94,6 +95,7 @@ Unless you already have GitHub auth working, we may have a "chicken and egg" pro
 
     mv ~/.bashrc ~/.bashrc.original
     ./dnf-install-gui.sh
+    ./authorized_keys.sh
 
 If it all works, you can now open _Kitty_ (not _GNOME Terminal)_, [test the YubiKey](docs/yubikey.md), and then change the remote:
 
@@ -119,6 +121,7 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./setup.sh
+    ./authorized_keys.sh
 
 ### Fedora-based Container (with SSH)
 

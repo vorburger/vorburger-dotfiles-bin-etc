@@ -15,7 +15,7 @@ if [ ! -s /usr/bin/code ]; then
 fi
 
 sudo dnf install -y \
-    pass kitty code \
+    pass kitty code powertop \
     ImageMagick \
     gnome-tweak-tool \
     android-tools
@@ -25,6 +25,8 @@ sudo dnf remove "libreoffice*"
 ./all-install.sh
 
 ./symlink.sh
+
+./gnome-settings.sh
 
 # sudo alternatives --config java
 # sudo alternatives --config javac

@@ -31,7 +31,6 @@
     "MD026": { "punctuation": ",;:。，；：" },
     "MD034": false
   },
-  "workbench.startupEditor": "none",
   "gitlens.codeLens.scopes": ["document"],
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "files.autoSaveDelay": 500,
@@ -68,5 +67,6 @@
   "editor.lineNumbers": "off",
   "search.showLineNumbers": true,
   "github.gitProtocol": "ssh",
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.startupEditor": "none"
 }
