@@ -2,6 +2,17 @@
 
 ## NeXT
 
+- Fresh Install `.bashrc` contains only `[ -f ~/.fzf.bash ] && source ~/.fzf.bash` ?! Perhaps some set-up order got inversed...
+
+- Auto-start Kitty & Brave
+
+- Java 17 instead of 11
+  1. change DNF package in dnf-install.sh + dnf-install-gui.sh
+  1. VSC now requires Java 17 instead of 11
+  1. rm bin/java11 bin/java8, rm alternatives from dnf-install.sh + dnf-install-gui.sh
+
+- clean up bin/, mv ARCHIVE or rm; many scripts are un-used
+
 - https://wiki.archlinux.org/title/Color_output_in_console
 
 - https://github.com/sharkdp/fd
@@ -52,8 +63,6 @@
 - https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
 
 # LATER
-
-- replace nano with micro
 
 - finish full Toolbox support; see README.md
 - toolbox: How does toolbox give accesss to podman.socket without requiring the chown?! It's a PITA, and would be nice to avoid, in an ideal world.
