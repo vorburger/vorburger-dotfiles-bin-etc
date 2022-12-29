@@ -7,7 +7,7 @@
 
     docker rm --force --time=1 devshell
 
-_TODO volume mapping to persist ongoing dev work._
+_TODO Add volume mapping to persist ongoing dev work, as per [my Podman Notes](../../docs/podman.md)._
 
 The `docker run -p 2222:22` port mapping is no longer required since we switched the default port to 2222 (for GCE).
 

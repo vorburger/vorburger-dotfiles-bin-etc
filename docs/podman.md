@@ -2,7 +2,11 @@
 
 ## Volumes
 
-The TL;DR is:
+See [the official doc](https://docs.podman.io/en/latest/volume.html),
+and [this blog post](https://www.redhat.com/sysadmin/rootless-podman-makes-sense)
+and [another blog post](https://www.redhat.com/sysadmin/debug-rootless-podman-mounted-volumes),
+and [that blog post](https://opensource.com/article/18/12/podman-and-user-namespaces);
+but the TL;DR is:
 
 * For processes running with UID 0 as root in the container, without `podman --user`, one can simply use
   something like `-v $PWD:/project:Z` (such as [here](https://github.com/OASIS-learn-study/minecraft-storeys-maker/blob/30ee8109ac2c990e3990da3f022cc042dcb9cb06/make#L5),
@@ -12,21 +16,24 @@ The TL;DR is:
   this can be seen e.g. by `podman info` and `idMappings` of `podman top`, which are
   based on `/etc/subuid` & `/etc/subgid`, see `man newuidmap` (`man newgidmap`).
 
-* Otherwise, it's... more complicated. `podman unshare` is one way, but after a `chown` it's not really usable 
+* Otherwise, it's... more complicated. `podman unshare` is one way, but after a `chown` it's not really usable
   normally on the host anymore - so that's kind of pointless. Therefore, separating in-container data on
   a `podman volume` makes more sense. _(TODO: Explore create --opt=o=uid=1000,gid=1000._
   _Also is there actually/how to use the `btrfs` driver?)_
 
 * _TODO: Using `-v $PWD:/project:Z,U` is an option still to explore further._
 
-See [the official doc](https://docs.podman.io/en/latest/volume.html),
-and [this blog post](https://www.redhat.com/sysadmin/rootless-podman-makes-sense)
-and [another blog post](https://www.redhat.com/sysadmin/debug-rootless-podman-mounted-volumes),
-and [that blog post](https://opensource.com/article/18/12/podman-and-user-namespaces).
+* With `podman volume`, as used e.g. by [dotfiles-fedora.service](../systemd/dotfiles-fedora.service):
 
     $ podman volume create dotfiles-work
     $ podman volume inspect dotfiles-work
     $ ls ~/.local/share/containers/storage/volumes/dotfiles-work/_data
+
+    $ podman run -v home-git:/home/vorburger/git gcr.io/vorburger/dotfiles-fedora
+
+    $ podman volume ls
+    $ podman volume rm ...
+    $ podman volume prune
 
     $ podman info
     (...)
@@ -52,14 +59,6 @@ and [that blog post](https://opensource.com/article/18/12/podman-and-user-namesp
     root        vorburger   root        vorburger
     vorburger   100999      vorburger   100999
     vorburger   ?           vorburger   ?
-
-_TODO_
-
-    podman volume create
-    podman volume ls
-    podman volume rm
-    podman volume prune
-
 
 ## _"Podman in Podman"_
 
