@@ -15,10 +15,14 @@ set -euox pipefail
 # see https://fedoramagazine.org/systemd-converting-sysvinit-scripts/
 # NB /usr/libexec/openssh/sshd-keygen is a script != /usr/bin/ssh-keygen binary
 # NB https://fedoraproject.org/wiki/Changes/Remove_slogin_and_sshd-keygen
-[ ! -s /etc/ssh/ssh_host_rsa_key ]     && /usr/libexec/openssh/sshd-keygen rsa
-[ ! -s /etc/ssh/ssh_host_ecdsa_key ]   && /usr/libexec/openssh/sshd-keygen ecdsa
-[ ! -s /etc/ssh/ssh_host_ed25519_key ] && /usr/libexec/openssh/sshd-keygen ed25519
+#[ ! -s /etc/ssh/ssh_host_rsa_key ]     && /usr/libexec/openssh/sshd-keygen rsa
+#[ ! -s /etc/ssh/ssh_host_ecdsa_key ]   && /usr/libexec/openssh/sshd-keygen ecdsa
+#[ ! -s /etc/ssh/ssh_host_ed25519_key ] && /usr/libexec/openssh/sshd-keygen ed25519
+# see 02-hostkey.conf
+mkdir -pv /pv/sshd/
+[ ! -s /pv/sshd/ssh_host_ed25519_key ] && /pv/sshd/ssh_host_ed25519_key ed25519
 
 # As in /usr/lib/systemd/system/sshd.service ...
+# -e writes debug logs to standard error instead of the system log.
 # -D for production, or -eddd for debug
 /usr/sbin/sshd -p 2222 -e -D

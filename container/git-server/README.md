@@ -2,16 +2,15 @@
 
 ## ToDo
 
-1. All TODO
-1. read-only container root filesystem
-1. USER git ?
-1. WORKDIR /git ?
+1. Mount host key, needs HostKey in sshd_conf.d
 1. No sudo usermod -aG wheel "$NEW_UID"
+1. run sshd as UID git instead of root
 1. git-shell-commands to create repo?
-1. sshd: Disable password login, Disable root user login
+1. sshd: Disable password login, Disable root user login, Disable Subsystem sftp
 1. git: no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
 1. Disable git push --force on server side with a hook
 1. Backup!
+1. All remaining TODO, if any
 
 ## Usage
 

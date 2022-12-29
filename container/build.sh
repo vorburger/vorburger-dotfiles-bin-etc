@@ -17,5 +17,5 @@ build fedora-updated Dockerfile        fedora-updated
 build sshd           Dockerfile        sshd
 build git-server     Dockerfile        git-server
 build devshell       Dockerfile        devshell
-build ..             Dockerfile-fedora gcr.io/vorburger/dotfiles-fedora
+#build ..             Dockerfile-fedora gcr.io/vorburger/dotfiles-fedora
 ## build gcloud         Dockerfile        gcloud
