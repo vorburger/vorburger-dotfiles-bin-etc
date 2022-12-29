@@ -4,7 +4,7 @@ see [`test.sh`](test.sh), and also the [`devshell`](../devshell/).
 
 ## Troubleshooting
 
-Change `-D` to `-eddd` in `Dockerfile`, (rebuild and) check `docker logs -f test-sshd`.
+Change `-D` to `-eddd` in `sshd-start`, (rebuild and) check `docker logs -f test-sshd`.
 NB that _The server also will not fork and will only process one connection._ (`man sshd`),
 the container has to be re-started after every test.
 

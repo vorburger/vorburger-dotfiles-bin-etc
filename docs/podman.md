@@ -23,11 +23,11 @@ but the TL;DR is:
 
 * _TODO: Using `-v $PWD:/project:Z,U` is an option still to explore further._
 
-* With `podman volume`, as used e.g. by [dotfiles-fedora.service](../systemd/dotfiles-fedora.service):
+* With `podman volume`, as used e.g. by [dotfiles-fedora.service](../systemd/dotfiles-fedora.service) or the [git-server](../container/git-server/README.md):
 
-    $ podman volume create dotfiles-work
-    $ podman volume inspect dotfiles-work
-    $ ls ~/.local/share/containers/storage/volumes/dotfiles-work/_data
+    $ podman volume create home-git
+    $ podman volume inspect home-git
+    $ ls ~/.local/share/containers/storage/volumes/home-git/_data
 
     $ podman run -v home-git:/home/vorburger/git gcr.io/vorburger/dotfiles-fedora
 

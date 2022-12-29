@@ -15,9 +15,26 @@
 
 ## Usage
 
-    ../build.sh
+TODO `systemd/git-server.service`, or _TODO this currently still fails with `git@localhost: Permission denied (publickey).`
+(even though [`test`](test) works), but I don't understand why (is it because of permission on /git/.ssh? but it's the same in the test, no?), yet:_
 
-TODO document usage, based on the [`test`](test) ...
+    ../build.sh
+    podman volume create git-server
+    mkdir ~/.ssh/authorized_keys.git
+    cp ~/.ssh/authorized_keys ~/.ssh/authorized_keys.git/
+    podman run -d -p 2223:2222 -v git-server:/git/ -v ~/.ssh/authorized_keys.git/:/home/git/.ssh/:ro,Z --name git-server git-server
+    
+    ssh -p 2223 git@localhost
+    podman logs git-server
+
+    podman exec git-server bash -c "mkdir /git/test-repo && cd /git/test-repo && git init --bare && chown -R git:git /git/"
+    GIT_SSH_COMMAND="ssh -p 2223" git clone git@localhost:/git/test-repo
+
+    podman rm -f -t=1 git-server
+
+TODO How to avoid `GIT_SSH_COMMAND` just for the port?
+
+See also the [`test`](test) to discover more usages.
 
 ## Troubleshooting
 
@@ -27,6 +44,9 @@ get ready when the container starts; the solution would be simply to increase th
     kex_exchange_identification: read: Connection reset by peer
     Connection reset by ::1 port 36619
     fatal: Could not read from remote repository.
+
+    Please make sure you have the correct access rights
+    and the repository exists.
 
 ## Background
 
