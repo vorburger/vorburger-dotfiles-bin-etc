@@ -13,8 +13,8 @@ docker run -d -p 2222 -v /tmp/test-$$-id_rsa.ssh/:/home/git/.ssh/:ro,Z --name te
 PORT="$(docker port test-git-server | sed 's/2222\/tcp -> 0.0.0.0://')"
 sleep 2
 
-! ssh -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT git@127.0.0.1
-! ssh -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT git@localhost "rm -rf /"
+! ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p $PORT git@127.0.0.1
+! ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p $PORT git@localhost "rm -rf /"
 
 # TODO How to script creating repo in container?
 docker exec test-git-server bash -c "mkdir /git && mkdir /git/test-repo && cd /git/test-repo && git init --bare && chown -R git:git /git/"
