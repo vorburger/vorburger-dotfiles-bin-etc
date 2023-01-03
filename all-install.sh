@@ -103,3 +103,8 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 fish -c "fisher update"
 
 # ADD ALL fisher generated fish functions to .gitignore instead of committing them
+
+
+# To install Python related stuff, use virtual environments;
+# see my https://github.com/vorburger/Notes/blob/master/Reference/python.md,
+# and note dotfiles/fish/functions/venv.fish
