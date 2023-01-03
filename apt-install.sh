@@ -3,6 +3,15 @@ set -euxo pipefail
 
 # This is for anything that's common to Ubuntu and Debian; see debian|ubuntu-install.sh for Debian respectively Ubuntu specific stuff.
 
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt
+# gh is on Debian, but behind officially repo; e.g. on 2023-01-03 it was 2.17.0 whereas latest was 2.21.1.
+# Adding this repo here must be done before the "apt update" and then the "apt install gh" that comes next.
+#if [ ! -f /usr/share/keyrings/githubcli-archive-keyring.gpg ]; then
+#    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+#      && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+#      && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+#fi
+
 sudo apt --allow-releaseinfo-change update
 # sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
 # sudo apt-get update --fix-missing && sudo apt-get clean && sudo apt-get clean && sudo apt-get install -f && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
@@ -15,11 +24,12 @@ sudo apt --allow-releaseinfo-change update
 # which breaks the gcr.io/cloudshell-images/custom-image-validation:latest test_ssh (__main__.CloudDevshellTests)
 
 sudo apt install -y \
-    bash-completion file git hub htop lsb-release procps rpl unzip \
+    bash-completion file git gh htop lsb-release procps rpl unzip \
     trash-cli shellcheck wipe \
     autojump fd-find \
     cargo curl graphviz wget \
-    autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev
+    autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
+    virtualenv
 
 # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
