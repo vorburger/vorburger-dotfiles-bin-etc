@@ -23,9 +23,15 @@
 [interactive]
     diffFilter = delta --color-only
 
+# https://dandavison.github.io/delta/
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    dark = true
+    # https://github.com/dandavison/delta/blob/master/themes.gitconfig
+    # features = chameleon
+    # plus-style = white bold green
+# NOTE https://dandavison.github.io/delta/using-delta-with-tmux.html
 
 [apply]
     whitespace = fix # or “warn”, but “now” leads to “fatal: unrecognized whitespace option 'now'”
