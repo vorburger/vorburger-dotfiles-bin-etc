@@ -25,7 +25,8 @@ if [ ! -f /usr/local/bin/starship ]; then
 fi
 
 # https://github.com/junegunn/fzf#using-git
-if [ ! $(command -v fzf) ]; then
+# if [ ! $(command -v fzf) ]; then
+if [ ! -d ~/.fzf ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install --all
 fi
@@ -62,8 +63,10 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/mikefarah/yq#go-get
 [ -s $GO_BIN_PATH/yq ] || go install github.com/mikefarah/yq/v4@latest
 
-# https://github.com/dty1er/kubecolor
-[ -s $GO_BIN_PATH/kubecolor ] || go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
+# https://github.com/hidetatz/kubecolor (WAS https://github.com/dty1er/kubecolor)
+# ALSO https://github.com/kubecolor/kubecolor/; see https://github.com/hidetatz/kubecolor/issues/95
+# (also https://github.com/hidetatz/kubecolor/issues/101 and https://github.com/hidetatz/kubecolor/issues/113)
+[ -s $GO_BIN_PATH/kubecolor ] || go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
 
 # https://github.com/yannh/kubeconform#Installation
 [ -s $GO_BIN_PATH/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
