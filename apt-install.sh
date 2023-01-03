@@ -45,5 +45,12 @@ if [ ! -f /usr/bin/bat ]; then
     sudo dpkg -i bat_0.22.1_amd64.deb
 fi
 
+# https://github.com/Peltoche/lsd
+# TODO automatically download latest version instead of hard-coding
+if [ ! -f /usr/bin/delta ]; then
+    wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb
+    sudo dpkg -i git-delta_0.15.1_amd64.deb
+fi
+
 # only DNF is here, other installations are in all-install.sh
 "$(dirname "$0")"/all-install.sh
