@@ -13,10 +13,8 @@
   "window.zoomLevel": 3,
   "terminal.integrated.shell.linux": "/usr/bin/fish",
   "explorer.confirmDragAndDrop": false,
-  "redhat.telemetry.enabled": true,
   "java.saveActions.organizeImports": true,
   "window.menuBarVisibility": "classic",
-  "go.toolsManagement.autoUpdate": true,
   "editor.inlineSuggest.enabled": true,
   "[beancount]": {},
   "git.confirmSync": false,
@@ -69,6 +67,9 @@
   "github.gitProtocol": "ssh",
   "vsicons.dontShowNewVersionMessage": true,
   "workbench.startupEditor": "none",
+  // G-like
+  "redhat.telemetry.enabled": false,
+  "go.toolsManagement.autoUpdate": false,
   // G
   "go.alternateTools": {
     "gocode": "/usr/bin/gocode",
