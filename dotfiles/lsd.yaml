@@ -1,0 +1,7 @@
+# https://github.com/Peltoche/lsd#config-file-content
+date: +%Y-%m-%d %H:%M
+sorting:
+  dir-grouping: first
+total-size: true
+# TODO This doesn't seem to work, or do anything? At least in Kitty & GNOME Terminal. Would it require support by the Terminal Emulator?
+hyperlink: always
