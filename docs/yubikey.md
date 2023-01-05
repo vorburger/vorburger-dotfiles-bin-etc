@@ -8,9 +8,38 @@
 
 ## Background
 
-TODO Move existing YubiKey related content from `README` here when cleaning up the README...
+TODO Move all existing YubiKey related content from `README` here when cleaning up the README...
 
 ## Troubleshooting
+
+### `ssh-add -l` fails
+
+    $ ssh-add -L
+    Error connecting to agent: No such file or directory
+
+    $ ll $SSH_AUTH_SOCK
+    /home/vorburger/.ssh.agent ⇒ /run/user/1000/gnupg/S.gpg-agent.ssh
+
+    $ ll -L $SSH_AUTH_SOCK
+    lsd: /home/vorburger/.ssh.agent: No such file or directory (os error 2).
+
+This is because the `gpg-agent` daemon was not running, yet (see `man gpg-agent` for related details); we can fix this like this:
+
+    $ systemctl --user enable --now gpg-agent-ssh.socket
+    $ ssh-add -L
+    ssh-...
+    $ systemctl --user status gpg-agent-ssh.socket
+    $ systemctl --user status gpg-agent
+
+Background:
+
+* There may be x2 such GPG Agent processes running (at least on Fedora Workstation) - one for the `root` user which was launched by `systemd` for `packagekit`, and one for the _"normal"_ user.
+
+* `gpgconf --launch gpg-agent` is another way to explicitly start it (as a daemon); see `man gpgconf` for background.  Alternatively, `systemctl status` may show that `seahorse` started it, via [D-Bus Activation](https://wiki.gnome.org/HowDoI/DBusApplicationLaunching).
+
+* Note `gpgconf --list-components` showing that in addition to `gpg-agent`, GPG has other moving parts, notably the `scdaemon`; consider using `gpgconf --kill all` (and `gpgconf --launch all`) to affect all such components which are daemons. Note also that `scdaemon` appears to be launched as a child process of (and ergo presumably by) `gpg-agent`.
+
+* `gpgconf --kill gpg-agent` kills a `gpg-agent`.
 
 ### `ssh-add -l` is empty & `ssh git@github.com` NOK
 
@@ -22,7 +51,7 @@ TODO Move existing YubiKey related content from `README` here when cleaning up t
 
 * This set-up [makes this happen automatically](https://github.com/vorburger/vorburger-dotfiles-bin-etc/search?q=SSH_AUTH_SOCK) (only) in Kitty,
   via `~/.config/kitty/kitty.conf` use of `tmux-local` and `tmux3`,
-  which set `SSH_AUTH_SOCK` to `~/.ssh.agent` which symlinks to `/run/user/1000/gnupg/S.gpg-agent.ssh` (in `$XDG_RUNTIME_DIR`).
+  which sets `SSH_AUTH_SOCK` to `~/.ssh.agent` which symlinks to `/run/user/1000/gnupg/S.gpg-agent.ssh` (in `$XDG_RUNTIME_DIR`).
 
 ### `decryption failed: No secret key`
 

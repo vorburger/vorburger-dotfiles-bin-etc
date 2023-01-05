@@ -321,15 +321,6 @@ always _only for a SINGLE Hostname__, never for all servers.
 
 BTW: `RemoteForward` in `~/.ssh/config` is not actually required (at least with Fedora 30).
 
-`gpgconf --kill gpg-agent` kills a `gpg-agent`.
-
-There are x2 such GPG Agent processes running (at least on Fedora 36) - one for the `root` user which was launched by `systemd` for `packagekit`, and one for the _"normal"_ user.
-
-`gpgconf --launch gpg-agent` is one way to explicitly start it (as a daemon); see `man gpgconf` for background.  A _"normal"_ users' `gpg-agent` does NOT appear to be started by systemd (at least on Fedora 36; see `systemctl --user status gpg-agent`, and note that the `systemctl --user status gpg-agent.socket` **socket** unit for `/run/user/1000/gnupg/S.gpg-agent` is vendor preset disabled). `systemctl status` appears to show that `seahorse` starts it, via [D-Bus Activation](https://wiki.gnome.org/HowDoI/DBusApplicationLaunching).
-
-Note `gpgconf --list-components` showing that in addition to `gpg-agent`, GPG has other moving parts, notably the `scdaemon`; consider using `gpgconf --kill all` (and `gpgconf --launch all`) to affect all such components which are daemons. Note also that `scdaemon` appears to be launched as a child process of (and ergo presumably by)
-`gpg-agent`.
-
 ### `gpg` Agent Forwarding
 
 _TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SSH'ing remotely._

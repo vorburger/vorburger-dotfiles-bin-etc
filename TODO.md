@@ -2,6 +2,10 @@
 
 ## NeXT
 
+- https://github.com/gazorby/fish-abbreviation-tips/issues/27
+- https://github.com/gazorby/fifc
+- https://github.com/gazorby/fish-finders
+
 - Fresh Install `.bashrc` contains only `[ -f ~/.fzf.bash ] && source ~/.fzf.bash` ?! Perhaps some set-up order got inversed...
 
 - Auto-start Kitty & Brave

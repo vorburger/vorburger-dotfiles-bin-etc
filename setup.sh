@@ -17,5 +17,8 @@ sudo cp container/sshd/01-local.conf /etc/ssh/sshd_config.d/
 sudo systemctl enable --now sshd
 sudo systemctl restart sshd
 
+# see docs/yubikey.md
+systemctl --user enable --now gpg-agent-ssh.socket
+
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
 systemctl enable --now --user podman.socket
