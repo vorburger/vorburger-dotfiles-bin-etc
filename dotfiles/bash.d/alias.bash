@@ -13,9 +13,10 @@ else
     export EDITOR=nano
 fi
 
-[ -s /usr/bin/lsd ] && alias l="lsd "
-[ -s /usr/bin/lsd ] && alias ll="lsd -l "
-[ -s /usr/bin/bat ] && alias c="bat "
+command -v lsd && alias l="lsd "
+command -v lsd && alias ll="lsd -l "
+command -v lsd && alias lt="lsd --tree "
+command -v bat && alias c="bat "
 
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git

@@ -71,9 +71,8 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/yannh/kubeconform#Installation
 [ -s $GO_BIN_PATH/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
-# https://github.com/jez/as-tree
-# cargo install core dumps (at least in Debian, at least sometimes)
-# [ -s $HOME/.cargo/bin/as-tree ] || cargo install -f --git https://github.com/jez/as-tree
+# https://github.com/Peltoche/lsd#from-source
+cargo install lsd
 
 # https://github.com/PatrickF1/fzf.fish
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?

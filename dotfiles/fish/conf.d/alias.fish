@@ -12,9 +12,10 @@ else
     set -Ux EDITOR nano
 end
 
-test -f /usr/bin/lsd && alias l="lsd "
-test -f /usr/bin/lsd && alias ll="lsd -l "
-test -f /usr/bin/bat && alias c="bat "
+command -sq lsd && alias l="lsd "
+command -sq lsd && alias ll="lsd -l "
+command -sq lsd && alias lt="lsd --tree "
+command -sq bat && alias c="bat "
 
 complete --command b --wraps bazelisk --wraps bazel
 complete --command g --wraps git
