@@ -1,6 +1,7 @@
 {
   "editor.suggestSelection": "first",
   "editor.minimap.enabled": false,
+  "files.trimTrailingWhitespace": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "java.project.importOnFirstTimeStartup": "automatic",
   "files.exclude": {
