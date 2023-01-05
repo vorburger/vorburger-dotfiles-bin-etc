@@ -55,9 +55,11 @@ get ready when the container starts; the solution would be simply to increase th
 
 ## Similar Projects
 
+* https://github.com/charmbracelet/soft-serve
 * https://github.com/jkarlosb/git-server-docker
 * https://github.com/leonklingele/git-simpleserver
 * https://github.com/qishibo/git-server
 * https://github.com/marcellodesales/git-sshd-server-docker
 * https://github.com/ZhongRuoyu/git-server/
 * https://github.com/louisroyer-docker/git-server/
+* https://github.com/chainguard-images/images/tree/main/images/git is a git client, not a server
