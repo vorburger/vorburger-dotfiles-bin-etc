@@ -68,5 +68,22 @@
   "search.showLineNumbers": true,
   "github.gitProtocol": "ssh",
   "vsicons.dontShowNewVersionMessage": true,
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  // G
+  "go.alternateTools": {
+    "gocode": "/usr/bin/gocode",
+    "godoc": "/usr/bin/godoc",
+    "goimports": "/usr/bin/goimports",
+    "gorename": "/usr/bin/gorename",
+    "guru": "/usr/bin/guru"
+  },
+  "go.autocompleteUnimportedPackages": true,
+  "go.buildOnSave": "off",
+  "go.docsTool": "guru",
+  "go.formatTool": "goimports",
+  "go.gocodeAutoBuild": false,
+  "go.inferGopath": false,
+  "go.vetOnSave": "off",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false
 }
