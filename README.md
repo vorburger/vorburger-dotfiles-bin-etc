@@ -298,6 +298,17 @@ Now `sudo dnf install seahorse` (GNOME's Passwords and Keys) and when prompted, 
     $ ssh git@github.com
     # does not ask for passphrase anymore!
 
+This could be automated e.g. by having an `dotfiles/bash.d/ssh-agent` which contains something like this:
+
+    if [[ -z "$SSH_AUTH_SOCK" ]]; then
+      eval $(ssh-agent)
+      ssh-add $HOME/.ssh/id_ed25519
+    else
+      echo SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+    fi
+
+But with how we'll set it up using a YubiKey and `gpgconf` in the next section we do not need this.
+
 ### `ssh` (incl. `git`) Agent incl. Forwarding with YubiKey
 
 As e.g. per https://github.com/drduh/YubiKey-Guide#replace-agents, we need to appropriately set
