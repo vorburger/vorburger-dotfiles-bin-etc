@@ -1,6 +1,0 @@
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
-  eval $(ssh-agent)
-  ssh-add $HOME/.ssh/id_ed25519
-else
-  echo SSH_AUTH_SOCK=$SSH_AUTH_SOCK
-fi
