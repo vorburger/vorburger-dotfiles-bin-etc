@@ -28,4 +28,4 @@ alias gpu="git push "
 alias gpl="git pull "
 alias gpf="git push --force vorburger"
 alias gsy="git pull --rebase && git push"
-# see ../bin/g* for more Git tools
+# see fish/conf.d/git.fish (and ../bin/g*) for more Git tools
