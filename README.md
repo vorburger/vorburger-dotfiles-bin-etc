@@ -334,7 +334,7 @@ BTW: `RemoteForward` in `~/.ssh/config` is not actually required (at least with 
 
 ### `gpg` Agent Forwarding
 
-_TODO make it possible to use the "local" `gpg` (e.g. for `pass` et al.) when SSH'ing remotely._
+See https://wiki.gnupg.org/AgentForwarding and related personal Notes.
 
 ## Manual Settings
 

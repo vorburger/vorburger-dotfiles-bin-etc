@@ -11,7 +11,8 @@
 1. sshd: Disable password login, Disable root user login
 1. git: no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
 1. Disable git push --force on server side with a hook
-1. Backup!
+1. Encrypted Backup! (Or not here, just part of volume management; better.)
+1. Enforce/require signatures (git commit -S)
 
 ## Usage
 
@@ -23,7 +24,7 @@ TODO `systemd/git-server.service`, or _TODO this currently still fails with `git
     mkdir ~/.ssh/authorized_keys.git
     cp ~/.ssh/authorized_keys ~/.ssh/authorized_keys.git/
     podman run -d -p 2223:2222 -v git-server:/git/ -v ~/.ssh/authorized_keys.git/:/home/git/.ssh/:ro,Z --name git-server git-server
-    
+
     ssh -p 2223 git@localhost
     podman logs git-server
 
