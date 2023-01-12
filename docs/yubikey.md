@@ -8,7 +8,9 @@
 
 ## Background
 
-TODO Move all existing YubiKey related content from `README` here when cleaning up the README...
+_TODO Merge all of my Notes/../yubikey.md here?_
+
+_TODO Move all existing YubiKey related content from `README` here when cleaning up the README..._
 
 ## Troubleshooting
 
@@ -23,13 +25,15 @@ TODO Move all existing YubiKey related content from `README` here when cleaning 
     $ ll -L $SSH_AUTH_SOCK
     lsd: /home/vorburger/.ssh.agent: No such file or directory (os error 2).
 
-This is because the `gpg-agent` daemon was not running, yet (see `man gpg-agent` for related details); we can fix this like this:
+This is because the `gpg-agent` daemon was not running, yet (see `man gpg-agent` for related details); we COULD fix this like this:
 
     $ systemctl --user enable --now gpg-agent-ssh.socket
     $ ssh-add -L
     ssh-...
     $ systemctl --user status gpg-agent-ssh.socket
     $ systemctl --user status gpg-agent
+
+BUT we prefer not to do this, as this interferes with support GPG over SSH; see Notes/../yubikey.md.
 
 Background:
 

@@ -18,7 +18,8 @@ sudo systemctl enable --now sshd
 sudo systemctl restart sshd
 
 # see docs/yubikey.md
-systemctl --user enable --now gpg-agent-ssh.socket
+# NO systemctl --user enable --now gpg-agent-ssh.socket
+systemctl disable --now --user gpg-agent.socket gpg-agent-ssh.socket
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
 systemctl enable --now --user podman.socket
