@@ -7,12 +7,13 @@ DIR="$(realpath $(dirname $0))"
 
 # TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
-  if [ ! -e ~/$1 ]
-  then
+  if [[ -h ~/$1 && ! -e ~/$1 ]]; then
+    echo "~/$1 is a BROKEN symlink, so NO NEW DOTFILES CREATED (fix that first)"
+  elif [[ ! -e ~/$1 ]]; then
     mkdir -p $(dirname ~/$1)
     ln --symbolic --relative $DIR/$2 ~/$1
   else
-    ls -l ~/$1
+    # ls -l ~/$1
     echo "~/$1 ALREADY EXISTS, so NO NEW DOTFILES SYMLINK CREATED (rm it first to create)"
   fi
 }
