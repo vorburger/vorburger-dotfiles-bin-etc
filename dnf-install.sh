@@ -19,7 +19,7 @@ sudo dnf install -y \
     bash-completion \
     dnf-automatic dnf-plugins-core \
     golang git htop \
-    java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
+    java-17-openjdk-devel java-17-openjdk-src java-17-openjdk-javadoc java-17-openjdk-javadoc-zip java-17-openjdk-jmods \
     powerline-fonts trash-cli ShellCheck tmux wipe wl-clipboard \
     fira-code-fonts mozilla-fira-mono-fonts \
     fish autojump-fish autojump fd-find bat \
