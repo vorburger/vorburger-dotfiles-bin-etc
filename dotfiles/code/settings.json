@@ -9,7 +9,7 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "editor.fontSize": 18,
   "window.zoomLevel": 3,
   "terminal.integrated.shell.linux": "/usr/bin/fish",
@@ -67,6 +67,7 @@
   "github.gitProtocol": "ssh",
   "vsicons.dontShowNewVersionMessage": true,
   "workbench.startupEditor": "none",
+  "workbench.settings.openDefaultKeybindings": true,
   // G-like
   "redhat.telemetry.enabled": false,
   "go.toolsManagement.autoUpdate": false,
@@ -94,8 +95,6 @@
     "editor.defaultFormatter": "redhat.java"
   },
   "java.cleanup.actionsOnSave": [
-    "qualifyMembers",
-    "qualifyStaticMembers",
     "addOverride",
     "addDeprecated",
     "stringConcatToTextBlock",
@@ -119,5 +118,6 @@
   "java.eclipse.downloadSources": true,
   "java.errors.incompleteClasspath.severity": "error",
   "java.implementationsCodeLens.enabled": true,
-  "java.debug.settings.hotCodeReplace": "auto"
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.completion.importOrder": []
 }

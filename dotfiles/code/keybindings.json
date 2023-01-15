@@ -1,88 +1,92 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "alt+t",
-        "command": "workbench.action.createTerminalEditorSide"
+  {
+    "key": "alt+t",
+    "command": "workbench.action.createTerminalEditorSide"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.toggleEditorWidths"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  {
+    "key": "alt+z",
+    "command": "-workbench.action.terminal.sizeToContentWidth",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported"
+  },
+  {
+    "key": "alt+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+k z",
+    "command": "-workbench.action.toggleZenMode"
+  },
+  {
+    "key": "f12",
+    "command": "editor.action.openLink",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "f12",
+    "command": "extension.js-debug.debugLink"
+  },
+  {
+    "key": "f12",
+    "command": "workbench.action.terminal.openUrlLink"
+  },
+  {
+    "key": "alt+7",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "f12",
+    "command": "editor.action.openLink"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "snippet": "[${TM_SELECTED_TEXT}]($0)"
     },
-    {
-        "key": "ctrl+m",
-        "command": "-editor.action.toggleTabFocusMode"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "-workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "workbench.action.toggleEditorWidths"
-    },
-    {
-        "key": "alt+z",
-        "command": "-editor.action.toggleWordWrap"
-    },
-    {
-        "key": "alt+z",
-        "command": "-workbench.action.terminal.sizeToContentWidth",
-        "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported"
-    },
-    {
-        "key": "alt+z",
-        "command": "workbench.action.toggleZenMode"
-    },
-    {
-        "key": "ctrl+k z",
-        "command": "-workbench.action.toggleZenMode"
-    },
-    {
-        "key": "f12",
-        "command": "editor.action.openLink",
-        "when": "editorTextFocus && editorLangId == 'markdown'"
-    },
-    {
-        "key": "f12",
-        "command": "extension.js-debug.debugLink"
-    },
-    {
-        "key": "f12",
-        "command": "workbench.action.terminal.openUrlLink"
-    },
-    {
-        "key": "alt+7",
-        "command": "workbench.action.splitEditorRight"
-    },
-    {
-        "key": "f12",
-        "command": "editor.action.openLink"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "editor.action.insertSnippet",
-        "args": {
-            "snippet": "[${TM_SELECTED_TEXT}]($0)"
-        },
-        "when": "editorHasSelection && editorLangId == markdown "
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openFile",
-        "when": "true"
-    },
-    {
-        "key": "ctrl+down",
-        "command": "cursorMove",
-        "when": "editorTextFocus", 
-        "args": {
-            "to": "nextBlankLine",
-            "by": "wrappedLine"
-        }
-    },
-    {
-        "key": "ctrl+up",
-        "command": "cursorMove",
-        "when": "editorTextFocus", 
-        "args": {
-            "to": "prevBlankLine",
-            "by": "wrappedLine"
-        }
+    "when": "editorHasSelection && editorLangId == markdown "
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "true"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "cursorMove",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "nextBlankLine",
+      "by": "wrappedLine"
     }
+  },
+  {
+    "key": "ctrl+up",
+    "command": "cursorMove",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "prevBlankLine",
+      "by": "wrappedLine"
+    }
+  },
+  {
+    "key": "f5",
+    "command": "java.debug.debugJavaFile"
+  }
 ]
