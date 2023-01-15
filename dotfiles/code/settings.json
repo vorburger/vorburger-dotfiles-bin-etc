@@ -3,7 +3,6 @@
   "editor.minimap.enabled": false,
   "files.trimTrailingWhitespace": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "java.project.importOnFirstTimeStartup": "automatic",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -15,7 +14,6 @@
   "window.zoomLevel": 3,
   "terminal.integrated.shell.linux": "/usr/bin/fish",
   "explorer.confirmDragAndDrop": false,
-  "java.saveActions.organizeImports": true,
   "window.menuBarVisibility": "classic",
   "editor.inlineSuggest.enabled": true,
   "[beancount]": {},
@@ -89,6 +87,9 @@
   "go.vetOnSave": "off",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
+  // Java
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "java.saveActions.organizeImports": true,
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   }
