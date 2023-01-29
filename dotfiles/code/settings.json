@@ -92,6 +92,7 @@
   "java.project.importOnFirstTimeStartup": "automatic",
   "java.saveActions.organizeImports": true,
   "[java]": {
+    "editor.tabSize": 4,
     "editor.defaultFormatter": "redhat.java"
   },
   "java.cleanup.actionsOnSave": [
@@ -131,9 +132,6 @@
   "editor.detectIndentation": false,
   "editor.indentSize": "tabSize",
   "editor.tabSize": 4,
-  "[java]": { "editor.tabSize": 4 },
   "[javascript]": { "editor.tabSize": 2 },
-  "[python]": {
-    "editor.tabSize": 2
-  }
+  "[python]": { "editor.tabSize": 2 }
 }
