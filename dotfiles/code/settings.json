@@ -119,5 +119,13 @@
   "java.errors.incompleteClasspath.severity": "error",
   "java.implementationsCodeLens.enabled": true,
   "java.debug.settings.hotCodeReplace": "auto",
-  "java.completion.importOrder": []
+  "java.completion.importOrder": [],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/usr/lib/jvm/java-17/",
+      "sources": "/usr/lib/jvm/java-17/lib/src.zip",
+      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api"
+    }
+  ]
 }
