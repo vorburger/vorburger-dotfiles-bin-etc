@@ -127,5 +127,13 @@
       "sources": "/usr/lib/jvm/java-17/lib/src.zip",
       "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api"
     }
-  ]
+  ],
+  "editor.detectIndentation": false,
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 4,
+  "[java]": { "editor.tabSize": 4 },
+  "[javascript]": { "editor.tabSize": 2 },
+  "[python]": {
+    "editor.tabSize": 2
+  }
 }
