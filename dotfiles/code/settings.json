@@ -138,5 +138,6 @@
   "[python]": {
     "editor.tabSize": 2
   },
-  "quarkus.tools.alwaysShowWelcomePage": false
+  "quarkus.tools.alwaysShowWelcomePage": false,
+  "editor.foldingImportsByDefault": true
 }
