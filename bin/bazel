@@ -1,0 +1,4 @@
+# bazel is also defined as alias for interactive shell (which is better for auto-completion) - this script is for tools who need to find bazel on the PATH (such as georgewfraser/java-language-server for VSC).
+# NB Must use "$@" and not "$*", see https://github.com/georgewfraser/java-language-server/issues/238.
+
+bazelisk "$@"
