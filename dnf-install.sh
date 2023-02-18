@@ -29,7 +29,8 @@ sudo dnf install -y \
     google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
     git-delta rclone \
-    clang-tools-extra
+    clang-tools-extra \
+    nodejs
 #   clang-tools-extra for clang-format
 
 # Do NOT add the "kubernetes-client" package above, but it causes this error:

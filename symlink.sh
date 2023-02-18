@@ -29,6 +29,7 @@ f .bashrc dotfiles/bashrc
 d .bash.d/ dotfiles/bash.d/
 f .inputrc dotfiles/.inputrc
 f .nanorc  dotfiles/.nanorc
+f .npmrc   dotfiles/.npmrc
 f .tmux.conf dotfiles/.tmux.conf
 f .gnupg/gpg.conf dotfiles/gpg.conf
 f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
