@@ -96,6 +96,8 @@
     "editor.tabSize": 4,
     "editor.defaultFormatter": "redhat.java"
   },
+  "java.format.comments.enabled": false,
+  "java.format.onType.enabled": true,
   "java.cleanup.actionsOnSave": [
     "addOverride",
     "addDeprecated",
