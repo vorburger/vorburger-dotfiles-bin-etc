@@ -1,0 +1,8 @@
+# https://bazel.build/run/bazelrc
+
+# https://bazel.build/reference/command-line-reference#flag--test_output
+# This specifies how Blaze displays test output. Setting it to errors sends combined stdout/stderr
+# output from failed tests only to stdout immediately after test is completed, ensuring that test
+# output lines from simultaneous tests are not interleaved with each other. It's a great way to spot
+# individual test failures.
+test --test_output=errors

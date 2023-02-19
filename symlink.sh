@@ -27,6 +27,7 @@ d() {
 
 f .bashrc dotfiles/bashrc
 d .bash.d/ dotfiles/bash.d/
+f .bazelrc dotfiles/.bazelrc
 f .inputrc dotfiles/.inputrc
 f .nanorc  dotfiles/.nanorc
 f .npmrc   dotfiles/.npmrc
