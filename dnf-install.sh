@@ -33,6 +33,9 @@ sudo dnf install -y \
     nodejs
 #   clang-tools-extra for clang-format
 
+# java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
+# TODO https://github.com/jenv/jenv (NOT sudo update-alternatives --config java ... because that's global, whereas jenv supports a per-directory .java-version)
+
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
 # file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64
 # (at least when run as part of ./container/build.sh which is FROM fedora:35 in container/fedora-updated/Dockerfile)
