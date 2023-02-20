@@ -29,9 +29,9 @@ sudo dnf install -y \
     google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
     git-delta rclone \
-    clang-tools-extra \
+    gcc gcc-c++ clang-tools-extra \
     nodejs
-#   clang-tools-extra for clang-format
+#   clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
 
 # java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
 # TODO https://github.com/jenv/jenv (NOT sudo update-alternatives --config java ... because that's global, whereas jenv supports a per-directory .java-version)
