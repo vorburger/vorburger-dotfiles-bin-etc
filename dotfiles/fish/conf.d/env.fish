@@ -8,7 +8,8 @@
 # NB: PATH is set in ../config.fish
 
 if test ! -n "$JAVA_HOME"
-    set -gx JAVA_HOME /etc/alternatives/java_sdk/
+   and test -d /etc/alternatives/java_sdk/
+        set -gx JAVA_HOME /etc/alternatives/java_sdk/
 end
 
 # see docs/podman.md
