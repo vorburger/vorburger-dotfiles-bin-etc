@@ -142,5 +142,14 @@
     "editor.tabSize": 2
   },
   "quarkus.tools.alwaysShowWelcomePage": false,
-  "editor.foldingImportsByDefault": true
+  "editor.foldingImportsByDefault": true,
+  // https://code.visualstudio.com/docs/languages/html#_auto-update-tags
+  "editor.linkedEditing": true,
+  "html.suggest.html5": true,
+  // https://code.visualstudio.com/docs/languages/html#_formatting but note that Prettier may have different formatting!
+  "html.format.wrapAttributes": "preserve-aligned",
+  "liveshare.launcherClient": "web",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
