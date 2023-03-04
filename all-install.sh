@@ -71,6 +71,10 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/yannh/kubeconform#Installation
 [ -s $GO_BIN_PATH/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
+# https://github.com/jenv/jenv/tree/master#11-installing-jenv
+# jenv is better than "sudo update-alternatives --config java" because that's global, whereas jenv supports a per-directory .java-version file
+[ -s $HOME/.jenv ] || (git clone https://github.com/jenv/jenv.git ~/.jenv && cp ~/.jenv/fish/jenv.fish ~/.config/fish/functions/jenv.fish)
+
 # https://github.com/Peltoche/lsd#from-source
 cargo install lsd
 

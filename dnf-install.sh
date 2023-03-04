@@ -31,10 +31,8 @@ sudo dnf install -y \
     git-delta rclone \
     gcc gcc-c++ clang-tools-extra \
     nodejs
-#   clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
-
-# java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
-# TODO https://github.com/jenv/jenv (NOT sudo update-alternatives --config java ... because that's global, whereas jenv supports a per-directory .java-version)
+#   clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf \
+#   java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
 
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
 # file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64
