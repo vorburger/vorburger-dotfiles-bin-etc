@@ -151,5 +151,8 @@
   "liveshare.launcherClient": "web",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[textproto]": {
+    "editor.defaultFormatter": "seaube.clangformat"
   }
 }
