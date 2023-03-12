@@ -4,9 +4,7 @@
 
 function venv -a DIR -d "Create or Enter Python Virtual Environment"
   if not set -q argv[1]
-    # echo "USAGE: venv <Python-Virtual-Env-Directory>"
-    # return
-    set DIR "🥽"
+    set DIR ".venv"
   end
 
   if [ ! -d "$DIR" ]
@@ -16,11 +14,16 @@ function venv -a DIR -d "Create or Enter Python Virtual Environment"
   source "$DIR/bin/activate.fish"
 end
 
+function venv_activate_try -a DIR
+  # echo Checking if "$DIR/bin/activate.fish" exists...
+  if [ -e "$DIR/bin/activate.fish" ]
+    set_color -i -u -d magenta
+    echo "Activating Python 🥽 Virtual Env for Fish Shell"
+    source "$DIR/bin/activate.fish"
+  end
+end
+
 function on_pwd --on-variable PWD
-   # echo Reacting to PWD changing to $PWD...
-   if [ -d  "$PWD/🥽" ]
-     set_color -i -u -d magenta
-     echo "Activating Python Virtual Env 🥽 for Fish Shell"
-     source "$PWD/🥽/bin/activate.fish"
-   end
+  venv_activate_try "$PWD/🥽"
+  venv_activate_try "$PWD/.venv"
 end
