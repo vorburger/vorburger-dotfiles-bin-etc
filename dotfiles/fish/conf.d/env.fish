@@ -7,6 +7,8 @@
 
 # NB: PATH is set in ../config.fish
 
+set DOTFILES (dirname (realpath (status --current-filename)))/../..
+
 if test ! -n "$JAVA_HOME"
    and test -d /etc/alternatives/java_sdk/
         set -gx JAVA_HOME /etc/alternatives/java_sdk/
@@ -22,3 +24,10 @@ end
 if test -f /usr/bin/podman
     set -Ux DOCKER_HOST unix://(podman info -f "{{.Host.RemoteSocket.Path}}")
 end
+
+# https://github.com/junegunn/fzf#respecting-gitignore
+# This makes FZF use ripgrep, which filters .gitignore, etc.
+set -Ux RIPGREP_CONFIG_PATH $DOTFILES/ripgreprc.properties
+set -Ux FZF_DEFAULT_COMMAND "rg --files"
+# This makes Ctrl-T FZF's Fish integration use the above
+set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"

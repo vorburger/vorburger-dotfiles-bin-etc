@@ -16,7 +16,10 @@ test -f /usr/bin/bat && set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'" && se
 # fish_key_reader is great to find the appropriate keyboard escape sequence! See
 # https://fishshell.com/docs/current/cmds/bind.html#special-input-functions, also
 # https://fishshell.com/docs/current/#escaping-characters is useful; note
-# eg. bind \b shows current binding.
+# "bind" shows all current bindings, and eg. "bind \cP" shows Ctrl-P's.
 
 # Use word instead of backward-kill-path-component to match .inputrc
 bind \b backward-kill-word
+
+# Ctrl-P for FZF, same as default Ctrl-T - for consistency with VSC
+bind \cp fzf-file-widget

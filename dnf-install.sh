@@ -28,7 +28,7 @@ sudo dnf install -y \
     cargo graphviz \
     google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
-    git-delta rclone \
+    git-delta rclone ripgrep \
     gcc gcc-c++ clang-tools-extra \
     nodejs
 #   clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf

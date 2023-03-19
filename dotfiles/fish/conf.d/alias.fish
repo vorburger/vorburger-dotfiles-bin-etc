@@ -16,6 +16,8 @@ command -sq lsd && alias l="lsd "
 command -sq lsd && alias ll="lsd -l "
 command -sq lsd && alias lt="lsd --tree "
 command -sq bat && alias c="bat "
+command -sq rg  && alias f="rg "
+# Note dotfiles/ripgreprc.properties!
 
 complete --command b --wraps bazelisk --wraps bazel
 complete --command g --wraps git

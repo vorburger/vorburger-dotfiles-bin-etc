@@ -1,16 +1,21 @@
 # ToDo
 
+Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC) a lot! 😏
+
 ## NeXT
 
+- Make the (new) `f` alias (based on ripgrep) show matches in FZF; and open an editor on Enter (via `e`, i.e. `code` or `nano`)
+  - https://github.com/junegunn/fzf/blob/master/ADVANCED.md#using-fzf-as-interactive-ripgrep-launcher
+  - https://github.com/tomrijndorp/vscode-finditfaster
+  - https://github.com/gazorby/fifc
+
 - https://github.com/gazorby/fish-abbreviation-tips/issues/27
-- https://github.com/gazorby/fifc
-- https://github.com/gazorby/fish-finders
 
 - Fresh Install `.bashrc` contains only `[ -f ~/.fzf.bash ] && source ~/.fzf.bash` ?! Perhaps some set-up order got inversed...
 
 - Auto-start Kitty & Brave
 
-- Java 17 instead of 11
+- Java 17 and 11, with https://github.com/jenv/jenv
   1. change DNF package in dnf-install.sh + dnf-install-gui.sh
   1. VSC now requires Java 17 instead of 11
   1. rm bin/java11 bin/java8, rm alternatives from dnf-install.sh + dnf-install-gui.sh
@@ -19,11 +24,7 @@
 
 - https://wiki.archlinux.org/title/Color_output_in_console
 
-- https://github.com/sharkdp/fd
-
 - https://magefile.org?
-
-- Activate `venv venv` whenever there is one in the current directory, with a Fish `cd` "event" (?) hook thing
 
 - JUST USE IT, to find gaps
   - initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
@@ -84,10 +85,6 @@
 - https://github.com/franciscolourenco/done
 
 - https://github.com/meaningful-ooo/sponge
-
-- https://github.com/BurntSushi/ripgrep
-
-- findx with fzf and open in nano at the matched line
 
 - clean up any remaining TODO (`findx TODO`)
 
