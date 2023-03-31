@@ -30,8 +30,9 @@ sudo dnf install -y \
     python3-devel portaudio-devel \
     git-delta rclone ripgrep \
     gcc gcc-c++ clang-tools-extra \
-    nodejs
-#   clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
+    nodejs xrandr
+# clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
+# xrandr is required by Minecraft client to fix ArrayIndexOutOfBoundsException at org.lwjgl.opengl.LinuxDisplay.getAvailableDisplayModes()
 
 # java-11-openjdk-devel java-11-openjdk-src java-11-openjdk-jmods \
 # TODO https://github.com/jenv/jenv (NOT sudo update-alternatives --config java ... because that's global, whereas jenv supports a per-directory .java-version)
