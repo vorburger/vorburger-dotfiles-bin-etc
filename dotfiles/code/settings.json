@@ -154,5 +154,6 @@
   },
   "[textproto]": {
     "editor.defaultFormatter": "seaube.clangformat"
-  }
+  },
+  "githubPullRequests.pullBranch": "never"
 }
