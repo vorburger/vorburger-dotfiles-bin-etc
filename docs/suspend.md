@@ -18,7 +18,9 @@ It's possible to re-authenticate with the Fingerprint reader, which is nice.
 
 You will see Kernel logs (e.g. in `dmesg`) change from `PM: suspend entry (s2idle)` to `PM: suspend entry (deep)`.
 
-With that, TODO power drain? 63% battery at 23:25... and still 63% at 23:37, but that's not very interesting! ;-)
+With that change, it went down only -3% from 26% to 23% in 6.5h on Standby. That seems ~30% better.
+
+To get more (full, 0% use) power saving when un-used, you have to use Hibernate to Swap instead of Suspend.
 
 PS: When we try to write `s2idle` into `/sys/power/mem_sleep` in that BIOS mode, Suspend is weird:
 The screen goes off, it seems like it's suspended (`/sys/power/suspend_stats/fail*` are all 0) - but
