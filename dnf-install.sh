@@ -25,7 +25,7 @@ sudo dnf install -y \
     fish autojump-fish autojump fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
-    cargo graphviz \
+    graphviz \
     google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
     git-delta rclone ripgrep \

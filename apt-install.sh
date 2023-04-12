@@ -27,7 +27,7 @@ sudo apt install -y \
     bash-completion file git gh htop lsb-release procps rpl unzip \
     trash-cli shellcheck wipe \
     autojump fd-find \
-    cargo curl graphviz wget \
+    curl graphviz wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
     python3-venv
 

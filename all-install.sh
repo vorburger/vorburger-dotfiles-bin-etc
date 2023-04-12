@@ -71,6 +71,9 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/yannh/kubeconform#Installation
 [ -s $GO_BIN_PATH/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
+# https://rustup.rs
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # https://github.com/Peltoche/lsd#from-source
 cargo install lsd
 
