@@ -1,77 +1,60 @@
 {
-  "editor.renderLineHighlight": "all",
-  "editor.suggestSelection": "first",
-  "editor.minimap.enabled": false,
-  "files.trimTrailingWhitespace": true,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "files.autoSave": "onFocusChange",
-  "editor.fontSize": 18,
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
-  "explorer.confirmDragAndDrop": false,
-  "window.menuBarVisibility": "classic",
-  "editor.inlineSuggest.enabled": true,
   "[beancount]": {},
-  "git.confirmSync": false,
-  "remoteHub.commitDirectlyWarning": "off",
-  "markdown.validate.fileLinks.enabled": "error",
-  "markdown.validate.enabled": true,
-  "markdown.validate.fragmentLinks.enabled": "error",
-  "markdown.validate.fileLinks.markdownFragmentLinks": "error",
-  "security.workspace.trust.untrustedFiles": "open",
-  "files.insertFinalNewline": true,
-  "markdownlint.config": {
-    "MD026": { "punctuation": ",;:。，；：" },
-    "MD034": false
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "gitlens.codeLens.scopes": ["document"],
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "files.autoSaveDelay": 500,
-  "files.autoGuessEncoding": true,
-  "window.restoreFullscreen": true,
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.tabSize": 4
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  // https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight
-  // successor of https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
-  // Possible alternative, if NOK: https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight
-  "todohighlight.keywords": ["TODO"],
-  "todohighlight.include": [
-    "**/*.java",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.html",
-    "**/*.css",
-    "**/*.scss",
-    "**/*.md",
-    "**/*.txt",
-    "**/*.rb",
-    "**/*.go"
-  ],
-  "workbench.iconTheme": "vscode-icons",
+  "[python]": {
+    "editor.tabSize": 2
+  },
+  "[textproto]": {
+    "editor.defaultFormatter": "seaube.clangformat"
+  },
   "cSpell.userWords": [],
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.renderWhitespace": "none",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.foldingImportsByDefault": true,
+  "editor.fontSize": 18,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.indentSize": "tabSize",
+  "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "off",
-  "search.showLineNumbers": true,
+  // https://code.visualstudio.com/docs/languages/html#_auto-update-tags
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "none",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 4,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 500,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
   "github.gitProtocol": "ssh",
-  "vsicons.dontShowNewVersionMessage": true,
-  "workbench.startupEditor": "none",
-  "workbench.settings.openDefaultKeybindings": true,
-  // G-like
-  "redhat.telemetry.enabled": false,
-  "go.toolsManagement.autoUpdate": false,
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.codeLens.scopes": ["document"],
   // G
   "go.alternateTools": {
     "gocode": "/usr/bin/gocode",
@@ -86,18 +69,11 @@
   "go.formatTool": "goimports",
   "go.gocodeAutoBuild": false,
   "go.inferGopath": false,
+  "go.toolsManagement.autoUpdate": false,
   "go.vetOnSave": "off",
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-  // Java
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "java.saveActions.organizeImports": true,
-  "[java]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "java.format.comments.enabled": false,
-  "java.format.onType.enabled": true,
+  // https://code.visualstudio.com/docs/languages/html#_formatting but note that Prettier may have different formatting!
+  "html.format.wrapAttributes": "preserve-aligned",
+  "html.suggest.html5": true,
   "java.cleanup.actionsOnSave": [
     "addOverride",
     "addDeprecated",
@@ -119,50 +95,76 @@
     "org.mockito.ArgumentMatchers.*",
     "org.mockito.Answers.*"
   ],
-  "java.eclipse.downloadSources": true,
-  "java.errors.incompleteClasspath.severity": "error",
-  "java.implementationsCodeLens.enabled": true,
-  "java.debug.settings.hotCodeReplace": "auto",
   "java.completion.importOrder": [],
   "java.configuration.runtimes": [
     {
+      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
       "name": "JavaSE-17",
       "path": "/usr/lib/jvm/java-17/",
-      "sources": "/usr/lib/jvm/java-17/lib/src.zip",
-      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api"
+      "sources": "/usr/lib/jvm/java-17/lib/src.zip"
     }
   ],
-  "editor.detectIndentation": false,
-  "editor.indentSize": "tabSize",
-  "editor.tabSize": 4,
-  "[javascript]": {
-    "editor.tabSize": 2
-  },
-  "[python]": {
-    "editor.tabSize": 2
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.eclipse.downloadSources": true,
+  "java.errors.incompleteClasspath.severity": "error",
+  "java.format.comments.enabled": false,
+  "java.format.onType.enabled": true,
+  "java.implementationsCodeLens.enabled": true,
+  // Java
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "java.saveActions.organizeImports": true,
+  "liveshare.launcherClient": "web",
+  "markdown.validate.enabled": true,
+  "markdown.validate.fileLinks.enabled": "error",
+  "markdown.validate.fileLinks.markdownFragmentLinks": "error",
+  "markdown.validate.fragmentLinks.enabled": "error",
+  "markdownlint.config": {
+    "MD026": {
+      "punctuation": ",;:。，；："
+    },
+    "MD034": false
   },
   "quarkus.tools.alwaysShowWelcomePage": false,
-  "editor.foldingImportsByDefault": true,
-  // https://code.visualstudio.com/docs/languages/html#_auto-update-tags
-  "editor.linkedEditing": true,
-  "html.suggest.html5": true,
-  // https://code.visualstudio.com/docs/languages/html#_formatting but note that Prettier may have different formatting!
-  "html.format.wrapAttributes": "preserve-aligned",
-  "liveshare.launcherClient": "web",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[textproto]": {
-    "editor.defaultFormatter": "seaube.clangformat"
-  },
-  "githubPullRequests.pullBranch": "never",
+  // G-like
+  "redhat.telemetry.enabled": false,
+  "remoteHub.commitDirectlyWarning": "off",
+  "search.showLineNumbers": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "todohighlight.include": [
+    "**/*.java",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.md",
+    "**/*.txt",
+    "**/*.rb",
+    "**/*.go"
+  ],
+  // https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight
+  // successor of https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
+  // Possible alternative, if NOK: https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight
+  "todohighlight.keywords": ["TODO"],
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.commandCenter": true,
+  "window.menuBarVisibility": "classic",
+  "window.restoreFullscreen": true,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 3,
   // https://github.com/piousdeer/vscode-adwaita#suggested-settings
   "workbench.colorTheme": "Adwaita Dark & default syntax highlighting & colorful status bar",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.preferredDarkColorTheme": "Adwaita Dark",
   "workbench.preferredLightColorTheme": "Adwaita Light",
   "workbench.productIconTheme": "adwaita",
-  "workbench.tree.indent": 12,
-  "window.commandCenter": true,
-  "window.titleBarStyle": "custom",
-  "window.zoomLevel": 3
+  "workbench.settings.openDefaultKeybindings": true,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 12
 }
