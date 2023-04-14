@@ -15,7 +15,6 @@ EOM
 sudo dnf install -y \
     glibc-langpack-en glibc-all-langpacks \
     rpl psmisc procps-ng \
-    asciinema \
     bash-completion \
     dnf-automatic dnf-plugins-core \
     golang git htop \

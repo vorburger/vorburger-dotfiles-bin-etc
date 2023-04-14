@@ -25,6 +25,9 @@
   "cSpell.userWords": [],
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.shellcheck": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
   "editor.foldingImportsByDefault": true,
@@ -153,7 +156,7 @@
   // https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight
   // successor of https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
   // Possible alternative, if NOK: https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight
-  "todohighlight.keywords": ["TODO"],
+  "todohighlight.keywords": ["TODO", "todo!()"], // todo!() for https://doc.rust-lang.org/std/macro.todo.html
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.commandCenter": true,
