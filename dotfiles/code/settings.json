@@ -110,6 +110,7 @@
       "sources": "/usr/lib/jvm/java-17/lib/src.zip"
     }
   ],
+  "java.configuration.updateBuildConfiguration": "automatic",
   "java.debug.settings.hotCodeReplace": "auto",
   "java.eclipse.downloadSources": true,
   "java.errors.incompleteClasspath.severity": "error",
@@ -172,5 +173,6 @@
   "workbench.productIconTheme": "adwaita",
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 12
+  "workbench.tree.indent": 12,
+  "git.openRepositoryInParentFolders": "always"
 }
