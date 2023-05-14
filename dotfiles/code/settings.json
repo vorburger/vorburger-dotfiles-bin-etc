@@ -23,7 +23,8 @@
     "editor.defaultFormatter": "seaube.clangformat"
   },
   "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.tabSize": 2
   },
   "cSpell.userWords": [],
   "diffEditor.ignoreTrimWhitespace": true,
