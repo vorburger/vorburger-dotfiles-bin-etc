@@ -22,6 +22,9 @@
   "[textproto]": {
     "editor.defaultFormatter": "seaube.clangformat"
   },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
   "cSpell.userWords": [],
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -58,6 +61,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
   "github.gitProtocol": "ssh",
   "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.scopes": ["document"],
@@ -173,6 +177,5 @@
   "workbench.productIconTheme": "adwaita",
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 12,
-  "git.openRepositoryInParentFolders": "always"
+  "workbench.tree.indent": 12
 }
