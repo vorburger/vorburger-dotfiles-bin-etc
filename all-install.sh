@@ -3,7 +3,7 @@ set -euxo pipefail
 
 # apt|dnf-install.sh has DNF RPM / APT DEB packages, this is everything else
 
-[ -s /usr/bin/nano ] || [ -s $HOME/bin/nano ] || "$(dirname "$0")"/install-nano.sh
+[ -s /usr/bin/nano ] || [ -s "$HOME"/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
 # see https://github.com/jorgebucaran/fisher/issues/742
 # and https://github.com/vorburger/dotfiles-reproduce-problem
@@ -13,7 +13,7 @@ exec </dev/null
 fish fish-install.fish
 
 # https://github.com/jorgebucaran/fisher
-[ -s $HOME/.config/fish/functions/fisher.fish ] || ( \
+[ -s "$HOME"/.config/fish/functions/fisher.fish ] || ( \
   curl -sL https://git.io/fisher -o /tmp/fisher && \
   fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher")
 
@@ -55,24 +55,27 @@ go version
 GO_BIN_PATH=$(go env GOPATH)/bin
 
 # NB alias b="bazelisk " in dotfiles/alias
-[ -s $GO_BIN_PATH/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
+[ -s "$GO_BIN_PATH"/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
 
 # https://github.com/bazelbuild/buildtools/tree/master/buildifier
-[ -s $GO_BIN_PATH/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
+[ -s "$GO_BIN_PATH"/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
 
 # https://github.com/mikefarah/yq#go-get
-[ -s $GO_BIN_PATH/yq ] || go install github.com/mikefarah/yq/v4@latest
+[ -s "$GO_BIN_PATH"/yq ] || go install github.com/mikefarah/yq/v4@latest
 
 # https://github.com/hidetatz/kubecolor (WAS https://github.com/dty1er/kubecolor)
 # ALSO https://github.com/kubecolor/kubecolor/; see https://github.com/hidetatz/kubecolor/issues/95
 # (also https://github.com/hidetatz/kubecolor/issues/101 and https://github.com/hidetatz/kubecolor/issues/113)
-[ -s $GO_BIN_PATH/kubecolor ] || go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
+[ -s "$GO_BIN_PATH"/kubecolor ] || go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
 
 # https://github.com/yannh/kubeconform#Installation
-[ -s $GO_BIN_PATH/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
+[ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
+
+# https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
+[ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
 
 # https://rustup.rs
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+[ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # https://github.com/Peltoche/lsd#from-source
 cargo install lsd
@@ -81,24 +84,24 @@ cargo install lsd
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/112 how to hide . files/dirs?
 # TODO [ -s $HOME/.config/fish/functions/__fzf* ] || ...
-[ -s $HOME/.config/fish/conf.d/fzf.fish ] || fish -c "fisher install PatrickF1/fzf.fish"
+[ -s "$HOME"/.config/fish/conf.d/fzf.fish ] || fish -c "fisher install PatrickF1/fzf.fish"
 
 # https://github.com/evanlucas/fish-kubectl-completions
 # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
 # see https://github.com/evanlucas/fish-kubectl-completions/issues/33
-[ -s $HOME/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions"
+[ -s "$HOME"/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions"
 
 # https://github.com/jorgebucaran/autopair.fish
-[ -s $HOME/.config/fish/conf.d/autopair.fish ] || fish -c "fisher install jorgebucaran/autopair.fish"
+[ -s "$HOME"/.config/fish/conf.d/autopair.fish ] || fish -c "fisher install jorgebucaran/autopair.fish"
 
 # https://github.com/Gazorby/fish-abbreviation-tips
-[ -s $HOME/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips"
+[ -s "$HOME"/.config/fish/conf.d/abbr_tips.fish ] || fish -c "fisher install gazorby/fish-abbreviation-tips"
 
 # https://github.com/nickeb96/puffer-fish for ... to ../.. and !! to inline previous command and !$ prev. arg
-[ -s $HOME/.config/fish/conf.d/puffer_fish_key_bindings.fish ] || fish -c "fisher install nickeb96/puffer-fish"
+[ -s "$HOME"/.config/fish/conf.d/puffer_fish_key_bindings.fish ] || fish -c "fisher install nickeb96/puffer-fish"
 
 # https://github.com/lgathy/google-cloud-sdk-fish-completion for gcloud
-[ -s $HOME/.config/fish/completions/gcloud.fish ] || fish -c "fisher install lgathy/google-cloud-sdk-fish-completion"
+[ -s "$HOME"/.config/fish/completions/gcloud.fish ] || fish -c "fisher install lgathy/google-cloud-sdk-fish-completion"
 
 # ToDo: https://github.com/edc/bass ?
 
