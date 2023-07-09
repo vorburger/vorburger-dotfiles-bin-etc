@@ -93,6 +93,8 @@ Unless you already have GitHub auth working, we may have a "chicken and egg" pro
     git clone https://github.com/vorburger/vorburger-dotfiles-bin-etc.git
     cd vorburger-dotfiles-bin-etc
 
+    sudo cp container/sshd/01-local.conf /etc/ssh/sshd_config.d/
+
     mv ~/.bashrc ~/.bashrc.original
     ./dnf-install-gui.sh
     ./authorized_keys.sh
