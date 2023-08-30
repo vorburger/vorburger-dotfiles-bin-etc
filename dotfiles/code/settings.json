@@ -27,7 +27,6 @@
     "editor.tabSize": 2
   },
   "cSpell.userWords": [],
-  "diffEditor.ignoreTrimWhitespace": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.shellcheck": true

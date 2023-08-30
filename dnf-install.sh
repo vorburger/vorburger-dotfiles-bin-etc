@@ -25,7 +25,7 @@ sudo dnf install -y \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
     graphviz \
-    google-cloud-sdk google-cloud-sdk-skaffold \
+    helm google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
     git-delta rclone ripgrep \
     gcc gcc-c++ clang-tools-extra \
