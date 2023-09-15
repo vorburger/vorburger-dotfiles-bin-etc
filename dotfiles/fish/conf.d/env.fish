@@ -31,3 +31,6 @@ set -Ux RIPGREP_CONFIG_PATH $DOTFILES/ripgreprc.properties
 set -Ux FZF_DEFAULT_COMMAND "rg --files"
 # This makes Ctrl-T FZF's Fish integration use the above
 set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
+
+# https://developer.android.com/tools/variables#android_home
+set -Ux ANDROID_HOME /home/vorburger/Android
