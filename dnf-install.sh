@@ -29,7 +29,8 @@ sudo dnf install -y \
     python3-devel portaudio-devel \
     git-delta rclone ripgrep \
     gcc gcc-c++ clang-tools-extra \
-    nodejs xrandr
+    nodejs xrandr \
+    ruby-devel rubygems
 # clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
 # xrandr is required by Minecraft client to fix ArrayIndexOutOfBoundsException at org.lwjgl.opengl.LinuxDisplay.getAvailableDisplayModes()
 
