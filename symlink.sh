@@ -3,15 +3,15 @@ set -euox pipefail
 
 # See also ./symlink-homefree.sh for an equivalent which does not use $HOME
 
-DIR="$(realpath $(dirname $0))"
+DIR="$(realpath $(dirname "$0"))"
 
 # TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
   if [[ -h ~/$1 && ! -e ~/$1 ]]; then
     echo "~/$1 is a BROKEN symlink, so NO NEW DOTFILES CREATED (fix that first)"
   elif [[ ! -e ~/$1 ]]; then
-    mkdir -p $(dirname ~/$1)
-    ln --symbolic --relative $DIR/$2 ~/$1
+    mkdir -p $(dirname ~/"$1")
+    ln --symbolic --relative "$DIR"/"$2" ~/"$1"
   else
     # ls -l ~/$1
     echo "~/$1 ALREADY EXISTS, so NO NEW DOTFILES SYMLINK CREATED (rm it first to create)"
@@ -19,10 +19,9 @@ f() {
 }
 
 d() {
-  mkdir -p ~/$1
-  find $DIR/$2 -maxdepth 1 -type f,l -exec ln -sfnr {} ~/$1 \;
+  mkdir -p ~/"$1"
+  find "$DIR"/"$2" -maxdepth 1 -type f,l -exec ln -sfnr {} ~/"$1" \;
 }
-
 
 
 f .bashrc dotfiles/bashrc
