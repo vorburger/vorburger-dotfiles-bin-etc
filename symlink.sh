@@ -24,6 +24,7 @@ d() {
 }
 
 
+f .tool-versions dotfiles/.tool-versions
 f .bashrc dotfiles/bashrc
 d .bash.d/ dotfiles/bash.d/
 f .bazelrc dotfiles/.bazelrc

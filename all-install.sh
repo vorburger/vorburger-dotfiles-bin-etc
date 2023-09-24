@@ -113,3 +113,10 @@ fish -c "fisher update"
 # To install Python related stuff, use virtual environments;
 # see my https://github.com/vorburger/Notes/blob/master/Reference/python.md,
 # and note dotfiles/fish/functions/venv.fish
+
+
+# https://asdf-vm.com/guide/getting-started.html
+# dotfiles/fish/conf.d/asdf.fish has the Fish shell related iniatlization
+[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
