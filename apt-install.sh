@@ -29,7 +29,8 @@ sudo apt install -y \
     autojump fd-find \
     curl graphviz wget \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
-    python3-venv
+    python3-venv \
+    lsd ripgrep
 
 # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
