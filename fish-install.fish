@@ -33,3 +33,6 @@ ln -fs $HOME/.krew/bin/kubectl-ns $HOME/.krew/bin/kubens
 
 # TODO How come Fish can do completion for Helm even without this?!
 command -sq helm && helm completion fish > $HOME/.config/fish/completions/helm.fish
+
+# Without this, if there is no helm, it does not return when called from all-install.sh
+echo "Exiting fish-install.fish"
