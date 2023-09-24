@@ -18,9 +18,7 @@ end
 grep -v "#" packages/krew.txt > /tmp/krew-packages.txt
 $HOME/.krew/bin/kubectl-krew install < /tmp/krew-packages.txt
 
-# see https://github.com/kubernetes-sigs/krew/pull/811
 # and https://github.com/kubernetes-sigs/krew/issues/810
-$HOME/.krew/bin/kubectl-krew completion fish > $HOME/.config/fish/completions/kubectl-krew.fish
 ln -fs $HOME/.krew/bin/kubectl-krew $HOME/.krew/bin/krew
 
 # ToDo: It is a shame that krew doesn't automatically install shell completion for plugins
