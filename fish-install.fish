@@ -34,4 +34,4 @@ ln -fs $HOME/.krew/bin/kubectl-ctx $HOME/.krew/bin/kubectx
 ln -fs $HOME/.krew/bin/kubectl-ns $HOME/.krew/bin/kubens
 
 # TODO How come Fish can do completion for Helm even without this?!
-helm completion fish > $HOME/.config/fish/completions/helm.fish
+command -sq helm && helm completion fish > $HOME/.config/fish/completions/helm.fish
