@@ -12,6 +12,11 @@
 # [credential]
 #   helper = store
 
+# MITM
+[url "https://github.com/"]
+    insteadOf = git://github.com/
+    insteadOf = http://github.com/
+
 #[url "https://"]
 #   insteadOf = git://
 
