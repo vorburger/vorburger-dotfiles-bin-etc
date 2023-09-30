@@ -31,5 +31,6 @@ alias gcob="git checkout -b "
 alias gpu="git push "
 alias gpl="git pull "
 alias gpf="git push --force vorburger"
+alias grm="git rebase main"
 alias gsy="git pull --rebase && git push"
 # see fish/conf.d/git.fish (and ../bin/g*) for more Git tools
