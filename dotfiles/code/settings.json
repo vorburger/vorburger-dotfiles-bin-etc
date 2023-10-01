@@ -26,7 +26,7 @@
     "editor.defaultFormatter": "redhat.vscode-xml",
     "editor.tabSize": 2
   },
-  "cSpell.userWords": ["vorburger"],
+  "cSpell.userWords": ["automagic", "automagically", "Proto", "vorburger"],
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.shellcheck": true
