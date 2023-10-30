@@ -41,7 +41,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
     sudo apt remove -y nano
     sudo apt autoremove -y
 
-else
+# else
     # This are minimally required tools for Codespaces
 
     # sudo apt install -y \
