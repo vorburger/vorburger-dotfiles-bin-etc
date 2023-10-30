@@ -13,7 +13,11 @@ if $(dpkg --compare-versions $FISH_VERSION lt 3.5.1); then
     sudo apt-get remove -y fish fish-common
 
     sudo apt-add-repository -y ppa:fish-shell/release-3
-    sudo apt-get update -y && sudo apt-get upgrade -y
+    sudo apt-get update -y
+    # Do *NOT* run upgrade (only update) in GitHub Codespaces, because it's slow
+    if [[ -z "${CODESPACES:-}" ]]; then
+        sudo apt-get upgrade -y
+    fi
     sudo apt-get install -y fish
     fish --version
 else
