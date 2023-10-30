@@ -57,8 +57,8 @@ lsb_release -a
 # https://github.com/sharkdp/bat
 # TODO automatically download latest version instead of hard-coding
 if [ ! -f /usr/bin/bat ]; then
-    wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat_0.23.0_amd64.deb
-    sudo dpkg -i bat_0.23.0_amd64.deb
+    wget https://github.com/sharkdp/bat/releases/download/v0.24.0/bat_0.24.0_amd64.deb
+    sudo dpkg -i bat_0.24.0_amd64.deb
 fi
 
 # https://dandavison.github.io/delta/installation.html
