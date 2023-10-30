@@ -54,42 +54,63 @@ go version
 # GO_BIN_PATH may not match GOPATH (it could be unset)
 GO_BIN_PATH=$(go env GOPATH)/bin
 
-# NB alias b="bazelisk " in dotfiles/alias
-[ -s "$GO_BIN_PATH"/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
+# ===============================================================================================================================
 
-# https://github.com/bazelbuild/buildtools/tree/master/buildifier
-[ -s "$GO_BIN_PATH"/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
+# Like in apt-install.sh, most of these tools don't need to be pre-installed into GitHub Codespaces, or only via prebuilt Dev Container:
+if [[ -z "${CODESPACES:-}" ]]; then
 
-# https://github.com/mikefarah/yq#go-get
-[ -s "$GO_BIN_PATH"/yq ] || go install github.com/mikefarah/yq/v4@latest
+  # NB alias b="bazelisk " in dotfiles/alias
+  [ -s "$GO_BIN_PATH"/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
 
-# https://github.com/hidetatz/kubecolor (WAS https://github.com/dty1er/kubecolor)
-# ALSO https://github.com/kubecolor/kubecolor/; see https://github.com/hidetatz/kubecolor/issues/95
-# (also https://github.com/hidetatz/kubecolor/issues/101 and https://github.com/hidetatz/kubecolor/issues/113)
-[ -s "$GO_BIN_PATH"/kubecolor ] || go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
+  # https://github.com/bazelbuild/buildtools/tree/master/buildifier
+  [ -s "$GO_BIN_PATH"/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
 
-# https://github.com/yannh/kubeconform#Installation
-[ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
+  # https://github.com/mikefarah/yq#go-get
+  [ -s "$GO_BIN_PATH"/yq ] || go install github.com/mikefarah/yq/v4@latest
 
-# https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
-[ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
+  # https://github.com/hidetatz/kubecolor (WAS https://github.com/dty1er/kubecolor)
+  # ALSO https://github.com/kubecolor/kubecolor/; see https://github.com/hidetatz/kubecolor/issues/95
+  # (also https://github.com/hidetatz/kubecolor/issues/101 and https://github.com/hidetatz/kubecolor/issues/113)
+  [ -s "$GO_BIN_PATH"/kubecolor ] || go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
 
-# https://rustup.rs
-[ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  # https://github.com/yannh/kubeconform#Installation
+  [ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
-# https://github.com/Peltoche/lsd#from-source
-[ ! $(command -v lsd) ] && [ $(command -v cargo) ] || cargo install lsd
+  # https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
+  [ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
+
+  # https://rustup.rs
+  [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+  # https://github.com/Peltoche/lsd#from-source
+  [ ! $(command -v lsd) ] && [ $(command -v cargo) ] || cargo install lsd
+
+  # https://github.com/evanlucas/fish-kubectl-completions
+  # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
+  # see https://github.com/evanlucas/fish-kubectl-completions/issues/33
+  [ -s "$HOME"/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions"
+
+  # https://github.com/lgathy/google-cloud-sdk-fish-completion for gcloud
+  [ -s "$HOME"/.config/fish/completions/gcloud.fish ] || fish -c "fisher install lgathy/google-cloud-sdk-fish-completion"
+
+  # ToDo: https://github.com/edc/bass ?
+
+  # https://asdf-vm.com/guide/getting-started.html
+  # dotfiles/fish/conf.d/asdf.fish has the Fish shell related iniatlization
+  [ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+  [ -s ~/.config/fish/completions/asdf.fish ] || ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+  ~/.asdf/bin/asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
+fi
+
+# ===============================================================================================================================
+# Here come the tools minimally required tools that we *DO* want to install in all Codespaces
+# (Some of the above, and other tools, could still be installed via prebuilt Dev Container on a per-project basis.)
 
 # https://github.com/PatrickF1/fzf.fish
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/112 how to hide . files/dirs?
 # TODO [ -s $HOME/.config/fish/functions/__fzf* ] || ...
 [ -s "$HOME"/.config/fish/conf.d/fzf.fish ] || fish -c "fisher install PatrickF1/fzf.fish"
-
-# https://github.com/evanlucas/fish-kubectl-completions
-# TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
-# see https://github.com/evanlucas/fish-kubectl-completions/issues/33
-[ -s "$HOME"/.config/fish/completions/kubectl.fish ] || fish -c "fisher install evanlucas/fish-kubectl-completions"
 
 # https://github.com/jorgebucaran/autopair.fish
 [ -s "$HOME"/.config/fish/conf.d/autopair.fish ] || fish -c "fisher install jorgebucaran/autopair.fish"
@@ -100,23 +121,10 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # https://github.com/nickeb96/puffer-fish for ... to ../.. and !! to inline previous command and !$ prev. arg
 [ -s "$HOME"/.config/fish/conf.d/puffer_fish_key_bindings.fish ] || fish -c "fisher install nickeb96/puffer-fish"
 
-# https://github.com/lgathy/google-cloud-sdk-fish-completion for gcloud
-[ -s "$HOME"/.config/fish/completions/gcloud.fish ] || fish -c "fisher install lgathy/google-cloud-sdk-fish-completion"
-
-# ToDo: https://github.com/edc/bass ?
-
 fish -c "fisher update"
 
-# ADD ALL fisher generated fish functions to .gitignore instead of committing them
+# PS: ADD ALL fisher generated fish functions to .gitignore instead of committing them!
 
-
-# To install Python related stuff, use virtual environments;
+# To install Python related stuff, use project-specific virtual environments;
 # see my https://github.com/vorburger/Notes/blob/master/Reference/python.md,
 # and note dotfiles/fish/functions/venv.fish
-
-
-# https://asdf-vm.com/guide/getting-started.html
-# dotfiles/fish/conf.d/asdf.fish has the Fish shell related iniatlization
-[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
-[ -s ~/.config/fish/completions/asdf.fish ] || ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-~/.asdf/bin/asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
