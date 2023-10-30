@@ -23,6 +23,11 @@ sudo apt --allow-releaseinfo-change update
 # NB: Do *NOT* apt install tmux, because that upgrades the version that comes with gcr.io/cloudshell-images/cloudshell:latest
 # which breaks the gcr.io/cloudshell-images/custom-image-validation:latest test_ssh (__main__.CloudDevshellTests)
 
+# Do *NOT* install most of my personal tools in GitHub Codespaces, because it's slow.
+# If any of these are needed in particular projects, this should typically rather be part of a project's devcontainer.json anyway; see:
+# https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#how-to-use-the-devcontainerjson
+# If I'm later ever hugely missing anything here in Codespaces, then add an "else" and only install select few specific must have tools.
+if [[ -z "${CODESPACES:-}" ]]; then
 sudo apt install -y \
     bash-completion file git gh htop lsb-release procps rpl unzip \
     trash-cli shellcheck wipe \
@@ -31,6 +36,7 @@ sudo apt install -y \
     autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
     python3-venv \
     lsd ripgrep
+fi
 
 # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
 sudo apt remove -y nano
