@@ -78,7 +78,7 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # https://github.com/Peltoche/lsd#from-source
-cargo install lsd
+[ ! $(command -v lsd) ] && [ $(command -v cargo) ] || cargo install lsd
 
 # https://github.com/PatrickF1/fzf.fish
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?

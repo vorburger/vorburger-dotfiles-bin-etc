@@ -44,8 +44,11 @@ if [[ -z "${CODESPACES:-}" ]]; then
 else
     # This are minimally required tools for Codespaces
 
-    sudo apt install -y \
-        cargo
+    # sudo apt install -y \
+
+    # Beware: cargo install seems to be (really!) slow when used from GitHub Codespace setup;
+    # do not install it, and make any subsequent "cargo install" conditional (see below).
+    # Rust based project repositories should probably use a pre-warmed dev container.
 fi
 
 lsb_release -a
@@ -67,7 +70,7 @@ fi
     # wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb
     # sudo dpkg -i git-delta_0.15.1_amd64.deb
 # fi
-if [ ! -f $HOME/.cargo/bin/delta ]; then
+if [ $(command -v cargo) ] && [ ! -f $HOME/.cargo/bin/delta ]; then
     cargo install git-delta
 fi
 
