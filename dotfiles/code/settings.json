@@ -79,7 +79,7 @@
   "go.formatTool": "goimports",
   "go.gocodeAutoBuild": false,
   "go.inferGopath": false,
-  "go.toolsManagement.autoUpdate": false,
+  "go.toolsManagement.autoUpdate": true,
   "go.vetOnSave": "off",
   // https://code.visualstudio.com/docs/languages/html#_formatting but note that Prettier may have different formatting!
   "html.format.wrapAttributes": "preserve-aligned",
@@ -108,12 +108,12 @@
   "java.completion.importOrder": [],
   "java.configuration.runtimes": [
     {
-      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
-      "name": "JavaSE-17",
-      "path": "/usr/lib/jvm/java-17/",
-      "sources": "/usr/lib/jvm/java-17/lib/src.zip"
+        "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
+        "name": "JavaSE-17",
+        "path": "/usr/lib/jvm/java-17/",
+        "sources": "/usr/lib/jvm/java-17/lib/src.zip"
     }
-  ],
+],
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.debug.settings.hotCodeReplace": "auto",
   "java.eclipse.downloadSources": true,
@@ -177,5 +177,7 @@
   "workbench.productIconTheme": "adwaita",
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 12
+  "workbench.tree.indent": 12,
+  "git.autofetch": true,
+  "githubPullRequests.pushBranch": "always"
 }
