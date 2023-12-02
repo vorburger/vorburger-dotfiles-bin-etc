@@ -31,6 +31,7 @@ f .bazelrc dotfiles/.bazelrc
 f .inputrc dotfiles/.inputrc
 f .nanorc  dotfiles/.nanorc
 f .npmrc   dotfiles/.npmrc
+f .wakatime.cfg dotfiles/wakatime.cfg
 f .tmux.conf dotfiles/.tmux.conf
 f .gnupg/gpg.conf dotfiles/gpg.conf
 f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf

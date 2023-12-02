@@ -371,6 +371,17 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
     ./gnome-settings.sh
 
+### Wakatime
+
+Copy https://wakatime.com/settings/account into a `$HOME/.wakatime/wakatime_secret.cfg` (imported in [`~/.wakatime.cfg`](dotfiles/wakatime.cfg)), and then verify heartbeat on https://wakatime.com/plugins/status after a few minutes, like this:
+
+```
+[settings]
+api_key = waka_...
+```
+
+_TODO:_ [Remote VSC Support?](https://github.com/wakatime/wakatime-cli/blob/develop/TROUBLESHOOTING.md#ssh-configuration)
+
 #### On Fedora Silverblue
 
 1. Install [Brave Flatpack from FlatHub](https://flathub.org/apps/details/com.brave.Browser) (but [YK SK won't work](https://github.com/flathub/com.brave.Browser/issues/126)):
