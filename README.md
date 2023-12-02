@@ -373,14 +373,12 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 
 ### Wakatime
 
-Copy https://wakatime.com/settings/account into a `$HOME/.wakatime/wakatime_secret.cfg` (imported in [`~/.wakatime.cfg`](dotfiles/wakatime.cfg)), and then verify heartbeat on https://wakatime.com/plugins/status after a few minutes, like this:
+`cp dofiles/wakatime.cfg ~/.wakatime.cfg` and edit it to replace [the placeholder `api_key`](dotfiles/wakatime.cfg) with the real one from https://wakatime.com/settings/account, and then verify heartbeat on https://wakatime.com/plugins/status after a few minutes.
 
-```
-[settings]
-api_key = waka_...
-```
-
-_TODO:_ [Remote VSC Support?](https://github.com/wakatime/wakatime-cli/blob/develop/TROUBLESHOOTING.md#ssh-configuration)
+_TODO_
+1. Fix `api_key_vault_cmd`, see https://github.com/wakatime/vscode-wakatime/issues/374
+1. Fix `api_key` in `import_cfg`, see https://github.com/wakatime/vscode-wakatime/issues/375. (When it works, then instead of above copy https://wakatime.com/settings/account into a `$HOME/.wakatime/wakatime_secret.cfg` imported in [`~/.wakatime.cfg`](dotfiles/wakatime.cfg) which contains `[settings]\napi_key = waka_...`)
+1. [Remote VSC Support?](https://github.com/wakatime/wakatime-cli/blob/develop/TROUBLESHOOTING.md#ssh-configuration)
 
 #### On Fedora Silverblue
 
