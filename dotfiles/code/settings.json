@@ -108,12 +108,12 @@
   "java.completion.importOrder": [],
   "java.configuration.runtimes": [
     {
-        "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
-        "name": "JavaSE-17",
-        "path": "/usr/lib/jvm/java-17/",
-        "sources": "/usr/lib/jvm/java-17/lib/src.zip"
+      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
+      "name": "JavaSE-17",
+      "path": "/usr/lib/jvm/java-17/",
+      "sources": "/usr/lib/jvm/java-17/lib/src.zip"
     }
-],
+  ],
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.debug.settings.hotCodeReplace": "auto",
   "java.eclipse.downloadSources": true,
@@ -179,5 +179,6 @@
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 12,
   "git.autofetch": true,
-  "githubPullRequests.pushBranch": "always"
+  "githubPullRequests.pushBranch": "always",
+  "explorer.confirmDelete": false
 }

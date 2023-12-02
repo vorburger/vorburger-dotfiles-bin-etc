@@ -27,6 +27,12 @@ Using locally in ChromeOS's Debian Linux on ARM arch hasn't been tested.
 
 Install https://code.visualstudio.com and press _Ctrl-Shift-P_ to [Enable _Settings Sync_](https://code.visualstudio.com/docs/editor/settings-sync) (also [GitHub](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#settings-sync)) (and, if prompted, choose _[Merge](https://code.visualstudio.com/docs/editor/settings-sync#_merge-or-replace)_). (Use [Settings Sync: Show Synced Data](https://code.visualstudio.com/docs/editor/settings-sync#_restoring-data) to view Synced Machines etc.)
 
+Each time after installing additional extensions, run [`bin/code-extensions-export.sh`](bin/code-extensions-export.sh) to export to [`extensions.txt`](dotfiles/code/extensions.txt).
+
+If extensions somehow get lost, then run [`bin/code-extensions-install.sh`](bin/code-extensions-install.sh)
+
+_TODO:_ `vsc --uninstall-extension` those that are not listed in `extensions.txt`.
+
 ### GitHub Codespaces
 
 Enable _Settings Sync_ as described above.
