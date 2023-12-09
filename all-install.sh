@@ -60,10 +60,16 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 if [[ -z "${CODESPACES:-}" ]]; then
 
   # NB alias b="bazelisk " in dotfiles/alias
-  [ -s "$GO_BIN_PATH"/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest
+  # NB alias bazel (with completion) in dotfiles/fish/completions/bazel.fish for Fish Shell (only; N/A in Bash, and from Scripts)
+  # NB We symlink "bazel" here, because this is better than the "delegating shell script" used originally (because of https://github.com/salesforce/bazel-eclipse/issues/477 like non-"bash -c" from IDE and other such tools)
+  # We use "$GO_BIN_PATH"/bazel instead of e.g. "$HOME"/bin/bazel because that should be in the PATH more often than our more "custom" ~/bin
+  [ -s "$GO_BIN_PATH"/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest && ln -s "$GO_BIN_PATH"/bazelisk "$GO_BIN_PATH"/bazel
 
   # https://github.com/bazelbuild/buildtools/tree/master/buildifier
   [ -s "$GO_BIN_PATH"/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
+
+  # https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
+  [ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
 
   # https://github.com/mikefarah/yq#go-get
   [ -s "$GO_BIN_PATH"/yq ] || go install github.com/mikefarah/yq/v4@latest
@@ -75,9 +81,6 @@ if [[ -z "${CODESPACES:-}" ]]; then
 
   # https://github.com/yannh/kubeconform#Installation
   [ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
-
-  # https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
-  [ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
 
   # https://rustup.rs
   [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
