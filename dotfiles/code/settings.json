@@ -110,6 +110,7 @@
   ],
   // This is BROKEN - it re-formats Java code wrong, and breaks Class JavaDoc.
   // "java.completion.importOrder": [],
+  "java.saveActions.organizeImports": false, // as above, true is BROKEN!
   "java.configuration.runtimes": [
     {
       "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
@@ -127,7 +128,6 @@
   "java.implementationsCodeLens.enabled": true,
   // Java
   "java.project.importOnFirstTimeStartup": "automatic",
-  "java.saveActions.organizeImports": true,
   "liveshare.launcherClient": "web",
   "markdown.validate.enabled": true,
   "markdown.validate.fileLinks.enabled": "error",
