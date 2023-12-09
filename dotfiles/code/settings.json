@@ -29,7 +29,10 @@
   "cSpell.userWords": ["automagic", "automagically", "Proto", "vorburger"],
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.shellcheck": "always"
+    "source.fixAll.shellcheck": "always",
+    // Used by at least JS as well as Java
+    "source.organizeImports": "always",
+    "source.addMissingImports": "always"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
@@ -105,7 +108,8 @@
     "org.mockito.ArgumentMatchers.*",
     "org.mockito.Answers.*"
   ],
-  "java.completion.importOrder": [],
+  // This is BROKEN - it re-formats Java code wrong, and breaks Class JavaDoc.
+  // "java.completion.importOrder": [],
   "java.configuration.runtimes": [
     {
       "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
