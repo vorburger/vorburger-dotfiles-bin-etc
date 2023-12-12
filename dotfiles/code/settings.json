@@ -182,7 +182,7 @@
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 12,
-  "git.autofetch": true,
+  "git.autofetch": false,
   "githubPullRequests.pushBranch": "always",
   "explorer.confirmDelete": false
 }
