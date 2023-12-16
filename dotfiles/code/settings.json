@@ -38,6 +38,9 @@
   "editor.detectIndentation": false,
   "editor.foldingImportsByDefault": true,
   "editor.fontSize": 18,
+  // https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
