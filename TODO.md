@@ -4,6 +4,14 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## NeXT
 
+- How to use System's `java` with ASDF _unless_ there is a `.tool-versions`?
+  - Is it really best to dnf remove openjdk and only use ASDF?! Hm...
+  - https://github.com/asdf-vm/asdf/issues/1622
+  - https://stackoverflow.com/q/74669564/421602 is dumb
+  - https://github.com/asdf-community/asdf-link needs another plugin (name), only good for full alternative, not combination of
+
+- Moar [cool `asdf` plugins](https://github.com/asdf-vm/asdf-plugins?tab=readme-ov-file#plugin-list)
+
 - Make the (new) `f` alias (based on ripgrep) show matches in FZF; and open an editor on Enter (via `e`, i.e. `code` or `nano`)
   - https://github.com/junegunn/fzf/blob/master/ADVANCED.md#using-fzf-as-interactive-ripgrep-launcher
   - https://github.com/tomrijndorp/vscode-finditfaster
@@ -11,14 +19,9 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 - https://github.com/gazorby/fish-abbreviation-tips/issues/27
 
-- Fresh Install `.bashrc` contains only `[ -f ~/.fzf.bash ] && source ~/.fzf.bash` ?! Perhaps some set-up order got inversed...
+- Fresh Install `.bashrc` contains only `[ -f ~/.fzf.bash ] && source ~/.fzf.bash` ?! Perhaps some set-up order got inverted...
 
 - Auto-start Kitty & Brave
-
-- Java 17 and 11, with https://github.com/jenv/jenv
-  1. change DNF package in dnf-install.sh + dnf-install-gui.sh
-  1. VSC now requires Java 17 instead of 11
-  1. rm bin/java11 bin/java8, rm alternatives from dnf-install.sh + dnf-install-gui.sh
 
 - clean up bin/, mv ARCHIVE or rm; many scripts are un-used
 
@@ -47,6 +50,8 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
   `ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts`
 
 - README clean-up
+
+- Remove all bash support to clean-up, and do only Fish
 
 - container: https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html ?
   This is better than --pull=newer, because it's more explicit. Also, newer isn't actually _newer_ but _different,_ which is a PITA during local development.

@@ -2,7 +2,7 @@
 
 ## Installation
 
-## ArchLinux
+### ArchLinux
 
     mkdir -p ~/git/github.com/vorburger/
     cd ~/git/github.com/vorburger/
@@ -17,7 +17,7 @@
     ./symlink.sh
     ./authorized_keys.sh
 
-## ChromeOS
+### ChromeOS
 
 Set up these dotfiles (in a container) on a server, like below. Then just SSH into it,
 using a [YubiKey with Secure Shell ChromeOS](https://chromium.googlesource.com/apps/libapps/+/HEAD/nassh/docs/hardware-keys.md).
@@ -263,6 +263,28 @@ cannot be SSH into, just like when "gcr.io/cloudshell-image/custom-image-validat
 e.g. due to a newer TMUX having been installed, or e.g. an infinite loop by
 `/etc/inputrc` doing an `$include /etc/inputrc` by `symlink-homefree.sh`.
 
+## Use
+
+### Versions
+
+We use <https://asdf-vm.com> (with `.tool-versions`) to handle different Java versions and such; e.g. to test something with an ancient Java version:
+
+    asdf plugin-add java
+    asdf install java zulu-6.22.0.3
+    asdf shell java zulu-6.22.0.3
+    java -version
+    asdf uninstall java zulu-6.22.0.3
+    asdf plugin-remove java
+
+To switch a project (directory) to a fixed version, and create the `.tool-versions` (which ASDF's Shell integration uses), do:
+
+    asdf local java zulu-6.22.0.3
+
+<https://sdkman.io> with `.sdkmanrc` (and _[sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish))_ is similar,
+but it has [less "SDKs"](https://sdkman.io/sdks) than `asdf` [has plugins](https://github.com/asdf-vm/asdf-plugins?tab=readme-ov-file#plugin-list), which are also visible with `asdf plugin-list-all`.
+
+<https://www.jenv.be> with `.java-version` is another (older) one like these, but it manages JDK and `JAVA_HOME`, only.
+
 ## Security
 
 ### SSH for multiple GitHub accounts
@@ -382,6 +404,7 @@ Preferences > General > Appearance > Colors and Fonts: Basic Text Font = Fira Co
 `cp dofiles/wakatime.cfg ~/.wakatime.cfg` and edit it to replace [the placeholder `api_key`](dotfiles/wakatime.cfg) with the real one from https://wakatime.com/settings/account, and then verify heartbeat on https://wakatime.com/plugins/status after a few minutes.
 
 _TODO_
+
 1. Fix `api_key_vault_cmd`, see https://github.com/wakatime/vscode-wakatime/issues/374
 1. Fix `api_key` in `import_cfg`, see https://github.com/wakatime/vscode-wakatime/issues/375. (When it works, then instead of above copy https://wakatime.com/settings/account into a `$HOME/.wakatime/wakatime_secret.cfg` imported in [`~/.wakatime.cfg`](dotfiles/wakatime.cfg) which contains `[settings]\napi_key = waka_...`)
 1. [Remote VSC Support?](https://github.com/wakatime/wakatime-cli/blob/develop/TROUBLESHOOTING.md#ssh-configuration)
