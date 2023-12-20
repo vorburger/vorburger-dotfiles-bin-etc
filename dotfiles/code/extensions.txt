@@ -1,6 +1,6 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
 Angular.ng-template@17.0.3
-BazelBuild.vscode-bazel@0.7.0
+BazelBuild.vscode-bazel@0.8.0
 bierner.emojisense@0.10.0
 bierner.github-markdown-preview@0.3.0
 bierner.markdown-checkbox@0.4.0
@@ -56,15 +56,14 @@ nico-castell.linux-desktop-file@0.0.21
 piousdeer.adwaita-theme@1.1.0
 plex.vscode-protolint@0.8.0
 redhat.fabric8-analytics@0.7.3
-redhat.java@1.26.2023121608
+redhat.java@1.26.2023122008
 redhat.vscode-microprofile@0.10.0
 redhat.vscode-quarkus@1.16.0
 redhat.vscode-xml@0.26.1
 redhat.vscode-yaml@1.14.0
-rust-lang.rust-analyzer@0.3.1766
 salesforce.bazel-vscode@0.0.5
 seaube.clangformat@2.0.2
-sfdc.bazel-vscode-java@1.23.112150854
+sfdc.bazel-vscode-java@1.23.112201129
 streetsidesoftware.code-spell-checker@3.0.1
 thejustinwalsh.textproto-grammer@0.0.8
 timonwong.shellcheck@0.35.0
