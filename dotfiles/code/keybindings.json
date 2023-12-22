@@ -114,5 +114,13 @@
   {
     "key": "alt+q",
     "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.openLink"
   }
 ]
