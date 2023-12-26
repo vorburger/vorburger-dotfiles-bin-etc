@@ -16,7 +16,19 @@ One way to do this is using GNOME's _Power Statistics_ GUI. You can install it u
 
 [batstat](https://github.com/Juve45/batstat) is a similar tool for the CLI, and [powerstat](https://github.com/ColinIanKing/powerstat), which can be easily installed [on Fedora using Snap](https://snapcraft.io/install/powerstat/fedora) is another such tool. (It focuses on measuring power consumption while a laptop is on battery; when plugged in it will refuse to start, saying: _"Device is not discharging, cannot measure power usage. Perhaps re-run with -z (ignore zero power) or -R (RAPL)"._ Run it WITHOUT `sudo`, as with it it failed with _socket failed: errno=1 (Operation not permitted)`, for me.)
 
+## power-profile-switcher
+
+To automatically switch Power Settings from Performance to Balanced or Power Saver when on Battery,
+install [the GNOME `power-profile-switcher` extension](https://extensions.gnome.org/extension/5575/power-profile-switcher/)
+(see [GitHub](https://github.com/eliapasquali/power-profile-switcher), and a [related article](https://fostips.com/auto-switch-cpu-performance-powersaver-linux/)).
+
+## auto-cpufreq
+
+TODO To automate CPU speed & power further than _performance/balanced/safer,_ consider using https://github.com/AdnanHodzic/auto-cpufreq?
+
 ## Recommended: TLP - Optimize Linux Laptop Battery Life
+
+_TODO, clarify: I used to use this on a Laptop, but ended up removing it, and going back to `power-profiles-daemon` because it seemed to prevent max. CPU frequency even when plugged in and under heavy load?_
 
 [TLP](https://github.com/linrunner/TLP) is easy to [install on many Linux distros](https://linrunner.de/tlp/installation/index.html):
 
@@ -89,6 +101,10 @@ It's older than TLP, has less Stars on GitHub, and no Fedora package.
 ### thermald? throttled?
 
 Probably not required / useful anymore with the `intel_pstate` driver.
+
+### konkor/cpufreq
+
+https://github.com/konkor/cpufreq looks neat - but it's manual; automation with `power-profile-switcher` and `auto-cpufreq` is better!
 
 ## Further Resources
 
