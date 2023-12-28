@@ -187,5 +187,6 @@
   "workbench.tree.indent": 12,
   "git.autofetch": false,
   "githubPullRequests.pushBranch": "always",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "diffEditor.experimental.showMoves": true
 }

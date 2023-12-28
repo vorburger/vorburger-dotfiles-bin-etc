@@ -27,7 +27,7 @@ sudo dnf install -y \
     graphviz \
     helm google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
-    git-delta rclone ripgrep \
+    git-delta rclone \
     gcc gcc-c++ clang-tools-extra \
     nodejs xrandr \
     ruby-devel rubygems

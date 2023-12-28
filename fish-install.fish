@@ -41,7 +41,7 @@ if test ! -n "$CODESPACES"
 end
 
 # Put Fish tools that we *DO* want to install in all Codespaces here
-
+rg --generate complete-fish > "$HOME/.config/fish/completions/rg.fish"
 
 # Without this, if there is no helm, it does not return when called from all-install.sh
 echo "Exiting fish-install.fish"

@@ -82,8 +82,14 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://github.com/yannh/kubeconform#Installation
   [ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
-  # https://rustup.rs
+  # https://rustup.rs (AKA cargo)
   [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+  # https://github.com/cargo-bins/cargo-binstall (AKA cargo binstall)
+  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
+  # https://github.com/BurntSushi/ripgrep (via Cargo instead of DNF or APT to have latest version 14+ because v13 didn't support "rg --generate" for https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#complete
+  cargo binstall ripgrep
 
   # https://github.com/Peltoche/lsd#from-source
   [ ! $(command -v lsd) ] && [ $(command -v cargo) ] || cargo install lsd
