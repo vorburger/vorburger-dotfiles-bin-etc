@@ -17,8 +17,14 @@ command -sq lsd && alias ll="lsd -l "
 command -sq lsd && alias lt="lsd --tree "
 command -sq batcat && alias c="batcat "
 command -sq bat && alias c="bat "
-command -sq rg  && alias f="rg "
+
 # Note dotfiles/ripgreprc.properties!
+# https://github.com/BurntSushi/ripgrep/issues/86
+alias less="less -R"
+command -sq rg &&
+  function f -d "RipGrep (with Paging)"
+    rg -p $argv | less -R
+  end
 
 complete --command b --wraps bazelisk --wraps bazel
 complete --command g --wraps git
