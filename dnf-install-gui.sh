@@ -17,7 +17,7 @@ fi
 sudo dnf install -y \
     pass kitty code powertop \
     ImageMagick \
-    gnome-tweak-tool \
+    gnome-extensions-app gnome-tweak-tool \
     android-tools
 
 sudo dnf remove "libreoffice*"
