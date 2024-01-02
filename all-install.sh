@@ -86,13 +86,13 @@ if [[ -z "${CODESPACES:-}" ]]; then
   [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
   # https://github.com/cargo-bins/cargo-binstall (AKA cargo binstall)
-  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+  [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
   # https://github.com/BurntSushi/ripgrep (via Cargo instead of DNF or APT to have latest version 14+ because v13 didn't support "rg --generate" for https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#complete
-   [ ! $(command -v rg) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm ripgrep
+  [ $(command -v rg) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm ripgrep
 
   # https://github.com/Peltoche/lsd#from-source
-  [ ! $(command -v lsd) ] || /home/vorburger/.cargo/bin/cargo install lsd
+  [ $(command -v lsd) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm lsd
 
   # https://github.com/evanlucas/fish-kubectl-completions
   # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
