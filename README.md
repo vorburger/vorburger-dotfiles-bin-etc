@@ -370,6 +370,8 @@ See https://wiki.gnupg.org/AgentForwarding and related personal Notes.
 
 ### Fonts
 
+**This isn't required anymore, now that `dnf-install.sh` does `dnf install fira-code-fonts`:**
+
 From https://www.nerdfonts.com/font-downloads (based on https://github.com/ryanoasis/nerd-fonts),
 download https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip (or later)
 and unzip and double-click on _Fira Code Retina Nerd Font Complete.otf_
