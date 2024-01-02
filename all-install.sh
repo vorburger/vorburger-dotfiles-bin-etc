@@ -63,7 +63,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # NB alias bazel (with completion) in dotfiles/fish/completions/bazel.fish for Fish Shell (only; N/A in Bash, and from Scripts)
   # NB We symlink "bazel" here, because this is better than the "delegating shell script" used originally (because of https://github.com/salesforce/bazel-eclipse/issues/477 like non-"bash -c" from IDE and other such tools)
   # We use "$GO_BIN_PATH"/bazel instead of e.g. "$HOME"/bin/bazel because that should be in the PATH more often than our more "custom" ~/bin
-  [ -s "$GO_BIN_PATH"/bazelisk ] || go install github.com/bazelbuild/bazelisk@latest && ln -s "$GO_BIN_PATH"/bazelisk "$GO_BIN_PATH"/bazel
+  [ -s "$GO_BIN_PATH"/bazelisk ] || (go install github.com/bazelbuild/bazelisk@latest && ln -s "$GO_BIN_PATH"/bazelisk "$GO_BIN_PATH"/bazel)
 
   # https://github.com/bazelbuild/buildtools/tree/master/buildifier
   [ -s "$GO_BIN_PATH"/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
@@ -83,16 +83,16 @@ if [[ -z "${CODESPACES:-}" ]]; then
   [ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
   # https://rustup.rs (AKA cargo)
-  [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
   # https://github.com/cargo-bins/cargo-binstall (AKA cargo binstall)
   curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
   # https://github.com/BurntSushi/ripgrep (via Cargo instead of DNF or APT to have latest version 14+ because v13 didn't support "rg --generate" for https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#complete
-  cargo binstall ripgrep
+   [ ! $(command -v rg) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm ripgrep
 
   # https://github.com/Peltoche/lsd#from-source
-  [ ! $(command -v lsd) ] && [ $(command -v cargo) ] || cargo install lsd
+  [ ! $(command -v lsd) ] || /home/vorburger/.cargo/bin/cargo install lsd
 
   # https://github.com/evanlucas/fish-kubectl-completions
   # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
