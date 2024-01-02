@@ -7,6 +7,8 @@ set -euxo pipefail
 
 ./dnf-install.sh
 
+# This installs the Visual Studio Code (VSC) "Client" UI;
+# code-install-cli-tunnel-service.sh installs the VSC Server Tunnel as a Service.
 # https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
 if [ ! -s /usr/bin/code ]; then
   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
