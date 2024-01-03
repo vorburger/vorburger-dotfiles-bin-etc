@@ -94,6 +94,11 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://github.com/Peltoche/lsd#from-source
   [ $(command -v lsd) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm lsd
 
+  # https://github.com/swsnr/mdcat
+  # NB: binstall NOK: "mdcat: error while loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory" (even with dnf install openssl-devel, which install mdcat also needs)
+  # [ $(command -v mdcat) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm mdcat
+  [ $(command -v mdcat) ] || /home/vorburger/.cargo/bin/cargo install mdcat
+
   # https://github.com/evanlucas/fish-kubectl-completions
   # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
   # see https://github.com/evanlucas/fish-kubectl-completions/issues/33

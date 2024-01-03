@@ -30,9 +30,11 @@ sudo dnf install -y \
     git-delta rclone \
     gcc gcc-c++ clang-tools-extra \
     nodejs xrandr \
-    ruby-devel rubygems
+    ruby-devel rubygems \
+    openssl-devel
 # clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
 # xrandr is required by Minecraft client to fix ArrayIndexOutOfBoundsException at org.lwjgl.opengl.LinuxDisplay.getAvailableDisplayModes()
+# openssl-devel is used (only, so far) by https://github.com/swsnr/mdcat
 
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
 # file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64

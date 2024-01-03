@@ -19,7 +19,7 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
    - Do the VSC Beancount Extensions for LLnP work remotely now? Probably not, just like they don't from the laptop. Open issues.
    - This might fix the git-server login? Not sure, could be unrelated.
 
-- https://github.com/swsnr/mdcat, `alias c` IFF MD
+- Make `alias c` use `mdcat` instead of `bat` IFF MD
 
 - https://docs.deno.com/runtime/manual/getting_started/setup_your_environment#fish-example
 
