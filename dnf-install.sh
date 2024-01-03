@@ -12,8 +12,18 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
+# https://github.com/charmbracelet/glow#package-manager
+[ -s /etc/yum.repos.d/charm.repo ] || sudo tee -a /etc/yum.repos.d/charm.repo << EOM
+[charm]
+name=Charm
+baseurl=https://repo.charm.sh/yum/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.charm.sh/yum/gpg.key
+EOM
+
 sudo dnf install -y \
-    glibc-langpack-en glibc-all-langpacks \
+    glow glibc-langpack-en glibc-all-langpacks \
     rpl psmisc procps-ng \
     bash-completion \
     dnf-automatic dnf-plugins-core \
