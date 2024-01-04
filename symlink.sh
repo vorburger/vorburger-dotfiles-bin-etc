@@ -23,6 +23,12 @@ d() {
   find "$DIR"/"$2" -maxdepth 1 -type f,l -exec ln -sfnr {} ~/"$1" \;
 }
 
+# If this script runs before gpg had a chance to create ~/.gnupg/ itself,
+# then it will have rwxr-xr-x instead of drwx------ which will cauge gpg to print:
+# gpg: WARNING: unsafe permissions on homedir '/home/vorburger/.gnupg'
+# Let's fix that like this:
+mkdir -p ~/.gnupg
+chmod 700 ~/.gnupg
 
 f .tool-versions dotfiles/.tool-versions
 f .bashrc dotfiles/bashrc
