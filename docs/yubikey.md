@@ -14,6 +14,10 @@ _TODO Move all existing YubiKey related content from `README` here when cleaning
 
 ## Troubleshooting
 
+### `gpg` hangs
+
+See https://github.com/vorburger/vorburger.ch-Notes/blob/develop/security/gpg-hangs-on-hostname-change.md.
+
 ### `ssh-add -l` fails
 
     $ ssh-add -L
