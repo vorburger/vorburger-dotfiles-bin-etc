@@ -388,6 +388,10 @@ and unzip and double-click on _Fira Code Retina Nerd Font Complete.otf_
     source ~/.local/share/fonts/i_linux.sh
     echo $i_linux_fedora
 
+### Dark Mode
+
+Open `chrome://flags` and search for _"dark"_ and enable it.
+
 ### Terminals
 
 From https://github.com/tonsky/FiraCode#terminal-support :
