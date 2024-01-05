@@ -71,6 +71,9 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
   [ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
 
+  # https://github.com/yoheimuta/protolint
+  [ -s "$GO_BIN_PATH"/protolint ] || go install github.com/yoheimuta/protolint/cmd/protolint@latest
+
   # https://github.com/mikefarah/yq#go-get
   [ -s "$GO_BIN_PATH"/yq ] || go install github.com/mikefarah/yq/v4@latest
 
