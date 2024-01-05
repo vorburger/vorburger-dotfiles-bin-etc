@@ -57,7 +57,7 @@ nico-castell.linux-desktop-file@0.0.21
 piousdeer.adwaita-theme@1.1.0
 plex.vscode-protolint@0.8.0
 redhat.fabric8-analytics@0.9.1
-redhat.java@1.26.2023122208
+redhat.java@1.26.2024010208
 redhat.vscode-microprofile@0.10.0
 redhat.vscode-quarkus@1.16.0
 redhat.vscode-xml@0.26.1
