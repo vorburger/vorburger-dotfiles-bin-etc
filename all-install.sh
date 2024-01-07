@@ -127,6 +127,9 @@ fi
 # Here come the tools minimally required tools that we *DO* want to install in all Codespaces
 # (Some of the above, and other tools, could still be installed via prebuilt Dev Container on a per-project basis.)
 
+# https://github.com/bazelbuild/bazel-watcher
+npm install -g @bazel/ibazel
+
 # https://github.com/PatrickF1/fzf.fish
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/112 how to hide . files/dirs?
