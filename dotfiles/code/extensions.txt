@@ -28,7 +28,6 @@ GrapeCity.gc-excelviewer@4.2.58
 HTMLHint.vscode-htmlhint@1.0.5
 jbockle.jbockle-format-files@3.4.0
 jgclark.vscode-todo-highlight@2.0.8
-josevseb.google-java-format-for-vs-code@0.2.0
 KatjanaKosic.vscode-json5@1.0.1
 kshetline.ligatures-limited@1.4.1
 Lencerf.beancount@0.10.0
