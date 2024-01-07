@@ -173,6 +173,8 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.commandCenter": true,
   "window.menuBarVisibility": "classic",
+  // https://github.com/Microsoft/vscode-docs/blob/vnext/release-notes/v1_9.md#control-the-dimensions-of-new-windows
+  "window.newWindowDimensions": "fullscreen",
   "window.restoreFullscreen": true,
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 3,
