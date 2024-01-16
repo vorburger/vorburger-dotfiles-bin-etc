@@ -62,7 +62,7 @@ redhat.java@1.27.2024011308
 redhat.vscode-xml@0.26.1
 redhat.vscode-yaml@1.14.0
 seaube.clangformat@2.0.2
-sfdc.bazel-vscode-java@1.24.101141409
+sfdc.bazel-vscode-java@1.24.101151500
 streetsidesoftware.code-spell-checker@3.0.1
 thejustinwalsh.textproto-grammer@0.0.8
 timonwong.shellcheck@0.35.0
