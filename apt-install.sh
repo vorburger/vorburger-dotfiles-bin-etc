@@ -65,14 +65,16 @@ if [ ! -f /usr/bin/bat ]; then
 fi
 
 # https://dandavison.github.io/delta/installation.html
-# if [ ! -f /usr/bin/delta ]; then
-    # NOK on GitHub Codespaces: git-delta depends on libc6 (>= 2.34); however: Version of libc6:amd64 on system is 2.31-0ubuntu9.9.
-    # wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb
-    # sudo dpkg -i git-delta_0.15.1_amd64.deb
-# fi
-if [ $(command -v cargo) ] && [ ! -f $HOME/.cargo/bin/delta ]; then
-    cargo install git-delta
+if [ ! -f /usr/bin/delta ]; then
+    # Due to https://github.com/dandavison/delta/issues/1250, we must use the musl variant; otherwise, on GitHub Codespaces:
+    # git-delta depends on libc6 (>= 2.34); however: Version of libc6:amd64 on system is 2.31-0ubuntu9.9.
+    wget https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb
+    sudo dpkg -i git-delta-musl_0.16.5_amd64.deb
 fi
+# Alternative; but slower - and cargo is not available (see above) on GitHub Codespaces:
+# if [ $(command -v cargo) ] && [ ! -f $HOME/.cargo/bin/delta ]; then
+#    cargo install git-delta
+# fi
 
 # only DNF is here, other installations are in all-install.sh
 "$(dirname "$0")"/all-install.sh
