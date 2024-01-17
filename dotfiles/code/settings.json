@@ -116,10 +116,16 @@
   "java.saveActions.organizeImports": false, // as above, true is BROKEN!
   "java.configuration.runtimes": [
     {
-      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
       "name": "JavaSE-17",
+      "javadoc": "https://docs.oracle.com/en/java/javase/17/docs/api",
       "path": "/usr/lib/jvm/java-17/",
       "sources": "/usr/lib/jvm/java-17/lib/src.zip"
+    },
+    {
+      "name": "JavaSE-21",
+      "javadoc": "https://docs.oracle.com/en/java/javase/21/docs/api",
+      "path": "/usr/lib/jvm/java-21/",
+      "sources": "/usr/lib/jvm/java-21/lib/src.zip"
     }
   ],
   "java.configuration.updateBuildConfiguration": "automatic",
