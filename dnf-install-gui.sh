@@ -24,6 +24,8 @@ sudo dnf install -y \
 
 sudo dnf remove "libreoffice*"
 
+./fonts-install.sh
+
 ./all-install.sh
 
 ./symlink.sh

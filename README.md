@@ -376,17 +376,21 @@ See https://wiki.gnupg.org/AgentForwarding and related personal Notes.
 
 ### Fonts
 
-**This isn't required anymore, now that `dnf-install.sh` does `dnf install fira-code-fonts`:**
+TL;DR Ligatures in the Terminal and Editor and symbols in directory listings "just work"!
 
-From https://www.nerdfonts.com/font-downloads (based on https://github.com/ryanoasis/nerd-fonts),
-download https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip (or later)
-and unzip and double-click on _Fira Code Retina Nerd Font Complete.otf_
+We (apparently...) need **BOTH** the (original)
+[DNF `fira-code-fonts` package](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#fedora)
+(which is what makes Ligatures e.g. in the Kitty Terminal and Visual Studio code work)
+*as well* as the (patched!) _[Fira Code (Nerd)](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)_
+(which is what makes the fancy symbols used by `lsd` work).
 
-    lsd
+This (monospaced) font is configured to be used in [`kitty.conf`](dotfiles/kitty/kitty.conf) and
+[in VSC](dotfiles/code/settings.json). The _Fira Mono_ font, which isn't part of the
+`fira-code-fonts` DNF package but comes with Fedora, is NOT actually used, here.
 
-    wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/bin/scripts/lib/i_linux.sh -P ~/.local/share/fonts/
-    source ~/.local/share/fonts/i_linux.sh
-    echo $i_linux_fedora
+[`fonts-install.sh`](fonts-install.sh), called by [`dnf-install-gui.sh`](dnf-install-gui.sh)
+scripts the installation of the the `ryanoasis/nerd-fonts` _FiraCode_ and [`dnf-install.sh`](dnf-install.sh)
+does `dnf install fira-code-fonts`.
 
 ### Dark Mode
 
