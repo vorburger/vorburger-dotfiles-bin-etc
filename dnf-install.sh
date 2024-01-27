@@ -29,8 +29,7 @@ sudo dnf install -y \
     dnf-automatic dnf-plugins-core \
     golang git htop \
     java-17-openjdk-devel java-17-openjdk-src java-17-openjdk-javadoc java-17-openjdk-javadoc-zip java-17-openjdk-jmods \
-    powerline-fonts trash-cli ShellCheck tmux wipe wl-clipboard \
-    fira-code-fonts mozilla-fira-mono-fonts \
+    trash-cli ShellCheck tmux wipe wl-clipboard \
     fish autojump-fish autojump fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \

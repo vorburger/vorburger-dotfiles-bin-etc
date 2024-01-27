@@ -389,7 +389,7 @@ This (monospaced) font is configured to be used in [`kitty.conf`](dotfiles/kitty
 `fira-code-fonts` DNF package but comes with Fedora, is NOT actually used, here.
 
 [`fonts-install.sh`](fonts-install.sh), called by [`dnf-install-gui.sh`](dnf-install-gui.sh)
-scripts the installation of the the `ryanoasis/nerd-fonts` _FiraCode_ and [`dnf-install.sh`](dnf-install.sh)
+scripts the installation of the the `ryanoasis/nerd-fonts` _FiraCode_ and [`dnf-install-gui.sh`](dnf-install.sh)
 does `dnf install fira-code-fonts`.
 
 ### Dark Mode
