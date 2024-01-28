@@ -69,4 +69,5 @@ vscjava.vscode-java-test@0.40.1
 vscjava.vscode-maven@0.43.0
 vscode-icons-team.vscode-icons@12.7.0
 WakaTime.vscode-wakatime@24.4.0
+Zignd.html-css-class-completion@1.20.0
 zxh404.vscode-proto3@0.5.5
