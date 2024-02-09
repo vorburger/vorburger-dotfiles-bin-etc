@@ -41,9 +41,11 @@
   // https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontLigatures": true,
-  "editor.formatOnPaste": true,
+  // formatOnType and formatOnPaste is a very bad idea for slow formatters
+  // (such as an external Google Java Format invocation exec), so just on Save.
+  "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
-  "editor.formatOnType": true,
+  "editor.formatOnType": false,
   "editor.indentSize": "tabSize",
   "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "off",
@@ -190,5 +192,7 @@
   "git.autofetch": false,
   "githubPullRequests.pushBranch": "prompt",
   "explorer.confirmDelete": false,
-  "diffEditor.experimental.showMoves": true
+  "diffEditor.experimental.showMoves": true,
+  "cloudcode.duetAI.project": "duetai-413620",
+  "cloudcode.duetAI.inlineSuggestions.enableAuto": false
 }
