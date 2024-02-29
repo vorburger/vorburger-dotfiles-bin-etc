@@ -115,7 +115,9 @@
   ],
   // This is BROKEN - it re-formats Java code wrong, and breaks Class JavaDoc.
   // "java.completion.importOrder": [],
-  "java.saveActions.organizeImports": false, // as above, true is BROKEN!
+  "java.saveActions.organizeImports": false,
+
+  /* https://github.com/enola-dev/enola/issues/546
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-21",
@@ -123,7 +125,7 @@
       "path": "/usr/lib/jvm/java-21/",
       "sources": "/usr/lib/jvm/java-21/lib/src.zip"
     }
-  ],
+  ], */
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.debug.settings.hotCodeReplace": "auto",
   "java.eclipse.downloadSources": true,
