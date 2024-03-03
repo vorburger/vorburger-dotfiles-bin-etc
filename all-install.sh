@@ -71,6 +71,9 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://github.com/bazelbuild/buildtools/blob/master/buildozer/README.md
   [ -s "$GO_BIN_PATH"/buildozer ] || go install github.com/bazelbuild/buildtools/buildozer@latest
 
+  # https://github.com/bazelbuild/bazel-watcher
+  # npm install -g @bazel/ibazel
+
   # https://github.com/yoheimuta/protolint
   [ -s "$GO_BIN_PATH"/protolint ] || go install github.com/yoheimuta/protolint/cmd/protolint@latest
 
@@ -126,9 +129,6 @@ fi
 # ===============================================================================================================================
 # Here come the tools minimally required tools that we *DO* want to install in all Codespaces
 # (Some of the above, and other tools, could still be installed via prebuilt Dev Container on a per-project basis.)
-
-# https://github.com/bazelbuild/bazel-watcher
-npm install -g @bazel/ibazel
 
 # https://github.com/PatrickF1/fzf.fish
 # TODO https://github.com/PatrickF1/fzf.fish/discussions/111 how to TMUX?
