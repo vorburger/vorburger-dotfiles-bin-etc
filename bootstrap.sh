@@ -5,5 +5,8 @@ set -euxo pipefail
 # https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles
 
 ./ubuntu-install.sh
-./all-install.sh
+
+# ubuntu-install.sh ends with apt-install.sh which ends with all-install.sh, so no need to redo:
+# ./all-install.sh
+
 ./symlink.sh
