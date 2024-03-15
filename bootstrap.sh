@@ -4,6 +4,10 @@ set -euxo pipefail
 # This sets up dotfiles in GitHub Codespaces, see
 # https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles
 
+if [ -f /etc/os-release ]; then
+    cat /etc/os-release
+fi
+
 if [ -f /etc/debian_version ]; then
     echo "You're running Debian"
     cat /etc/debian_version
