@@ -33,4 +33,6 @@ set -Ux FZF_DEFAULT_COMMAND "rg --files"
 set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 
 # https://developer.android.com/tools/variables#android_home
-set -Ux ANDROID_HOME /home/vorburger/Android
+if ! [[ -z "${CODESPACES:-}" ]]; then
+    set -Ux ANDROID_HOME /home/vorburger/Android
+fi
