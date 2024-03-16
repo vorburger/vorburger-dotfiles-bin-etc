@@ -131,7 +131,7 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     cd vorburger-dotfiles-bin-etc
 
     ./git-install.sh
-    ./debian-install.sh 11 # or ./ubuntu-install.sh
+    ./debian-install.sh # or ./ubuntu-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./setup.sh
