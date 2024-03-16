@@ -11,6 +11,8 @@ DEBIAN_MAJOR_VERSION=$(cut -d'.' -f1 /etc/debian_version)
 sudo apt install -y curl gpg
 echo "deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_$DEBIAN_MAJOR_VERSION/ /" | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
 curl -fsSL "https://download.opensuse.org/repositories/shells:fish:release:3/Debian_$DEBIAN_MAJOR_VERSION/Release.key" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-# NB this ^^^ must be done BEFORE the apt update that comes NEXT
+
+sudo apt-get update -y
+sudo apt-get install -y fish
 
 ./apt-install.sh
