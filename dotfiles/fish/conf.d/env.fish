@@ -32,7 +32,11 @@ set -Ux FZF_DEFAULT_COMMAND "rg --files"
 # This makes Ctrl-T FZF's Fish integration use the above
 set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 
-# https://developer.android.com/tools/variables#android_home
-if ! [[ -z "${CODESPACES:-}" ]]; then
-    set -Ux ANDROID_HOME /home/vorburger/Android
-fi
+# Set ANDROID_HOME, see
+# https://developer.android.com/tools/variables#android_home;
+# but only if it's not already set, and if we're not in a Codespace,
+# where a Dev Container Feature will set it to something else.
+if test ! -n "$ANDROID_HOME"
+    and test ! -n "$CODESPACES"
+        set -Ux ANDROID_HOME /home/vorburger/Android
+end
