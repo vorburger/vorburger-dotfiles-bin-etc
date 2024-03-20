@@ -201,5 +201,9 @@
   "explorer.confirmDelete": false,
   "diffEditor.experimental.showMoves": true,
   "cloudcode.duetAI.project": "duetai-413620",
-  "cloudcode.duetAI.inlineSuggestions.enableAuto": false
+  "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
+  "files.associations": {
+    "AUTHORS": "plaintext"
+  },
+  "extensions.autoUpdate": false
 }
