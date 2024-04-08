@@ -37,7 +37,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
   "editor.foldingImportsByDefault": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 12,
   // https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
   "editor.fontFamily": "'FiraCode Nerd Font', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontLigatures": true,
