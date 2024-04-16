@@ -22,7 +22,7 @@ esbenp.prettier-vscode@10.4.0
 git-emoji.vscode-git-emoji@0.0.16
 github.codespaces@1.16.18
 github.vscode-github-actions@0.26.2
-github.vscode-pull-request-github@0.86.1
+github.vscode-pull-request-github@0.82.1
 golang.go@0.41.2
 googlecloudtools.cloudcode@2.7.1
 grapecity.gc-excelviewer@4.2.59
@@ -38,13 +38,13 @@ ms-kubernetes-tools.kind-vscode@0.0.3
 ms-kubernetes-tools.vscode-kubernetes-tools@1.3.16
 ms-python.debugpy@2024.4.0
 ms-python.isort@2023.10.1
-ms-python.python@2024.4.0
-ms-python.vscode-pylance@2024.4.1
-ms-toolsai.jupyter@2024.3.0
+ms-python.python@2024.2.1
+ms-python.vscode-pylance@2024.3.1
+ms-toolsai.jupyter@2024.2.0
 ms-toolsai.jupyter-keymap@1.1.2
 ms-toolsai.jupyter-renderers@1.0.17
-ms-toolsai.vscode-jupyter-cell-tags@0.1.9
-ms-toolsai.vscode-jupyter-slideshow@0.1.6
+ms-toolsai.vscode-jupyter-cell-tags@0.1.8
+ms-toolsai.vscode-jupyter-slideshow@0.1.5
 ms-vscode.cpptools@1.19.9
 ms-vscode.remote-explorer@0.4.3
 ms-vscode-remote.remote-containers@0.354.0
@@ -70,7 +70,7 @@ streetsidesoftware.code-spell-checker@3.0.1
 thejustinwalsh.textproto-grammer@0.0.8
 timonwong.shellcheck@0.37.0
 visualstudioexptteam.intellicode-api-usage-examples@0.2.8
-visualstudioexptteam.vscodeintellicode@1.3.1
+visualstudioexptteam.vscodeintellicode@1.2.30
 vscjava.vscode-gradle@3.13.5
 vscjava.vscode-java-debug@0.57.0
 vscjava.vscode-java-dependency@0.23.6
