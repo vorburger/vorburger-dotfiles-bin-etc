@@ -29,6 +29,9 @@
 
   "cSpell.userWords": ["automagic", "automagically", "Proto", "vorburger"],
 
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.renderSideBySide": false,
+
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.shellcheck": "always",
@@ -60,12 +63,16 @@
   "editor.tabSize": 4,
 
   "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
 
   "extensions.autoUpdate": false,
 
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 500,
+  "files.associations": {
+    "AUTHORS": "plaintext"
+  },
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -75,10 +82,12 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
 
+  "git.autofetch": false,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",
   "github.gitProtocol": "ssh",
   "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.pushBranch": "prompt",
   "gitlens.codeLens.scopes": ["document"],
 
   // G
@@ -194,6 +203,7 @@
 
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
   "window.commandCenter": true,
   "window.menuBarVisibility": "classic",
   // https://github.com/Microsoft/vscode-docs/blob/vnext/release-notes/v1_9.md#control-the-dimensions-of-new-windows
@@ -201,6 +211,7 @@
   "window.restoreFullscreen": true,
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 3,
+
   // https://github.com/piousdeer/vscode-adwaita#suggested-settings
   "workbench.colorTheme": "Adwaita Dark & default syntax highlighting & colorful status bar",
   "workbench.iconTheme": "vscode-icons",
@@ -210,14 +221,7 @@
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 12,
-  "git.autofetch": false,
-  "githubPullRequests.pushBranch": "prompt",
-  "explorer.confirmDelete": false,
-  "diffEditor.experimental.showMoves": true,
-  "diffEditor.renderSideBySide": false,
+
   "cloudcode.duetAI.project": "duetai-413620",
-  "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
-  "files.associations": {
-    "AUTHORS": "plaintext"
-  }
+  "cloudcode.duetAI.inlineSuggestions.enableAuto": false
 }
