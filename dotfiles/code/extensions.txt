@@ -24,7 +24,6 @@ github.codespaces@1.16.20
 github.vscode-github-actions@0.26.2
 github.vscode-pull-request-github@0.82.1
 golang.go@0.41.4
-googlecloudtools.cloudcode@2.9.0
 grapecity.gc-excelviewer@4.2.59
 htmlhint.vscode-htmlhint@1.0.5
 html-validate.vscode-html-validate@2.8.2
@@ -46,12 +45,10 @@ ms-toolsai.jupyter-keymap@1.1.2
 ms-toolsai.jupyter-renderers@1.0.17
 ms-toolsai.vscode-jupyter-cell-tags@0.1.8
 ms-toolsai.vscode-jupyter-slideshow@0.1.5
-ms-vscode.cpptools@1.19.9
 ms-vscode.remote-explorer@0.4.3
 ms-vscode-remote.remote-containers@0.362.0
 ms-vscode-remote.remote-ssh@0.109.0
 ms-vscode-remote.remote-ssh-edit@0.86.0
-ms-vscode-remote.remote-wsl@0.86.0
 ms-vscode.remote-server@1.5.1
 ms-vscode-remote.vscode-remote-extensionpack@0.25.0
 ms-vsliveshare.vsliveshare@1.0.5918
@@ -63,7 +60,6 @@ redhat.fabric8-analytics@0.9.4
 redhat.java@1.30.0
 redhat.vscode-xml@0.26.1
 redhat.vscode-yaml@1.14.0
-rust-lang.rust-analyzer@0.3.1940
 seaube.clangformat@2.0.2
 sfdc.bazel-vscode-java@1.24.104161717
 stardog-union.stardog-rdf-grammars@0.2.1
