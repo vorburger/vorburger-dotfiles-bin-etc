@@ -26,7 +26,9 @@
     "editor.defaultFormatter": "redhat.vscode-xml",
     "editor.tabSize": 2
   },
+
   "cSpell.userWords": ["automagic", "automagically", "Proto", "vorburger"],
+
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.shellcheck": "always",
@@ -56,7 +58,11 @@
   "editor.renderWhitespace": "none",
   "editor.suggestSelection": "first",
   "editor.tabSize": 4,
+
   "explorer.confirmDragAndDrop": false,
+
+  "extensions.autoUpdate": false,
+
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 500,
@@ -68,11 +74,13 @@
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",
   "github.gitProtocol": "ssh",
   "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.scopes": ["document"],
+
   // G
   "go.alternateTools": {
     "gocode": "/usr/bin/gocode",
@@ -89,6 +97,7 @@
   "go.inferGopath": false,
   "go.toolsManagement.autoUpdate": true,
   "go.vetOnSave": "off",
+
   // https://code.visualstudio.com/docs/languages/html#_formatting but note that Prettier may have different formatting!
   "html.format.wrapAttributes": "preserve-aligned",
   "html.suggest.html5": true,
@@ -98,6 +107,7 @@
     "stringConcatToTextBlock",
     "invertEquals"
   ],
+
   "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
   "java.codeGeneration.toString.codeStyle": "STRING_BUILDER_CHAINED",
   "java.codeGeneration.toString.limitElements": 7,
@@ -147,6 +157,7 @@
     "MD034": false
   },
   "quarkus.tools.alwaysShowWelcomePage": false,
+
   // G-like
   "redhat.telemetry.enabled": false,
   "remoteHub.commitDirectlyWarning": "off",
@@ -154,12 +165,14 @@
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
+
   // https://code.visualstudio.com/docs/terminal/appearance
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "underline",
   "terminal.integrated.shell.linux": "/usr/bin/fish",
+
   "todohighlight.include": [
     "**/*.java",
     "**/*.js",
@@ -178,6 +191,7 @@
   // successor of https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
   // Possible alternative, if NOK: https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight
   "todohighlight.keywords": ["TODO", "todo!()"], // todo!() for https://doc.rust-lang.org/std/macro.todo.html
+
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.commandCenter": true,
@@ -200,10 +214,10 @@
   "githubPullRequests.pushBranch": "prompt",
   "explorer.confirmDelete": false,
   "diffEditor.experimental.showMoves": true,
+  "diffEditor.renderSideBySide": false,
   "cloudcode.duetAI.project": "duetai-413620",
   "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
   "files.associations": {
     "AUTHORS": "plaintext"
-  },
-  "extensions.autoUpdate": false
+  }
 }
