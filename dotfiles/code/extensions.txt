@@ -1,5 +1,6 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
 bazelbuild.vscode-bazel@0.10.0
+bbenoist.nix@1.0.1
 bierner.emojisense@0.10.0
 bierner.github-markdown-preview@0.3.0
 bierner.markdown-checkbox@0.4.0
