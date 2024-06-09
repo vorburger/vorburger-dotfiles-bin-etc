@@ -65,7 +65,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
 
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "onlySelectedExtensions",
 
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
