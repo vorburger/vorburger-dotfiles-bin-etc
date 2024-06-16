@@ -32,7 +32,7 @@ sudo dnf install -y \
     ruby-devel rubygems \
     openssl-devel \
     dracut-config-rescue \
-    pipx
+    pandoc pipx
 # clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
 # xrandr is required by Minecraft client to fix ArrayIndexOutOfBoundsException at org.lwjgl.opengl.LinuxDisplay.getAvailableDisplayModes()
 # openssl-devel is used (only, so far) by https://github.com/swsnr/mdcat
