@@ -31,7 +31,8 @@ sudo dnf install -y \
     nodejs xrandr \
     ruby-devel rubygems \
     openssl-devel \
-    dracut-config-rescue
+    dracut-config-rescue \
+    pipx
 # clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
 # xrandr is required by Minecraft client to fix ArrayIndexOutOfBoundsException at org.lwjgl.opengl.LinuxDisplay.getAvailableDisplayModes()
 # openssl-devel is used (only, so far) by https://github.com/swsnr/mdcat
