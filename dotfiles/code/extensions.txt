@@ -10,6 +10,7 @@ bierner.markdown-mermaid@1.23.0
 bierner.markdown-preview-github-styles@2.0.4
 bierner.markdown-yaml-preamble@0.1.0
 bmalehorn.vscode-fish@1.0.38
+bpruitt-goddard.mermaid-markdown-syntax-highlighting@1.6.6
 christian-kohler.npm-intellisense@1.4.5
 coolbear.systemd-unit-file@1.0.6
 davidanson.vscode-markdownlint@0.55.0
