@@ -223,5 +223,6 @@
   "workbench.tree.indent": 12,
 
   "cloudcode.duetAI.project": "duetai-413620",
-  "cloudcode.duetAI.inlineSuggestions.enableAuto": false
+  "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
+  "gitlens.launchpad.indicator.enabled": false
 }
