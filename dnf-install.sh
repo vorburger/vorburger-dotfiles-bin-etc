@@ -39,6 +39,9 @@ sudo dnf install -y \
 
 # dracut-config-rescue as per https://docs.fedoraproject.org/en-US/quick-docs/upgrading-fedora-offline/#sect-update-rescue-kernel
 
+# https://github.com/pypa/pipx?tab=readme-ov-file#shell-completions
+register-python-argcomplete --shell fish pipx >~/.config/fish/completions/pipx.fish
+
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
 # file /usr/bin/kubectl conflicts between attempted installs of kubernetes-client-1.21.0-2.fc35.x86_64 and kubectl-1.23.0-0.x86_64
 # (at least when run as part of ./container/build.sh which is FROM fedora:35 in container/fedora-updated/Dockerfile)
