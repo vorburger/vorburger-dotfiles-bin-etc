@@ -79,6 +79,7 @@ vscjava.vscode-java-pack@0.27.0
 vscjava.vscode-java-test@0.41.1
 vscjava.vscode-maven@0.44.0
 vscode-icons-team.vscode-icons@12.8.0
+vsls-contrib.gitdoc@0.1.0
 wakatime.vscode-wakatime@24.6.0
 zazuko.vscode-rdf-sketch@0.0.8
 zignd.html-css-class-completion@1.20.0
