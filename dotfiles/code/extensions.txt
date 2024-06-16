@@ -18,11 +18,11 @@ dbaeumer.vscode-eslint@2.4.4
 dinhani.copy-on-select@0.0.7
 dongfg.vscode-beancount-formatter@1.4.2
 eamodio.gitlens@15.1.0
-ecmel.vscode-html-css@2.0.9
+ecmel.vscode-html-css@2.0.10
 editorconfig.editorconfig@0.16.4
 esbenp.prettier-vscode@10.4.0
 git-emoji.vscode-git-emoji@0.0.16
-github.codespaces@1.16.22
+github.codespaces@1.16.23
 github.vscode-github-actions@0.26.3
 github.vscode-pull-request-github@0.88.1
 golang.go@0.41.4
@@ -40,7 +40,7 @@ ms-kubernetes-tools.kind-vscode@0.0.3
 ms-kubernetes-tools.vscode-kubernetes-tools@1.3.16
 ms-python.debugpy@2024.6.0
 ms-python.isort@2023.10.1
-ms-python.python@2024.8.0
+ms-python.python@2024.8.1
 ms-python.vscode-pylance@2024.6.1
 ms-toolsai.jupyter@2024.5.0
 ms-toolsai.jupyter-keymap@1.1.2
@@ -49,11 +49,11 @@ ms-toolsai.vscode-jupyter-cell-tags@0.1.9
 ms-toolsai.vscode-jupyter-slideshow@0.1.6
 ms-vscode.remote-explorer@0.4.3
 ms-vscode-remote.remote-containers@0.369.0
-ms-vscode-remote.remote-ssh@0.110.1
+ms-vscode-remote.remote-ssh@0.112.0
 ms-vscode-remote.remote-ssh-edit@0.86.0
-ms-vscode.remote-server@1.5.1
+ms-vscode.remote-server@1.5.2
 ms-vscode-remote.vscode-remote-extensionpack@0.25.0
-ms-vsliveshare.vsliveshare@1.0.5918
+ms-vsliveshare.vsliveshare@1.0.5932
 mutantdino.resourcemonitor@1.0.7
 nico-castell.linux-desktop-file@0.0.21
 piousdeer.adwaita-theme@1.1.0
@@ -63,7 +63,7 @@ redhat.java@1.31.0
 redhat.vscode-xml@0.27.1
 redhat.vscode-yaml@1.15.0
 seaube.clangformat@2.0.2
-sfdc.bazel-vscode-java@1.24.106060630
+sfdc.bazel-vscode-java@1.24.106140907
 stardog-union.stardog-rdf-grammars@0.2.1
 stardog-union.vscode-langserver-turtle@0.2.1
 streetsidesoftware.code-spell-checker@3.0.1
@@ -72,7 +72,7 @@ timonwong.shellcheck@0.37.1
 valentjn.vscode-ltex@13.1.0
 visualstudioexptteam.intellicode-api-usage-examples@0.2.8
 visualstudioexptteam.vscodeintellicode@1.3.1
-vscjava.vscode-gradle@3.13.5
+vscjava.vscode-gradle@3.14.0
 vscjava.vscode-java-debug@0.57.0
 vscjava.vscode-java-dependency@0.23.6
 vscjava.vscode-java-pack@0.27.0
