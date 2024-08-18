@@ -4,11 +4,13 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## NeXT
 
+- shellcheck pre-commit and GitHub action, fix all errors
+
 - https://sw.kovidgoyal.net/kitty/kittens/hints/
 
 - [DNF v5](https://www.zdnet.com/google-amp/article/how-to-install-dnf5-on-fedora-39-for-faster-application-installation-and-management/)? Try in container!
 
-1. fix SSH_AUTH_SOCK "bug" in dotfiles
+- fix SSH_AUTH_SOCK "bug" in dotfiles
    - Remember how https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/36771f62ac2c31e40cbc9d72ca58adef00c263db
      was reverted on 2023-01-07, see https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/6bafbde1afd456fca5d32761f09142584058bb97
    - Cannot "ssh localhsot" in GNOME Terminal instead of in Kitty
