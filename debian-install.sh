@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+# ALWAYS invoke bootstrap.sh instead of directly this, as it will dispatch Debian -VS- Ubuntu correctly.
+
 # This is Debian specific; see ubuntu-install.sh for Ubuntu specific stuff, and apt-install.sh for stuff that's common to Debian and Ubuntu.
 
+# This must be the "numeric" Debian version (like 12, 11 or 10) and not the "code name" (like bullseye/sid)
+# It does not seem to be possible to obtain this as a number when we're running on a (Debian-based) Ubuntu, where this is the Debian name not number.
 DEBIAN_MAJOR_VERSION=$(cut -d'.' -f1 /etc/debian_version)
 
 # https://fishshell.com =>

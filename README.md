@@ -47,7 +47,9 @@ Enable _Automatically install dotfiles_ from this repository in [your GitHub Set
 
 To fix _Error loading webview: Error: Could not register service workers: NotSupportedError: Failed to register a ServiceWorker for scope ('...'): The user denied permission to use Service Worker_, [allow third-party cookies](https://stackoverflow.com/q/72498891/421602); e.g. on Chrome, add `[*.]github.dev` _Including third-party cookies_ on chrome://settings/cookies.
 
-[Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialied by [bootstrap.sh](bootstrap.sh). Check if it is still running with `tail -f /workspaces/.codespaces/.persistedshare/creation.log`. If NOK, or to update:
+[Your GitHub Codespaces](https://github.com/codespaces) (only future, not existing) will be initialized by [bootstrap.sh](bootstrap.sh), as per [this list of file names](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles).
+
+Check if it is still running with `tail -f /workspaces/.codespaces/.persistedshare/creation.log`. If NOK, or to update:
 
     cd /workspaces/.codespaces/.persistedshare/dotfiles/
     ./bootstrap.sh

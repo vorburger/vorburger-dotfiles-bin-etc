@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+# ALWAYS invoke bootstrap.sh instead of directly this, as it will dispatch Debian -VS- Ubuntu correctly.
+
 # This is Ubuntu specific; see debian-install.sh for Debian specific stuff, and apt-install.sh for stuff that's common to Ubuntu and Debian.
 
 function install_fish {
