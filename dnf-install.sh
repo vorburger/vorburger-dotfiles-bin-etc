@@ -18,7 +18,7 @@ sudo dnf install -y \
     bash-completion \
     dnf-automatic dnf-plugins-core \
     golang git htop \
-    java-17-openjdk-devel java-17-openjdk-src java-17-openjdk-javadoc java-17-openjdk-javadoc-zip java-17-openjdk-jmods \
+    java-21-openjdk-devel java-21-openjdk-src java-21-openjdk-javadoc java-21-openjdk-javadoc-zip java-21-openjdk-jmods \
     trash-cli ShellCheck tmux wipe wl-clipboard \
     fish autojump-fish autojump fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
