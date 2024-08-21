@@ -54,7 +54,6 @@ ms-vscode.remote-explorer@0.4.3
 ms-vscode-remote.remote-containers@0.380.0
 ms-vscode-remote.remote-ssh@0.113.1
 ms-vscode-remote.remote-ssh-edit@0.86.0
-ms-vscode-remote.remote-wsl@0.88.2
 ms-vscode.remote-server@1.5.2
 ms-vscode-remote.vscode-remote-extensionpack@0.25.0
 ms-vsliveshare.vsliveshare@1.0.5936
