@@ -61,7 +61,6 @@ mutantdino.resourcemonitor@1.0.7
 nico-castell.linux-desktop-file@0.0.21
 piousdeer.adwaita-theme@1.1.0
 plex.vscode-protolint@0.8.0
-redhat.fabric8-analytics@0.9.5
 redhat.java@1.33.0
 redhat.vscode-xml@0.27.1
 redhat.vscode-yaml@1.15.0
