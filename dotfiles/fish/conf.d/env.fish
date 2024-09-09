@@ -17,20 +17,20 @@ end
 # see docs/podman.md
 # (This must come before the below so that this works in-container.)
 if test -f /usr/bin/podman-remote
-    set -Ux CONTAINER_HOST unix://run/user/1000/podman/podman.sock
+    set -gx CONTAINER_HOST unix://run/user/1000/podman/podman.sock
 end
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
 if test -f /usr/bin/podman
-    set -Ux DOCKER_HOST unix://(podman info -f "{{.Host.RemoteSocket.Path}}")
+    set -gx DOCKER_HOST unix://(podman info -f "{{.Host.RemoteSocket.Path}}")
 end
 
 # https://github.com/junegunn/fzf#respecting-gitignore
 # This makes FZF use ripgrep, which filters .gitignore, etc.
-set -Ux RIPGREP_CONFIG_PATH $DOTFILES/ripgreprc.properties
-set -Ux FZF_DEFAULT_COMMAND "rg --files"
+set -gx RIPGREP_CONFIG_PATH $DOTFILES/ripgreprc.properties
+set -gx FZF_DEFAULT_COMMAND "rg --files"
 # This makes Ctrl-T FZF's Fish integration use the above
-set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
+set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 
 # Set ANDROID_HOME, see
 # https://developer.android.com/tools/variables#android_home;
@@ -38,5 +38,5 @@ set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 # where a Dev Container Feature will set it to something else.
 if test ! -n "$ANDROID_HOME"
     and test ! -n "$CODESPACES"
-        set -Ux ANDROID_HOME /home/vorburger/Android
+        set -gx ANDROID_HOME /home/vorburger/Android
 end
