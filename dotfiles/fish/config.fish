@@ -12,6 +12,7 @@ test -f /usr/local/bin/starship && starship init fish | source
 # NOT https://github.com/eth-p/bat-extras/blob/master/doc/batman.md
 # For alternatives, see https://wiki.archlinux.org/title/Color_output_in_console#man
 test -f /usr/bin/bat && set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'" && set -gx MANROFFOPT "-c"
+test -f /usr/bin/batcat && set -gx MANPAGER "sh -c 'col -bx | batcat -l man -p'" && set -gx MANROFFOPT "-c"
 
 # Keyboard bindings
 # fish_key_reader is great to find the appropriate keyboard escape sequence! See
