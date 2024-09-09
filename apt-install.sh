@@ -16,7 +16,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
     #      && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
     #      && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
     #fi
-    
+
     sudo apt --allow-releaseinfo-change update
     # sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
     # sudo apt-get update --fix-missing && sudo apt-get clean && sudo apt-get clean && sudo apt-get install -f && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
@@ -24,7 +24,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
     ## E: Failed to fetch https://packages.sury.org/php/pool/main/p/pcre2/libpcre2-32-0_10.36-2+0~20210212.6+debian10~1.gbp6138a4_amd64.deb  404  Not Found [IP: 104.21.18.148 443]
     ## E: Failed to fetch http://deb.debian.org/debian/pool/main/libw/libwebp/libwebpmux3_0.6.1-2_amd64.deb  404  Not Found [IP: 199.232.126.132 80]
     ## E: Failed to fetch http://deb.debian.org/debian/pool/main/h/http-parser/libhttp-parser2.8_2.8.1-1_amd64.deb  404  Not Found [IP: 199.232.126.132 80]
-    
+
     # NB: Do *NOT* apt install tmux, because that upgrades the version that comes with gcr.io/cloudshell-images/cloudshell:latest
     # which breaks the gcr.io/cloudshell-images/custom-image-validation:latest test_ssh (__main__.CloudDevshellTests)
 
@@ -35,7 +35,9 @@ if [[ -z "${CODESPACES:-}" ]]; then
         curl graphviz wget \
         autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
         python3-venv \
-        lsd ripgrep
+        lsd ripgrep needrestart debian-goodies
+
+    # debian-goodies contains checkrestart, among other goodies; see https://packages.debian.org/en/bookworm/debian-goodies
 
     # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
     sudo apt remove -y nano
