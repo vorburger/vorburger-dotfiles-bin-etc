@@ -15,6 +15,10 @@ end
 command -sq lsd && alias l="lsd "
 command -sq lsd && alias ll="lsd -l "
 command -sq lsd && alias lt="lsd --tree "
+
+not type -q l && alias l="ls --group-directories-first --classify --hyperlink"
+not type -q ll && alias ll="ls -l --group-directories-first --classify --hyperlink"
+
 command -sq batcat && alias c="batcat "
 command -sq bat && alias c="bat "
 
