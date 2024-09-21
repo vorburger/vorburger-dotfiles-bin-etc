@@ -224,5 +224,6 @@
 
   "cloudcode.duetAI.project": "duetai-413620",
   "cloudcode.duetAI.inlineSuggestions.enableAuto": false,
-  "gitlens.launchpad.indicator.enabled": false
+  "gitlens.launchpad.indicator.enabled": false,
+  "explorer.confirmPasteNative": false
 }
