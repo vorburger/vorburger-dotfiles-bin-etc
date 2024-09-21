@@ -43,10 +43,10 @@ if [[ -z "${CODESPACES:-}" ]]; then
     sudo apt remove -y nano
     sudo apt autoremove -y
 
-# else
+else
     # This are minimally required tools for Codespaces
 
-    # sudo apt install -y \
+    sudo apt install -y shellcheck
 
     # Beware: cargo install seems to be (really!) slow when used from GitHub Codespace setup;
     # do not install it, and make any subsequent "cargo install" conditional (see below).
