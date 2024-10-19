@@ -15,10 +15,7 @@ env:
 
 jobs:
   build:
-    # As-is, this fails due to "No space left on device" when run on GitHub's default runner;
-    # so set-up self-hosted on https://github.com/vorburger/vorburger-dotfiles-bin-etc/settings/actions/runners.
-    # runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -27,6 +24,14 @@ jobs:
       id-token: write
 
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        # Alternatively, simply rm; see https://github.com/docker/build-push-action/blob/master/TROUBLESHOOTING.md#image-not-loaded
+        with:
+          remove-dotnet: "true"
+          remove-android: "true"
+          remove-haskell: "true"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
