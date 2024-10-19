@@ -12,7 +12,7 @@ ssh-add -l
 
 docker rm --force test-"$1" || true
 docker run -d -p 2222 --name test-"$1" "$1"
-PORT="$(docker port test-"$1" | sed 's/2222\/tcp -> 0.0.0.0://')"
+PORT="$(docker port test-"$1" | head -n1 | sed 's/2222\/tcp -> 0.0.0.0://')"
 sleep 2
 
 rm -f /tmp/test-$$-id_rsa*

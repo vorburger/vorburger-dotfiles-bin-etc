@@ -9,19 +9,19 @@ cd "$(dirname "$0")"
 # but use the 'vorburger' user created in the ./Dockerfile, instead of creating a 'tester' on the fly..
 # (TODO avoid copy/paste from ../container/devshell/test-ssh-agent, which itself copy/pasted from ../sshd/test)
 
-docker rm --force --time=1 test-vorburger-again || true
+docker rm --force test-vorburger-again || true
 docker run -d -p 2222 --name test-vorburger-again vorburger
-PORT="$(docker port test-vorburger-again | sed 's/2222\/tcp -> 0.0.0.0://')"
+PORT="$(docker port test-vorburger-again | head -n1 | sed 's/2222\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test-vorburger-again
 docker cp /tmp/test-$$-id_rsa test-vorburger-again:/home/vorburger/.ssh/test.pubkey
 docker exec test-vorburger-again cat /home/vorburger/.ssh/test.pubkey >> /home/vorburger/.ssh/authorized_keys
-ssh -A -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT vorburger@localhost ssh-add -l
+ssh -A -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p "$PORT" vorburger@localhost ssh-add -l
 
 # This tests if the local SSH YubiKey works (which does not work on CI)
-ssh -A -o "StrictHostKeyChecking=no" -p $PORT vorburger@localhost ssh-add -l
+ssh -A -o "StrictHostKeyChecking=no" -p "$PORT" vorburger@localhost ssh-add -l
 
-docker rm --force --time=1 test-vorburger-again
+docker rm --force test-vorburger-again
 
 echo Test ~vorburger successful.

@@ -6,20 +6,22 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 - shellcheck pre-commit and GitHub action, fix all errors
 
+- Replace the massive copy/paste in the Bash shell scripts with a library of Shell functions (at least, if not something better)
+
 - https://sw.kovidgoyal.net/kitty/kittens/hints/
 
 - [DNF v5](https://www.zdnet.com/google-amp/article/how-to-install-dnf5-on-fedora-39-for-faster-application-installation-and-management/)? Try in container!
 
 - fix SSH_AUTH_SOCK "bug" in dotfiles
-   - Remember how https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/36771f62ac2c31e40cbc9d72ca58adef00c263db
+  - Remember how https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/36771f62ac2c31e40cbc9d72ca58adef00c263db
      was reverted on 2023-01-07, see https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/6bafbde1afd456fca5d32761f09142584058bb97
-   - Cannot "ssh localhsot" in GNOME Terminal instead of in Kitty
+  - Cannot "ssh localhsot" in GNOME Terminal instead of in Kitty
      because `SSH_AUTH_SOCKET` was set to `/run/user/1000/keyring/ssh` instead of `/home/vorburger/.ssh.agent` ...
-   - Retrace what set this where!
-   - Move `SSH_AUTH_SOCKET` magic from `bin/tmux-local`, `bin/tmux3` and `tmux-ssh` to... some place "earlier".
-   - This is also why VSC Remote localhost fails... does that work now?
-   - Do the VSC Beancount Extensions for LLnP work remotely now? Probably not, just like they don't from the laptop. Open issues.
-   - This might fix the git-server login? Not sure, could be unrelated.
+  - Retrace what set this where!
+  - Move `SSH_AUTH_SOCKET` magic from `bin/tmux-local`, `bin/tmux3` and `tmux-ssh` to... some place "earlier".
+  - This is also why VSC Remote localhost fails... does that work now?
+  - Do the VSC Beancount Extensions for LLnP work remotely now? Probably not, just like they don't from the laptop. Open issues.
+  - This might fix the git-server login? Not sure, could be unrelated.
 
 - Make `alias c` use `glow` or `mdcat` instead of `bat` IFF MD
 
