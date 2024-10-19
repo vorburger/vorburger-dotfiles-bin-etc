@@ -2,11 +2,11 @@ name: Build
 
 on:
   schedule:
-    - cron: '15 9 6,13,20,27 * *'
+    - cron: "15 9 6,13,20,27 * *"
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 env:
@@ -15,7 +15,10 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # As-is, this fails due to "No space left on device" when run on GitHub's default runner;
+    # so set-up self-hosted on https://github.com/vorburger/vorburger-dotfiles-bin-etc/settings/actions/runners.
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: read
       packages: write
@@ -31,7 +34,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@59acb6260d9c0ba8f4a2f9d9b48431a222b68e20 #v3.5.0
         with:
-          cosign-release: 'v2.2.4'
+          cosign-release: "v2.2.4"
 
       # Set up BuildKit Docker container builder to be able to build multi-platform images and export cache
       - name: Set up Docker Buildx
@@ -52,6 +55,9 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build containers
+        run: container/build.sh
 
       # Build and push Docker image with Buildx
       - name: Build and push Docker image
