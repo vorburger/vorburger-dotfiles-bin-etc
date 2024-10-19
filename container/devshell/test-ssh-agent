@@ -6,6 +6,10 @@ cd "$(dirname "$0")"
 # currently that is not what this tests: instead it's testing SSH from where this runs into a container, with an agent.
 
 # Test that the local SSH Agent works (on the laptop/build server, where this script runs; NOT in container)
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  echo "Starting SSH Agent..."
+  eval "$(ssh-agent -s)"
+fi
 ssh-add -l
 
 # TODO instead of copy/paste from ../sshd/test, share common test harness structure..
