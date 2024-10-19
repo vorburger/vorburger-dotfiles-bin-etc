@@ -21,7 +21,8 @@ RUN /tmp/git-install.sh /tmp/install-nano.sh && rm /tmp/git-install.sh /tmp/inst
 # TODO see TODO.MD: "clone" to ~/.git - how to COPY with .git ??)
 # Do NOT do this, because then any time you touch any file during dev, it will redo above:
 #   COPY . /home/vorburger/dev/vorburger-dotfiles-bin-etc/
-COPY --chown=vorburger:vorburger *.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+COPY --chown=vorburger:vorburger *.sh       /home/vorburger/dev/vorburger-dotfiles-bin-etc/
+COPY --chown=vorburger:vorburger *.fish     /home/vorburger/dev/vorburger-dotfiles-bin-etc/
 COPY --chown=vorburger:vorburger dotfiles/  /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
 COPY --chown=vorburger:vorburger bin/       /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/
 
