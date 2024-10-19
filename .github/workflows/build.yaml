@@ -66,13 +66,14 @@ jobs:
         uses: docker/build-push-action@v6.9.0
         with:
           context: .
-          pull: false
           file: Dockerfile-fedora
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          # https://docs.docker.com/reference/cli/docker/buildx/build/#load
+          load: true
 
       # Sign the resulting Docker image digest (see https://github.com/sigstore/cosign)
       - name: Sign the published Docker image
