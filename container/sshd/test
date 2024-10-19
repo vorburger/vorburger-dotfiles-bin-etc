@@ -18,7 +18,7 @@ sleep 2
 ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" fooba@localhost echo "1. hello, world."
 ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" fooba@localhost echo "2. hello, world."
 
-docker rm --force --time=1 test-sshd
+docker rm --force test-sshd
 rm -f /tmp/test-$$-id_rsa*
 
 echo Test sshd successful.

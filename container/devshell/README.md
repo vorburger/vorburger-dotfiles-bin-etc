@@ -5,7 +5,7 @@
     ssh -A -p 2222 localhost
     container$ ssh git@github.com
 
-    docker rm --force --time=1 devshell
+    docker rm --force devshell
 
 _TODO Add volume mapping to persist ongoing dev work, as per [my Podman Notes](../../docs/podman.md)._
 

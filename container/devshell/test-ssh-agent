@@ -10,20 +10,20 @@ ssh-add -l
 
 # TODO instead of copy/paste from ../sshd/test, share common test harness structure..
 
-docker rm --force --time=1 test-$1 || true
-docker run -d -p 2222 --name test-$1 $1
-PORT="$(docker port test-$1 | sed 's/2222\/tcp -> 0.0.0.0://')"
+docker rm --force test-"$1" || true
+docker run -d -p 2222 --name test-"$1" "$1"
+PORT="$(docker port test-"$1" | sed 's/2222\/tcp -> 0.0.0.0://')"
 sleep 2
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
-docker exec test-$1 /usr/local/sbin/add-uid-key tester /bin/bash "$(cat /tmp/test-$$-id_rsa.pub)"
+docker exec test-"$1" /usr/local/sbin/add-uid-key tester /bin/bash "$(cat /tmp/test-$$-id_rsa.pub)"
 
 # NB -A for Agent Forwarding!
-ssh -A -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p $PORT tester@localhost ssh-add -l
+ssh -A -i /tmp/test-$$-id_rsa -o "StrictHostKeyChecking=no" -p "$PORT" tester@localhost ssh-add -l
 
 # TODO fire up another sshd container, and "cross hop" into it by agent forwarding
 
-docker rm --force --time=1 test-$1
+docker rm --force test-"$1"
 
 echo Test successful.

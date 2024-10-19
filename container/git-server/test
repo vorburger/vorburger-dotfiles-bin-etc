@@ -8,29 +8,29 @@ ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
 mkdir /tmp/test-$$-id_rsa.ssh
 cp /tmp/test-$$-id_rsa.pub  /tmp/test-$$-id_rsa.ssh/authorized_keys
 
-docker rm --force --time=1 test-git-server || true
+docker rm --force test-git-server || true
 docker run -d -p 2222 -v /tmp/test-$$-id_rsa.ssh/:/home/git/.ssh/:ro,Z --name test-git-server git-server
 PORT="$(docker port test-git-server | sed 's/2222\/tcp -> 0.0.0.0://')"
 sleep 2
 
-! ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p $PORT git@127.0.0.1
-! ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p $PORT git@localhost "rm -rf /"
+ ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" git@127.0.0.1 && exit 1
+ ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" git@localhost "rm -rf /" && exit 1
 
 # TODO How to script creating repo in container?
 docker exec test-git-server bash -c "mkdir /git && mkdir /git/test-repo && cd /git/test-repo && git init --bare && chown -R git:git /git/"
 
-# GIT_TRACE=1 
+# GIT_TRACE=1
 GIT_SSH_COMMAND="ssh -i /tmp/test-$$-id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $PORT" git clone git@localhost:/git/test-repo
 
 cd test-repo/
 echo "hello, world" > hello.txt
 git add hello.txt
 git commit -m "Add initial greeting."
-# GIT_TRACE=1 
+# GIT_TRACE=1
 GIT_SSH_COMMAND="ssh -i /tmp/test-$$-id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $PORT" git push
 cd ..
 
-docker rm --force --time=1 test-git-server
+docker rm --force test-git-server
 rm -rf /tmp/test-$$-id_rsa*
 rm -rf test-repo/
 
