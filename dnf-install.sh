@@ -41,6 +41,7 @@ sudo dnf install -y \
 # dracut-config-rescue as per https://docs.fedoraproject.org/en-US/quick-docs/upgrading-fedora-offline/#sect-update-rescue-kernel
 
 # https://github.com/pypa/pipx?tab=readme-ov-file#shell-completions
+mkdir -p ~/.config/fish/completions/
 register-python-argcomplete --shell fish pipx >~/.config/fish/completions/pipx.fish
 
 # Do NOT add the "kubernetes-client" package above, but it causes this error:
