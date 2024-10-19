@@ -10,7 +10,9 @@ build() {
   docker build -t "$3" -f "$1"/"$2" "$1"/
 
   # Testing should never depend on user presence SK touch, so we clear SSH_AUTH_SOCK
-  SSH_AUTH_SOCK="" "$1"/test
+  if [ -f "$1"/test ]; then
+    SSH_AUTH_SOCK="" "$1"/test
+  fi
 }
 
 #     Directory      Dockerfile        Image Tag Name
