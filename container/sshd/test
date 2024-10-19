@@ -6,7 +6,7 @@ shellcheck add-uid-key
 
 docker rm -f -t=1 test-sshd || true
 docker run -d -p 2222 --name test-sshd sshd
-PORT="$(docker port test-sshd | sed 's/2222\/tcp -> 0.0.0.0://')"
+PORT="$(docker port test-sshd | head -n1 | sed 's/2222\/tcp -> 0.0.0.0://')"
 
 rm -f /tmp/test-$$-id_rsa*
 ssh-keygen -f /tmp/test-$$-id_rsa -P "" -C test
@@ -15,8 +15,8 @@ docker exec test-sshd /usr/local/sbin/add-uid-key fooba /bin/bash "$(cat /tmp/te
 sleep 2
 
 # intentionally testing twice, just to make sure that ssdh isn't in debugging mode and quit after first use
-ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "1. hello, world."
-ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p $PORT fooba@localhost echo "2. hello, world."
+ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" fooba@localhost echo "1. hello, world."
+ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" fooba@localhost echo "2. hello, world."
 
 docker rm --force --time=1 test-sshd
 rm -f /tmp/test-$$-id_rsa*
