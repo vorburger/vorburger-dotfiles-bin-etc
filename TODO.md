@@ -115,9 +115,6 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 - container clean-up: make container not use ~/git but store its files somewhere on / instead of anywhere in $HOME
 - container: clone dotfiles to ~/git/ instead of ~/dev/ (but.. how? shouldn't git clone, because need local changes; must copy with .git)
 
-- sshd doesn't seem to react to kill, so podman stop waits until timeout?
-  Is there an orphan sshd at every restart?!
-
 - https://github.com/franciscolourenco/done
 
 - https://github.com/meaningful-ooo/sponge

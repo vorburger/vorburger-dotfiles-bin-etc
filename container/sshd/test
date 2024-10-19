@@ -4,6 +4,7 @@ cd "$(dirname "$0")"
 
 shellcheck add-uid-key
 
+docker stop --time=1 test-sshd || true
 docker rm -f test-sshd || true
 docker run -d -p 2222 --name test-sshd sshd
 PORT="$(docker port test-sshd | head -n1 | sed 's/2222\/tcp -> 0.0.0.0://')"
@@ -18,6 +19,7 @@ sleep 2
 ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" fooba@localhost echo "1. hello, world."
 ssh -i /tmp/test-$$-id_rsa -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -p "$PORT" fooba@localhost echo "2. hello, world."
 
+docker stop --time=1 test-sshd || true
 docker rm --force test-sshd
 rm -f /tmp/test-$$-id_rsa*
 
