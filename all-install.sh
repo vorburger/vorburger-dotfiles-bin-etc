@@ -3,6 +3,8 @@ set -euxo pipefail
 
 # apt|dnf-install.sh has DNF RPM / APT DEB packages, this is everything else
 
+DIR="$(realpath $(dirname "$0"))"
+
 [ -s /usr/bin/nano ] || [ -s "$HOME"/bin/nano ] || "$(dirname "$0")"/install-nano.sh
 
 # see https://github.com/jorgebucaran/fisher/issues/742
@@ -10,7 +12,7 @@ set -euxo pipefail
 # and https://github.com/orgs/community/discussions/35527
 exec </dev/null
 
-fish fish-install.fish
+fish "$DIR"/fish-install.fish
 
 # https://github.com/jorgebucaran/fisher
 [ -s "$HOME"/.config/fish/functions/fisher.fish ] || ( \
