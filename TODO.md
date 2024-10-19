@@ -28,7 +28,6 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 - https://docs.deno.com/runtime/manual/getting_started/setup_your_environment#fish-example
 
 - Container, take 2?
-  - Build `FROM fedora:39`
   - VSC Container support? Works via Tunnels?
   - https://gitlab.gnome.org/chergert/prompt Container-friendly Terminal, for Toolbox
 
