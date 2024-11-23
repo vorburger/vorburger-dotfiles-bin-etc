@@ -19,7 +19,7 @@ fi
 sudo dnf install -y \
     pass kitty code powertop \
     ImageMagick \
-    powerline-fonts fira-code-fonts mozilla-fira-mono-fonts \
+    powerline-fonts fira-code-fonts mozilla-fira-mono-fonts google-roboto-fonts google-roboto-mono-fonts liberation-fonts \
     gnome-extensions-app gnome-tweak-tool \
     android-tools
 

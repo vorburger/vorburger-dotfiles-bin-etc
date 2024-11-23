@@ -19,3 +19,9 @@ wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/b16e67d6257eafed2d9a
 # shellcheck source=/dev/null.
 source ~/.local/share/fonts/i_logos.sh
 echo "${i_linux_fedora:?}"
+
+# PS: The font families often used in documents which originated on Microsoft Windows are a PITA.
+# [_Liberation_ Fonts](https://en.wikipedia.org/wiki/Liberation_fonts) (`liberation-fonts`) have an _Arial_ "equivalent";
+# the problem is that ["Font Substitution"](https://docs.fedoraproject.org/en-US/packaging-guidelines/FontsPolicy/) does not always work - e.g. in Google Sheets.
+
+# TODO? Script manually DL & install Arial somehow from somewhere?! Nah, not worth the effort.
