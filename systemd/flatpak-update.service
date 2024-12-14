@@ -1,0 +1,6 @@
+[Unit]
+Description=Update Flatpak applications
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak update -y

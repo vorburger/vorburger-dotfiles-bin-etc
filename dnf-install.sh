@@ -61,6 +61,8 @@ else
   echo "Not enabling dnf-automatic-install.timer, because no systemd"
 fi
 
+./flatpack-install.sh
+
 sudo dnf update -y
 
 sudo dnf remove -y "libreoffice*"

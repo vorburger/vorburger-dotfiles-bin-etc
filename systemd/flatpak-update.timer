@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Flatpak application update
+
+[Timer]
+# Or for a specific time: OnCalendar=*-*-* 03:00:00
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
