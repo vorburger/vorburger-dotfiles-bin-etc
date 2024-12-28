@@ -46,7 +46,7 @@ format = '[$symbol(\($region\))]($style)'
 "vorburger-learn-appengin" = "learn"
 
 [kubernetes]
-disabled = false
+disabled = true
 [kubernetes.context_aliases]
 "gke_oasis-learn-study_europe-west4_cluster1" = "oasis"
 
