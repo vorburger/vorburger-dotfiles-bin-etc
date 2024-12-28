@@ -217,7 +217,6 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.preferredDarkColorTheme": "Adwaita Dark",
   "workbench.preferredLightColorTheme": "Adwaita Light",
-  "workbench.productIconTheme": "adwaita",
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 12,
