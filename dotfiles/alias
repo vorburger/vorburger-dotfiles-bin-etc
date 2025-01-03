@@ -38,4 +38,6 @@ alias gpl="git pull "
 alias gpf="git push --force-with-lease vorburger"
 alias grm="git rebase main"
 alias gsy="git pull --rebase && git push"
+alias gsh="git stash"
+alias gsp="git stash pop"
 # see fish/conf.d/git.fish (and ../bin/g*) for more Git tools
