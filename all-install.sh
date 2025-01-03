@@ -126,6 +126,10 @@ if [[ -z "${CODESPACES:-}" ]]; then
 
   # TODO Manage *all* Java installations with ASDF instead of DNF?!
   # ~/.asdf/bin/asdf plugin-add java https://github.com/halcyon/asdf-java.git
+
+  # https://www.jbang.dev/documentation/guide/latest/installation.html
+  curl -Ls https://sh.jbang.dev | bash -s - app setup
+  ln -fs ~/.jbang/bin/jbang ~/bin/jbang
 fi
 
 # ===============================================================================================================================
