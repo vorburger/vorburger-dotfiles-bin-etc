@@ -34,6 +34,7 @@ alias gacap="git add . && git commit --amend --no-edit && git push --force-with-
 alias gco="git checkout "
 alias gcob="git checkout -b "
 alias gpu="git push "
+alias gpv="git push vorburger"
 alias gpl="git pull "
 alias gpf="git push --force-with-lease vorburger"
 alias grm="git rebase main"
