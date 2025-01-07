@@ -16,7 +16,7 @@ sudo dnf install -y \
     glibc-langpack-en glibc-all-langpacks \
     rpl psmisc procps-ng \
     bash-completion \
-    dnf-automatic dnf-plugins-core \
+    dnf-automatic dnf5-plugin-automatic dnf-plugins-core dnf5-plugins \
     golang git htop \
     java-21-openjdk-devel java-21-openjdk-src java-21-openjdk-javadoc java-21-openjdk-javadoc-zip java-21-openjdk-jmods \
     trash-cli ShellCheck tmux wipe wl-clipboard \
@@ -53,12 +53,16 @@ sudo dnf install 'dnf-command(config-manager)'
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install -y gh
 
+sudo echo '[commands]
+apply_updates = yes
+' | sudo tee -a /etc/dnf/automatic.conf
+
 # Also in setup.sh
 if [ $(ps --no-headers -o comm 1) = "systemd" ]; then
-  sudo systemctl enable --now dnf-automatic-install.timer
+  sudo systemctl enable --now dnf5-automatic.timer
   systemctl status dnf-automatic-install.timer
 else
-  echo "Not enabling dnf-automatic-install.timer, because no systemd"
+  echo "Not enabling dnf5-automatic.timer, because no systemd"
 fi
 
 ./flatpack-install.sh
