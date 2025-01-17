@@ -60,7 +60,7 @@ apply_updates = yes
 # Also in setup.sh
 if [ $(ps --no-headers -o comm 1) = "systemd" ]; then
   sudo systemctl enable --now dnf5-automatic.timer
-  systemctl status dnf-automatic-install.timer
+  systemctl status dnf5-automatic.timer
 else
   echo "Not enabling dnf5-automatic.timer, because no systemd"
 fi

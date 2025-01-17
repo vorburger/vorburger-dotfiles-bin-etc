@@ -4,7 +4,7 @@
 2. GNOME Settings Users: Auto Login + Fingerprint!
 3. IR WebCam Auth?
 4. `sudo dnf install fish fira-code-fonts dnf-automatic dnf-plugins-core`
-5. `sudo systemctl enable --now dnf-automatic-install.timer`
+5. `sudo systemctl enable --now dnf5-automatic.timer`
 6. `~/.inputrc`
 7. `~/.config/fish/config.fish`
 8. [`~/.config/fish/conf.d/needs-restarting.fish`](https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/main/dotfiles/fish/conf.d/needs-restarting.fish)
