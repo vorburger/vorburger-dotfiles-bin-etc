@@ -10,7 +10,7 @@ if status is-interactive
   if not test -f $daily_flag_file; or not test (date -r $daily_flag_file +%Y-%m-%d) = $today
 
     # On Fedora (from https://bugzilla.redhat.com/show_bug.cgi?id=2048113)
-    test -f /usr/bin/dnf && not dnf needs-restarting --cacheonly -r -s >/dev/null && not dnf needs-restarting -r -s && echo && uptime -p
+    test -f /usr/bin/dnf && not dnf needs-restarting --cacheonly -r -s >/dev/null && not dnf needs-restarting --cacheonly -r -s && echo && uptime -p
 
     # On Debian
     test -f /usr/sbin/needrestart && /usr/sbin/needrestart
