@@ -243,6 +243,8 @@ To enable SSH login to the host, not container, typically only required to check
 
     ./google-cloud-workstation-install.sh
 
+TODO: Set up CI to [pre-build](https://cloud.google.com/workstations/docs/customize-container-images) the [`Dockerfile-google-cloud-workstation`](Dockerfile-google-cloud-workstation).
+
 ### Google Cloud Shell
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)

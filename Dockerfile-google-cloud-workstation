@@ -1,0 +1,10 @@
+FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/intellij-ultimate:latest
+
+COPY . /var/local/vorburger-dotfiles
+# RUN ls -l /var/local/vorburger-dotfiles
+
+# RUN chmod +x /var/local/vorburger-dotfiles/*.sh && \
+#     /var/local/vorburger-dotfiles/google-cloud-workstation-install.sh
+RUN /var/local/vorburger-dotfiles/ubuntu-install.sh
+
+# ENTRYPOINT fish

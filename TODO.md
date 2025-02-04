@@ -4,11 +4,8 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## NeXT
 
-- Single Entry Point scripts (and update README accordingly)
-
-- `./test.sh` to run:
+- Extend `./test.sh` to also run:
   - dnf-install.sh on a Fedora container
-  - ubuntu-install.sh on `us-central1-docker.pkg.dev/cloud-workstations-images/predefined/intellij-ultimate:latest` from https://cloud.google.com/workstations/docs/preconfigured-base-images
   - Debian
   - ...
 
