@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # see also fish/conf.d/alias.fish
 # TODO Add the missing $SSH_CONNECTION + $TERM_PROGRAM magic from alias.fish here also
-if command -v code; then
+if command -v code >/dev/null 2>&1; then
     alias e="code "
     export EDITOR="code --wait"
 else
@@ -13,10 +13,10 @@ else
     export EDITOR=nano
 fi
 
-command -v lsd && alias l="lsd "
-command -v lsd && alias ll="lsd -l "
-command -v lsd && alias lt="lsd --tree "
-command -v bat && alias c="bat "
+command -v lsd >/dev/null 2>&1 && alias l="lsd "
+command -v lsd >/dev/null 2>&1 && alias ll="lsd -l "
+command -v lsd >/dev/null 2>&1 && alias lt="lsd --tree "
+command -v bat >/dev/null 2>&1 && alias c="bat "
 
 # https://stackoverflow.com/a/24665529/421602
 source /usr/share/bash-completion/completions/git

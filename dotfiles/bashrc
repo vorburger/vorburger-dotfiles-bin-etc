@@ -58,7 +58,7 @@ fi
 [ -s "$HOME/.web3j/source.sh" ] && source "$HOME/.web3j/source.sh"
 
 # https://buildpacks.io/docs/app-developer-guide/building-on-podman/
-if [ "$(command -v podman)" ]; then
+if command -v podman >/dev/null 2>&1; then
   export DOCKER_HOST="unix://$(podman info -f "{{.Host.RemoteSocket.Path}}")"
 fi
 
