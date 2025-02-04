@@ -6,17 +6,24 @@ set -euxo pipefail
 # This is Ubuntu specific; see debian-install.sh for Debian specific stuff, and apt-install.sh for stuff that's common to Ubuntu and Debian.
 
 function install_fish {
+  if [ ! "$(command -v apt-add-repository)" ]; then
+    sudo apt-get update -y
+    sudo apt-get install -y software-properties-common
+  fi
+
   sudo apt-add-repository -y ppa:fish-shell/release-3
   sudo apt-get update -y
-  # Do *NOT* run upgrade (only update) in GitHub Codespaces, because it's slow
-  if [[ -z "${CODESPACES:-}" ]]; then
+
+  # Do *NOT* run upgrade (only update) in GitHub Codespaces or GCP WS, because it's SO SLOW
+  if [[ -z "${CODESPACES:-}" && -z "${GOOGLE_CLOUD_WORKSTATIONS:-}" ]]; then
     sudo apt-get upgrade -y
   fi
+
   sudo apt-get install -y fish
   fish --version
 }
 
-if [ ! $(command -v fish) ]; then
+if [ ! "$(command -v fish)" ]; then
   install_fish
 else
 

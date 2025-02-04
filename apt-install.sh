@@ -35,9 +35,10 @@ if [[ -z "${CODESPACES:-}" ]]; then
         curl graphviz wget \
         autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
         python3-venv \
-        lsd ripgrep needrestart debian-goodies
+        lsd ripgrep needrestart debian-goodies libssl-dev
 
     # debian-goodies contains checkrestart, among other goodies; see https://packages.debian.org/en/bookworm/debian-goodies
+    # libssl-dev is required because "cargo install mdcat" needs it
 
     # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
     sudo apt remove -y nano

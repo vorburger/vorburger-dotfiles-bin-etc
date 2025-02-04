@@ -4,6 +4,16 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## NeXT
 
+- Single Entry Point scripts (and update README accordingly)
+
+- `./test.sh` to run:
+  - dnf-install.sh on a Fedora container
+  - ubuntu-install.sh on `us-central1-docker.pkg.dev/cloud-workstations-images/predefined/intellij-ultimate:latest` from https://cloud.google.com/workstations/docs/preconfigured-base-images
+  - Debian
+  - ...
+
+- Unify ubuntu-install.sh and debian-install.sh, by reading `/etc/lsb-release`
+
 - shellcheck pre-commit and GitHub action, fix all errors
 
 - Replace the massive copy/paste in the Bash shell scripts with a library of Shell functions (at least, if not something better)

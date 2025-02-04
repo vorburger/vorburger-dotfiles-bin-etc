@@ -239,6 +239,10 @@ To enable SSH login to the host, not container, typically only required to check
     gcloud --project=vorburger compute os-login ssh-keys add --key-file=/home/vorburger/.ssh/id_ecdsa_sk.pub
     ssh michael_vorburger@1.2.3.4
 
+### Google Cloud Workstations
+
+    ./google-cloud-workstation-install.sh
+
 ### Google Cloud Shell
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)

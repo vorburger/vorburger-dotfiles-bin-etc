@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-if ! [[ -z "${CODESPACES:-}" ]]; then
+if [[ -n "${CODESPACES:-}" || -n "${GOOGLE_CLOUD_WORKSTATIONS:-}" ]]; then
   echo "Skipping nano installation in GitHub Codespace set-up"
   exit
 fi
@@ -11,7 +11,7 @@ if ! [[ -e "$NANO" ]]; then
   mkdir -p "$NANO"
   git clone git://git.savannah.gnu.org/nano.git "$NANO"
 else
-  cd $NANO
+  cd "$NANO"
   git pull
 fi
 

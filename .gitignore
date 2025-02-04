@@ -1,3 +1,4 @@
 *.retry
 *.deb
 /.git-described
+/.idea/

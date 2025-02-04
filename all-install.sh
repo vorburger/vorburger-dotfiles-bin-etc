@@ -38,7 +38,7 @@ fi
 #   go get golang.org/dl/go1.15.8
 #   eval $(go1.15.8 env GOROOT)
 # https://golang.org/doc/install
-if [ ! $(command -v go) ]; then
+if [ ! "$(command -v go)" ]; then
   curl -fsSL https://golang.org/dl/go1.17.5.linux-amd64.tar.gz -o /tmp/go.tgz
   sudo tar -C /usr/local -xzf /tmp/go.tgz
   sudo ln -s /usr/local/go/bin/go* /usr/local/bin/
@@ -95,17 +95,18 @@ if [[ -z "${CODESPACES:-}" ]]; then
 
   # https://github.com/cargo-bins/cargo-binstall (AKA cargo binstall)
   [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+  # ? source "$HOME/.bashrc"
 
   # https://github.com/BurntSushi/ripgrep (via Cargo instead of DNF or APT to have latest version 14+ because v13 didn't support "rg --generate" for https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#complete
-  [ $(command -v rg) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm ripgrep
+  [ "$(command -v rg)" ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm ripgrep
 
   # https://github.com/Peltoche/lsd#from-source
-  [ $(command -v lsd) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm lsd
+  [ "$(command -v lsd)" ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm lsd
 
   # https://github.com/swsnr/mdcat
   # NB: binstall NOK: "mdcat: error while loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory" (even with dnf install openssl-devel, which install mdcat also needs)
-  # [ $(command -v mdcat) ] || /home/vorburger/.cargo/bin/cargo binstall --no-confirm mdcat
-  [ $(command -v mdcat) ] || /home/vorburger/.cargo/bin/cargo install mdcat
+  # [ $(command -v mdcat) ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm mdcat
+  [ "$(command -v mdcat)" ] || "$HOME/.cargo/bin/cargo" install mdcat
 
   # https://github.com/evanlucas/fish-kubectl-completions
   # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
