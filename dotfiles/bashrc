@@ -64,5 +64,5 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Added by https://rustup.rs
-. "$HOME/.cargo/env"
+# For https://rustup.rs
+[ -f ~/.cargo/env ] && source ~/.cargo/env
