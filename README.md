@@ -251,7 +251,7 @@ TODO: Set up CI to [pre-build](https://cloud.google.com/workstations/docs/custom
 
 _TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70612890/non-ephemeral-google-cloud-shell-with-custom-container-image) about Google Cloud Shell Custom Images always launched ephemeral; which makes it a No-Go for this project. (Simply running a dotfile devshell container on a GCE VM is much easier)._
 
-https://shell.cloud.google.com, see https://cloud.google.com/shell, is handy (but limited to a `du -h ~` 5 GB `$HOME`..), especially with the web-based [Google Cloud Code](https://cloud.google.com/code), based on [Eclipse Theia](https://theia-ide.org) (also available on [Gitpod](https://www.gitpod.io)). To be able to connect to other servers from Google Cloud Shell, notably GitHub, login to it from a local Terminal like this (or use a Browser-based [Secure Shell App](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en), based on https://hterm.org):
+https://shell.cloud.google.com, see https://cloud.google.com/shell, is handy (but limited to a `du -h ~` 5 GB `$HOME`..), especially with the web-based [Google Cloud Code](https://cloud.google.com/code), based on [Eclipse Theia](https://theia-ide.org) (also available on [Gitpod](https://www.gitpod.io)). To be able to connect to other servers from Google Cloud Shell, notably GitHub, login to it from a local Terminal like this (or use [SSH Web](#ssh-web)):
 
     gcloud cloud-shell ssh --ssh-flag="-A"
 
@@ -300,6 +300,14 @@ but it has [less "SDKs"](https://sdkman.io/sdks) than `asdf` [has plugins](https
 <https://www.jenv.be> with `.java-version` is another (older) one like these, but it manages JDK and `JAVA_HOME`, only.
 
 ## Security
+
+### SSH Web
+
+Browser-based [Secure Shell App](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en), based on https://hterm.org.
+
+Connection Dialog SSH Arguments e.g. `-At -- /usr/bin/fish` or `-At -- /bin/bash -c "~/bin/tmux3 new -A -s Cloud"`.
+
+It's important to use absolute paths to the shell, because `ssh` won't read `PATH`.
 
 ### SSH for multiple GitHub accounts
 
