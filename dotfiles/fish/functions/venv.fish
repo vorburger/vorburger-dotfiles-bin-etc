@@ -23,7 +23,8 @@ function venv_activate_try -a DIR
   end
 end
 
-function on_pwd --on-variable PWD
+# NOT: function on_pwd_venv --on-variable PWD
+function on_fish_prompt_venv --on-event fish_prompt
   venv_activate_try "$PWD/🥽"
   venv_activate_try "$PWD/.venv"
 end

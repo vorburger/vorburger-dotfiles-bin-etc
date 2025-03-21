@@ -26,6 +26,6 @@ bind \b backward-kill-word
 # Ctrl-P for FZF, same as default Ctrl-T - for consistency with VSC
 bind \cp fzf-file-widget
 
-# bun
+# https://bun.sh
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
