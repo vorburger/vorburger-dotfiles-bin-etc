@@ -30,6 +30,7 @@ d() {
 mkdir -p ~/.gnupg
 chmod 700 ~/.gnupg
 
+f .flox dotfiles/.flox/
 f .tool-versions dotfiles/.tool-versions
 f .bashrc dotfiles/bashrc
 d .bash.d/ dotfiles/bash.d/
