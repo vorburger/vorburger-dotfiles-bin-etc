@@ -1,7 +1,7 @@
 [user]
     name = Michael Vorburger
     email = mike@vorburger.ch
-#   signingkey = 0x4DD7EC29BB91D899
+    signingkey = 0x4DD7EC29BB91D899
 
 [commit]
 #   gpgsign = true
