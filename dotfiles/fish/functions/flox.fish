@@ -24,8 +24,12 @@ function on_fish_prompt_flux --on-event fish_prompt
     # TODO Scan upwards...
     if [ -d "$PWD/.flox/" ]
       if ! check_path_prefix "$PWD/.flox/"
-        echo "✨ Activating 🕰️  Flux ⚛️  capacitor... 💫"
-        flox activate -m run | source
+        if command -q flox
+          echo "✨ Activating 🕰️  Flux ⚛️  capacitor... 💫"
+          flox activate -m run | source
+        else
+          echo ".flow/ directory presence requires https://flox.dev to be installed..."
+        end
       end
     else
       # TODO De-activate! How?!

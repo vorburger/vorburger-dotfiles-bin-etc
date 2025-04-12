@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-brew install coreutils nano fish
+brew install coreutils findutils nano fish
 
 ./git-install.sh
 ./symlink.sh
