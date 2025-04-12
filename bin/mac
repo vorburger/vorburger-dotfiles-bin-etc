@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+ssh mac -- rm /Users/flow/.gnupg/S.gpg-agent
+ssh mac -- /opt/homebrew/bin/fish
