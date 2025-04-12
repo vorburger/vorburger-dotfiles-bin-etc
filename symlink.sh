@@ -49,6 +49,7 @@ d .config/fish/ dotfiles/fish/
 d .config/fish/completions/ dotfiles/fish/completions/
 d .config/fish/conf.d/ dotfiles/fish/conf.d/
 d .config/fish/functions/ dotfiles/fish/functions/
+d .config/nix dotfiles/nix
 f .config/starship.toml dotfiles/starship.toml
 f .config/sway/config dotfiles/.config/sway/config
 f .config/weston.ini dotfiles/.config/weston.ini
