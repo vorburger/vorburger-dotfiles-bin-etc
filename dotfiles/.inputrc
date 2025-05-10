@@ -27,6 +27,9 @@ set visible-stats On
 # read this blog post for more ideas..
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
+# Same (?) for JLine3
+"\e[1;3C": forward-word
+"\e[1;3D": backward-word
 
 # C-n and C-p complete words using previously-typed words (like in vim):
 "\C-n": dabbrev-expand
