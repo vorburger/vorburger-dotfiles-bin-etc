@@ -85,7 +85,7 @@
   "git.openRepositoryInParentFolders": "always",
   "github.gitProtocol": "ssh",
   "githubPullRequests.pullBranch": "never",
-  "githubPullRequests.pushBranch": "prompt",
+  "githubPullRequests.pushBranch": "always",
   "gitlens.codeLens.scopes": ["document"],
 
   // G
@@ -222,6 +222,7 @@
   "explorer.confirmPasteNative": false,
 
   "editor.inlineSuggest.suppressSuggestions": true,
-  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "geminicodeassist.inlineSuggestions.enableAuto": true,
   "geminicodeassist.project": "",
+  "diffEditor.codeLens": true
 }
