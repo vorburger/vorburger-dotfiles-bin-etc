@@ -171,6 +171,31 @@
   },
   "quarkus.tools.alwaysShowWelcomePage": false,
 
+  // Nix
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nixd": {
+      // https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md
+      "formatting": {
+        "command": ["nixfmt"]
+      },
+      "options": {
+        // ...
+      },
+      "diagnostic": {
+        // "suppress": ["sema-extra-with"]
+      }
+    },
+    "nil": {
+      "formatting": {
+        "command": ["nixfmt"]
+      },
+      "options": {},
+      "diagnostic": {}
+    }
+  },
+
   // G-like
   "redhat.telemetry.enabled": false,
   "remoteHub.commitDirectlyWarning": "off",
