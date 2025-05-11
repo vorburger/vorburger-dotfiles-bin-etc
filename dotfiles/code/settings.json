@@ -10,6 +10,9 @@
   "[javascript]": {
     "editor.tabSize": 2
   },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },

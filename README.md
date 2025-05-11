@@ -2,6 +2,16 @@
 
 ## Installation
 
+### NixOS
+
+TBD.
+
+### Nix
+
+[For Nix](dotfiles/nix/README.md); first install another base Linux OS (see below; incl. [`nix.conf`](dotfiles/nix/nix.conf)), and then:
+
+    ./nix-install.sh
+
 ### ArchLinux
 
     mkdir -p ~/git/github.com/vorburger/
