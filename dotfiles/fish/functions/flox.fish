@@ -28,7 +28,7 @@ function on_fish_prompt_flux --on-event fish_prompt
           echo "✨ Activating 🕰️  Flux ⚛️  capacitor... 💫"
           flox activate -m run | source
         else
-          echo ".flow/ directory presence requires https://flox.dev to be installed..."
+          echo ".flox/ directory presence requires https://flox.dev to be installed..."
         end
       end
     else
