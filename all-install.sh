@@ -130,7 +130,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
 
   # https://www.jbang.dev/documentation/guide/latest/installation.html
   curl -Ls https://sh.jbang.dev | bash -s - app setup
-  ln -fs ~/.jbang/bin/jbang ~/bin/jbang
+  mkdir -p ~/bin && ln -fs ~/.jbang/bin/jbang ~/bin/jbang
 fi
 
 # ===============================================================================================================================
