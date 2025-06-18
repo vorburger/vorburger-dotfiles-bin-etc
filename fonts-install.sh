@@ -17,8 +17,10 @@ rm FiraCode.zip
 # https://github.com/ryanoasis/nerd-fonts/tree/master/bin/scripts/lib
 wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/b16e67d6257eafed2d9a4250c640f3982f84bd8c/bin/scripts/lib/i_logos.sh -P ~/.local/share/fonts/
 # shellcheck source=/dev/null.
+set +u
 source ~/.local/share/fonts/i_logos.sh
 echo "${i_linux_fedora:?}"
+set -u
 
 # PS: The font families often used in documents which originated on Microsoft Windows are a PITA.
 # [_Liberation_ Fonts](https://en.wikipedia.org/wiki/Liberation_fonts) (`liberation-fonts`) have an _Arial_ "equivalent";
