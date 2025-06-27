@@ -13,6 +13,7 @@ bmalehorn.vscode-fish@1.0.39
 bpruitt-goddard.mermaid-markdown-syntax-highlighting@1.7.1
 christian-kohler.npm-intellisense@1.4.5
 compilenix.vscode-zonefile@0.0.4
+coolbear.systemd-unit-file@1.0.6
 davidanson.vscode-markdownlint@0.59.0
 dbaeumer.vscode-eslint@3.0.10
 docker.docker@0.6.0
@@ -59,7 +60,6 @@ ms-vscode.remote-explorer@0.5.0
 ms-vscode-remote.remote-containers@0.413.0
 ms-vscode-remote.remote-ssh@0.120.0
 ms-vscode-remote.remote-ssh-edit@0.87.0
-ms-vscode-remote.remote-wsl@0.99.0
 ms-vscode.remote-server@1.5.2
 ms-vscode-remote.vscode-remote-extensionpack@0.26.0
 ms-vsliveshare.vsliveshare@1.0.5948
@@ -75,7 +75,6 @@ rust-lang.rust-analyzer@0.3.2449
 rvest.vs-code-prettier-eslint@6.0.0
 seaube.clangformat@2.0.2
 sfdc.bazel-vscode-java@1.25.101230444
-sourcegraph.cody-ai@1.92.0
 stardog-union.stardog-rdf-grammars@0.2.1
 stardog-union.vscode-langserver-turtle@0.2.1
 streetsidesoftware.code-spell-checker@4.0.47
