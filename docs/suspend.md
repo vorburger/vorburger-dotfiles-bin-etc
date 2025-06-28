@@ -5,6 +5,8 @@ This article is about power use when suspended, [there is another one about when
 On a Lenovo ThinkPad X1 Yoga Gen6 (Type Number `20XY-004AMZ`), I noticed the
 battery drained from 78% to 68% while the laptop was un-opened for 13h in Standby (sleep) mode.
 
+While in the BIOS (for below), also change the USB power "always on" setting to false.
+
 [According to this SO](https://askubuntu.com/a/1398067), if `sudo cat /sys/power/mem_sleep` shows
 `[s2idle]`, then `sudo -i` and then `echo 'deep' > /sys/power/mem_sleep` should help.
 
