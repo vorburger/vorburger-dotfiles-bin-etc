@@ -4,6 +4,10 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## NeXT
 
+- https://nix-community.github.io/home-manager/
+
+- https://github.com/ndonfris/fish-lsp ?
+
 - Extend `./test.sh` to also run:
   - dnf-install.sh on a Fedora container
   - Debian
