@@ -1,8 +1,12 @@
 function t -d "Test code in current or parent directory (using various strategies)"
   set DIR $PWD
 
-  if test -x $DIR/test*
-    $DIR/test*
+  if test -x $DIR/test.bash
+    $DIR/test.bash
+  else if test -x $DIR/test.sh
+    $DIR/test.sh
+  else if test -x $DIR/test
+    $DIR/test
   else if test -x $DIR/pom.xml
     $DIR/mvnw test
   else if test -x $DIR/build.gradle
