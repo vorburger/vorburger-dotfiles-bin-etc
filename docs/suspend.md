@@ -1,11 +1,26 @@
 # Linux Suspend Power Consumption
 
+## Lenovo ThinkPad X1 Carbon Gen 12
+
+Discharges too fast when suspended; so until that's fixed, just always shut it down completely.
+
+BIOS (see [simulator](https://download.lenovo.com/bsco/index.html#/graphicalsimulator/ThinkPad%20X1%20Carbon%2012th%20Gen%20(21KC,21KD)); cool!)
+does not have that (below) Linux Suspend setting... :=((
+
+While in the BIOS (for below), also change:
+
+* Config : Network : Wake on LAN from Dock == OFF
+* Config : USB : Always On USB == OFF
+* Config : Power : Power On with AC Attach == OFF
+* Config : Intel AMT : == DISABLED
+* Config : Intel(R) Standard Manageability == DISABLED
+
+## General
+
 This article is about power use when suspended, [there is another one about when running](power.md).
 
 On a Lenovo ThinkPad X1 Yoga Gen6 (Type Number `20XY-004AMZ`), I noticed the
 battery drained from 78% to 68% while the laptop was un-opened for 13h in Standby (sleep) mode.
-
-While in the BIOS (for below), also change the USB power "always on" setting to false.
 
 [According to this SO](https://askubuntu.com/a/1398067), if `sudo cat /sys/power/mem_sleep` shows
 `[s2idle]`, then `sudo -i` and then `echo 'deep' > /sys/power/mem_sleep` should help.
@@ -38,6 +53,7 @@ PPS: TODO Hibernates instead of Suspend, to save moar power?
 
 ## Further Resources
 
+* https://github.com/lhl/batterylog
 * https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate
 * TODO What's `GRUB_CMDLINE_LINUX_DEFAULT="quiet mem_sleep_default=deep"` ?
 * TODO Why `acpi.ec_no_wakeup=1` ?
