@@ -22,6 +22,10 @@ To automatically switch Power Settings from Performance to Balanced or Power Sav
 install [the GNOME `power-profile-switcher` extension](https://extensions.gnome.org/extension/5575/power-profile-switcher/)
 (see [GitHub](https://github.com/eliapasquali/power-profile-switcher), and a [related article](https://fostips.com/auto-switch-cpu-performance-powersaver-linux/)).
 
+Installation [might require](https://gnome.pages.gitlab.gnome.org/gnome-browser-integration/pages/installation-guide.html) Firefox, and not work on Chrome-like Browser.
+
+It's broken on Fedora 42+ because of a too new GNOME version, but maybe fixing that [is as easy as this](https://github.com/eliapasquali/power-profile-switcher/commit/16c45736fad7cbb0c53e4ecc1e4b5e2a2b602cd7)? But fixing it may just lead to https://github.com/eliapasquali/power-profile-switcher/issues/36? (Likely, as I'm also already seeing that error when clicking on its Settings.)
+
 ## auto-cpufreq
 
 TODO To automate CPU speed & power further than _performance/balanced/safer,_ consider using https://github.com/AdnanHodzic/auto-cpufreq?
