@@ -26,6 +26,12 @@ Installation [might require](https://gnome.pages.gitlab.gnome.org/gnome-browser-
 
 It's broken on Fedora 42+ because of a too new GNOME version, but maybe fixing that [is as easy as this](https://github.com/eliapasquali/power-profile-switcher/commit/16c45736fad7cbb0c53e4ecc1e4b5e2a2b602cd7)? But fixing it may just lead to https://github.com/eliapasquali/power-profile-switcher/issues/36? (Likely, as I'm also already seeing that error when clicking on its Settings.)
 
+GNOME won't implement this, see https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1600.
+
+https://gitlab.com/EikoTsukida/power-profiles-automation is a simple alternative. (TODO integrate into here my dotfiles, make it a Nix config; blog about it.)
+
+https://gitlab.gnome.org/gnumdk/power-profile-selector is another, but looks more (too) complicated.
+
 ## auto-cpufreq
 
 TODO To automate CPU speed & power further than _performance/balanced/safer,_ consider using https://github.com/AdnanHodzic/auto-cpufreq?
