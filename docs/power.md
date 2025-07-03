@@ -28,9 +28,9 @@ It's broken on Fedora 42+ because of a too new GNOME version, but maybe fixing t
 
 GNOME won't implement this, see https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1600.
 
-https://gitlab.com/EikoTsukida/power-profiles-automation is a simple alternative. (TODO integrate into here my dotfiles, make it a Nix config; blog about it.)
+https://gitlab.com/EikoTsukida/power-profiles-automation is a simple alternative. (TODO integrate into here my dotfiles, make it a Nix config; blog about it.) https://gitlab.gnome.org/gnumdk/power-profile-selector is another, but looks more (too) complicated.
 
-https://gitlab.gnome.org/gnumdk/power-profile-selector is another, but looks more (too) complicated.
+[TLP also does this](https://linrunner.de/tlp/settings/processor.html#cpu-energy-perf-policy-on-ac-bat) anyways.
 
 ## auto-cpufreq
 
