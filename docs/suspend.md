@@ -39,9 +39,11 @@ While in the BIOS (for below), also change:
 
 * Config : Network : Wake on LAN from Dock == OFF
 * Config : Network : Lenovo Cloud Services == OFF
+* Config : Network : UEFI IPv4 & IPv6 == OFF
 * Config : USB : Always On USB == OFF
 * Config : USB : Charge in Battery Mode == OFF
 * Config : Power : Power On with AC Attach == OFF
+* Config : Thunderbolt 4 : PCIe Tunneling== OFF (for Sécurité, NOT Power)
 * Config : Intel AMT : == DISABLED
 * Config : Intel(R) Standard Manageability == DISABLED
 
