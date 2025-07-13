@@ -11,7 +11,8 @@ set DOTFILES (dirname (realpath (status --current-filename)))/../..
 
 if test ! -n "$JAVA_HOME"
    and test -d /etc/alternatives/java_sdk/
-        set -gx JAVA_HOME /etc/alternatives/java_sdk/
+        set -gx JAVA_HOME (realpath /etc/alternatives/java_sdk/)
+        # See https://github.com/bazelbuild/bazel/issues/26449 re. realpath
 end
 
 # see docs/podman.md
