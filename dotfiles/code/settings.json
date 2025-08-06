@@ -114,7 +114,7 @@
   // https://code.visualstudio.com/docs/languages/html#_formatting but note that Prettier may have different formatting!
   "html.format.wrapAttributes": "preserve-aligned",
   "html.suggest.html5": true,
-  "java.cleanup.actionsOnSave": [
+  "java.cleanup.actions": [
     "addOverride",
     "addDeprecated",
     "stringConcatToTextBlock",
@@ -168,8 +168,7 @@
       "punctuation": ",;:。，；："
     },
     "MD034": false
-  },
-  "quarkus.tools.alwaysShowWelcomePage": false,
+},
 
   // Nix
   "nix.enableLanguageServer": true,
