@@ -7,7 +7,6 @@ set -euxo pipefail
 
 function install_fish {
   if [ ! "$(command -v apt-add-repository)" ]; then
-    sudo apt-get update -y
     sudo apt-get install -y software-properties-common
   fi
 
@@ -22,6 +21,9 @@ function install_fish {
   sudo apt-get install -y fish
   fish --version
 }
+
+# MUST always 'update', first; otherwise no 'apt-get install' will work afterwards.
+sudo apt-get update -y
 
 if [ ! "$(command -v fish)" ]; then
   install_fish
