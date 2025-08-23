@@ -66,3 +66,7 @@ fi
 
 # For https://rustup.rs
 [ -f ~/.cargo/env ] && source ~/.cargo/env
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"
