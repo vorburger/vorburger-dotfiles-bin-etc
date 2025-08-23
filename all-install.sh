@@ -130,7 +130,9 @@ if [[ -z "${CODESPACES:-}" ]]; then
 
   # https://www.jbang.dev/documentation/guide/latest/installation.html
   curl -Ls https://sh.jbang.dev | bash -s - app setup
-  mkdir -p ~/bin && ln -fs ~/.jbang/bin/jbang ~/bin/jbang
+  # NB: ~/.jbang/bin must be added to PATH for this to work. That script does that for Bash;
+  # for Fish, we're doing this in dotfiles/fish/config.fish;
+  # see https://github.com/jbangdev/jbang/issues/2189.
 fi
 
 # ===============================================================================================================================

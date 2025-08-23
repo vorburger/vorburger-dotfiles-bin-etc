@@ -1,7 +1,7 @@
 set DOTFILES (dirname (realpath (status --current-filename)))/../..
 
 command -q go && set _GOPATH (go env GOPATH)
-fish_add_path $HOME/.nix-profile/bin $DOTFILES/bin $HOME/bin $HOME/.local/bin $_GOPATH/bin $HOME/.cargo/bin $HOME/.krew/bin $HOME/.npm/bin
+fish_add_path $HOME/.nix-profile/bin $DOTFILES/bin $HOME/bin $HOME/.local/bin $HOME/.jbang/bin $_GOPATH/bin $HOME/.cargo/bin $HOME/.krew/bin $HOME/.npm/bin
 # NOT $PWD/node_modules/.bin, see https://github.com/vorburger/Notes/blob/master/Reference/javascript.md#pnpm
 
 # autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package
