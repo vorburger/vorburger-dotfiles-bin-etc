@@ -13,6 +13,8 @@ alias bazel="bazelisk "
 # This ^^^ is required just because completions/bazel.fish uses bazel not bazelisk.
 
 # Other
+alias a=/home/vorburger/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola
+alias enola=/home/vorburger/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola
 alias pass="EDITOR=/usr/bin/nano /bin/pass "
 
 # https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-shell
