@@ -48,3 +48,7 @@ alias gsy="git pull --rebase && git push"
 alias gsh="git stash"
 alias gsp="git stash pop"
 # see fish/conf.d/git.fish (and ../bin/g*) for more Git tools
+
+# Nix!
+alias nt="nix run .#test"
+alias nr="nix run"
