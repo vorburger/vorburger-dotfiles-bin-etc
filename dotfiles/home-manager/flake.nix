@@ -10,18 +10,20 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { self, nixpkgs, home-manager, ... }:
     let
+      # TODO Support Mac...
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       homeConfigurations."vorburger" = home-manager.lib.homeManagerConfiguration {
+        # TODO Simply? pkgs = nixpkgs.legacyPackages.x86_64-linux;
         inherit pkgs;
 
+        # extraSpecialArgs passes through arguments to home.nix etc. modules
+        extraSpecialArgs = { envHOME = builtins.getEnv "HOME"; };
         modules = [ ./home.nix ];
-
-        # extraSpecialArgs to pass through arguments to home.nix
       };
     };
 }

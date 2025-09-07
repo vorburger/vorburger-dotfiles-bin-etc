@@ -1,12 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, envHOME, ... }:
 
 {
   # TODO avoid home.* repetition...
 
   home.username = "vorburger";
   home.homeDirectory =
-    if builtins.getEnv "HOME" != ""
-      then builtins.getEnv "HOME"
+    if envHOME != ""
+      then envHOME
       else "/home/vorburger";
 
   home.packages = with pkgs; [
@@ -25,13 +25,6 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
 
   home.activation.activate = lib.hm.dag.entryAfter ["writeBoundary"] ''
