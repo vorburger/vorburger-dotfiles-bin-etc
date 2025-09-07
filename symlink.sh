@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
+# TODO Make this more quiet!
+
 # See also ./symlink-homefree.sh for an equivalent which does not use $HOME
 
 DIR="$(realpath $(dirname "$0"))"

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  # TODO avoid home.* repetition...
+
   home.username = "vorburger";
   home.homeDirectory = "/usr/local/google/home/vorburger";
 
@@ -26,6 +28,11 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  home.activation.activate = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    $DRY_RUN_CMD ${../../git-install.sh}
+    $DRY_RUN_CMD "$HOME/git/github.com/vorburger/vorburger-dotfiles-bin-etc/symlink.sh"
+  '';
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
