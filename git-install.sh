@@ -21,3 +21,4 @@ clone() {
 
 clone vorburger/vorburger-dotfiles-bin-etc
 clone scopatz/nanorc
+clone seitz/nanonix

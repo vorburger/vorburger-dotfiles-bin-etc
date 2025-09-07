@@ -3,6 +3,7 @@
 # by default reads /usr/local/etc/nanorc instead of /etc/nanorc.  (nano --rcfile ... overwrites it.)
 
 include ~/git/github.com/scopatz/nanorc/*.nanorc
+include ~/git/github.com/seitz/nanonix/nix.nanorc
 
 # See fish/conf.d/TERM.fish for a note about colours in Nano.
 
