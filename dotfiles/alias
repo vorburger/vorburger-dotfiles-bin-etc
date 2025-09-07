@@ -52,3 +52,5 @@ alias gsp="git stash pop"
 # Nix!
 alias nt="nix run .#test"
 alias nr="nix run"
+alias hm="home-manager"
+alias hms="pushd .; cd ~/git/github.com/vorburger/vorburger-dotfiles-bin-etc/nix; home-manager switch --flake .#vorburger; popd"

@@ -13,7 +13,7 @@ For using the [Nix](https://nixos.org) package manager with these dotfiles on a 
 1. Install some other base Linux OS (Mac TBD)
 1. [Install the `nix` CLI](https://github.com/vorburger/LearningLinux/blob/develop/nix/docs/install.md)
 1. Run `cd nix && nix run nixpkgs#home-manager -- switch --flake .#vorburger` here (once)
-1. Add packages etc. to [`nix/home.nix`](nix/home.nix); re-run (now) `home-manager switch --flake .#vorburger`
+1. Add packages etc. to [`nix/home.nix`](nix/home.nix); (re)run [`hms`](dotfiles/alias)
 
 See [`nix/`](nix/) for more background.
 
