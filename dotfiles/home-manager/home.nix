@@ -4,7 +4,10 @@
   # TODO avoid home.* repetition...
 
   home.username = "vorburger";
-  home.homeDirectory = "/usr/local/google/home/vorburger";
+  home.homeDirectory =
+    if builtins.getEnv "HOME" != ""
+      then builtins.getEnv "HOME"
+      else "/home/vorburger";
 
   home.packages = with pkgs; [
     bat
