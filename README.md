@@ -8,9 +8,14 @@ TBD.
 
 ### Nix
 
-[For Nix](dotfiles/nix/README.md); first install another base Linux OS (see below; incl. [`nix.conf`](dotfiles/nix/nix.conf)), and then:
+For using the [Nix](https://nixos.org) package manager with these dotfiles on a non-NixOS (above):
 
-    ./nix-install.sh
+1. Install some other base Linux OS (Mac TBD)
+1. [Install the `nix` CLI](https://github.com/vorburger/LearningLinux/blob/develop/nix/docs/install.md)
+1. Run `cd nix && nix run nixpkgs#home-manager -- switch --flake .#vorburger` here (once)
+1. Add packages etc. to [`nix/home.nix`](nix/home.nix); re-run (now) `home-manager switch --flake .#vorburger`
+
+See [`nix/`](nix/) for more background.
 
 ### ArchLinux
 
