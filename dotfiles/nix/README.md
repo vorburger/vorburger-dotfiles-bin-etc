@@ -1,3 +1,5 @@
-# Nix
+# Nix `nix.conf` dotfile
 
-See https://github.com/vorburger/LearningLinux/tree/develop/nix
+This directory only contains the [`nix.conf`](nix.conf).
+
+See [`../../nix/README.md`](../../nix/README.md) for more.
