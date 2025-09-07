@@ -5,10 +5,7 @@ set -euo pipefail
 
 # Default path for the git executable.
 # This can be overridden by providing a path as the first command-line argument.
-GIT_CMD="git"
-if [ -n "$1" ]; then
-  GIT_CMD="$1"
-fi
+GIT_CMD="${1:-git}"
 if ! command -v "$GIT_CMD" &> /dev/null; then
   echo "Error: Git command not found at '$GIT_CMD'." >&2
   echo "Please install git or provide a valid path as the first argument." >&2
