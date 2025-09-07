@@ -1,13 +1,16 @@
-{ config, pkgs, lib, envHOME, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  envHOME,
+  ...
+}:
 
 {
   # TODO avoid home.* repetition...
 
   home.username = "vorburger";
-  home.homeDirectory =
-    if envHOME != ""
-      then envHOME
-      else "/home/vorburger";
+  home.homeDirectory = if envHOME != "" then envHOME else "/home/vorburger";
 
   home.packages = with pkgs; [
     bat
@@ -20,6 +23,10 @@
     nixd
     nil
 
+    # TODO Install UI packages, but how-to only if on a machine with GUI?
+    # kitty
+    # wl-copy (?)
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -27,7 +34,7 @@
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
-  home.activation.activate = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.activate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     $DRY_RUN_CMD ${../../git-install.sh} ${pkgs.git}/bin/git
     $DRY_RUN_CMD "$HOME/git/github.com/vorburger/vorburger-dotfiles-bin-etc/symlink.sh"
   '';
