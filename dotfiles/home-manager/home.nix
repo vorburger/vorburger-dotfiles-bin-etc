@@ -8,8 +8,10 @@
 
   home.packages = with pkgs; [
     bat
+    direnv
     fish
     git
+    sops
 
     nixfmt
     nixd
