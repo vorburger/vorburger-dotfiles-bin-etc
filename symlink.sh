@@ -30,6 +30,7 @@ d() {
 mkdir -p ~/.gnupg
 chmod 700 ~/.gnupg
 
+# TODO Simplify this by moving everything to the expected place in git already...
 f .flox dotfiles/.flox/
 f .tool-versions dotfiles/.tool-versions
 f .bashrc dotfiles/bashrc
@@ -49,6 +50,7 @@ d .config/fish/ dotfiles/fish/
 d .config/fish/completions/ dotfiles/fish/completions/
 d .config/fish/conf.d/ dotfiles/fish/conf.d/
 d .config/fish/functions/ dotfiles/fish/functions/
+d .config/home-manager/ dotfiles/home-manager/
 d .config/nix dotfiles/nix
 f .config/starship.toml dotfiles/starship.toml
 f .config/sway/config dotfiles/.config/sway/config
