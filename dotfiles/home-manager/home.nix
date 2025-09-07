@@ -19,6 +19,8 @@
   # environment.
   home.packages = with pkgs; [
     bat
+    fish
+    git
 
     nixfmt
     nixd

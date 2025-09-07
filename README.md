@@ -17,9 +17,9 @@ For using the [Nix](https://nixos.org) package manager with these dotfiles on a 
 
 1. Install some other base Linux OS (Mac TBD)
 1. [Install the `nix` CLI](https://github.com/vorburger/LearningLinux/blob/develop/nix/docs/install.md)
-1. Run `cd dotfiles/home-manager && nix run nixpkgs#home-manager -- switch --flake .#vorburger` here (once)
+1. Run `cd dotfiles/home-manager && nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake .#vorburger` here (once)
 1. Run `./symlink.sh`
-1. Add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix); (re)run [`hms`](dotfiles/alias)
+1. Add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix) with `hm edit`, then (re)run [`hms`](dotfiles/alias)
 
 See [`home-manager`](dotfiles/home-manager) for more background.
 
