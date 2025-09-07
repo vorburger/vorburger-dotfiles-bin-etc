@@ -2,4 +2,4 @@
 
 This directory only contains the [`nix.conf`](nix.conf).
 
-See [`../../nix/README.md`](../../nix/README.md) for more.
+See [`home-manager`](../home-manager/README.md) for more.

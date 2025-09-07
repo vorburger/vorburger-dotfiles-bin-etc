@@ -2,6 +2,11 @@
 
 ## Installation
 
+    mkdir -p ~/git/github.com/vorburger/
+    cd ~/git/github.com/vorburger/
+    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    cd vorburger-dotfiles-bin-etc
+
 ### NixOS
 
 TBD.
@@ -12,17 +17,13 @@ For using the [Nix](https://nixos.org) package manager with these dotfiles on a 
 
 1. Install some other base Linux OS (Mac TBD)
 1. [Install the `nix` CLI](https://github.com/vorburger/LearningLinux/blob/develop/nix/docs/install.md)
-1. Run `cd nix && nix run nixpkgs#home-manager -- switch --flake .#vorburger` here (once)
-1. Add packages etc. to [`nix/home.nix`](nix/home.nix); (re)run [`hms`](dotfiles/alias)
+1. Run `cd dotfiles/home-manager && nix run nixpkgs#home-manager -- switch --flake .#vorburger` here (once)
+1. Run `./symlink.sh`
+1. Add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix); (re)run [`hms`](dotfiles/alias)
 
-See [`nix/`](nix/) for more background.
+See [`home-manager`](dotfiles/home-manager) for more background.
 
 ### ArchLinux
-
-    mkdir -p ~/git/github.com/vorburger/
-    cd ~/git/github.com/vorburger/
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
-    cd vorburger-dotfiles-bin-etc
 
     ./setup.sh
     ./git-install.sh
