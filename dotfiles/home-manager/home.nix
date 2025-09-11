@@ -19,7 +19,9 @@
     fish
     fzf
     git
+    lazygit
     sops
+    tig
 
     nixfmt
     nixd
