@@ -2,6 +2,12 @@
 
 Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC) a lot! 😏
 
+## Nix
+
+1. `$SSH_AUTH_SOCK`
+1. `j` jump, what's missing? Anything more modern, in Fish?
+1. Ctrl-P fails due to missing `fzf-file-widget` - why is that not installed as part of `fzf` ?
+
 ## NeXT
 
 - https://nix-community.github.io/home-manager/
