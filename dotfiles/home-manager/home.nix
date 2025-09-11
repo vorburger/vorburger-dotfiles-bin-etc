@@ -14,8 +14,10 @@
 
   home.packages = with pkgs; [
     bat
+    delta
     direnv
     fish
+    fzf
     git
     sops
 
@@ -26,6 +28,8 @@
     # TODO Install UI packages, but how-to only if on a machine with GUI?
     # kitty
     # wl-copy (?)
+
+    ripgrep
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
