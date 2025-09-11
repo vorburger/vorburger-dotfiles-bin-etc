@@ -29,7 +29,7 @@
 
     # TODO Install UI packages, but how-to only if on a machine with GUI?
     # kitty
-    # wl-copy (?)
+    wl-clipboard
 
     ripgrep
 
