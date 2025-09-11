@@ -54,6 +54,7 @@ alias gsp="git stash pop"
 # Nix!
 alias nt="nix run .#test"
 alias nr="nix run"
+# nrp is in dotfiles/fish/functions/nix.fish
 alias hm="home-manager"
 alias hme="home-manager edit"
 alias hms="home-manager switch"
