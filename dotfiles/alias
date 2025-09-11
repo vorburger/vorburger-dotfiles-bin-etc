@@ -1,6 +1,7 @@
 # These aliases are shared between Bash and Fish
 # Bash specific in dotfiles/bash.d/alias.bash, fish specific in dotfiles/fish/alias.fish
 
+alias cpc="wl-copy <"
 alias d="cd "
 alias n="nix "
 alias m="mvn "
