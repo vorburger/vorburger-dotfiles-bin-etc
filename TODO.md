@@ -8,6 +8,7 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 1. `alias sh` to SSH home? But how to keep hostname secret - Age? SOPS?
 1. `j` jump, what's missing? Anything more modern, in Fish?
 1. Ctrl-P fails due to missing `fzf-file-widget` :(
+1. `gemini` (with an alias), when https://github.com/NixOS/nixpkgs/issues/442213 is fixed
 
 ## NeXT
 
