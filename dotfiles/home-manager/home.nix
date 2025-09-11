@@ -22,6 +22,7 @@
     lazygit
     sops
     tig
+    trashy
 
     nil
     nixfmt
@@ -78,8 +79,11 @@
     EDITOR = "nano";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs.fish.enable = true;
+  programs.fzf.enable = true;
+  programs.fzf.enableFishIntegration = true;
+  programs.home-manager.enable = true; # Lets Home Manager install and manage itself.
+  programs.nix-index.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

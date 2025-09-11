@@ -7,10 +7,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
-    { self, nixpkgs, home-manager, ... }:
+    { self, nixpkgs, home-manager, nix-index-database, ... }:
     let
       # TODO Support Mac...
       system = "x86_64-linux";
@@ -18,12 +20,15 @@
     in
     {
       homeConfigurations."vorburger" = home-manager.lib.homeManagerConfiguration {
-        # TODO Simply? pkgs = nixpkgs.legacyPackages.x86_64-linux;
         inherit pkgs;
 
         # extraSpecialArgs passes through arguments to home.nix etc. modules
         extraSpecialArgs = { envHOME = builtins.getEnv "HOME"; };
-        modules = [ ./home.nix ];
+        modules = [
+          nix-index-database.homeModules.nix-index
+
+          ./home.nix
+        ];
       };
     };
 }
