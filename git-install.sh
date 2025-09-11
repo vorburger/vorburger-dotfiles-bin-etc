@@ -15,9 +15,16 @@ fi
 # Clones a GitHub repository if it doesn't already exist locally.
 #   @param {string} $1 The GitHub repository, in "owner/repo" format.
 clone() {
-  local repo="$1"
+  local protocol="$1"
+  local repo="$2"
   local target_dir="$HOME/git/github.com/$repo"
-  local repo_url="https://github.com/$repo.git"
+
+  local repo_url
+  if [ "$protocol" == "ssh" ]; then
+    repo_url="git@github.com:$repo.git"
+  else
+    repo_url="https://github.com/$repo.git"
+  fi
 
   if [ ! -d "$target_dir" ]; then
     echo "Cloning '$repo' into '$target_dir'..."
@@ -28,6 +35,6 @@ clone() {
   fi
 }
 
-clone vorburger/vorburger-dotfiles-bin-etc
-clone scopatz/nanorc
-clone seitz/nanonix
+clone ssh vorburger/vorburger-dotfiles-bin-etc
+clone https scopatz/nanorc
+clone https seitz/nanonix

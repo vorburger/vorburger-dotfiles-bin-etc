@@ -5,12 +5,13 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 ## Nix
 
 1. `$SSH_AUTH_SOCK`
+1. `alias sh` to SSH home? But how to keep hostname secret - Age? SOPS?
 1. `j` jump, what's missing? Anything more modern, in Fish?
-1. Ctrl-P fails due to missing `fzf-file-widget` - why is that not installed as part of `fzf` ?
+1. Ctrl-P fails due to missing `fzf-file-widget` :(
 
 ## NeXT
 
-- https://nix-community.github.io/home-manager/
+- Generate a `keybindings.md` during the build, from `alias` and `functions` (IFF ours... how-to?)
 
 - https://github.com/ndonfris/fish-lsp ?
 

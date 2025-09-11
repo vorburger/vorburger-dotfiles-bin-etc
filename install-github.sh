@@ -3,6 +3,7 @@ set -euxo pipefail
 
 # This script installs packages from GitHub releases.
 # This is NOT directly related GitHub Codespaces - that's bootstrap.sh
+# This also not the same as the somewhat related git-install.sh
 
 DIR="/tmp/install-github/$1/"
 ZIP="$DIR/$3.zip"
