@@ -4,11 +4,16 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## Nix
 
+Use AI to fix all this... Gemini, or Enola!
+
 1. `$SSH_AUTH_SOCK`
 1. `alias sh` to SSH home? But how to keep hostname secret - Age? SOPS?
 1. `j` jump, what's missing? Anything more modern, in Fish?
 1. Ctrl-P fails due to missing `fzf-file-widget` :(
 1. `gemini` (with an alias), when https://github.com/NixOS/nixpkgs/issues/442213 is fixed
+1. `cd dotfiles/home-manager && nix fmt`
+1. `nix fmt` (in root)
+1. Auto-order packages during format
 
 ## NeXT
 

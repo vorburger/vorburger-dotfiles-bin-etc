@@ -23,11 +23,10 @@
     sops
     tig
     trashy
-
     nil
     nixfmt
     nixd
-
+    nodejs_24
     ripgrep
 
     # TODO Install UI packages, but how-to only if on a machine with GUI?
