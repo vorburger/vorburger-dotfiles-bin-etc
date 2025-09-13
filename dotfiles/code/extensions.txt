@@ -13,7 +13,7 @@ bmalehorn.vscode-fish@1.0.39
 bpruitt-goddard.mermaid-markdown-syntax-highlighting@1.7.4
 christian-kohler.npm-intellisense@1.4.5
 compilenix.vscode-zonefile@0.0.4
-coolbear.systemd-unit-file@1.0.6
+coolbear.systemd-unit-file@1.0.8
 davidanson.vscode-markdownlint@0.60.0
 dbaeumer.vscode-eslint@3.0.16
 docker.docker@0.16.0
