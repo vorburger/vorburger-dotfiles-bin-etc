@@ -270,5 +270,6 @@
   "github.copilot.chat.languageContext.inline.typescript.enabled": true,
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "githubPullRequests.codingAgent.uiIntegration": true,
-  "githubPullRequests.assignCreated": "${user}"
+  "githubPullRequests.assignCreated": "${user}",
+  "chat.mcp.autostart": "newAndOutdated"
 }
