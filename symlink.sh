@@ -59,6 +59,7 @@ f .config/sway/config dotfiles/.config/sway/config
 f .config/weston.ini dotfiles/.config/weston.ini
 f .config/lsd/config.yaml dotfiles/lsd.yaml
 f .m2/toolchains.xml dotfiles/m2/toolchains.xml
+f .config/Code/User/mcp.json dotfiles/code/mcp.json
 f .config/Code/User/settings.json dotfiles/code/settings.json
 f .config/Code/User/keybindings.json dotfiles/code/keybindings.json
 f .config/Code/User/snippets/personal.code-snippets dotfiles/code/personal.code-snippets
