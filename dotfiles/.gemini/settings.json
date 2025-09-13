@@ -8,5 +8,17 @@
         "Authorization": "Bearer $GITHUB_PAT"
       }
     }
-  }
+  },
+  "theme": "ANSI",
+
+  "hideBanner": "true",
+  "ui.hideBanner": "true",
+
+  "hideFooter": "false",
+  "ui.hideFooter": "false",
+
+  "ui.hideWindowTitle": "false",
+  "ui.showCitations": "true",
+  "ui.showLineNumbers": "true",
+  "ui.showMemoryUsage": "true",
 }
