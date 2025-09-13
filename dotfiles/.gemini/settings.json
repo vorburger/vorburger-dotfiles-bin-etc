@@ -3,7 +3,7 @@
   "mcpServers": {
     "github": {
       "httpUrl": "https://api.githubcopilot.com/mcp/",
-      "trust": true,
+      "trust": false,
       "headers": {
         "Authorization": "Bearer $GITHUB_PAT"
       }
