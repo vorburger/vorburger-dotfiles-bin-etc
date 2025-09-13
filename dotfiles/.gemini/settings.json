@@ -20,5 +20,5 @@
   "ui.hideWindowTitle": "false",
   "ui.showCitations": "true",
   "ui.showLineNumbers": "true",
-  "ui.showMemoryUsage": "true",
+  "ui.showMemoryUsage": "true"
 }
