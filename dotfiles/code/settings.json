@@ -168,7 +168,7 @@
       "punctuation": ",;:。，；："
     },
     "MD034": false
-},
+  },
 
   // Nix
   "nix.enableLanguageServer": true,
@@ -254,5 +254,21 @@
   "editor.inlineSuggest.suppressSuggestions": true,
   "geminicodeassist.inlineSuggestions.enableAuto": true,
   "geminicodeassist.project": "",
-  "diffEditor.codeLens": true
+  "diffEditor.codeLens": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": true,
+    "scminput": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "githubPullRequests.codingAgent.uiIntegration": true,
+  "githubPullRequests.assignCreated": "${user}"
 }
