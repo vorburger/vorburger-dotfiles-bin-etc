@@ -120,8 +120,14 @@
     "command": "-workbench.action.focusActiveEditorGroup"
   },
   {
+    "key": "f3",
+    "command": "editor.action.openLink",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+m",
-    "command": "editor.action.openLink"
+    "command": "editor.action.openLink",
+    "when": "editorTextFocus"
   },
   {
     "key": "alt+1",
