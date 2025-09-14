@@ -17,7 +17,6 @@ coolbear.systemd-unit-file@1.0.8
 davidanson.vscode-markdownlint@0.60.0
 dbaeumer.vscode-eslint@3.0.16
 docker.docker@0.16.0
-dongfg.vscode-beancount-formatter@1.5.0
 eamodio.gitlens@17.4.1
 ecmel.vscode-html-css@2.0.13
 editorconfig.editorconfig@0.17.4
@@ -40,7 +39,6 @@ jgclark.vscode-todo-highlight@2.0.8
 jnoortheen.nix-ide@0.4.22
 josevseb.google-java-format-for-vs-code@1.2.0
 katjanakosic.vscode-json5@1.0.1
-lencerf.beancount@0.13.0
 mechatroner.rainbow-csv@3.21.0
 ms-azuretools.vscode-containers@2.1.0
 ms-azuretools.vscode-docker@2.0.0
