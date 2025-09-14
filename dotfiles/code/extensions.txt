@@ -1,6 +1,5 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
 antfu.slidev@51.4.0
-bazelbuild.vscode-bazel@0.12.0
 bierner.emojisense@0.10.0
 bierner.github-markdown-preview@0.3.0
 bierner.markdown-checkbox@0.4.0
@@ -9,7 +8,6 @@ bierner.markdown-footnotes@0.1.1
 bierner.markdown-mermaid@1.28.0
 bierner.markdown-preview-github-styles@2.2.0
 bierner.markdown-yaml-preamble@0.1.0
-bmalehorn.vscode-fish@1.0.39
 bpruitt-goddard.mermaid-markdown-syntax-highlighting@1.7.4
 christian-kohler.npm-intellisense@1.4.5
 compilenix.vscode-zonefile@0.0.4
@@ -54,7 +52,6 @@ ms-toolsai.jupyter-keymap@1.1.2
 ms-toolsai.jupyter-renderers@1.3.0
 ms-toolsai.vscode-jupyter-cell-tags@0.1.9
 ms-toolsai.vscode-jupyter-slideshow@0.1.6
-ms-vscode.cpptools@1.26.5
 ms-vscode.remote-explorer@0.5.0
 ms-vscode-remote.remote-containers@0.427.0
 ms-vscode-remote.remote-ssh@0.120.0
