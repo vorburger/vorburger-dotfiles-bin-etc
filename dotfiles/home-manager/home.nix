@@ -28,6 +28,7 @@
     nixd
     nodejs_24
     ripgrep
+    wipe
 
     # TODO Install UI packages, but how-to only if on a machine with GUI?
     # kitty
