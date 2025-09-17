@@ -9,6 +9,8 @@
 {
   home = {
     username = "vorburger";
+    # TODO Rip out the envHOME stuff, because it doesn't work anyway
+    # homeDirectory = if envHOME != "" then envHOME else "/usr/local/google/home/vorburger";
     homeDirectory = if envHOME != "" then envHOME else "/home/vorburger";
 
     packages = with pkgs; [
@@ -89,6 +91,8 @@
     stateVersion = "25.05"; # Please read the comment before changing.
   };
 
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
   programs.fish.enable = true;
   programs.fzf.enable = true;
   programs.fzf.enableFishIntegration = true;
