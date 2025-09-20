@@ -1,41 +1,54 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    
+
     disko.url = "github:nix-community/disko";
-    disko.inputs.nixpgks.follows = "nixpkgs";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, disko, ... }: {
-    nixosConfigurations.livecd = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        (
-          { pkgs, modulesPath, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      disko,
+      ...
+    }:
+    let
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+      nixosConfiguration = nixpkgs.lib.nixosSystem {
+        modules = [
           {
-            imports = [
-             (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
-            ];
-            isoImage.squashfsCompression = "lz4"; # Faster build!
-            isoImage.makeEfiBootable = true;
-            isoImage.makeUsbBootable = true;
-            # TODO Put packages somewhere else...
-            environment.systemPackages = [
-              pkgs.disko
-              disko.packages."x86_64-linux".disko-install
-            ];
-            environment.etc = {
-              # Do NOT name this "nix" or "nixos"!
-              mynix.source = ./.;
-            };
-            systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
+            services.openssh.enable = true;
+          }
+
+          {
             users.users.root.openssh.authorizedKeys.keys = [
               "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+qSqOeDos2pCI1Q0tm44FgghgvOaX5WuPAXKRIw1/bwahPXnvTwJbSNdnIbQyDWZCmvJaXr6wnDP8faQBZcIyBBjD4JOoVONfvTw2/RKPHBB9eb6h8q6Jl1STsCk/8+Qv5PXhSjCJQ2mJdaE56wKrrPL/bIyOInx1KQj0rygV96KFj67CeXpjpMqOxAxcJyjp6/cxAGJyL81lcjA2HFKhwjeHS71ipOstmG+n6cOjd2x5V5Qv7j1x2zKSnxCJOU7PHphm7UqPUlvCcrKLq+YZ2VWSjjHiu+GUIR7dp1HG73W5uSmhgAM2fQEhldT53Lc2tCYwyrMq/C1hAtq/S26BxmibR8jmAxIqJ4JB9Njv/r97/6amI8LxnzuRBnDhA6cW9JHUBrNoG41vTwopdAz9DjaklzeRAjStoQY9rE6Ck6GXzuqUuLaBryS1JETKpxWvbQrnFA/yS9qFl/oDlfjYT0dX4oeWK58tCgdDD42SF4fUP6zpQZzHx4iwKGukMV3e87DW5tKTs2yCQzeBgw664mlG0WbYdj1TZ0n7MRXAr9aKpPSiW0H94A+0cZS/VJdVAxrRgbPv3Uk9W7E/tq4aMySRTm6ZlU0HTKlkg5adnQl5yM8ZxyOdYybnsq9ZyyUlsc9cmEfyOvIOP9cvi2pN5cpmDNG+pZ+mEHJ5aU95WQ=="
             ];
           }
-        )
-      ];
+        ];
+      };
+
+    in
+    {
+      nixosConfigurations.nixos-vm = nixosConfiguration;
+      packages.nixos-vm = nixosConfiguration;
+
+      packages.default =
+        pkgs.runCommand "run-vm"
+          {
+            inherit nixosConfiguration;
+            buildInputs = [ pkgs.qemu ];
+          }
+          ''
+            cat > $out <<EOF
+            #!${pkgs.stdenv.shell}
+            echo "To stop VM, press Ctrl+A followed by X."
+            exec ${nixosConfiguration}/bin/run-nixos-vm
+            EOF
+            chmod +x $out
+          '';
+      defaultPackage.x86_64-linux = self.packages.default;
     };
-    livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
-  };
 }
