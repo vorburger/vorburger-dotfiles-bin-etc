@@ -28,6 +28,8 @@
       nixfmt
       nixd
       nodejs_24
+      maven
+
       ripgrep
       wipe
 
