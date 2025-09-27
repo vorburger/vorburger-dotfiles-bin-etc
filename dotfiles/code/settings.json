@@ -240,6 +240,12 @@
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 3,
 
+  "workbench.colorCustomizations": {
+    // "editorError.foreground": "#00000000",
+    // "editorWarning.foreground": "#00000000",
+    "editorInfo.foreground": "#26d20c54"
+  },
+
   // https://github.com/piousdeer/vscode-adwaita#suggested-settings
   "workbench.colorTheme": "Adwaita Dark & default syntax highlighting & colorful status bar",
   "workbench.iconTheme": "vscode-icons",
@@ -271,5 +277,6 @@
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "githubPullRequests.codingAgent.uiIntegration": true,
   "githubPullRequests.assignCreated": "${user}",
-  "chat.mcp.autostart": "newAndOutdated"
+  "chat.mcp.autostart": "newAndOutdated",
+  "java.editor.reloadChangedSources": "auto"
 }
