@@ -141,5 +141,10 @@
   {
     "key": "alt+2",
     "command": "workbench.files.action.showActiveFileInExplorer"
+  },
+  {
+    "key": "f3",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider"
   }
 ]
