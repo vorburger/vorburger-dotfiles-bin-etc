@@ -1,7 +1,21 @@
 {
   "[beancount]": {},
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
   "[fish]": {
     "editor.defaultFormatter": "bmalehorn.vscode-fish"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -152,6 +166,7 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.debug.settings.hotCodeReplace": "auto",
   "java.eclipse.downloadSources": true,
+  "java.editor.reloadChangedSources": "auto",
   "java.errors.incompleteClasspath.severity": "error",
   "java.format.comments.enabled": false,
   "java.format.onType.enabled": true,
@@ -277,6 +292,5 @@
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "githubPullRequests.codingAgent.uiIntegration": true,
   "githubPullRequests.assignCreated": "${user}",
-  "chat.mcp.autostart": "newAndOutdated",
-  "java.editor.reloadChangedSources": "auto"
+  "chat.mcp.autostart": "newAndOutdated"
 }
