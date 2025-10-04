@@ -46,6 +46,7 @@ f .tmux.conf dotfiles/.tmux.conf
 f .gnupg/gpg.conf dotfiles/gpg.conf
 f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 f .gitconfig dotfiles/gitconfig
+d .local/share/gh-triage/ dotfiles/.local/share/gh-triage/
 d .local/share/applications/ dotfiles/desktop/
 d .config/kitty/ dotfiles/kitty/
 d .config/fish/ dotfiles/fish/

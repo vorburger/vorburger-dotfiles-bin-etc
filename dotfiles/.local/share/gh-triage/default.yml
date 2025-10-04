@@ -1,0 +1,13 @@
+done:
+  max: 1000
+  conditions:
+  - merged
+  - closed
+open:
+  max: 1
+  conditions:
+  - is_pull_request && me in reviewers && passed && !approved && open && !draft
+list:
+  max: 1000
+  conditions:
+  - "*"
