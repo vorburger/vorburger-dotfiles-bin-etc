@@ -38,7 +38,7 @@ clone() {
     if [ "$protocol" == "https" ]; then
       local repo_name="${repo##*/}"
       local fork_url="git@github.com:vorburger/$repo_name.git"
-      "$GIT_CMD" remote add fork "$fork_url"
+      "$GIT_CMD" remote add vorburger "$fork_url"
     fi
   else
     echo "Directory '$target_dir' already exists. Skipping." >&2
