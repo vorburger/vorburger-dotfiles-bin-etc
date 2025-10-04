@@ -47,7 +47,7 @@
     ];
 
     activation.activate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      $DRY_RUN_CMD ${../../git-install.sh} ${pkgs.git}/bin/git
+      GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
       $DRY_RUN_CMD "$HOME/git/github.com/vorburger/vorburger-dotfiles-bin-etc/symlink.sh"
     '';
 

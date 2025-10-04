@@ -15,8 +15,8 @@ WORKDIR /home/vorburger/
 RUN mkdir -p dev/vorburger-dotfiles-bin-etc
 
 # This is slower than the rest, so do this first so that's cached and skipped when make other changes
-COPY --chown=vorburger:vorburger git-install.sh install-nano.sh /tmp/
-RUN /tmp/git-install.sh /tmp/install-nano.sh && rm /tmp/git-install.sh /tmp/install-nano.sh
+COPY --chown=vorburger:vorburger git-clone.sh install-nano.sh /tmp/
+RUN /tmp/git-clone.sh /tmp/install-nano.sh && rm /tmp/git-clone.sh /tmp/install-nano.sh
 
 # TODO see TODO.MD: "clone" to ~/.git - how to COPY with .git ??)
 # Do NOT do this, because then any time you touch any file during dev, it will redo above:

@@ -24,8 +24,7 @@ See [`home-manager`](dotfiles/home-manager) for more background.
 
 ### ArchLinux
 
-    ./setup.sh
-    ./git-install.sh
+    ./git-clone.sh
     ./pacman-install.sh
     ./pacman-install-gui.sh
     mv ~/.bashrc ~/.bashrc.original
@@ -147,7 +146,7 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
     git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
     cd vorburger-dotfiles-bin-etc
 
-    ./git-install.sh
+    ./git-clone.sh
     ./debian-install.sh # or ./ubuntu-install.sh
     mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh

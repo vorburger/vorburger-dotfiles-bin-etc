@@ -3,7 +3,7 @@ set -euxo pipefail
 
 ./setup.sh
 
-./git-install.sh
+./git-clone.sh
 
 ./dnf-install.sh
 

@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# TODO Rename git-install.sh (and all references to it) to git-clone.sh
-
 # Default path for the git executable.
-# This can be overridden by providing a path as the first command-line argument.
-GIT_CMD="${1:-git}"
+GIT_CMD="${GIT_CMD:-git}"
 if ! command -v "$GIT_CMD" &> /dev/null; then
   echo "Error: Git command not found at '$GIT_CMD'." >&2
-  echo "Please install git or provide a valid path as the first argument." >&2
+  echo "Please install git or provide a valid path via GIT_CMD env var." >&2
   exit 1
 fi
 
-# Clones a GitHub repository if it doesn't already exist locally.
+# Clones a GitHub repository if it doesn't already exist locally, and prints the target directory path.
 #   @param {string} $1 The GitHub repository, in "owner/repo" format.
 clone() {
   local repo="$1"
@@ -33,7 +30,7 @@ clone() {
 
   local target_dir="$HOME/git/github.com/$repo"
   if [ ! -d "$target_dir" ]; then
-    echo "Cloning '$repo' into '$target_dir'..."
+    echo "Cloning '$repo' into '$target_dir'..." >&2
     mkdir -p "$(dirname "$target_dir")"
     "$GIT_CMD" clone "$repo_url" "$target_dir"
     cd "$target_dir"
@@ -41,13 +38,20 @@ clone() {
     if [ "$protocol" == "https" ]; then
       local repo_name="${repo##*/}"
       local fork_url="git@github.com:vorburger/$repo_name.git"
-      "$GIT_CMD" remote add vorburger "$fork_url"
+      "$GIT_CMD" remote add fork "$fork_url"
     fi
   else
-    echo "Directory '$target_dir' already exists. Skipping."
+    echo "Directory '$target_dir' already exists. Skipping." >&2
   fi
+  echo "$target_dir"
 }
 
-clone vorburger/vorburger-dotfiles-bin-etc
-clone scopatz/nanorc
-clone seitz/nanonix
+if [ "$#" -eq 0 ]; then
+    clone vorburger/vorburger-dotfiles-bin-etc
+    clone scopatz/nanorc
+    clone seitz/nanonix
+else
+    for repo in "$@"; do
+        clone "$repo"
+    done
+fi

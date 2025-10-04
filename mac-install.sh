@@ -3,5 +3,5 @@ set -euxo pipefail
 
 brew install coreutils findutils nano fish bat
 
-./git-install.sh
+./git-clone.sh
 ./symlink.sh
