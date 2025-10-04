@@ -19,24 +19,19 @@ clone() {
   local owner="${repo%%/*}"
   local protocol
 
+  local repo_url
   case "$owner" in
     vorburger|MariaDB4j|enola-dev)
       protocol="ssh"
+      repo_url="git@github.com:$repo.git"
       ;;
     *)
       protocol="https"
+      repo_url="https://github.com/$repo.git"
       ;;
   esac
 
   local target_dir="$HOME/git/github.com/$repo"
-
-  local repo_url
-  if [ "$protocol" == "ssh" ]; then
-    repo_url="git@github.com:$repo.git"
-  else
-    repo_url="https://github.com/$repo.git"
-  fi
-
   if [ ! -d "$target_dir" ]; then
     echo "Cloning '$repo' into '$target_dir'..."
     mkdir -p "$(dirname "$target_dir")"
