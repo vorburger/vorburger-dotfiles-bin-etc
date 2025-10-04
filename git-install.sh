@@ -15,8 +15,19 @@ fi
 # Clones a GitHub repository if it doesn't already exist locally.
 #   @param {string} $1 The GitHub repository, in "owner/repo" format.
 clone() {
-  local protocol="$1"
-  local repo="$2"
+  local repo="$1"
+  local owner="${repo%%/*}"
+  local protocol
+
+  case "$owner" in
+    vorburger|MariaDB4j|enola-dev)
+      protocol="ssh"
+      ;;
+    *)
+      protocol="https"
+      ;;
+  esac
+
   local target_dir="$HOME/git/github.com/$repo"
 
   local repo_url
@@ -35,6 +46,6 @@ clone() {
   fi
 }
 
-clone ssh vorburger/vorburger-dotfiles-bin-etc
-clone https scopatz/nanorc
-clone https seitz/nanonix
+clone vorburger/vorburger-dotfiles-bin-etc
+clone scopatz/nanorc
+clone seitz/nanonix
