@@ -19,6 +19,7 @@
       direnv
       fish
       fzf
+      gh
       git
       lazygit
       sops
