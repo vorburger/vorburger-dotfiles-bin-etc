@@ -224,6 +224,7 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "underline",
   "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.scrollback": 100000,
 
   "todohighlight.include": [
     "**/*.java",
