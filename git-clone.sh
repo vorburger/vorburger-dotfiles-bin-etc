@@ -10,9 +10,12 @@ if ! command -v "$GIT_CMD" &> /dev/null; then
 fi
 
 # Clones a GitHub repository if it doesn't already exist locally, and prints the target directory path.
-#   @param {string} $1 The GitHub repository, in "owner/repo" format.
+#   @param {string} $1 The GitHub repository, in "owner/repo" format, or a full git URL.
 clone() {
   local repo="$1"
+  repo="${repo#https://github.com/}"
+  repo="${repo#git@github.com:}"
+  repo="${repo%.git}"
   local owner="${repo%%/*}"
   local protocol
 
