@@ -51,6 +51,8 @@ clone() {
 
 if [ "$#" -eq 0 ]; then
     clone vorburger/vorburger-dotfiles-bin-etc
+    clone enola-dev/vorburger-ai-assistant
+
     clone scopatz/nanorc
     clone seitz/nanonix
 else
