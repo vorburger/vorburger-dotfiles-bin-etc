@@ -1,12 +1,5 @@
 {
   "mcpServers": {
-    "github": {
-      "httpUrl": "https://api.githubcopilot.com/mcp/",
-      "trust": false,
-      "headers": {
-        "Authorization": "Bearer $GITHUB_PAT"
-      }
-    },
     "nix": {
       "command": "nix",
       "args": [
