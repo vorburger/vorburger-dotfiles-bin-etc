@@ -1,5 +1,6 @@
 {
   "selectedAuthType": "gemini-api-key",
+
   "mcpServers": {
     "github": {
       "httpUrl": "https://api.githubcopilot.com/mcp/",
@@ -9,6 +10,11 @@
       }
     }
   },
+
+  "context": {
+    "fileName": ["AGENTS.md", "GEMINI.md"]
+  },
+
   "theme": "ANSI",
 
   "hideBanner": "true",
