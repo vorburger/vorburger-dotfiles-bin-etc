@@ -1,6 +1,4 @@
 {
-  "selectedAuthType": "gemini-api-key",
-
   "mcpServers": {
     "github": {
       "httpUrl": "https://api.githubcopilot.com/mcp/",
@@ -10,21 +8,30 @@
       }
     }
   },
-
   "context": {
     "fileName": ["AGENTS.md", "GEMINI.md"]
   },
-
-  "theme": "ANSI",
-
-  "hideBanner": "true",
+  "ui": {
+    "hideBanner": "true",
+    "hideFooter": "false",
+    "theme": "ANSI"
+  },
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
   "ui.hideBanner": "true",
-
-  "hideFooter": "false",
   "ui.hideFooter": "false",
-
   "ui.hideWindowTitle": "false",
   "ui.showCitations": "true",
   "ui.showLineNumbers": "true",
-  "ui.showMemoryUsage": "true"
+  "ui.showMemoryUsage": "true",
+  "output": {
+    "format": "text"
+  }
 }
