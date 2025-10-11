@@ -277,6 +277,13 @@
   "geminicodeassist.inlineSuggestions.enableAuto": true,
   "geminicodeassist.project": "",
   "diffEditor.codeLens": true,
+
+  "chat.emptyState.history.enabled": true,
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.gallery.enabled": true,
+  "chat.useNestedAgentsMdFiles": true,
+  "chat.agentSessionsViewLocation": "view",
+
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -292,6 +299,5 @@
   "github.copilot.chat.languageContext.inline.typescript.enabled": true,
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "githubPullRequests.codingAgent.uiIntegration": true,
-  "githubPullRequests.assignCreated": "${user}",
-  "chat.mcp.autostart": "newAndOutdated"
+  "githubPullRequests.assignCreated": "${user}"
 }
