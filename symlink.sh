@@ -53,7 +53,6 @@ mkdir -p ~/.gnupg
 chmod 700 ~/.gnupg
 
 # TODO Simplify this by moving everything to the expected place in git already...
-f .flox dotfiles/.flox/
 f .tool-versions dotfiles/.tool-versions
 f .bashrc dotfiles/bashrc
 d .bash.d/ dotfiles/bash.d/
