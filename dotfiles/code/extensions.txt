@@ -27,6 +27,7 @@ github.copilot-chat@0.32.0
 github.vscode-github-actions@0.28.0
 github.vscode-pull-request-github@0.120.0
 golang.go@0.50.0
+google.gemini-cli-vscode-ide-companion@0.7.0
 google.geminicodeassist@2.53.0
 grapecity.gc-excelviewer@4.2.64
 gruntfuggly.todo-tree@0.0.226
