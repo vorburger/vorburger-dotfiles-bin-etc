@@ -25,6 +25,7 @@
   "ui": {
     "hideBanner": "true",
     "hideFooter": "false",
+    "hideTips": "true",
     "theme": "ANSI"
   },
   "ide": {
