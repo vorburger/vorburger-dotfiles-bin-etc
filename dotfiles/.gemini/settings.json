@@ -6,6 +6,10 @@
       "headers": {
         "Authorization": "Bearer $GITHUB_PAT"
       }
+    },
+    "nix": {
+      "command": "nix",
+      "args": ["run", "github:utensils/mcp-nixos", "--"]
     }
   },
   "context": {
