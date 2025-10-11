@@ -13,10 +13,13 @@ alias b="bazelisk "
 alias bazel="bazelisk "
 # This ^^^ is required just because completions/bazel.fish uses bazel not bazelisk.
 
+# AI
+alias a="gemini"
+
 # Enola
 # alias enola=~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola
-alias a="~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola ai"
-alias ac="~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola ai --http-scheme --agents=https://raw.githubusercontent.com/enola-dev/git-commit-message-agent/refs/heads/main/git-commit-message.agent.yaml --in='Make it so!'"
+alias z="~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola ai"
+alias zc="~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola ai --http-scheme --agents=https://raw.githubusercontent.com/enola-dev/git-commit-message-agent/refs/heads/main/git-commit-message.agent.yaml --in='Make it so!'"
 
 # Other
 alias pass="EDITOR=/usr/bin/nano /bin/pass "
