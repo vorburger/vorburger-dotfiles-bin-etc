@@ -10,13 +10,33 @@ DIR="$(realpath $(dirname "$0"))"
 # TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
   if [[ -h ~/$1 && ! -e ~/$1 ]]; then
-    echo "~/$1 is a BROKEN symlink, so NO NEW DOTFILES CREATED (fix that first)"
+    echo "~/$1 is a BROKEN symlink. Please fix it." >&2
+    exit 1
   elif [[ ! -e ~/$1 ]]; then
-    mkdir -p $(dirname ~/"$1")
+    mkdir -p "$(dirname ~/"$1")"
     ln --symbolic --relative "$DIR"/"$2" ~/"$1"
   else
-    # ls -l ~/$1
-    echo "~/$1 ALREADY EXISTS, so NO NEW DOTFILES SYMLINK CREATED (rm it first to create)"
+    # It exists. Check if it is the correct symlink.
+    if [[ -L ~/$1 ]]; then
+      # It is a symlink.
+      local target_realpath
+      target_realpath=$(realpath "$DIR"/"$2")
+      local link_realpath
+      link_realpath=$(realpath ~/"$1")
+      if [[ "$target_realpath" == "$link_realpath" ]]; then
+        # It is the correct symlink, all good.
+        :
+      else
+        echo "~/$1 is a symlink but points to the wrong file." >&2
+        echo "  points to: $(readlink ~/"$1") -> $link_realpath" >&2
+        echo "  should point to: $target_realpath" >&2
+        exit 1
+      fi
+    else
+      # It is a file or directory.
+      echo "~/$1 already exists and is not a symlink." >&2
+      exit 1
+    fi
   fi
 }
 
@@ -71,7 +91,7 @@ f .config/rygel.conf dotfiles/rygel.conf
 # This is used by dotfiles/.gemini/GEMINI.md
 ln -fs "$HOME/git/github.com/enola-dev/vorburger-ai-assistant" "$HOME/.gemini/"
 
-if [ $(command -v desktop-file-validate) ]; then
+if [ "$(command -v desktop-file-validate)" ]; then
   desktop-file-validate ~/.local/share/applications/*.desktop
   # desktop-file-install --dir=~/.local/share/applications/ ~/.local/share/applications/*.desktop
   update-desktop-database ~/.local/share/applications
