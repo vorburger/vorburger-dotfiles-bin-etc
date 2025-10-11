@@ -1,0 +1,5 @@
+# Nix
+result/
+
+# Start QEMU VM unfortunately writes outside of result/
+nixos.qcow2

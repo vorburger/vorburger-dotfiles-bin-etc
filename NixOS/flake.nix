@@ -17,8 +17,10 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
       nixosConfiguration = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
           {
+            system.stateVersion = "25.11";
             services.openssh.enable = true;
           }
 
@@ -35,20 +37,11 @@
       nixosConfigurations.nixos-vm = nixosConfiguration;
       packages.nixos-vm = nixosConfiguration;
 
-      packages.default =
-        pkgs.runCommand "run-vm"
-          {
-            inherit nixosConfiguration;
-            buildInputs = [ pkgs.qemu ];
-          }
-          ''
-            cat > $out <<EOF
-            #!${pkgs.stdenv.shell}
-            echo "To stop VM, press Ctrl+A followed by X."
-            exec ${nixosConfiguration}/bin/run-nixos-vm
-            EOF
-            chmod +x $out
-          '';
+      packages.default = pkgs.writeShellScriptBin "run-vm" ''
+        #!${pkgs.stdenv.shell}
+        echo "To stop VM, press Ctrl+A followed by X."
+        exec ${nixosConfiguration.config.system.build.vm}/bin/run-nixos-vm
+      '';
       defaultPackage.x86_64-linux = self.packages.default;
     };
 }

@@ -1,5 +1,9 @@
 # NixOS
 
-    nix build .#livecd
+Start a VM with:
 
-See `result/iso/*.iso`!
+    QEMU_NET_OPTS="hostfwd=tcp::2222-:22" nix run .
+
+Then login to it with:
+
+    ssh -o StrictHostKeyChecking=no -o "UserKnownHostsFile /dev/null" root@localhost -p 2222
