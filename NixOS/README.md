@@ -1,5 +1,9 @@
 # NixOS
 
+Status: This is a WIP and currently broken;
+see also https://github.com/vorburger/LearningLinux/tree/develop/nix/os,
+for a clean restart from scratch (which this will be pieced back together from again later).
+
 ## Usage
 
 To start, just use:
