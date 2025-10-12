@@ -16,6 +16,10 @@ This VM has most of the image defined by the flake on `/run` in a `tmpfs` (someh
 a (small, initially; ~6 MB!!) `./nixos.qcow2` disk image in the current directory (because it's NOT an "output"),
 which is `/dev/vda` that's mounted as `/` in the VM.
 
+## Testing
+
+    nix flake check
+
 ## More
 
 To build a (big; ~415 MB!) NixOS LiveCD `./result/iso/nixos*.iso` ISO image, use:
