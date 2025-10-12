@@ -4,7 +4,7 @@
 
 To start, just use:
 
-    QEMU_NET_OPTS="hostfwd=tcp::2222-:22" nix run .
+    QEMU_NET_OPTS="hostfwd=tcp::2222-:22" rm -f *.qcow2 && nix run .
 
 Then login to it with:
 
@@ -14,7 +14,7 @@ This starts the VM through `result/bin/run-nixos-vm` (which you could subsequent
 
 This VM has most of the image defined by the flake on `/run` in a `tmpfs` (somehow), and
 a (small, initially; ~6 MB!!) `./nixos.qcow2` disk image in the current directory (because it's NOT an "output"),
-which is `/dev/vda` that's mounted as `/` in the VM.
+which is `/dev/vda` that's mounted as `/` in the VM. We `rm` disk images on each start to get a fresh VM.
 
 ## Testing
 
