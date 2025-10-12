@@ -2,7 +2,7 @@
 
 ## Usage
 
-To build the (small; ~6 MB!!) `nixos.qcow2` image and then implicitly start this VM through `result/bin/run-nixos-vm`, just use:
+To start, just use:
 
     QEMU_NET_OPTS="hostfwd=tcp::2222-:22" nix run .
 
@@ -10,11 +10,13 @@ Then login to it with:
 
     ssh -o StrictHostKeyChecking=no -o "UserKnownHostsFile /dev/null" root@localhost -p 2222
 
+This starts the VM through `result/bin/run-nixos-vm` (which you could subsequently also directly start).
+
+This VM has most of the image defined by the flake on `/run` in a `tmpfs` (somehow), and
+a (small, initially; ~6 MB!!) `./nixos.qcow2` disk image in the current directory (because it's NOT an "output"),
+which is `/dev/vda` that's mounted as `/` in the VM.
+
 ## More
-
-To only build the `nixos.qcow2` image without starting it in QEMU, use:
-
-    nix build .#nixosConfigurations.nixos-vm.config.system.build.vm
 
 To build a (big; ~415 MB!) NixOS LiveCD `./result/iso/nixos*.iso` ISO image, use:
 
