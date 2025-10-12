@@ -66,7 +66,6 @@
         echo "To stop VM, press Ctrl+A followed by X."
         exec ${nixosConfiguration.config.system.build.vm}/bin/run-nixos-vm
       '';
-      defaultPackage.x86_64-linux = self.packages.x86_64-linux.default;
 
       # The test can be run with `nix flake check` or `nix test`.
       checks.x86_64-linux.default = sshTest;
