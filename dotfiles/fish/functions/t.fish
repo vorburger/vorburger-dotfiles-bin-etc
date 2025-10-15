@@ -1,7 +1,9 @@
 function t -d "Test code in current or parent directory (using various strategies)"
     set -l start_dir (pwd)
     while true
-        if test -x "test.bash"
+        if test -f "flake.nix"
+            nix flake check
+        else if test -x "test.bash"
             ./test.bash
             cd "$start_dir"
             return 0
