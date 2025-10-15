@@ -3,6 +3,8 @@ function t -d "Test code in current or parent directory (using various strategie
     while true
         if test -f "flake.nix"
             nix flake check
+            cd "$start_dir"
+            return 0
         else if test -x "test.bash"
             ./test.bash
             cd "$start_dir"
