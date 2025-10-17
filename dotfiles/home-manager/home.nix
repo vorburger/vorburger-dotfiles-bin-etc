@@ -94,8 +94,14 @@
     stateVersion = "25.05"; # Please read the comment before changing.
   };
 
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    config.global = {
+      warn_timeout = "30s";
+      hide_env_diff = true;
+    };
+  };
   programs.fish.enable = true;
   programs.fzf.enable = true;
   programs.fzf.enableFishIntegration = true;
