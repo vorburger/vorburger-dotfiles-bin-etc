@@ -100,8 +100,8 @@
     config.global = {
       warn_timeout = "30s";
       hide_env_diff = true;
-      log_filter = "^direnv: .*"; # silent
     };
+    silent = true;
   };
   programs.fish.enable = true;
   programs.fzf.enable = true;
