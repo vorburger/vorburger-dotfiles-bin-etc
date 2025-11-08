@@ -288,7 +288,8 @@
     "*": true,
     "markdown": true,
     "plaintext": true,
-    "scminput": true
+    "scminput": true,
+    "beancount": false
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
