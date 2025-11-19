@@ -1,0 +1,6 @@
+[Unit]
+Description=Send desktop notification about failing unit %i
+
+[Service]
+Type=oneshot
+ExecStart=__DOTFILES_PATH__/bin/systemd-failure-notify.sh %i

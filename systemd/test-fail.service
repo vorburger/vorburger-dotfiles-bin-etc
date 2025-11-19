@@ -1,0 +1,8 @@
+[Unit]
+Description=A test service that is designed to fail
+RefuseManualStart=false
+RefuseManualStop=false
+
+[Service]
+Type=oneshot
+ExecStart=/bin/false
