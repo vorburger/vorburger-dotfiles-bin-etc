@@ -61,7 +61,7 @@ else
   echo "Not enabling dnf5-automatic.timer, because no systemd"
 fi
 
-./flatpack-install.sh
+./systemd-install.sh
 
 sudo dnf update -y
 

@@ -1,0 +1,7 @@
+[Unit]
+Description=Run gh triage
+Documentation=https://github.com/k1LoW/gh-triage
+
+[Service]
+Type=oneshot
+ExecStart=%h/.nix-profile/bin/gh triage
