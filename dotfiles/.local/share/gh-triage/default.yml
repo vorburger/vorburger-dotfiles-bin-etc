@@ -1,5 +1,4 @@
 # https://github.com/k1LoW/gh-triage
-# TODO https://github.com/k1LoW/gh-triage/issues/44
 done:
   max: 1000
   conditions:

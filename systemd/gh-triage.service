@@ -5,3 +5,5 @@ Documentation=https://github.com/k1LoW/gh-triage
 [Service]
 Type=oneshot
 ExecStart=%h/.nix-profile/bin/gh triage
+
+# Configuration is in ~/.local/share/gh-triage/default.yml
