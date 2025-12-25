@@ -28,6 +28,8 @@
       nil
       nixfmt
       nixd
+      nixos-install-tools
+      nixos-rebuild
       nodejs_24
       maven
 
