@@ -16,9 +16,13 @@
     ]
   },
   "ui": {
-    "hideBanner": "true",
-    "hideFooter": "false",
-    "hideTips": "true",
+    "hideBanner": true,
+    "hideFooter": false,
+    "hideTips": true,
+    "hideWindowTitle": false,
+    "showCitations": true,
+    "showLineNumbers": true,
+    "showMemoryUsage": true,
     "theme": "ANSI"
   },
   "ide": {
@@ -30,12 +34,6 @@
       "selectedType": "gemini-api-key"
     }
   },
-  "ui.hideBanner": "true",
-  "ui.hideFooter": "false",
-  "ui.hideWindowTitle": "false",
-  "ui.showCitations": "true",
-  "ui.showLineNumbers": "true",
-  "ui.showMemoryUsage": "true",
   "output": {
     "format": "text"
   },
