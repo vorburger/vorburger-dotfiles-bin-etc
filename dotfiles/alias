@@ -64,3 +64,4 @@ alias nl="nix log"
 alias hm="home-manager"
 alias hme="home-manager edit"
 alias hms="home-manager switch"
+# hmu is in bin/

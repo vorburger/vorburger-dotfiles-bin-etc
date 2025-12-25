@@ -1,0 +1,15 @@
+pushd .
+
+cd /home/vorburger/git/github.com/vorburger/vorburger-dotfiles-bin-etc
+
+if [ -z "$(git status --porcelain)" ]; then
+  # Working directory clean
+  cd dotfiles/home-manager
+  nix flake update
+  git commit -am"nix flake update"
+
+else
+  echo "Please clean-up uncommitted changes in dotfiles to HMU..."
+fi
+
+popd
