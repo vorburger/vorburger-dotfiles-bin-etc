@@ -9,6 +9,14 @@ if ! command -v "$GIT_CMD" &> /dev/null; then
   exit 1
 fi
 
+# Check if SSH to GitHub is available.
+SSH_AVAILABLE=false
+if command -v ssh &>/dev/null; then
+  if ssh -o BatchMode=yes -o ConnectTimeout=2 -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
+    SSH_AVAILABLE=true
+  fi
+fi
+
 # Clones a GitHub repository if it doesn't already exist locally, and prints the target directory path.
 #   @param {string} $1 The GitHub repository, in "owner/repo" format, or a full git URL.
 clone() {
@@ -17,19 +25,18 @@ clone() {
   repo="${repo#git@github.com:}"
   repo="${repo%.git}"
   local owner="${repo%%/*}"
-  local protocol
+  local protocol="https"
+
+  if [[ "$owner" =~ ^(vorburger|MariaDB4j|enola-dev)$ ]] && [ "$SSH_AVAILABLE" == "true" ]; then
+    protocol="ssh"
+  fi
 
   local repo_url
-  case "$owner" in
-    vorburger|MariaDB4j|enola-dev)
-      protocol="ssh"
-      repo_url="git@github.com:$repo.git"
-      ;;
-    *)
-      protocol="https"
-      repo_url="https://github.com/$repo.git"
-      ;;
-  esac
+  if [ "$protocol" == "ssh" ]; then
+    repo_url="git@github.com:$repo.git"
+  else
+    repo_url="https://github.com/$repo.git"
+  fi
 
   local target_dir="$HOME/git/github.com/$repo"
   if [ ! -d "$target_dir" ]; then
