@@ -22,8 +22,11 @@
     "hideWindowTitle": false,
     "showCitations": true,
     "showLineNumbers": true,
-    "showMemoryUsage": true,
-    "theme": "ANSI"
+    "showMemoryUsage": false,
+    "theme": "ANSI",
+    "footer": {
+      "hideContextPercentage": false
+    }
   },
   "ide": {
     "enabled": true,
@@ -31,13 +34,21 @@
   },
   "security": {
     "auth": {
-      "selectedType": "oauth-personal"
-    }
+      "selectedType": "gemini-api-key"
+    },
+    "enablePermanentToolApproval": true
   },
   "output": {
     "format": "text"
   },
   "general": {
-    "vimMode": false
+    "vimMode": false,
+    "previewFeatures": true,
+    "enablePromptCompletion": true
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
   }
 }
