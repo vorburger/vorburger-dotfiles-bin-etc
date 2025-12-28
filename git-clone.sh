@@ -12,9 +12,17 @@ fi
 # Check if SSH to GitHub is available.
 SSH_AVAILABLE=false
 if command -v ssh &>/dev/null; then
-  if ssh -o BatchMode=yes -o ConnectTimeout=2 -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
+  set +eo pipefail
+  SSH_OUTPUT=$(ssh -o BatchMode=yes -o ConnectTimeout=2 -T git@github.com 2>&1)
+  set -eo pipefail
+  if echo "$SSH_OUTPUT" | grep -q "successfully authenticated"; then
     SSH_AVAILABLE=true
+    echo "ssh git@github.com works!"
+  else
+    echo "ssh command is available, but 'ssh git@github.com' failed: $SSH_OUTPUT"
   fi
+else
+  echo "ssh command is not available"
 fi
 
 # Clones a GitHub repository if it doesn't already exist locally, and prints the target directory path.
@@ -40,7 +48,7 @@ clone() {
 
   local target_dir="$HOME/git/github.com/$repo"
   if [ ! -d "$target_dir" ]; then
-    echo "Cloning '$repo' into '$target_dir'..." >&2
+    echo "Cloning '$repo_url' into '$target_dir'..." >&2
     mkdir -p "$(dirname "$target_dir")"
     "$GIT_CMD" clone "$repo_url" "$target_dir"
     cd "$target_dir"
