@@ -1,5 +1,6 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
 antfu.slidev@52.11.1
+arrterian.nix-env-selector@1.1.0
 bierner.emojisense@0.10.0
 bierner.github-markdown-preview@0.3.0
 bierner.markdown-checkbox@0.4.0
@@ -42,6 +43,7 @@ josevseb.google-java-format-for-vs-code@1.2.0
 katjanakosic.vscode-json5@1.0.1
 lencerf.beancount@0.14.0
 mechatroner.rainbow-csv@3.23.0
+mkhl.direnv@0.17.0
 ms-azuretools.vscode-containers@2.3.0
 ms-azuretools.vscode-docker@2.0.0
 ms-kubernetes-tools.kind-vscode@0.0.3
@@ -80,7 +82,6 @@ stardog-union.vscode-langserver-turtle@0.2.1
 streetsidesoftware.code-spell-checker@4.4.0
 thejustinwalsh.textproto-grammer@0.0.8
 timonwong.shellcheck@0.38.5
-valentjn.vscode-ltex@13.1.0
 vscjava.vscode-gradle@3.17.1
 vscjava.vscode-java-debug@0.58.4
 vscjava.vscode-java-dependency@0.27.0
