@@ -1,7 +1,6 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
 antfu.slidev@52.11.1
 arrterian.nix-env-selector@1.1.0
-bbenoist.nix@1.0.1
 bierner.emojisense@0.10.0
 bierner.github-markdown-preview@0.3.0
 bierner.markdown-checkbox@0.4.0
@@ -18,10 +17,8 @@ compilenix.vscode-zonefile@0.0.4
 coolbear.systemd-unit-file@1.0.8
 davidanson.vscode-markdownlint@0.61.1
 dbaeumer.vscode-eslint@3.0.20
-dinhani.copy-on-select@0.0.7
 docker.docker@0.18.0
 dongfg.vscode-beancount-formatter@1.5.0
-drblury.protobuf-vsc@1.4.26
 ecmel.vscode-html-css@2.0.13
 editorconfig.editorconfig@0.17.4
 esbenp.prettier-vscode@11.0.2
@@ -39,7 +36,6 @@ grapecity.gc-excelviewer@4.2.64
 gruntfuggly.todo-tree@0.0.226
 htmlhint.vscode-htmlhint@1.15.1
 html-validate.vscode-html-validate@2.12.6
-james-yu.latex-workshop@10.6.1
 jbockle.jbockle-format-files@3.4.0
 jgclark.vscode-todo-highlight@2.0.8
 jnoortheen.nix-ide@0.5.5
@@ -74,20 +70,17 @@ mutantdino.resourcemonitor@1.0.7
 nico-castell.linux-desktop-file@0.0.21
 oven.bun-vscode@0.0.32
 piousdeer.adwaita-theme@1.1.0
-plex.vscode-protolint@0.8.0
 redhat.java@1.50.0
 redhat.vscode-xml@0.29.0
 redhat.vscode-yaml@1.19.1
 rust-lang.rust-analyzer@0.3.2727
 rvest.vs-code-prettier-eslint@6.0.0
 seaube.clangformat@2.0.2
-sfdc.bazel-vscode-java@1.25.101230444
 stardog-union.stardog-rdf-grammars@0.2.1
 stardog-union.vscode-langserver-turtle@0.2.1
 streetsidesoftware.code-spell-checker@4.4.0
 thejustinwalsh.textproto-grammer@0.0.8
 timonwong.shellcheck@0.38.5
-valentjn.vscode-ltex@13.1.0
 vscjava.vscode-gradle@3.17.1
 vscjava.vscode-java-debug@0.58.4
 vscjava.vscode-java-dependency@0.27.0
