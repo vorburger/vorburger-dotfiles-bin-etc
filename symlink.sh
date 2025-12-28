@@ -10,7 +10,7 @@ DIR="$(realpath $(dirname "$0"))"
 # TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
   if [[ -h ~/$1 && ! -e ~/$1 ]]; then
-    echo "~/$1 is a BROKEN symlink. Please fix it." >&2
+    echo "$HOME/$1 is a BROKEN symlink. Please fix it." >&2
     exit 1
   elif [[ ! -e ~/$1 ]]; then
     mkdir -p "$(dirname ~/"$1")"
@@ -27,15 +27,21 @@ f() {
         # It is the correct symlink, all good.
         :
       else
-        echo "~/$1 is a symlink but points to the wrong file." >&2
+        echo "$HOME/$1 is a symlink but points to the wrong file." >&2
         echo "  points to: $(readlink ~/"$1") -> $link_realpath" >&2
         echo "  should point to: $target_realpath" >&2
         exit 1
       fi
     else
       # It is a file or directory.
-      echo "~/$1 already exists and is not a symlink." >&2
-      exit 1
+      if [[ "${CODESPACES:-}" == "true" ]]; then
+        echo "$HOME/$1 already exists and is not a symlink. Backing up to $HOME/$1.bak and overwriting, because CODESPACES is set." >&2
+        mv ~/"$1" ~/"$1.bak"
+        ln --symbolic --relative "$DIR"/"$2" ~/"$1"
+      else
+        echo "$HOME/$1 already exists and is not a symlink (and we're not in a Codespace)." >&2
+        exit 1
+      fi
     fi
   fi
 }
