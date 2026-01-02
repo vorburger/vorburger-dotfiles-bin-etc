@@ -47,7 +47,18 @@
     "editor.tabSize": 2
   },
 
-  "cSpell.userWords": ["automagic", "automagically", "Proto", "vorburger"],
+  "cSpell.userWords": [
+    "automagic",
+    "automagically",
+    "enola",
+    "errorprone",
+    "genai",
+    "jspecify",
+    "ltgt",
+    "nullaway",
+    "Proto",
+    "vorburger"
+  ],
 
   "diffEditor.experimental.showMoves": true,
   "diffEditor.renderSideBySide": false,
@@ -303,6 +314,30 @@
   "githubPullRequests.assignCreated": "${user}",
   "chat.tools.terminal.autoApprove": {
     "gradle clean": true,
-    "./test": true
-  }
+    "./test": true,
+    "/^gradle eclipse && cat \\.classpath$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^gradle build$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^gradle eclipse$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "gradle test": true,
+    "javap": true,
+    "/^gradle cleanTest test$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^podman build -t enola2 \\.$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+  "gradle.showStoppedDaemons": true,
+  "docker.extension.enableComposeLanguageServer": false
 }
