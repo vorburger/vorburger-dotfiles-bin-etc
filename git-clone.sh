@@ -17,12 +17,12 @@ if command -v ssh &>/dev/null; then
   set -eo pipefail
   if echo "$SSH_OUTPUT" | grep -q "successfully authenticated"; then
     SSH_AVAILABLE=true
-    echo "ssh git@github.com works!"
+    echo "ssh git@github.com works!" >&2
   else
-    echo "ssh command is available, but 'ssh git@github.com' failed: $SSH_OUTPUT"
+    echo "ssh command is available, but 'ssh git@github.com' failed: $SSH_OUTPUT" >&2
   fi
 else
-  echo "ssh command is not available"
+  echo "ssh command is not available" >&2
 fi
 
 # Clones a GitHub repository if it doesn't already exist locally, and prints the target directory path.
