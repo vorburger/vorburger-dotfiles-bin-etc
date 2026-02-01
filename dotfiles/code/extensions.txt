@@ -28,7 +28,6 @@ github.copilot@1.388.0
 github.copilot-chat@0.36.2
 github.vscode-github-actions@0.28.2
 github.vscode-pull-request-github@0.124.1
-golang.go@0.52.1
 googlecloudtools.cloudcode@2.37.0
 google.gemini-cli-vscode-ide-companion@0.20.0
 google.geminicodeassist@2.68.0
