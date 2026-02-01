@@ -97,9 +97,6 @@ if [[ -z "${CODESPACES:-}" ]]; then
   [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
   # ? source "$HOME/.bashrc"
 
-  # https://github.com/BurntSushi/ripgrep (via Cargo instead of DNF or APT to have latest version 14+ because v13 didn't support "rg --generate" for https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#complete
-  [ "$(command -v rg)" ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm ripgrep
-
   # https://github.com/swsnr/mdcat
   # NB: binstall NOK: "mdcat: error while loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory" (even with dnf install openssl-devel, which install mdcat also needs)
   # [ $(command -v mdcat) ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm mdcat
