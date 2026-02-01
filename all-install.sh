@@ -90,11 +90,11 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://github.com/yannh/kubeconform#Installation
   [ -s "$GO_BIN_PATH"/kubeconform ] || go install github.com/yannh/kubeconform/cmd/kubeconform@latest
 
+  # TODO Add Rust to home.nix ?
   # https://rustup.rs (AKA cargo)
-  [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
+  # [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   # https://github.com/cargo-bins/cargo-binstall (AKA cargo binstall)
-  [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+  # [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
   # ? source "$HOME/.bashrc"
 
   # https://github.com/evanlucas/fish-kubectl-completions
