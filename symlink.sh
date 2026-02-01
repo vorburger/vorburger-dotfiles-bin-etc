@@ -73,7 +73,8 @@ f .gnupg/gpg-agent.conf dotfiles/gpg-agent.conf
 f .gitconfig dotfiles/gitconfig
 d .local/share/gh-triage/ dotfiles/.local/share/gh-triage/
 d .local/share/applications/ dotfiles/desktop/
-d .config/bat/ dotfiles/bat
+d .config/bat/ dotfiles/bat/
+d .config/git/ dotfiles/git/
 d .config/kitty/ dotfiles/kitty/
 d .config/fish/ dotfiles/fish/
 d .config/fish/completions/ dotfiles/fish/completions/
