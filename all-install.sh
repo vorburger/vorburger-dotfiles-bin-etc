@@ -97,11 +97,6 @@ if [[ -z "${CODESPACES:-}" ]]; then
   [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
   # ? source "$HOME/.bashrc"
 
-  # https://github.com/swsnr/mdcat
-  # NB: binstall NOK: "mdcat: error while loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory" (even with dnf install openssl-devel, which install mdcat also needs)
-  # [ $(command -v mdcat) ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm mdcat
-  [ "$(command -v mdcat)" ] || "$HOME/.cargo/bin/cargo" install mdcat
-
   # https://github.com/evanlucas/fish-kubectl-completions
   # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
   # see https://github.com/evanlucas/fish-kubectl-completions/issues/33
