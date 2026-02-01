@@ -339,5 +339,11 @@
     }
   },
   "gradle.showStoppedDaemons": true,
-  "docker.extension.enableComposeLanguageServer": false
+  "docker.extension.enableComposeLanguageServer": false,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+  },
+  "chat.tools.urls.autoApprove": {
+    "https://javalin.io": true
+  }
 }
