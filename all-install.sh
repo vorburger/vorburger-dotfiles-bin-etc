@@ -100,9 +100,6 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://github.com/BurntSushi/ripgrep (via Cargo instead of DNF or APT to have latest version 14+ because v13 didn't support "rg --generate" for https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#complete
   [ "$(command -v rg)" ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm ripgrep
 
-  # https://github.com/Peltoche/lsd#from-source
-  [ "$(command -v lsd)" ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm lsd
-
   # https://github.com/swsnr/mdcat
   # NB: binstall NOK: "mdcat: error while loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory" (even with dnf install openssl-devel, which install mdcat also needs)
   # [ $(command -v mdcat) ] || "$HOME/.cargo/bin/cargo" binstall --no-confirm mdcat

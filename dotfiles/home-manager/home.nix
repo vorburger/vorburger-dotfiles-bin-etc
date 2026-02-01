@@ -22,6 +22,7 @@
       gh
       git
       lazygit
+      lsd
       sops
       tig
       trashy
