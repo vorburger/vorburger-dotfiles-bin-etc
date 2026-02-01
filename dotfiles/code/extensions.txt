@@ -73,7 +73,6 @@ piousdeer.adwaita-theme@1.1.0
 redhat.java@1.50.0
 redhat.vscode-xml@0.29.0
 redhat.vscode-yaml@1.19.1
-rust-lang.rust-analyzer@0.3.2727
 rvest.vs-code-prettier-eslint@6.0.0
 seaube.clangformat@2.0.2
 stardog-union.stardog-rdf-grammars@0.2.1
