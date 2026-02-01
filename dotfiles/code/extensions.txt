@@ -1,5 +1,5 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
-antfu.slidev@52.11.1
+antfu.slidev@52.11.5
 arrterian.nix-env-selector@1.1.0
 bierner.emojisense@0.10.0
 bierner.github-markdown-preview@0.3.0
@@ -25,13 +25,13 @@ esbenp.prettier-vscode@11.0.2
 git-emoji.vscode-git-emoji@0.0.17
 github.codespaces@1.18.4
 github.copilot@1.388.0
-github.copilot-chat@0.35.2
+github.copilot-chat@0.36.2
 github.vscode-github-actions@0.28.2
 github.vscode-pull-request-github@0.124.1
 golang.go@0.52.1
 googlecloudtools.cloudcode@2.37.0
 google.gemini-cli-vscode-ide-companion@0.20.0
-google.geminicodeassist@2.64.0
+google.geminicodeassist@2.68.0
 grapecity.gc-excelviewer@4.2.64
 gruntfuggly.todo-tree@0.0.226
 htmlhint.vscode-htmlhint@1.15.1
@@ -44,7 +44,7 @@ katjanakosic.vscode-json5@1.0.1
 lencerf.beancount@0.14.0
 mechatroner.rainbow-csv@3.23.0
 mkhl.direnv@0.17.0
-ms-azuretools.vscode-containers@2.3.0
+ms-azuretools.vscode-containers@2.4.0
 ms-azuretools.vscode-docker@2.0.0
 ms-kubernetes-tools.kind-vscode@0.0.3
 ms-kubernetes-tools.vscode-kubernetes-tools@1.3.28
@@ -52,7 +52,7 @@ ms-python.debugpy@2025.18.0
 ms-python.isort@2025.0.0
 ms-python.python@2025.20.1
 ms-python.vscode-pylance@2025.10.4
-ms-python.vscode-python-envs@1.14.0
+ms-python.vscode-python-envs@1.16.0
 ms-toolsai.jupyter@2025.9.1
 ms-toolsai.jupyter-keymap@1.1.2
 ms-toolsai.jupyter-renderers@1.3.0
