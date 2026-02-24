@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euox pipefail
 
+# TODO Flip order - it would be more logically readable if it was flipped (source to target)
+
 # TODO Make this more quiet!
 
 # See also ./symlink-homefree.sh for an equivalent which does not use $HOME
@@ -93,6 +95,9 @@ f .config/Code/User/mcp.json dotfiles/code/mcp.json
 f .config/Code/User/settings.json dotfiles/code/settings.json
 f .config/Code/User/keybindings.json dotfiles/code/keybindings.json
 f .config/Code/User/snippets/personal.code-snippets dotfiles/code/personal.code-snippets
+f .config/Antigravity/User/settings.json dotfiles/code/settings.json
+f .config/Antigravity/User/keybindings.json dotfiles/code/keybindings.json
+f .config/Antigravity/User/snippets/personal.code-snippets dotfiles/code/personal.code-snippets
 f .config/rygel.conf dotfiles/rygel.conf
 
 # This is used by dotfiles/.gemini/GEMINI.md

@@ -345,5 +345,6 @@
   },
   "chat.tools.urls.autoApprove": {
     "https://javalin.io": true
-  }
+  },
+  "prettier.trailingComma": "none"
 }
