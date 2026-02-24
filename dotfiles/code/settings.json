@@ -112,8 +112,14 @@
   "files.trimTrailingWhitespace": true,
 
   "git.autofetch": false,
-  "git.confirmSync": false,
+  "git.confirmSync": true,
   "git.openRepositoryInParentFolders": "always",
+  "git.postCommitCommand": "none",
+  "git.showActionButton": {
+    "commit": true,
+    "publish": true,
+    "sync": false,
+  },
   "github.gitProtocol": "ssh",
   "githubPullRequests.pullBranch": "never",
   "githubPullRequests.pushBranch": "always",
