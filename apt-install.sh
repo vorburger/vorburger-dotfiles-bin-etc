@@ -17,7 +17,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
     #      && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
     #fi
 
-    sudo apt --allow-releaseinfo-change update
+    sudo apt-get --allow-releaseinfo-change update
     # sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade -y
     # sudo apt-get update --fix-missing && sudo apt-get clean && sudo apt-get clean && sudo apt-get install -f && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
     ## dist-upgrade causes these problems on the Debian 10 (Buster)-based gcr.io/cloudshell-images/cloudshell:latest
@@ -28,7 +28,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
     # NB: Do *NOT* apt install tmux, because that upgrades the version that comes with gcr.io/cloudshell-images/cloudshell:latest
     # which breaks the gcr.io/cloudshell-images/custom-image-validation:latest test_ssh (__main__.CloudDevshellTests)
 
-    sudo apt install -y \
+    sudo apt-get install -y \
         bash-completion file git gh htop lsb-release procps rpl unzip \
         trash-cli shellcheck wipe \
         autojump fd-find \
@@ -41,13 +41,13 @@ if [[ -z "${CODESPACES:-}" ]]; then
     # libssl-dev is required because "cargo install mdcat" needs it
 
     # see install-nano.sh (which all-install.sh only invokes if there is no /usr/bin/nano)
-    sudo apt remove -y nano
-    sudo apt autoremove -y
+    sudo apt-get remove -y nano
+    sudo apt-get autoremove -y
 
 else
     # This are minimally required tools for Codespaces
 
-    sudo apt install -y shellcheck
+    sudo apt-get install -y shellcheck
 
     # Beware: cargo install seems to be (really!) slow when used from GitHub Codespace setup;
     # do not install it, and make any subsequent "cargo install" conditional (see below).
