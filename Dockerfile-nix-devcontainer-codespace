@@ -1,20 +1,14 @@
 FROM ghcr.io/xtruder/nix-devcontainer:v1
 
-COPY . /var/local/vorburger-dotfiles/
+COPY --chown=code:code . /var/local/vorburger-dotfiles/
 
 # Simulate a Codespace environment so that:
 # - symlink.sh backs up existing files (e.g. /root/.bashrc) instead of failing
 ENV CODESPACES=true
 
-# Fix SSL certs dir permissions: ONBUILD sets /etc/ssl/certs to 0700 (root-only),
-# which prevents nix (running as 'code' user) from reading ca-certificates.crt.
-# Rename 'code' user to 'vorburger' to match the home-manager homeConfigurations key in flake.nix.
-# Pass CODESPACES explicitly as 'su' may not inherit Docker ENV vars.
+# /etc/ssl/certs is a bind-mount in this image, so chmod changes don't persist
+# across Docker RUN layers. Both the chmod and bootstrap must run in the same
+# RUN step. CODESPACES is passed explicitly as 'su' may not inherit Docker ENVs.
 USER root
 RUN chmod 755 /etc/ssl/certs \
-    && usermod -l vorburger -d /home/vorburger -m code \
-    && groupmod -n vorburger code \
-    && sed -i 's/^code /vorburger /' /etc/sudoers.d/devcontainer \
-    && ln -sfn /home/vorburger/.local/state/nix/profiles/profile /home/vorburger/.nix-profile \
-    && chown -R vorburger:vorburger /var/local/vorburger-dotfiles \
-    && su vorburger -c "export PATH=/home/vorburger/.nix-profile/bin:\$PATH && export CODESPACES=true HOME=/home/vorburger && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"
+    && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"

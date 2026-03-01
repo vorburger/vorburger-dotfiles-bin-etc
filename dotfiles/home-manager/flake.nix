@@ -17,13 +17,18 @@
       # TODO Support Mac...
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      # Read the current user from the environment so this flake works for any
+      # user (e.g. 'vorburger' on a workstation or 'code' in a devcontainer).
+      # Requires --impure evaluation (see nix-install.sh).
+      envUSER = builtins.getEnv "USER";
+      envHOME = builtins.getEnv "HOME";
     in
     {
-      homeConfigurations."vorburger" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${envUSER} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # extraSpecialArgs passes through arguments to home.nix etc. modules
-        extraSpecialArgs = { envHOME = builtins.getEnv "HOME"; };
+        extraSpecialArgs = { inherit envUSER envHOME; };
         modules = [
           nix-index-database.homeModules.nix-index
 
