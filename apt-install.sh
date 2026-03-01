@@ -47,7 +47,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
 else
     # This are minimally required tools for Codespaces
 
-    sudo apt-get install -y shellcheck
+    sudo apt-get install -y lsb-release shellcheck
 
     # Beware: cargo install seems to be (really!) slow when used from GitHub Codespace setup;
     # do not install it, and make any subsequent "cargo install" conditional (see below).
