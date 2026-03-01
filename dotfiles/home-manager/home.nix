@@ -2,16 +2,15 @@
   config,
   pkgs,
   lib,
+  envUSER,
   envHOME,
   ...
 }:
 
 {
   home = {
-    username = "vorburger";
-    # TODO Rip out the envHOME stuff, because it doesn't work anyway
-    # homeDirectory = if envHOME != "" then envHOME else "/usr/local/google/home/vorburger";
-    homeDirectory = if envHOME != "" then envHOME else "/home/vorburger";
+    username = envUSER;
+    homeDirectory = if envHOME != "" then envHOME else "/home/${envUSER}";
 
     packages = with pkgs; [
       bat

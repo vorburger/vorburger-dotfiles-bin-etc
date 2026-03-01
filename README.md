@@ -16,7 +16,7 @@ TBD.
 For using the [Nix](https://nixos.org) package manager with these dotfiles on non-NixOS (above):
 
 1. [Install the `nix` CLI](https://github.com/vorburger/LearningLinux/blob/develop/nix/docs/install.md)
-1. First time only, on an entirely fresh computer: `nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake github:vorburger/vorburger-dotfiles-bin-etc?dir=dotfiles/home-manager` (OR, if this repo was already cloned, then just: `nix run nixpkgs#home-manager -- switch --flake ./dotfiles/home-manager`)
+1. Run `./nix-install.sh`
 
 Now add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix) with `hme`, then run [`hms`](dotfiles/alias) to activate them. Use [`hmu`](bin/hmu) to upgrade Nix packages.
 

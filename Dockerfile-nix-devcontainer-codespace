@@ -1,0 +1,14 @@
+FROM ghcr.io/xtruder/nix-devcontainer:v1@sha256:34b3b05a767b8c16db9be933cb8a7d8772988a4bcab2567273db29c061a4bcec
+
+COPY --chown=code:code . /var/local/vorburger-dotfiles/
+
+# Simulate a Codespace environment so that:
+# - symlink.sh backs up existing files (e.g. /root/.bashrc) instead of failing
+ENV CODESPACES=true
+
+# /etc/ssl/certs is a bind-mount in this image, so chmod changes don't persist
+# across Docker RUN layers. Both the chmod and bootstrap must run in the same
+# RUN step. CODESPACES is passed explicitly as 'su' may not inherit Docker ENVs.
+USER root
+RUN chmod 755 /etc/ssl/certs \
+    && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"

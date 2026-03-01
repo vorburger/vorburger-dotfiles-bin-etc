@@ -1,0 +1,15 @@
+name: Nix Devcontainer Codespace
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Dockerfile-nix-devcontainer-codespace
+        run: docker build -f Dockerfile-nix-devcontainer-codespace .
