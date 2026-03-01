@@ -12,6 +12,7 @@ DEBIAN_MAJOR_VERSION=$(cut -d'.' -f1 /etc/debian_version)
 # https://fishshell.com =>
 # https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A3&package=fish
 # (because Debian 11 packages an ancient Fish v3.1.2 which is 1.5 years behind)
+sudo apt-get update -y
 sudo apt-get install -y curl wget gpg
 # Remove stale yarnpkg repo which has an invalid GPG key and causes apt-get update to fail
 sudo rm -f /etc/apt/sources.list.d/yarnpkg.list
