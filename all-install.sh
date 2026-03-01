@@ -39,7 +39,7 @@ fi
 #   eval $(go1.15.8 env GOROOT)
 # https://golang.org/doc/install
 if [ ! "$(command -v go)" ]; then
-  curl -fsSL https://golang.org/dl/go1.17.5.linux-amd64.tar.gz -o /tmp/go.tgz
+  curl -fsSL https://golang.org/dl/go1.24.0.linux-amd64.tar.gz -o /tmp/go.tgz
   sudo tar -C /usr/local -xzf /tmp/go.tgz
   sudo ln -s /usr/local/go/bin/go* /usr/local/bin/
 fi
