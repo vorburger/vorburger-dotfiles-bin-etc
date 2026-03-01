@@ -1,0 +1,5 @@
+FROM debian:bookworm
+
+COPY . /var/local/vorburger-dotfiles/
+
+RUN cd /var/local/vorburger-dotfiles && ./bootstrap.sh

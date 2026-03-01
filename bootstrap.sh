@@ -8,6 +8,12 @@ if [ -f /etc/os-release ]; then
     cat /etc/os-release
 fi
 
+# If running as root in a container without sudo available, create a passthrough stub
+if [ "$(id -u)" = "0" ] && [ -f /.dockerenv ] && ! command -v sudo &> /dev/null; then
+    printf '#!/bin/sh\nexec "$@"\n' > /usr/local/bin/sudo
+    chmod +x /usr/local/bin/sudo
+fi
+
 if [ -f /etc/lsb-release ] && (grep -qi "Ubuntu" /etc/lsb-release); then
     echo "You're running Ubuntu"
     cat /etc/lsb-release
