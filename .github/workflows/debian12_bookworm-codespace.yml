@@ -1,0 +1,15 @@
+name: Debian 12 Bookworm Codespace
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Dockerfile-debian12_bookworm-codespace
+        run: docker build -f Dockerfile-debian12_bookworm-codespace .
