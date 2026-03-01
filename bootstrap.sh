@@ -19,21 +19,23 @@ fi
 if command -v nix &> /dev/null; then
     echo "Nix is available"
     ./nix-install.sh
+    # home-manager activation (in home.nix) already clones the repo and runs symlink.sh
 
 elif [ -f /etc/lsb-release ] && (grep -qi "Ubuntu" /etc/lsb-release); then
     echo "You're running Ubuntu"
     cat /etc/lsb-release
     ./ubuntu-install.sh
+    ./symlink.sh
 
 elif [ -f /etc/debian_version ]; then
     echo "You're running Debian"
     cat /etc/debian_version
     ./debian-install.sh
+    ./symlink.sh
 
 # TODO Add Fedora check (and dnf-install[-gui].sh) here as well! Needs restructuring...
 
 else
     echo "Unable to determine if you're running Debian or Ubuntu!"
+    ./symlink.sh
 fi
-
-./symlink.sh
