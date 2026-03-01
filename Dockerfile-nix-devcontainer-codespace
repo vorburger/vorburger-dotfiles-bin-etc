@@ -1,0 +1,16 @@
+FROM ghcr.io/xtruder/nix-devcontainer:v1
+
+COPY . /var/local/vorburger-dotfiles/
+
+# Simulate a Codespace environment so that:
+# - symlink.sh backs up existing files (e.g. /root/.bashrc) instead of failing
+ENV CODESPACES=true
+
+# Fix SSL certs dir permissions: ONBUILD sets /etc/ssl/certs to 0700 (root-only),
+# which prevents nix (running as 'code' user) from reading ca-certificates.crt.
+# chown so that the 'code' user can execute scripts in /var/local/vorburger-dotfiles.
+# Pass CODESPACES explicitly as 'su' may not inherit Docker ENV vars.
+USER root
+RUN chmod 755 /etc/ssl/certs \
+    && chown -R code:code /var/local/vorburger-dotfiles \
+    && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"

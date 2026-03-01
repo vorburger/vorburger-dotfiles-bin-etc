@@ -16,7 +16,11 @@ if [ "$(id -u)" = "0" ] && ! command -v sudo &> /dev/null; then
     chmod +x /usr/local/bin/sudo
 fi
 
-if [ -f /etc/lsb-release ] && (grep -qi "Ubuntu" /etc/lsb-release); then
+if command -v nix &> /dev/null; then
+    echo "Nix is available"
+    ./nix-install.sh
+
+elif [ -f /etc/lsb-release ] && (grep -qi "Ubuntu" /etc/lsb-release); then
     echo "You're running Ubuntu"
     cat /etc/lsb-release
     ./ubuntu-install.sh
