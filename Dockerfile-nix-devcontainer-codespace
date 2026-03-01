@@ -8,9 +8,13 @@ ENV CODESPACES=true
 
 # Fix SSL certs dir permissions: ONBUILD sets /etc/ssl/certs to 0700 (root-only),
 # which prevents nix (running as 'code' user) from reading ca-certificates.crt.
-# chown so that the 'code' user can execute scripts in /var/local/vorburger-dotfiles.
+# Rename 'code' user to 'vorburger' to match the home-manager homeConfigurations key in flake.nix.
 # Pass CODESPACES explicitly as 'su' may not inherit Docker ENV vars.
 USER root
 RUN chmod 755 /etc/ssl/certs \
-    && chown -R code:code /var/local/vorburger-dotfiles \
-    && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"
+    && usermod -l vorburger -d /home/vorburger -m code \
+    && groupmod -n vorburger code \
+    && sed -i 's/^code /vorburger /' /etc/sudoers.d/devcontainer \
+    && ln -sfn /home/vorburger/.local/state/nix/profiles/profile /home/vorburger/.nix-profile \
+    && chown -R vorburger:vorburger /var/local/vorburger-dotfiles \
+    && su vorburger -c "export PATH=/home/vorburger/.nix-profile/bin:\$PATH && export CODESPACES=true HOME=/home/vorburger && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"
