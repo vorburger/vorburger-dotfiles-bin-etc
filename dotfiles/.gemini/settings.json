@@ -44,7 +44,12 @@
   "general": {
     "vimMode": false,
     "previewFeatures": true,
-    "enablePromptCompletion": true
+    "enablePromptCompletion": true,
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "120d"
+    }
   },
   "tools": {
     "shell": {
