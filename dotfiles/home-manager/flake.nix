@@ -20,7 +20,10 @@
       # Read the current user from the environment so this flake works for any
       # user (e.g. 'vorburger' on a workstation or 'code' in a devcontainer).
       # Requires --impure evaluation (see nix-install.sh).
-      envUSER = builtins.getEnv "USER";
+      envUSER =
+        let u = builtins.getEnv "USER"; in
+        if u != "" then u else
+          throw "USER environment variable is not set. Run with --impure and ensure USER is exported.";
       envHOME = builtins.getEnv "HOME";
     in
     {

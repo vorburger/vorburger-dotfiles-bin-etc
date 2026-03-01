@@ -1,4 +1,4 @@
-FROM ghcr.io/xtruder/nix-devcontainer:v1
+FROM ghcr.io/xtruder/nix-devcontainer:v1@sha256:34b3b05a767b8c16db9be933cb8a7d8772988a4bcab2567273db29c061a4bcec
 
 COPY --chown=code:code . /var/local/vorburger-dotfiles/
 
