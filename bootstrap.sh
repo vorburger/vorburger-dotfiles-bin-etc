@@ -8,8 +8,10 @@ if [ -f /etc/os-release ]; then
     cat /etc/os-release
 fi
 
-# If running as root in a container without sudo available, create a passthrough stub
-if [ "$(id -u)" = "0" ] && [ -f /.dockerenv ] && ! command -v sudo &> /dev/null; then
+# If running as root without sudo available (e.g. during a Docker build), create a passthrough stub
+# so that child scripts (debian-install.sh, apt-install.sh, etc.) which use `sudo apt-get ...` work
+# without requiring sudo to be pre-installed in the base image.
+if [ "$(id -u)" = "0" ] && ! command -v sudo &> /dev/null; then
     printf '#!/bin/sh\nexec "$@"\n' > /usr/local/bin/sudo
     chmod +x /usr/local/bin/sudo
 fi
