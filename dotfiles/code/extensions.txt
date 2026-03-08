@@ -78,7 +78,7 @@ stardog-union.stardog-rdf-grammars@0.2.1
 stardog-union.vscode-langserver-turtle@0.2.1
 streetsidesoftware.code-spell-checker@4.5.6
 thejustinwalsh.textproto-grammer@0.0.8
-timonwong.shellcheck@0.39.1
+timonwong.shellcheck@0.39.2
 vscjava.vscode-gradle@3.17.2
 vscjava.vscode-java-debug@0.58.5
 vscjava.vscode-java-dependency@0.27.0
