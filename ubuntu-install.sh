@@ -23,8 +23,9 @@ function install_fish {
 }
 
 # MUST always 'update', first; otherwise no 'apt-get install' will work afterwards.
-# Remove stale yarnpkg repo which has an invalid GPG key and causes apt-get update to fail
-sudo rm -f /etc/apt/sources.list.d/yarnpkg.list
+# Remove stale yarnpkg repo which has an invalid GPG key and causes apt-get update to fail;
+# see https://github.com/vorburger/vorburger-dotfiles-bin-etc/issues/15.
+sudo rm -f /etc/apt/sources.list.d/yarn.list
 sudo apt-get update -y
 
 if [ ! "$(command -v fish)" ]; then
