@@ -1,0 +1,15 @@
+name: Debian 13 Trixie Codespace
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Dockerfile-debian13_trixie-codespace
+        run: docker build -f Dockerfile-debian13_trixie-codespace .
