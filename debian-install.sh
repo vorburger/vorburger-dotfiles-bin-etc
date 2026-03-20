@@ -9,7 +9,7 @@ set -euxo pipefail
 # It does not seem to be possible to obtain this as a number when we're running on a (Debian-based) Ubuntu, where this is the Debian name not number.
 DEBIAN_MAJOR_VERSION=$(cut -d'.' -f1 /etc/debian_version)
 
-BASE_PACKAGES="curl wget gpg git lsb-release shellcheck"
+BASE_PACKAGES="curl wget gpg git lsb-release shellcheck bat"
 
 # https://fishshell.com =>
 # https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A3&package=fish
@@ -23,6 +23,11 @@ if [ "$DEBIAN_MAJOR_VERSION" -lt 13 ]; then
     # NB: Do curl *first* so that if it fails we don't "pollute" /etc/apt/sources.list.d/ (which we intentionally do only after)
     curl -fsSL "https://download.opensuse.org/repositories/shells:fish:release:3/Debian_$DEBIAN_MAJOR_VERSION/Release.key" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
     echo "deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_$DEBIAN_MAJOR_VERSION/ /" | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
+
+else
+    # https://github.com/dandavison/delta is only available in Debian 13+ "Trixie";
+    # for older Debian 12 "Bookworm" and older we'll install it without package later in ./apt-install.sh
+    BASE_PACKAGES="$BASE_PACKAGES git-delta"
 fi
 
 sudo apt-get update -y
