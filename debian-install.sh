@@ -9,7 +9,7 @@ set -euxo pipefail
 # It does not seem to be possible to obtain this as a number when we're running on a (Debian-based) Ubuntu, where this is the Debian name not number.
 DEBIAN_MAJOR_VERSION=$(cut -d'.' -f1 /etc/debian_version)
 
-BASE_PACKAGES="curl wget gpg"
+BASE_PACKAGES="curl wget gpg git lsb-release shellcheck"
 
 # https://fishshell.com =>
 # https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A3&package=fish

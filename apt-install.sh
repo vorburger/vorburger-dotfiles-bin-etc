@@ -29,8 +29,8 @@ if [[ -z "${CODESPACES:-}" ]]; then
     # which breaks the gcr.io/cloudshell-images/custom-image-validation:latest test_ssh (__main__.CloudDevshellTests)
 
     sudo apt-get install -y \
-        bash-completion file git gh htop lsb-release procps rpl unzip \
-        trash-cli shellcheck wipe \
+        bash-completion file gh htop procps rpl unzip \
+        trash-cli wipe \
         autojump fd-find \
         curl graphviz wget \
         autoconf automake autopoint gcc gettext groff make pkg-config texinfo libncurses-dev \
@@ -45,9 +45,13 @@ if [[ -z "${CODESPACES:-}" ]]; then
     sudo apt-get autoremove -y
 
 else
-    # This are minimally required tools for Codespaces
+    # Because it makes shared dotfiles slow; any project-specific tools should instead
+    # be installed via the devcontainer.json of the respectice project, not here.
+    echo "Skipping installation of other tools in GitHub Codespaces!"
 
-    sudo apt-get install -y git lsb-release shellcheck
+    # We could install any additional minimally required tools for Codespaces here.
+    # But ./debian-install.sh now already has everything we need in its $BASE_PACKAGES.
+    # sudo apt-get install -y ...
 
     # Beware: cargo install seems to be (really!) slow when used from GitHub Codespace setup;
     # do not install it, and make any subsequent "cargo install" conditional (see below).
