@@ -343,6 +343,18 @@
       "approve": true,
       "matchCommandLine": true,
     },
+    "/^gradle spotlessApply$/": {
+      "approve": true,
+      "matchCommandLine": true,
+    },
+    "/^gradle rewriteRun -PrunRewrite$/": {
+      "approve": true,
+      "matchCommandLine": true,
+    },
+    "/^gradle rewriteRun -PrunRewrite && gradle spotlessApply$/": {
+      "approve": true,
+      "matchCommandLine": true,
+    },
   },
   "gradle.showStoppedDaemons": true,
   "docker.extension.enableComposeLanguageServer": false,
@@ -352,4 +364,5 @@
   "chat.tools.urls.autoApprove": {
     "https://javalin.io": true,
   },
+  "chat.viewSessions.orientation": "stacked",
 }
