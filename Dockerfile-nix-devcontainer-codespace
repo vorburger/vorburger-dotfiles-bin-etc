@@ -8,17 +8,17 @@ ENV CODESPACES=true
 
 # Accept a GitHub token to authenticate Nix flake fetches and avoid rate limits.
 ARG GITHUB_TOKEN
-# Write access-tokens to /etc/nix/nix.conf only when a token is provided,
-# so the build still works without a token (e.g. local builds).
-RUN mkdir -p /etc/nix \
-    && if [ -n "${GITHUB_TOKEN}" ]; then \
-           printf 'access-tokens = github.com=%s\n' "${GITHUB_TOKEN}" >> /etc/nix/nix.conf; \
-           chmod 600 /etc/nix/nix.conf; \
-       fi
 
 # /etc/ssl/certs is a bind-mount in this image, so chmod changes don't persist
 # across Docker RUN layers. Both the chmod and bootstrap must run in the same
 # RUN step. CODESPACES is passed explicitly as 'su' may not inherit Docker ENVs.
+# Write access-tokens to /etc/nix/nix.conf only when a token is provided,
+# so the build still works without a token (e.g. local builds).
 USER root
 RUN chmod 755 /etc/ssl/certs \
+    && mkdir -p /etc/nix \
+    && if [ -n "${GITHUB_TOKEN}" ]; then \
+           printf 'access-tokens = github.com=%s\n' "${GITHUB_TOKEN}" >> /etc/nix/nix.conf; \
+           chmod 600 /etc/nix/nix.conf; \
+       fi \
     && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"
