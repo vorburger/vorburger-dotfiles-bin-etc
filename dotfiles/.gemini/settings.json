@@ -2,18 +2,17 @@
   "mcpServers": {
     "nix": {
       "command": "nix",
-      "args": [
-        "run",
-        "github:utensils/mcp-nixos",
-        "--"
-      ]
+      "args": ["run", "github:utensils/mcp-nixos", "--"]
+    },
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "Accept": "application/json, text/event-stream"
+      }
     }
   },
   "context": {
-    "fileName": [
-      "AGENTS.md",
-      "GEMINI.md"
-    ]
+    "fileName": ["AGENTS.md", "GEMINI.md"]
   },
   "ui": {
     "hideBanner": true,
