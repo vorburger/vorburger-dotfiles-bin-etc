@@ -17,6 +17,7 @@ ARG GITHUB_TOKEN
 USER root
 RUN chmod 755 /etc/ssl/certs \
     && mkdir -p /etc/nix \
+    && printf 'experimental-features = nix-command flakes\n' >> /etc/nix/nix.conf \
     && if [ -n "${GITHUB_TOKEN}" ]; then \
            printf 'access-tokens = github.com=%s\n' "${GITHUB_TOKEN}" >> /etc/nix/nix.conf; \
            chmod 600 /etc/nix/nix.conf; \
