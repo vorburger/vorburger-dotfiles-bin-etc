@@ -6,9 +6,24 @@ COPY --chown=code:code . /var/local/vorburger-dotfiles/
 # - symlink.sh backs up existing files (e.g. /root/.bashrc) instead of failing
 ENV CODESPACES=true
 
+# Accept a GitHub token to authenticate Nix flake fetches and avoid rate limits.
+ARG GITHUB_TOKEN
+
 # /etc/ssl/certs is a bind-mount in this image, so chmod changes don't persist
 # across Docker RUN layers. Both the chmod and bootstrap must run in the same
 # RUN step. CODESPACES is passed explicitly as 'su' may not inherit Docker ENVs.
+# Enable experimental nix-command and flakes features globally so that
+# home-manager activation scripts can invoke nix subcommands.
+# Write access-tokens to /etc/nix/nix.conf only when a token is provided,
+# so the build still works without a token (e.g. local builds).
+# nix.conf must stay readable (644) by the code user; the access-tokens
+# line is stripped after bootstrap so it does not persist in the image.
 USER root
 RUN chmod 755 /etc/ssl/certs \
-    && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"
+    && mkdir -p /etc/nix \
+    && printf 'experimental-features = nix-command flakes\n' >> /etc/nix/nix.conf \
+    && if [ -n "${GITHUB_TOKEN}" ]; then \
+           su code -c "export CODESPACES=true NIX_CONFIG='extra-access-tokens = github.com=${GITHUB_TOKEN}' && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"; \
+       else \
+           su code -c \"export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh\"; \
+       fi
