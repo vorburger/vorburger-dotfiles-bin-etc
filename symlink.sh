@@ -91,6 +91,7 @@ f .config/lsd/config.yaml dotfiles/lsd.yaml
 f .m2/toolchains.xml dotfiles/m2/toolchains.xml
 f .gemini/settings.json dotfiles/.gemini/settings.json
 f .gemini/GEMINI.md dotfiles/.gemini/GEMINI.md
+f .gemini/antigravity/mcp_config.json dotfiles/.gemini/antigravity/mcp_config.json
 f .config/Code/User/mcp.json dotfiles/code/mcp.json
 f .config/Code/User/settings.json dotfiles/code/settings.json
 f .config/Code/User/keybindings.json dotfiles/code/keybindings.json
