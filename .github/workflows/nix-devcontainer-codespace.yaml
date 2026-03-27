@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build Dockerfile-nix-devcontainer-codespace
-        run: docker build -f Dockerfile-nix-devcontainer-codespace .
+        run: docker build --build-arg GITHUB_TOKEN=${{ github.token }} -f Dockerfile-nix-devcontainer-codespace .
