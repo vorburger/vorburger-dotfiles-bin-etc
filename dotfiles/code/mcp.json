@@ -3,6 +3,14 @@
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "nix": {
+      "command": "nix",
+      "args": [
+        "run",
+        "github:utensils/mcp-nixos",
+        "--"
+      ]
     }
   }
 }
