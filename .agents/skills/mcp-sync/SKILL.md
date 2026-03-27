@@ -11,10 +11,13 @@ To ensure a consistent experience across different AI tools (like VS Code Copilo
     *   Format: Standard MCP JSON configuration within the `servers` object.
 2.  **Gemini CLI**: `dotfiles/.gemini/settings.json`
     *   Format: Standard MCP JSON configuration within the `mcpServers` object.
+3.  **Antigravity**: `dotfiles/.gemini/antigravity/mcp_config.json`
+    *   Format: Standard MCP JSON configuration within the `mcpServers` object.
 
 ## Workflow
 When a directive is issued to add an MCP server:
 1.  Identify the command and arguments for the MCP server.
 2.  Update `dotfiles/code/mcp.json`.
 3.  Update `dotfiles/.gemini/settings.json`.
-4.  Verify that both files are valid JSON and contain matching configurations.
+4.  Update `dotfiles/.gemini/antigravity/mcp_config.json`.
+5.  Verify that all files are valid JSON and contain matching configurations.

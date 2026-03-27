@@ -6,6 +6,14 @@
         "-y",
         "@google-cloud/cloud-run-mcp"
       ]
+    },
+    "nix": {
+      "command": "nix",
+      "args": [
+        "run",
+        "github:utensils/mcp-nixos",
+        "--"
+      ]
     }
   }
 }
