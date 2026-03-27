@@ -23,7 +23,7 @@ RUN chmod 755 /etc/ssl/certs \
     && mkdir -p /etc/nix \
     && printf 'experimental-features = nix-command flakes\n' >> /etc/nix/nix.conf \
     && if [ -n "${GITHUB_TOKEN}" ]; then \
-           printf 'access-tokens = github.com=%s\n' "${GITHUB_TOKEN}" >> /etc/nix/nix.conf; \
-       fi \
-    && su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh" \
-    && sed -i '/^access-tokens/d' /etc/nix/nix.conf
+           su code -c "export CODESPACES=true NIX_CONFIG='extra-access-tokens = github.com=${GITHUB_TOKEN}' && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"; \
+       else \
+           su code -c \"export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh\"; \
+       fi
