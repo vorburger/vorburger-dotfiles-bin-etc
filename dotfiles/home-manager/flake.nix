@@ -21,9 +21,13 @@
       # user (e.g. 'vorburger' on a workstation or 'code' in a devcontainer).
       # Requires --impure evaluation (see nix-install.sh).
       envUSER =
-        let u = builtins.getEnv "USER"; in
+        let
+          u = builtins.getEnv "USER";
+          l = builtins.getEnv "LOGNAME";
+        in
         if u != "" then u else
-          throw "USER environment variable is not set. Run with --impure and ensure USER is exported.";
+        if l != "" then l else
+          throw "Neither USER nor LOGNAME environment variable is set. Run with --impure and ensure USER or LOGNAME is exported.";
       envHOME = builtins.getEnv "HOME";
     in
     {
