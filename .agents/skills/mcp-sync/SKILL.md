@@ -5,7 +5,7 @@ description: Use this skill when adding or modifying Model Context Protocol (MCP
 
 # MCP Sync Convention
 
-To ensure a consistent experience across different AI tools (like VS Code Copilot and Gemini CLI), any new MCP server must be added to both of the following locations:
+To ensure a consistent experience across different AI tools (like VS Code Copilot and Gemini CLI), any new MCP server must be added to all of the following locations:
 
 1.  **VS Code / Copilot**: `dotfiles/code/mcp.json`
     *   Format: Standard MCP JSON configuration within the `servers` object.
