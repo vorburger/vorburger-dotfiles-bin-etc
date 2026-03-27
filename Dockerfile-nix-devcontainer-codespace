@@ -25,5 +25,5 @@ RUN chmod 755 /etc/ssl/certs \
     && if [ -n "${GITHUB_TOKEN}" ]; then \
            su code -c "export CODESPACES=true NIX_CONFIG='extra-access-tokens = github.com=${GITHUB_TOKEN}' && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"; \
        else \
-           su code -c \"export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh\"; \
+           su code -c "export CODESPACES=true && cd /var/local/vorburger-dotfiles && ./bootstrap.sh"; \
        fi
