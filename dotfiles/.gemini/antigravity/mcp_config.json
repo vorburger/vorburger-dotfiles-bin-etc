@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "cloudrun": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@google-cloud/cloud-run-mcp"
+      ]
+    }
+  }
+}
