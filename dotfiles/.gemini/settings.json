@@ -2,7 +2,11 @@
   "mcpServers": {
     "nix": {
       "command": "nix",
-      "args": ["run", "github:utensils/mcp-nixos", "--"]
+      "args": [
+        "run",
+        "github:utensils/mcp-nixos",
+        "--"
+      ]
     },
     "context7": {
       "httpUrl": "https://mcp.context7.com/mcp",
@@ -12,7 +16,10 @@
     }
   },
   "context": {
-    "fileName": ["AGENTS.md", "GEMINI.md"]
+    "fileName": [
+      "AGENTS.md",
+      "GEMINI.md"
+    ]
   },
   "ui": {
     "hideBanner": true,
@@ -27,7 +34,10 @@
       "hideContextPercentage": false
     },
     "inlineThinkingMode": "full",
-    "showStatusInTitle": true
+    "showStatusInTitle": true,
+    "escapePastedAtSymbols": true,
+    "hideContextSummary": true,
+    "showUserIdentity": false
   },
   "ide": {
     "enabled": true,
@@ -37,7 +47,11 @@
     "auth": {
       "selectedType": "gemini-api-key"
     },
-    "enablePermanentToolApproval": true
+    "enablePermanentToolApproval": true,
+    "environmentVariableRedaction": {
+      "enabled": true
+    },
+    "enableConseca": true
   },
   "output": {
     "format": "text"
@@ -50,11 +64,21 @@
       "warningAcknowledged": true,
       "enabled": true,
       "maxAge": "120d"
+    },
+    "enableNotifications": true,
+    "plan": {
+      "directory": "plan"
     }
   },
   "tools": {
     "shell": {
       "showColor": true
     }
+  },
+  "experimental": {
+    "modelSteering": true
+  },
+  "billing": {
+    "overageStrategy": "ask"
   }
 }
