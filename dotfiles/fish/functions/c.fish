@@ -4,7 +4,7 @@ function c --description "Use glow for Markdown files, fallback to bat"
     # Check if the first argument ends in .md (case-insensitive)
     if string match -q -i "*.md" "$target"
         if command -sq glow
-            glow $argv
+            glow -p $argv
             return
         end
     end
