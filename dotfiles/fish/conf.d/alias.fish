@@ -19,9 +19,6 @@ command -sq lsd && alias lt="lsd --tree "
 not type -q l && alias l="ls --group-directories-first --classify --hyperlink"
 not type -q ll && alias ll="ls -l --group-directories-first --classify --hyperlink"
 
-command -sq batcat && alias c="batcat "
-command -sq bat && alias c="bat "
-
 # Note dotfiles/ripgreprc.properties!
 # https://github.com/BurntSushi/ripgrep/issues/86
 alias less="less -R"

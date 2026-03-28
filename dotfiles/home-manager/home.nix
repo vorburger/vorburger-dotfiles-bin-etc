@@ -17,9 +17,11 @@
       delta
       direnv
       fish
+      frogmouth
       fzf
       gh
       git
+      glow
       lazygit
       lsd
       sops

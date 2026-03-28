@@ -10,7 +10,8 @@ alias r="./gradlew "
 alias gt="gradle test"
 alias k="kubecolor "
 alias jb="jbang "
-alias b="bazelisk "
+alias b="frogmouth"
+alias bz="bazelisk "
 alias bazel="bazelisk "
 # This ^^^ is required just because completions/bazel.fish uses bazel not bazelisk.
 
