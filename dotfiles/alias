@@ -29,7 +29,8 @@ alias pass="EDITOR=/usr/bin/nano /bin/pass "
 alias cloud="gcloud cloud-shell ssh --ssh-flag=-A"
 
 # Git
-alias g="git "
+# Gemini! ;) alias g="git "
+alias g="gemini"
 # alias gl="git ls"
 alias gl="tig"
 # alias gll="git ll"
