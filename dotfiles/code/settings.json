@@ -7,44 +7,44 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true,
+      "strings": true
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[fish]": {
-    "editor.defaultFormatter": "bmalehorn.vscode-fish",
+    "editor.defaultFormatter": "bmalehorn.vscode-fish"
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   "[javascript]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   "[nix]": {
-    "editor.defaultFormatter": "jnoortheen.nix-ide",
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "[python]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "[textproto]": {
-    "editor.defaultFormatter": "seaube.clangformat",
+    "editor.defaultFormatter": "seaube.clangformat"
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml",
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
 
   "cSpell.userWords": [
@@ -57,7 +57,7 @@
     "ltgt",
     "nullaway",
     "Proto",
-    "vorburger",
+    "vorburger"
   ],
 
   "diffEditor.experimental.showMoves": true,
@@ -68,7 +68,7 @@
     "source.fixAll.shellcheck": "always",
     // Used by at least JS as well as Java
     "source.organizeImports": "always",
-    "source.addMissingImports": "always",
+    "source.addMissingImports": "always"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
@@ -100,13 +100,13 @@
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 500,
   "files.associations": {
-    "AUTHORS": "plaintext",
+    "AUTHORS": "plaintext"
   },
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
     "**/.project": true,
-    "**/.settings": true,
+    "**/.settings": true
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -118,7 +118,7 @@
   "git.showActionButton": {
     "commit": true,
     "publish": true,
-    "sync": false,
+    "sync": false
   },
   "github.gitProtocol": "ssh",
   "githubPullRequests.pullBranch": "never",
@@ -131,7 +131,7 @@
     "godoc": "/usr/bin/godoc",
     "goimports": "/usr/bin/goimports",
     "gorename": "/usr/bin/gorename",
-    "guru": "/usr/bin/guru",
+    "guru": "/usr/bin/guru"
   },
   "go.autocompleteUnimportedPackages": true,
   "go.buildOnSave": "off",
@@ -149,7 +149,7 @@
     "addOverride",
     "addDeprecated",
     "stringConcatToTextBlock",
-    "invertEquals",
+    "invertEquals"
   ],
 
   "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
@@ -165,7 +165,7 @@
     "org.junit.jupiter.api.DynamicTest.*",
     "org.mockito.Mockito.*",
     "org.mockito.ArgumentMatchers.*",
-    "org.mockito.Answers.*",
+    "org.mockito.Answers.*"
   ],
   // This is BROKEN - it re-formats Java code wrong, and breaks Class JavaDoc.
   // "java.completion.importOrder": [],
@@ -197,9 +197,9 @@
   "markdown.validate.fragmentLinks.enabled": "error",
   "markdownlint.config": {
     "MD026": {
-      "punctuation": ",;:。，；：",
+      "punctuation": ",;:。，；："
     },
-    "MD034": false,
+    "MD034": false
   },
 
   // Nix
@@ -209,22 +209,22 @@
     "nixd": {
       // https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md
       "formatting": {
-        "command": ["nixfmt"],
+        "command": ["nixfmt"]
       },
       "options": {
         // ...
       },
       "diagnostic": {
         // "suppress": ["sema-extra-with"]
-      },
+      }
     },
     "nil": {
       "formatting": {
-        "command": ["nixfmt"],
+        "command": ["nixfmt"]
       },
       "options": {},
-      "diagnostic": {},
-    },
+      "diagnostic": {}
+    }
   },
 
   // G-like
@@ -255,7 +255,7 @@
     "**/*.md",
     "**/*.txt",
     "**/*.rb",
-    "**/*.go",
+    "**/*.go"
   ],
   // https://marketplace.visualstudio.com/items?itemName=jgclark.vscode-todo-highlight
   // successor of https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
@@ -276,14 +276,9 @@
   "workbench.colorCustomizations": {
     // "editorError.foreground": "#00000000",
     // "editorWarning.foreground": "#00000000",
-    "editorInfo.foreground": "#26d20c54",
+    "editorInfo.foreground": "#26d20c54"
   },
-
-  // https://github.com/piousdeer/vscode-adwaita#suggested-settings
-  "workbench.colorTheme": "Adwaita Dark & default syntax highlighting & colorful status bar",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.preferredDarkColorTheme": "Adwaita Dark",
-  "workbench.preferredLightColorTheme": "Adwaita Light",
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 12,
@@ -306,7 +301,7 @@
     "markdown": true,
     "plaintext": true,
     "scminput": true,
-    "beancount": false,
+    "beancount": false
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
@@ -323,46 +318,46 @@
     "./test": true,
     "/^gradle eclipse && cat \\.classpath$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "/^gradle build$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "/^gradle eclipse$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "gradle test": true,
     "javap": true,
     "/^gradle cleanTest test$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "/^podman build -t enola2 \\.$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "/^gradle spotlessApply$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "/^gradle rewriteRun -PrunRewrite$/": {
       "approve": true,
-      "matchCommandLine": true,
+      "matchCommandLine": true
     },
     "/^gradle rewriteRun -PrunRewrite && gradle spotlessApply$/": {
       "approve": true,
-      "matchCommandLine": true,
-    },
+      "matchCommandLine": true
+    }
   },
   "gradle.showStoppedDaemons": true,
   "docker.extension.enableComposeLanguageServer": false,
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-containers",
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
   },
   "chat.tools.urls.autoApprove": {
-    "https://javalin.io": true,
+    "https://javalin.io": true
   },
-  "chat.viewSessions.orientation": "stacked",
+  "chat.viewSessions.orientation": "stacked"
 }
