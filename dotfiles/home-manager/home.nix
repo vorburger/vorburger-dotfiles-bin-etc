@@ -13,6 +13,7 @@
     homeDirectory = if envHOME != "" then envHOME else "/home/${username}";
 
     packages = with pkgs; [
+      autojump
       bat
       delta
       direnv
