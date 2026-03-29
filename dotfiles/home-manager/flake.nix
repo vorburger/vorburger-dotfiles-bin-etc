@@ -12,31 +12,52 @@
   };
 
   outputs =
-    { self, nixpkgs, home-manager, nix-index-database, ... }:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-index-database,
+      ...
+    }:
     let
       # TODO Support Mac...
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
       # Function to create home configurations to avoid duplication.
-      mkHomeConfig = { username }: home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        # Pass variables to home.nix. 
-        # envHOME is empty ("") during pure evaluation, but gets $HOME if --impure is passed.
-        extraSpecialArgs = { 
-          inherit username; 
-          envHOME = builtins.getEnv "HOME"; 
+      mkHomeConfig =
+        {
+          username,
+          homeDirectory ? "",
+        }:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          # Pass variables to home.nix.
+          # envHOME gets the explicitly passed homeDirectory, or falls back to reading
+          # the HOME environment variable if --impure is passed, or is empty ("").
+          extraSpecialArgs = {
+            inherit username;
+            envHOME = if homeDirectory != "" then homeDirectory else builtins.getEnv "HOME";
+          };
+          modules = [
+            nix-index-database.homeModules.nix-index
+            ./home.nix
+          ];
         };
-        modules = [
-          nix-index-database.homeModules.nix-index
-          ./home.nix
-        ];
-      };
     in
     {
       homeConfigurations = {
         vorburger = mkHomeConfig { username = "vorburger"; };
         code = mkHomeConfig { username = "code"; };
+
+        # Dedicated Pure Config for a specific machine.
+        # Home Manager automatically looks for "username@hostname" first.
+        # This matches the user "vorburger" on a machine named "headless-workstation"
+        "vorburger@headless-workstation" = mkHomeConfig {
+          username = "vorburger";
+          # Set this to the actual non-standard $HOME path:
+          homeDirectory = "/var/home/vorburger";
+        };
       };
     };
 }
