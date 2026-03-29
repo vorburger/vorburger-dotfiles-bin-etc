@@ -32,9 +32,10 @@
       nixd
       nixos-install-tools
       nixos-rebuild
-      nodejs_24
-      maven
+      #nodejs_24
+      #maven
 
+      rpl
       ripgrep
       wipe
 

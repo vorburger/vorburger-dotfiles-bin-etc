@@ -4,7 +4,6 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## Generic
 
-1. install rpl
 1. aifiles are now in vorburger instead of in enola-dev - change all references
 
 ## Nix
