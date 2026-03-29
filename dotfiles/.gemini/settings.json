@@ -8,12 +8,6 @@
         "--"
       ]
     },
-    "context7": {
-      "httpUrl": "https://mcp.context7.com/mcp",
-      "headers": {
-        "Accept": "application/json, text/event-stream"
-      }
-    }
   },
   "context": {
     "fileName": [
