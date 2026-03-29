@@ -7,7 +7,7 @@
         "github:utensils/mcp-nixos",
         "--"
       ]
-    },
+    }
   },
   "context": {
     "fileName": [

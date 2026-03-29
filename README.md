@@ -9,7 +9,9 @@
 
 ### NixOS
 
-TBD.
+Use my [`nixfiles`](https://github.com/vorburger/nixfiles).
+
+That uses this repo for user settings.
 
 ### Nix
 
