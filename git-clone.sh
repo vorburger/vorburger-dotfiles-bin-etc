@@ -66,6 +66,8 @@ clone() {
 
 if [ "$#" -eq 0 ]; then
     clone vorburger/vorburger-dotfiles-bin-etc
+    clone vorburger/nixfiles
+    # TODO Replace (incl. all references...) with vorburger/aifiles !!
     clone enola-dev/vorburger-ai-assistant
 
     clone scopatz/nanorc
