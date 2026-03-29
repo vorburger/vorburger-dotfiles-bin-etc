@@ -2,15 +2,15 @@
   config,
   pkgs,
   lib,
-  envUSER,
+  username,
   envHOME,
   ...
 }:
 
 {
   home = {
-    username = if envUSER != "" then envUSER else "vorburger";
-    homeDirectory = if envHOME != "" then envHOME else "/home/${envUSER}";
+    username = username;
+    homeDirectory = if envHOME != "" then envHOME else "/home/${username}";
 
     packages = with pkgs; [
       bat
