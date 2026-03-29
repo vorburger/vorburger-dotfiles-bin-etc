@@ -56,11 +56,11 @@
     "auth": {
       "selectedType": "gemini-api-key"
     },
-    "enablePermanentToolApproval": true,
+    "enablePermanentToolApproval": false,
     "environmentVariableRedaction": {
       "enabled": true
     },
-    "enableConseca": true
+    "enableConseca": false
   },
   "output": {
     "format": "text"
