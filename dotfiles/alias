@@ -68,5 +68,5 @@ alias nl="nix log"
 # nrp is in dotfiles/fish/functions/nix.fish
 alias hm="home-manager"
 alias hme="home-manager edit"
-alias hms="home-manager switch"
+alias hms="home-manager switch --impure"
 # hmu is in bin/

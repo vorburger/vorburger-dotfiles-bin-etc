@@ -17,30 +17,37 @@
       # TODO Support Mac...
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      # Function to create home configurations to avoid duplication.
+      mkHomeConfig = { envUSER, envHOME }: home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit envUSER envHOME; };
+        modules = [
+          nix-index-database.homeModules.nix-index
+          ./home.nix
+        ];
+      };
+
       # Read the current user from the environment so this flake works for any
       # user (e.g. 'vorburger' on a workstation or 'code' in a devcontainer).
-      # Requires --impure evaluation (see nix-install.sh).
+      # This requires --impure evaluation.
       envUSER =
         let
           u = builtins.getEnv "USER";
           l = builtins.getEnv "LOGNAME";
         in
-        if u != "" then u else
-        if l != "" then l else
-          throw "Neither USER nor LOGNAME environment variable is set. Run with --impure and ensure USER or LOGNAME is exported.";
+        if u != "" then u else l;
       envHOME = builtins.getEnv "HOME";
     in
     {
-      homeConfigurations.${envUSER} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # extraSpecialArgs passes through arguments to home.nix etc. modules
-        extraSpecialArgs = { inherit envUSER envHOME; };
-        modules = [
-          nix-index-database.homeModules.nix-index
-
-          ./home.nix
-        ];
-      };
+      homeConfigurations = {
+        # Explicit configurations for common users to allow pure evaluation
+        # (without --impure) for these specific users.
+        vorburger = mkHomeConfig { envUSER = "vorburger"; envHOME = "/home/vorburger"; };
+        code = mkHomeConfig { envUSER = "code"; envHOME = "/home/code"; };
+      } // (if envUSER != "" && envUSER != "vorburger" && envUSER != "code" then {
+        # Dynamic configuration for any other user when run with --impure.
+        ${envUSER} = mkHomeConfig { inherit envUSER envHOME; };
+      } else {});
     };
 }

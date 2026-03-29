@@ -9,7 +9,7 @@
 
 {
   home = {
-    username = envUSER;
+    username = if envUSER != "" then envUSER else "vorburger";
     homeDirectory = if envHOME != "" then envHOME else "/home/${envUSER}";
 
     packages = with pkgs; [
