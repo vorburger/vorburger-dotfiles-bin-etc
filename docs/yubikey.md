@@ -108,17 +108,25 @@ This seems to happen when the YK SK is pulled out from USB and it gets confused;
 
 ### `gpg --card-status` says `No such device`
 
-See https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/fedora-upgrade.md#gpg-with-yubikey about this:
-
     $ gpg --card-status
     gpg: selecting card failed: No such device
     gpg: OpenPGP card not available: No such device
 
-Solution was to `sudo dnf remove opensc` as per https://bugzilla.redhat.com/show_bug.cgi?id=1893131.
+This should now be permanently fixed by the `dotfiles/.gnupg/scdaemon.conf`.
 
-https://bugzilla.redhat.com/show_bug.cgi?id=1941346 seems a related bug.
+The earlier solutions was to do this every time (but it shouldn't be required anymore now):
 
-NB: In a fresh Fedora 37 Workstation installation on 2022-12-28 this workaround was not required.
+    sudo pkill gpg-agent
+    sudo systemctl restart pcscd
+    systemctl status pcscd
+
+This could be automated via this in `/etc/udev/rules.d/99-yubikey.rules`:
+
+    ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0406", RUN+="/usr/bin/pkill -f gpg-agent", RUN+="/usr/bin/systemctl restart pcscd"
+
+Other earlier solutions suggested to do `sudo dnf remove opensc` (as per https://bugzilla.redhat.com/show_bug.cgi?id=1893131; also https://bugzilla.redhat.com/show_bug.cgi?id=1941346 seems a related bug); but this shouldn't be required anymore now and is a bad idea.
+
+Also see my https://github.com/vorburger/vorburger.ch-Notes/blob/develop/linux/fedora-upgrade.md#gpg-with-yubikey about it.
 
 ### `winscard.c:286:SCardConnect() Error Reader Exclusive`
 
