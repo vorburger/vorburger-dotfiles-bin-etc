@@ -105,7 +105,7 @@ f .config/Antigravity/User/snippets/personal.code-snippets dotfiles/code/persona
 f .config/rygel.conf dotfiles/rygel.conf
 
 # This is used by dotfiles/.gemini/GEMINI.md
-ln -fs "$HOME/git/github.com/enola-dev/vorburger-ai-assistant" "$HOME/.gemini/"
+ln -fs "$HOME/git/github.com/vorburger/aifiles" "$HOME/.gemini/"
 
 if [ "$(command -v desktop-file-validate)" ]; then
   desktop-file-validate ~/.local/share/applications/*.desktop

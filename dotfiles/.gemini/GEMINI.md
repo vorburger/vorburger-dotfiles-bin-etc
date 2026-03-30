@@ -1,1 +1,1 @@
-@./vorburger-ai-assistant/knowledge/GEMINI.md
+@./aifiles/knowledge/GEMINI.md
