@@ -50,7 +50,7 @@
     "auth": {
       "selectedType": "gemini-api-key"
     },
-    "enablePermanentToolApproval": false,
+    "enablePermanentToolApproval": true,
     "environmentVariableRedaction": {
       "enabled": true
     },
