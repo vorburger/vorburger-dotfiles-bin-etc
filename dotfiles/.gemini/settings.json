@@ -7,6 +7,10 @@
         "github:utensils/mcp-nixos",
         "--"
       ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
     }
   },
   "context": {
