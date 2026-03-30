@@ -29,6 +29,7 @@
       lsd
       sops
       tig
+      tmux
       trashy
       nil
       nixfmt
