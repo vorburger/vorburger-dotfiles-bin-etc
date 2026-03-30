@@ -33,6 +33,7 @@ alias cloud="gcloud cloud-shell ssh --ssh-flag=-A"
 # Git
 # Gemini! ;) alias g="git "
 alias g="gemini"
+alias gr="gemini --resume"
 # alias gl="git ls"
 alias gl="tig"
 # alias gll="git ll"
