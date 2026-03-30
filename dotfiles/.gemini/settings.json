@@ -73,6 +73,33 @@
       "directory": "plan"
     }
   },
+  "hooksConfig": {
+    "enabled": true
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a' > /dev/tty || true; paplay /usr/share/sounds/freedesktop/stereo/message.oga",
+            "name": "notify-bell-and-sound"
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a' > /dev/tty || true; paplay /usr/share/sounds/freedesktop/stereo/complete.oga",
+            "name": "complete-bell-and-sound"
+          }
+        ]
+      }
+    ]
+  },
   "tools": {
     "shell": {
       "showColor": true

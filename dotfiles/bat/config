@@ -1,2 +1,3 @@
 # https://github.com/sharkdp/bat/issues/3575
 --map-syntax='BUILD:Python'
+--pager="less -R -q"

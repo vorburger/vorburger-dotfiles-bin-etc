@@ -21,10 +21,10 @@ not type -q ll && alias ll="ls -l --group-directories-first --classify --hyperli
 
 # Note dotfiles/ripgreprc.properties!
 # https://github.com/BurntSushi/ripgrep/issues/86
-alias less="less -R"
+alias less="less -R -q"
 command -sq rg &&
   function f -d "RipGrep (with Paging)"
-    rg -p $argv | less -R
+    rg -p $argv | less -R -q
   end
 
 complete --command b --wraps bazelisk --wraps bazel
