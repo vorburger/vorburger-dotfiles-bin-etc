@@ -15,6 +15,7 @@
     packages = with pkgs; [
       autojump
       bat
+      btop
       delta
       direnv
       fish
@@ -24,9 +25,11 @@
       gh
       git
       glow
+      htop
       jq
       lazygit
       lsd
+      psmisc
       sops
       starship
       tig
