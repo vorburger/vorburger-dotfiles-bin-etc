@@ -1,6 +1,6 @@
 pushd .
 
-cd /home/vorburger/git/github.com/vorburger/dotfiles
+cd "$(dirname "$(realpath "$0")")/.."
 
 if [ -z "$(git status --porcelain)" ]; then
   # Working directory clean

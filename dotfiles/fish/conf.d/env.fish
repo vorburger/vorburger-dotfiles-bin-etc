@@ -7,7 +7,7 @@
 
 # NB: PATH is set in ../config.fish
 
-set DOTFILES (dirname (realpath (status --current-filename)))/../..
+set DOTFILES (dirname (realpath (status --current-filename)))/../../..
 
 if test ! -n "$JAVA_HOME"
    and test -d /etc/alternatives/java_sdk/
@@ -28,7 +28,7 @@ end
 
 # https://github.com/junegunn/fzf#respecting-gitignore
 # This makes FZF use ripgrep, which filters .gitignore, etc.
-set -gx RIPGREP_CONFIG_PATH $DOTFILES/ripgreprc.properties
+set -gx RIPGREP_CONFIG_PATH $DOTFILES/dotfiles/ripgreprc.properties
 set -gx FZF_DEFAULT_COMMAND "rg --files"
 # This makes Ctrl-T FZF's Fish integration use the above
 set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"

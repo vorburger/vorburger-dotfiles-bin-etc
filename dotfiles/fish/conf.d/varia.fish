@@ -1,4 +1,4 @@
-set DOTFILES (dirname (realpath (status --current-filename)))/../..
+set DOTFILES (dirname (realpath (status --current-filename)))/../../..
 
 command -q go && set _GOPATH (go env GOPATH)
 fish_add_path $HOME/.nix-profile/bin $DOTFILES/bin $HOME/bin $HOME/.local/bin $_GOPATH/bin $HOME/.cargo/bin $HOME/.krew/bin $HOME/.npm/bin
