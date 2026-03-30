@@ -24,6 +24,7 @@
       gh
       git
       glow
+      jq
       lazygit
       lsd
       sops
