@@ -12,8 +12,8 @@ To directly run it the first time on an already set-up machine with this, just:
 
 To update to latest on one machine after having pushed changes from another, either:
 
-    nix flake update --flake github:vorburger/vorburger-dotfiles-bin-etc`
-    home-manager switch --flake github:vorburger/vorburger-dotfiles-bin-etc?dir=dotfiles/home-manager
+    nix flake update --flake github:vorburger/dotfiles`
+    home-manager switch --flake github:vorburger/dotfiles?dir=dotfiles/home-manager
 
 or, and simpler:
 

@@ -57,7 +57,7 @@ Background:
       SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ssh-add -l
       SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ssh git@github.com
 
-* This set-up [makes this happen automatically](https://github.com/vorburger/vorburger-dotfiles-bin-etc/search?q=SSH_AUTH_SOCK) (only) in Kitty,
+* This set-up [makes this happen automatically](https://github.com/vorburger/dotfiles/search?q=SSH_AUTH_SOCK) (only) in Kitty,
   via `~/.config/kitty/kitty.conf` use of `tmux-local` and `tmux3`,
   which sets `SSH_AUTH_SOCK` to `~/.ssh.agent` which symlinks to `/run/user/1000/gnupg/S.gpg-agent.ssh` (in `$XDG_RUNTIME_DIR`).
 

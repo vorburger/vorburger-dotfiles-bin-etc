@@ -14,7 +14,7 @@ disabled = true
 truncation_symbol = "…/"
 fish_style_pwd_dir_length = 1
 [directory.substitutions]
-'vorburger-dotfiles-bin-etc' = 'v…d'
+'dotfiles' = 'v…d'
 
 [java]
 # drop Java version from prompt; format default = "via [${symbol}${version}]($style) "

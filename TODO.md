@@ -43,8 +43,8 @@ Use AI to fix all this... Gemini, or Enola!
 - [DNF v5](https://www.zdnet.com/google-amp/article/how-to-install-dnf5-on-fedora-39-for-faster-application-installation-and-management/)? Try in container!
 
 - fix SSH_AUTH_SOCK "bug" in dotfiles
-  - Remember how https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/36771f62ac2c31e40cbc9d72ca58adef00c263db
-     was reverted on 2023-01-07, see https://github.com/vorburger/vorburger-dotfiles-bin-etc/commit/6bafbde1afd456fca5d32761f09142584058bb97
+  - Remember how https://github.com/vorburger/dotfiles/commit/36771f62ac2c31e40cbc9d72ca58adef00c263db
+     was reverted on 2023-01-07, see https://github.com/vorburger/dotfiles/commit/6bafbde1afd456fca5d32761f09142584058bb97
   - Cannot "ssh localhsot" in GNOME Terminal instead of in Kitty
      because `SSH_AUTH_SOCKET` was set to `/run/user/1000/keyring/ssh` instead of `/home/vorburger/.ssh.agent` ...
   - Retrace what set this where!
@@ -61,7 +61,7 @@ Use AI to fix all this... Gemini, or Enola!
   - VSC Container support? Works via Tunnels?
   - https://gitlab.gnome.org/chergert/prompt Container-friendly Terminal, for Toolbox
 
-- https://github.com/vorburger/vorburger-dotfiles-bin-etc/compare/jenv
+- https://github.com/vorburger/dotfiles/compare/jenv
   - https://github.com/jenv/jenv/issues/152
   - https://github.com/jenv/jenv/pull/169/files
   - https://github.com/jenv/jenv/pull/290/files
@@ -92,7 +92,7 @@ Use AI to fix all this... Gemini, or Enola!
 
 - JUST USE IT, to find gaps
   - initally NOT as toolbox, because that reads $HOME, but as sshd, with the systemd unit; with a GNOME Terminal Profile!
-  - later [`useradd dotfiles`](https://github.com/vorburger/vorburger-dotfiles-bin-etc#fedora-based-container-with-ssh)
+  - later [`useradd dotfiles`](https://github.com/vorburger/dotfiles#fedora-based-container-with-ssh)
   - develop using `podman machine`, for best isolation?
   - LATER toolbox, perhaps try without mounting $HOME? Create a bug, for discussion.
 
@@ -127,9 +127,9 @@ Use AI to fix all this... Gemini, or Enola!
 
 # GCE
 
-- https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
+- https://github.com/vorburger/dotfiles/blob/master/README.md#google-cloud-cos-vm-with-this-container-ssh-from-outside-into-container
   with $HOME/git persistence on an additional disk attached to the GCE VM,
-  similar to https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/master/README.md#local-dev
+  similar to https://github.com/vorburger/dotfiles/blob/master/README.md#local-dev
 
 - https://cloud.google.com/artifact-registry/docs/configure-cloud-build#docker
 

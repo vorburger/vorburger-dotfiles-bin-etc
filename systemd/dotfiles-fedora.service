@@ -4,7 +4,7 @@
 
 [Unit]
 Description=Podman container for dotfiles-fedora
-Documentation=https://github.com/vorburger/vorburger-dotfiles-bin-etc
+Documentation=https://github.com/vorburger/dotfiles
 Wants=network-online.target
 After=network-online.target
 RequiresMountsFor=%t/containers

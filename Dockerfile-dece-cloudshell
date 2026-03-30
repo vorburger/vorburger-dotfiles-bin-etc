@@ -8,13 +8,13 @@ RUN useradd -G wheel vorburger
 USER vorburger
 WORKDIR /home/vorburger/
 
-COPY git-clone.sh symlink.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/
-COPY dotfiles/ /home/vorburger/dev/vorburger-dotfiles-bin-etc/dotfiles/
+COPY git-clone.sh symlink.sh /home/vorburger/dev/dotfiles/
+COPY dotfiles/ /home/vorburger/dev/dotfiles/dotfiles/
 
 # as per ./README.md
-RUN /home/vorburger/dev/vorburger-dotfiles-bin-etc/git-intstall.sh \
+RUN /home/vorburger/dev/dotfiles/git-intstall.sh \
  && rm /home/vorburger/.bashrc \
- && /home/vorburger/dev/vorburger-dotfiles-bin-etc/symlink.sh
+ && /home/vorburger/dev/dotfiles/symlink.sh
 
 # We have to reset the user to root so that parent image will work as intended
 USER root

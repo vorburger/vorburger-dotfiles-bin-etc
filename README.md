@@ -4,8 +4,8 @@
 
     mkdir -p ~/git/github.com/vorburger/
     cd ~/git/github.com/vorburger/
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
-    cd vorburger-dotfiles-bin-etc
+    git clone git@github.com:vorburger/dotfiles
+    cd dotfiles
 
 ### NixOS
 
@@ -20,7 +20,7 @@ For using the [Nix](https://nixos.org) package manager with these dotfiles on no
 1. [Install the `nix` CLI](https://github.com/vorburger/LearningLinux/blob/develop/nix/docs/install.md)
 1. Run `./nix-install.sh`
 
-Without cloning, you can also just directly: `nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake github:vorburger/vorburger-dotfiles-bin-etc?dir=dotfiles/home-manager`.
+Without cloning, you can also just directly: `nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake github:vorburger/dotfiles?dir=dotfiles/home-manager`.
 
 Now add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix) with `hme`, then run [`hms`](dotfiles/alias) to activate them. Use [`hmu`](bin/hmu) to upgrade Nix packages.
 
@@ -81,7 +81,7 @@ The `CODESPACES` [environment variable](https://docs.github.com/en/codespaces/de
 ### Fedora [Silverblue](https://silverblue.fedoraproject.org) & [CoreOS](https://github.com/vorburger/vorburger.ch-Notes/tree/develop/linux/coreos)
 
     mkdir ~/git/github.com/vorburger && cd ~/git/github.com/vorburger/
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc && cd vorburger-dotfiles-bin-etc
+    git clone git@github.com:vorburger/dotfiles && cd dotfiles
 
     ./gnome-settings.sh
     ./ostree-install-gui.sh
@@ -92,7 +92,7 @@ The `CODESPACES` [environment variable](https://docs.github.com/en/codespaces/de
 
 If the Silverblue workstation is intended to (also) be used as a server, remember _Settings > Power > Power Mode > Power Saving Options > Automatic Suspend._
 
-Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below). Copy [`kitty.conf`](dotfiles/kitty.conf) to `~/.config/kitty/kitty.conf`, and change `shell /home/vorburger/git/github.com/vorburger/vorburger-dotfiles-bin-etc/container/ssh.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s MAKE`.
+Until the Toolbox Container works, use [the Fedora-based Container](#fedora-based-container-with-ssh) (see below). Copy [`kitty.conf`](dotfiles/kitty.conf) to `~/.config/kitty/kitty.conf`, and change `shell /home/vorburger/git/github.com/vorburger/dotfiles/container/ssh.sh /home/vorburger/dev/dotfiles/bin/tmux-ssh new -A -s MAKE`.
 
 #### Toolbox Container (NEW)
 
@@ -122,8 +122,8 @@ Unless you already have GitHub auth working, we may have a "chicken and egg" pro
 
     mkdir -p ~/git/github.com/vorburger/
     cd ~/git/github.com/vorburger/
-    git clone https://github.com/vorburger/vorburger-dotfiles-bin-etc.git
-    cd vorburger-dotfiles-bin-etc
+    git clone https://github.com/vorburger/dotfiles.git
+    cd dotfiles
 
     sudo cp container/sshd/01-local.conf /etc/ssh/sshd_config.d/
 
@@ -133,7 +133,7 @@ Unless you already have GitHub auth working, we may have a "chicken and egg" pro
 
 If it all works, you can now open _Kitty_ (not _GNOME Terminal)_, [test the YubiKey](docs/yubikey.md), and then change the remote:
 
-    git remote set-url origin git@github.com:vorburger/vorburger-dotfiles-bin-etc
+    git remote set-url origin git@github.com:vorburger/dotfiles
 
 #### UHK
 
@@ -147,8 +147,8 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
 
     mkdir -p ~/git/github.com/vorburger/
     cd ~/git/github.com/vorburger/
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc
-    cd vorburger-dotfiles-bin-etc
+    git clone git@github.com:vorburger/dotfiles
+    cd dotfiles
 
     ./git-clone.sh
     ./debian-install.sh # or ./ubuntu-install.sh
@@ -186,7 +186,7 @@ Now put the [`systemd` Unit File](systemd/) into `~/.config/systemd/user/` and t
 
 You can now SSH login on port 2222 similarly to how [`ssh.sh`](container/ssh.sh) does.
 It's convenient to configure a terminal (Kitty or GNOME Terminal or whatever) to call
-`ssh.sh /home/vorburger/dev/vorburger-dotfiles-bin-etc/bin/tmux-ssh new -A -s MAKE`.
+`ssh.sh /home/vorburger/dev/dotfiles/bin/tmux-ssh new -A -s MAKE`.
 
 Restart the dotfiles container for user dotfiles from another user like this:
 
@@ -223,8 +223,8 @@ We can now work on this project in that container, like so:
 
     sudo chown vorburger:vorburger git/
     cd git
-    git clone git@github.com:vorburger/vorburger-dotfiles-bin-etc.git
-    cd vorburger-dotfiles-bin-etc
+    git clone git@github.com:vorburger/dotfiles.git
+    cd dotfiles
 
     sudo chown vorburger:vorburger /run/user/1000/podman/podman.sock
     ./container/build.sh
@@ -265,7 +265,7 @@ TODO: Set up CI to [pre-build](https://cloud.google.com/workstations/docs/custom
 
 ### Google Cloud Shell
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_image=gcr.io/vorburger/vorburger-dotfiles-bin-etc)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_image=gcr.io/vorburger/dotfiles)
 
 _TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/questions/70612890/non-ephemeral-google-cloud-shell-with-custom-container-image) about Google Cloud Shell Custom Images always launched ephemeral; which makes it a No-Go for this project. (Simply running a dotfile devshell container on a GCE VM is much easier)._
 
@@ -286,7 +286,7 @@ _TODO [See this (pending) question on StackOverflow](https://stackoverflow.com/q
 
 To use the many configurations from this repo in Google Cloud Shell, simply use the big blue _"Open in Google Cloud Shell"_ above. This is [based on a customized image](https://cloud.google.com/shell/docs/customizing-container-image) available on [gcr.io/vorburger](https://gcr.io/vorburger). Here is how to "locally" build it for improvements to it:
 
-    cd ~/git/github.com/vorburger/vorburger-dotfiles-bin-etc/
+    cd ~/git/github.com/vorburger/dotfiles/
     cloudshell env build-local
     cloudshell env run
 

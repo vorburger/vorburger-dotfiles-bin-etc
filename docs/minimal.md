@@ -7,7 +7,7 @@
 5. `sudo systemctl enable --now dnf5-automatic.timer`
 6. `~/.inputrc`
 7. `~/.config/fish/config.fish`
-8. [`~/.config/fish/conf.d/needs-restarting.fish`](https://github.com/vorburger/vorburger-dotfiles-bin-etc/blob/main/dotfiles/fish/conf.d/needs-restarting.fish)
+8. [`~/.config/fish/conf.d/needs-restarting.fish`](https://github.com/vorburger/dotfiles/blob/main/dotfiles/fish/conf.d/needs-restarting.fish)
 9. [TLP for Power Management](https://linrunner.de/tlp/index.html) ¡!
 10. Visual Studio Code (via repository)
 11. g* etc. Aliases! And funky short namred Fish functions.
