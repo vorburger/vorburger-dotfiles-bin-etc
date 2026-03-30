@@ -12,9 +12,11 @@ DIR="$(realpath $(dirname "$0"))"
 # TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
   if [[ -h ~/$1 && ! -e ~/$1 ]]; then
-    echo "$HOME/$1 is a BROKEN symlink. Please fix it." >&2
-    exit 1
-  elif [[ ! -e ~/$1 ]]; then
+    echo "$HOME/$1 is a BROKEN symlink, fixing it..." >&2
+    rm ~/"$1"
+  fi
+
+  if [[ ! -e ~/$1 ]]; then
     mkdir -p "$(dirname ~/"$1")"
     ln --symbolic --relative "$DIR"/"$2" ~/"$1"
   else

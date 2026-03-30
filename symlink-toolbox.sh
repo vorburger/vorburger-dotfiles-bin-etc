@@ -6,10 +6,14 @@ set -euox pipefail
 DIR="$(realpath $(dirname $0))"
 
 l() {
-  if [ ! -e ~/$1 ]
-  then
-    mkdir -p $(dirname ~/$1)
-    ln --symbolic --relative $DIR/$2 ~/$1
+  if [[ -h ~/$1 && ! -e ~/$1 ]]; then
+    echo "$HOME/$1 is a BROKEN symlink, fixing it..." >&2
+    rm ~/"$1"
+  fi
+
+  if [[ ! -e ~/$1 ]]; then
+    mkdir -p "$(dirname ~/"$1")"
+    ln --symbolic --relative "$DIR"/"$2" ~/"$1"
   fi
 }
 
