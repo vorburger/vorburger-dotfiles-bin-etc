@@ -20,6 +20,7 @@
       fish
       frogmouth
       fzf
+      gemini-cli
       gh
       git
       glow
