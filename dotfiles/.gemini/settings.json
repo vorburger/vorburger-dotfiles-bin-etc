@@ -71,7 +71,8 @@
     "enableNotifications": true,
     "plan": {
       "directory": "plan"
-    }
+    },
+    "preferredEditor": "vscode"
   },
   "hooksConfig": {
     "enabled": true
