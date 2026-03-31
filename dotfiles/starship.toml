@@ -1,6 +1,7 @@
 # https://starship.rs/config/
 
-# This does NOT avoid line break in the prompt; see https://github.com/starship/starship/issues/1987
+# This does NOT avoid line break in the prompt;
+# see https://github.com/starship/starship/issues/1987
 # add_newline = false
 
 # https://starship.rs/config/#prompt
@@ -13,8 +14,12 @@ disabled = true
 [directory]
 truncation_symbol = "…/"
 fish_style_pwd_dir_length = 1
+
+# This is super weird, it's a hack that makes it show
+# …/aifiles and …/nixfiles and (also, but not only!) …/dotfiles etc.
+# instead of ~/g/g/v/aifiles etc.
 [directory.substitutions]
-'dotfiles' = 'v…d'
+'dotfiles' = 'dotfiles'
 
 [java]
 # drop Java version from prompt; format default = "via [${symbol}${version}]($style) "
@@ -80,3 +85,10 @@ detect_variables=["RBENV_VERSION"]
 [python]
 # I like the cute yellow duck but don't need to always see the version everywhere
 version_format = ''
+
+[nix_shell]
+# https://github.com/starship/starship/issues/6188
+impure_msg = ''
+# https://github.com/starship/starship/issues/7370
+format = 'via [$symbol]($style)' # no trailing space
+symbol = "❄️ "
