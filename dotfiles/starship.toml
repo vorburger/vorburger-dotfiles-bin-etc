@@ -70,7 +70,10 @@ disabled = true
 # Either way - it's ugly / in the way and useless if it's always shown.
 
 [[battery.display]]
-threshold = 50
+# Always showing the battery is useful on the console. It doesn't hurt in a DM either.
+discharging_symbol = '󰁽 ' # default 󰂃 is unnecessarily scary
+style = 'blue' # default red is unnecessarily scary
+threshold = 100
 
 [docker_context]
 disabled = true
