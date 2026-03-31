@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   username,
@@ -13,7 +14,6 @@
 
     packages = with pkgs; [
       autojump
-      antigravity
       bat
       delta
       direnv
@@ -103,12 +103,6 @@
     # release notes.
     stateVersion = "25.05"; # Please read the comment before changing.
   };
-
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (pkgs.lib.getName pkg) [
-      "antigravity"
-    ];
 
   programs.direnv = {
     enable = true;
