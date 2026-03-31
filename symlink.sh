@@ -46,7 +46,13 @@ _f() {
     # It exists. Check if it is the correct link.
     if [[ "$dest" -ef "$src_path" ]]; then
       # It is the correct link (either soft or hard), all good.
-      :
+      # If we're in hard-link mode, but it's currently a soft link, we might want to change it.
+      if [[ "$mode" == "hard" && -L "$dest" ]]; then
+        echo "$dest is a soft link but should be a hard link. Fixing..." >&2
+        rm "$dest"
+        ln "$src_path" "$dest"
+        echo "hard linked $dest"
+      fi
     else
       # It is not the correct link.
       if [[ "${CODESPACES:-}" == "true" ]]; then
@@ -61,8 +67,12 @@ _f() {
       else
         echo "$dest already exists and is not the correct link (and we're not in a Codespace)." >&2
         if [[ -L "$dest" ]]; then
-          echo "  points to: $(readlink "$dest") -> $(realpath "$dest")" >&2
+          echo "  it is a soft link pointing to: $(readlink "$dest") -> $(realpath "$dest")" >&2
           echo "  should point to: $(realpath "$src_path")" >&2
+        else
+          echo "  it is a regular file (different inode), maybe it was a hard link that got broken?" >&2
+          echo "  consider: diff -u $src_path $dest" >&2
+          echo "  consider: ln -f $src_path $dest" >&2
         fi
         exit 1
       fi
