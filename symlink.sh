@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
-set -euox pipefail
+set -euo pipefail
+
+# TODO Clean-up and unify the messy file naming conventions - everything should simply be exactly where it ends up!
+
+# TODO Why not just hard- instead of soft-link everything? Research other dotfiles frameworks..
+
+# TODO Simplify and just link everything under dotfiles/ into $HOME
 
 # TODO Flip order - it would be more logically readable if it was flipped (source to target)
 
-# TODO Make this more quiet!
-
 # See also ./symlink-homefree.sh for an equivalent which does not use $HOME
+# TODO avoid copy/paste between here and ./symlink-homefree.sh
 
 DIR="$(realpath $(dirname "$0"))"
 
-# TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
   _f "soft" "$1" "$2"
 }
@@ -37,6 +41,7 @@ _f() {
     else
       ln "$src_path" "$dest"
     fi
+    echo "$mode linked $dest"
   else
     # It exists. Check if it is the correct link.
     if [[ "$dest" -ef "$src_path" ]]; then
@@ -52,6 +57,7 @@ _f() {
         else
           ln "$src_path" "$dest"
         fi
+        echo "$mode linked $dest"
       else
         echo "$dest already exists and is not the correct link (and we're not in a Codespace)." >&2
         if [[ -L "$dest" ]]; then
@@ -65,8 +71,20 @@ _f() {
 }
 
 d() {
-  mkdir -p ~/"$1"
-  find "$DIR"/"$2" -maxdepth 1 -type f,l -exec ln -sfnr {} ~/"$1" \;
+  local target_dir="$1"
+  local source_dir="$2"
+  mkdir -p ~/"$target_dir"
+  # Replace find with a loop to get the desired output format
+  while IFS= read -r -d '' src; do
+    local base="${src##*/}"
+    local dst="$HOME/$target_dir"
+    [[ "$dst" != */ ]] && dst="$dst/"
+    dst="${dst}${base}"
+    if [[ ! -L "$dst" || ! "$dst" -ef "$src" ]]; then
+      ln -sfnr "$src" "$dst"
+      echo "soft linked $dst"
+    fi
+  done < <(find "$DIR/$source_dir" -maxdepth 1 -type f,l -print0)
 }
 
 # If this script runs before gpg had a chance to create ~/.gnupg/ itself,
@@ -120,7 +138,10 @@ f .config/Antigravity/User/snippets/personal.code-snippets dotfiles/code/persona
 f .config/rygel.conf dotfiles/rygel.conf
 
 # This is used by dotfiles/.gemini/GEMINI.md
-ln -fs "$HOME/git/github.com/vorburger/aifiles" "$HOME/.gemini/"
+if [[ ! "$HOME/.gemini/aifiles" -ef "$HOME/git/github.com/vorburger/aifiles" ]]; then
+  ln -fs "$HOME/git/github.com/vorburger/aifiles" "$HOME/.gemini/"
+  echo "soft linked $HOME/.gemini/aifiles"
+fi
 
 if [ "$(command -v desktop-file-validate)" ]; then
   desktop-file-validate ~/.local/share/applications/*.desktop
