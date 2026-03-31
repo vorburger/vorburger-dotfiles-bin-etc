@@ -10,7 +10,10 @@
     },
     "puppeteer": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
     }
   },
   "context": {
@@ -52,7 +55,7 @@
   },
   "security": {
     "auth": {
-      "selectedType": "gemini-api-key"
+      "selectedType": "oauth-personal"
     },
     "enablePermanentToolApproval": true,
     "environmentVariableRedaction": {
