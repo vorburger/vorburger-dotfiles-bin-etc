@@ -11,39 +11,53 @@ DIR="$(realpath $(dirname "$0"))"
 
 # TODO avoid copy/paste between here and ./symlink-homefree.sh
 f() {
-  if [[ -h ~/$1 && ! -e ~/$1 ]]; then
-    echo "$HOME/$1 is a BROKEN symlink, fixing it..." >&2
-    rm ~/"$1"
+  _f "soft" "$1" "$2"
+}
+
+fh() {
+  _f "hard" "$1" "$2"
+}
+
+_f() {
+  local mode=$1
+  local target=$2
+  local source=$3
+  local dest="$HOME/$target"
+  local src_path="$DIR/$source"
+
+  if [[ -h "$dest" && ! -e "$dest" ]]; then
+    echo "$dest is a BROKEN symlink, fixing it..." >&2
+    rm "$dest"
   fi
 
-  if [[ ! -e ~/$1 ]]; then
-    mkdir -p "$(dirname ~/"$1")"
-    ln --symbolic --relative "$DIR"/"$2" ~/"$1"
-  else
-    # It exists. Check if it is the correct symlink.
-    if [[ -L ~/$1 ]]; then
-      # It is a symlink.
-      local target_realpath
-      target_realpath=$(realpath "$DIR"/"$2")
-      local link_realpath
-      link_realpath=$(realpath ~/"$1")
-      if [[ "$target_realpath" == "$link_realpath" ]]; then
-        # It is the correct symlink, all good.
-        :
-      else
-        echo "$HOME/$1 is a symlink but points to the wrong file." >&2
-        echo "  points to: $(readlink ~/"$1") -> $link_realpath" >&2
-        echo "  should point to: $target_realpath" >&2
-        exit 1
-      fi
+  if [[ ! -e "$dest" ]]; then
+    mkdir -p "$(dirname "$dest")"
+    if [[ "$mode" == "soft" ]]; then
+      ln --symbolic --relative "$src_path" "$dest"
     else
-      # It is a file or directory.
+      ln "$src_path" "$dest"
+    fi
+  else
+    # It exists. Check if it is the correct link.
+    if [[ "$dest" -ef "$src_path" ]]; then
+      # It is the correct link (either soft or hard), all good.
+      :
+    else
+      # It is not the correct link.
       if [[ "${CODESPACES:-}" == "true" ]]; then
-        echo "$HOME/$1 already exists and is not a symlink. Backing up to $HOME/$1.bak and overwriting, because CODESPACES is set." >&2
-        mv ~/"$1" ~/"$1.bak"
-        ln --symbolic --relative "$DIR"/"$2" ~/"$1"
+        echo "$dest already exists and is not the correct link. Backing up to $dest.bak and overwriting, because CODESPACES is set." >&2
+        mv "$dest" "$dest.bak"
+        if [[ "$mode" == "soft" ]]; then
+          ln --symbolic --relative "$src_path" "$dest"
+        else
+          ln "$src_path" "$dest"
+        fi
       else
-        echo "$HOME/$1 already exists and is not a symlink (and we're not in a Codespace)." >&2
+        echo "$dest already exists and is not the correct link (and we're not in a Codespace)." >&2
+        if [[ -L "$dest" ]]; then
+          echo "  points to: $(readlink "$dest") -> $(realpath "$dest")" >&2
+          echo "  should point to: $(realpath "$src_path")" >&2
+        fi
         exit 1
       fi
     fi
@@ -93,6 +107,7 @@ f .config/weston.ini dotfiles/.config/weston.ini
 f .config/lsd/config.yaml dotfiles/lsd.yaml
 f .m2/toolchains.xml dotfiles/m2/toolchains.xml
 f .gemini/settings.json dotfiles/.gemini/settings.json
+fh .gemini/policies/auto-saved.toml dotfiles/.gemini/policies/auto-saved.toml
 f .gemini/GEMINI.md dotfiles/.gemini/GEMINI.md
 f .gemini/antigravity/mcp_config.json dotfiles/.gemini/antigravity/mcp_config.json
 f .config/Code/User/mcp.json dotfiles/code/mcp.json
