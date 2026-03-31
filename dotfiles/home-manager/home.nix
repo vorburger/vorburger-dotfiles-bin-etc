@@ -28,6 +28,7 @@
       lazygit
       lsd
       sops
+      starship
       tig
       tmux
       trashy

@@ -19,13 +19,6 @@ fish "$DIR"/fish-install.fish
   curl -sL https://git.io/fisher -o /tmp/fisher && \
   fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher")
 
-# https://starship.rs
-if [ ! -f /usr/local/bin/starship ]; then
-  curl -fsSL https://starship.rs/install.sh -o /tmp/starship-install.sh
-  chmod +x /tmp/starship-install.sh
-  sudo /tmp/starship-install.sh --yes
-fi
-
 # https://github.com/junegunn/fzf#using-git
 # if [ ! $(command -v fzf) ]; then
 if [ ! -d ~/.fzf ]; then

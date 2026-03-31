@@ -7,7 +7,7 @@ fish_add_path $HOME/.nix-profile/bin $DOTFILES/bin $HOME/bin $HOME/.local/bin $_
 # autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package
 test -f /usr/share/autojump/autojump.fish && source /usr/share/autojump/autojump.fish
 
-test -f /usr/local/bin/starship && starship init fish | source
+command -q starship && starship init fish | source
 
 # https://github.com/sharkdp/bat#man
 # NOT https://github.com/eth-p/bat-extras/blob/master/doc/batman.md
