@@ -53,6 +53,9 @@ _f() {
         ln "$src_path" "$dest"
         echo "hard linked $dest"
       fi
+    elif [[ -L "$dest" && "$(realpath "$dest")" == /nix/store/* ]]; then
+      # It is managed by Nix, which is also fine.
+      :
     else
       # It is not the correct link.
       if [[ "${CODESPACES:-}" == "true" ]]; then
@@ -70,9 +73,10 @@ _f() {
           echo "  it is a soft link pointing to: $(readlink "$dest") -> $(realpath "$dest")" >&2
           echo "  should point to: $(realpath "$src_path")" >&2
         else
-          echo "  it is a regular file (different inode), maybe it was a hard link that got broken?" >&2
-          echo "  consider: diff -u $src_path $dest" >&2
-          echo "  consider: ln -f $src_path $dest" >&2
+          echo "  it is a regular file (different inode), maybe it was a hard link that got broken? Diff:" >&2
+          diff -u "$src_path" "$dest" >&2 || true
+          echo
+          echo "  consider: cp $dest $src_path && ln -f $src_path $dest" >&2
         fi
         exit 1
       fi
@@ -90,6 +94,10 @@ d() {
     local dst="$HOME/$target_dir"
     [[ "$dst" != */ ]] && dst="$dst/"
     dst="${dst}${base}"
+    if [[ -L "$dst" && "$(realpath "$dst")" == /nix/store/* ]]; then
+      # Managed by Nix, skip
+      continue
+    fi
     if [[ ! -L "$dst" || ! "$dst" -ef "$src" ]]; then
       ln -sfnr "$src" "$dst"
       echo "soft linked $dst"
