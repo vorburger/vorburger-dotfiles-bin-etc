@@ -1,2 +1,2 @@
 complete -e gwr
-complete -c gwr -f -a '(if test -d .worktrees; for i in .worktrees/*; string replace ".worktrees/" "" $i; end; end)'
+complete -c gwr -f -a '(set -l main_root (git worktree list 2>/dev/null | head -n 1 | cut -d " " -f 1); git worktree list 2>/dev/null | string match -r -g "\[(.*)\]"; if test -d "$main_root/.worktrees"; ls "$main_root/.worktrees"; end)'

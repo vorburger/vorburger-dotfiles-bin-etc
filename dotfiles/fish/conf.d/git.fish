@@ -33,20 +33,38 @@ function gsts --description 'git status on repos in all sub-directories'
 end
 
 function gwt --description 'git worktree add into .worktrees/ or cd into it'
+  set -l main_root (git worktree list | head -n 1 | cut -d ' ' -f 1)
   if test -z "$argv[1]"
+    set -l main_dir (git worktree list | grep -E '\[(main|master)\]' | head -n 1 | cut -d ' ' -f 1)
+    if test -n "$main_dir"
+      cd "$main_dir"
+      return
+    end
+    if test -n "$main_root"
+      cd "$main_root"
+      return
+    end
     echo "Usage: gwt <name>" >&2
     return 1
   end
-  if test -d .worktrees/$argv[1]
-    cd .worktrees/$argv[1]
+
+  if test -d "$main_root/.worktrees/$argv[1]"
+    cd "$main_root/.worktrees/$argv[1]"
     return
   end
-  if not test -d .worktrees
-    mkdir .worktrees
+
+  set -l target_dir (git worktree list | grep "\[$argv[1]\]" | head -n 1 | cut -d ' ' -f 1)
+  if test -n "$target_dir"
+    cd "$target_dir"
+    return
   end
-  git worktree add .worktrees/$argv[1] $argv[2..-1]
+
+  if not test -d "$main_root/.worktrees"
+    mkdir "$main_root/.worktrees"
+  end
+  git worktree add "$main_root/.worktrees/$argv[1]" $argv[2..-1]
   if test $status -eq 0
-    cd .worktrees/$argv[1]
+    cd "$main_root/.worktrees/$argv[1]"
   end
 end
 
@@ -55,8 +73,9 @@ function gwl --description 'git worktree list'
 end
 
 function gwr --description 'git worktree remove'
-  if test -n "$argv[1]" && test -d .worktrees/$argv[1]
-    git worktree remove .worktrees/$argv[1] $argv[2..-1]
+  set -l main_root (git worktree list | head -n 1 | cut -d ' ' -f 1)
+  if test -n "$argv[1]" && test -d "$main_root/.worktrees/$argv[1]"
+    git worktree remove "$main_root/.worktrees/$argv[1]" $argv[2..-1]
   else
     git worktree remove $argv
   end
