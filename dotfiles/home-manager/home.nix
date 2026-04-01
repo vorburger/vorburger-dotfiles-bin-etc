@@ -2,7 +2,8 @@
   config,
   pkgs,
   lib,
-  username,
+  envUSER ? "vorburger",
+  username ? envUSER,
   envHOME,
   ...
 }:
