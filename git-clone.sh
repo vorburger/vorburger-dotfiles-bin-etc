@@ -58,10 +58,11 @@ clone() {
       local fork_url="git@github.com:vorburger/$repo_name.git"
       "$GIT_CMD" remote add vorburger "$fork_url"
     fi
-  else
-    echo "Directory '$target_dir' already exists. Skipping." >&2
+  # SILENCE!
+  # else
+  #   echo "Directory '$target_dir' already exists. Skipping." >&2
   fi
-  echo "$target_dir"
+  # echo "$target_dir"
 }
 
 if [ "$#" -eq 0 ]; then
