@@ -90,7 +90,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "printf '\\a' > /dev/tty || true; paplay /usr/share/sounds/freedesktop/stereo/message.oga",
+            "command": "printf '\\a' > /dev/tty || true; play message",
             "name": "notify-bell-and-sound"
           }
         ]
@@ -101,7 +101,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "printf '\\a' > /dev/tty || true; paplay /usr/share/sounds/freedesktop/stereo/complete.oga",
+            "command": "printf '\\a' > /dev/tty || true; play complete",
             "name": "complete-bell-and-sound"
           }
         ]

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Determine the sounds directory
+if [[ -d "/run/current-system/sw/share/sounds/freedesktop/stereo/" ]]; then
+    SOUNDS_DIR="/run/current-system/sw/share/sounds/freedesktop/stereo/"
+elif [[ -d "/usr/share/sounds/freedesktop/stereo/" ]]; then
+    SOUNDS_DIR="/usr/share/sounds/freedesktop/stereo/"
+else
+    echo "Error: Neither /run/current-system/sw/share/sounds/freedesktop/stereo/ nor /usr/share/sounds/freedesktop/stereo/ was found." >&2
+    exit 1
+fi
+
+# Check if an argument was provided
+if [[ -z "$1" ]]; then
+    echo "Usage: play <sound_name>" >&2
+    exit 1
+fi
+
+SOUND_FILE="${SOUNDS_DIR}${1}.oga"
+
+# Check if the sound file exists and play it
+if [[ -f "$SOUND_FILE" ]]; then
+    paplay "$SOUND_FILE"
+else
+    echo "Error: Sound file $SOUND_FILE not found." >&2
+    exit 1
+fi
