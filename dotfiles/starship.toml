@@ -95,3 +95,7 @@ impure_msg = ''
 # https://github.com/starship/starship/issues/7370
 format = 'via [$symbol]($style)' # no trailing space
 symbol = "❄️ "
+
+[git_branch]
+truncation_length = 17
+ignore_branches = ['develop', 'main', 'master']
