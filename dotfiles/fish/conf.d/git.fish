@@ -32,11 +32,22 @@ function gsts --description 'git status on repos in all sub-directories'
   find . -name .git -type d -exec sh -c 'echo -e "\n\n{}" && git --git-dir={} --work-tree={}/.. status' \;
 end
 
-function gw --description 'git worktree add into .worktrees/'
+function gwt --description 'git worktree add into .worktrees/ or cd into it'
+  if test -z "$argv[1]"
+    echo "Usage: gwt <name>" >&2
+    return 1
+  end
+  if test -d .worktrees/$argv[1]
+    cd .worktrees/$argv[1]
+    return
+  end
   if not test -d .worktrees
     mkdir .worktrees
   end
   git worktree add .worktrees/$argv[1] $argv[2..-1]
+  if test $status -eq 0
+    cd .worktrees/$argv[1]
+  end
 end
 
 function gwl --description 'git worktree list'
@@ -44,5 +55,9 @@ function gwl --description 'git worktree list'
 end
 
 function gwr --description 'git worktree remove'
-  git worktree remove $argv
+  if test -n "$argv[1]" && test -d .worktrees/$argv[1]
+    git worktree remove .worktrees/$argv[1] $argv[2..-1]
+  else
+    git worktree remove $argv
+  end
 end
