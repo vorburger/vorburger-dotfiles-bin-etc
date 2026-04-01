@@ -41,6 +41,7 @@
       nixd
       nixos-install-tools
       nixos-rebuild
+      openssh
       #nodejs_24
       #maven
 
@@ -61,7 +62,7 @@
     ];
 
     activation.activate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
+      SSH_CMD=${pkgs.openssh}/bin/ssh GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
       $DRY_RUN_CMD "$HOME/git/github.com/vorburger/dotfiles/symlink.sh"
     '';
 
