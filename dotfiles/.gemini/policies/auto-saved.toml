@@ -66,11 +66,5 @@ commandPrefix = [ "./symlink.sh" ]
 [[rule]]
 decision = "allow"
 priority = 950
-mcpName = "nix"
-toolName = "mcp_nix_nix"
-
-[[rule]]
-decision = "allow"
-priority = 950
 toolName = "run_shell_command"
-commandPrefix = [ "nix-build", "find", "head" ]
+commandPrefix = [ "git" ]
