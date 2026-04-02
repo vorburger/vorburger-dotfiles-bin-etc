@@ -17,6 +17,7 @@
       autojump
       bat
       btop
+      comma
       delta
       direnv
       fish
