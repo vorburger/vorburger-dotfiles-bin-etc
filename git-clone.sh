@@ -67,7 +67,9 @@ clone() {
   # else
   #   echo "Directory '$target_dir' already exists. Skipping." >&2
   fi
-  # echo "$target_dir"
+
+  # NOTE: This 'echo' is NOT informational for the user, but it's this function's return value!!
+  echo "$target_dir"
 }
 
 if [ "$#" -eq 0 ]; then
