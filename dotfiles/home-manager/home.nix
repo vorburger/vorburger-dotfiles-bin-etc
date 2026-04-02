@@ -42,7 +42,6 @@
       nixd
       nixos-install-tools
       nixos-rebuild
-      openssh
       #nodejs_24
       #maven
 
