@@ -32,6 +32,7 @@
       lazygit
       lsd
       psmisc
+      uv
       sops
       starship
       tig
