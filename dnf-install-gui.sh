@@ -17,9 +17,10 @@ if [ ! -s /usr/bin/code ]; then
 fi
 
 sudo dnf install -y \
+    pulseaudio-utils \
     pass kitty code powertop \
     ImageMagick \
-    powerline-fonts fira-code-fonts mozilla-fira-mono-fonts google-roboto-fonts google-roboto-mono-fonts liberation-fonts \
+    powerline-fonts fira-code-fonts google-roboto-fonts google-roboto-mono-fonts liberation-fonts \
     gnome-extensions-app gnome-tweak-tool \
     android-tools
 
