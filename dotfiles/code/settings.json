@@ -351,7 +351,9 @@
       "matchCommandLine": true
     },
     "gradle rewriteRun": true,
-    "gradle spotlessApply": true
+    "gradle spotlessApply": true,
+    "nix": true,
+    "tee": true
   },
   "gradle.showStoppedDaemons": true,
   "docker.extension.enableComposeLanguageServer": false,
@@ -365,5 +367,6 @@
     "https://schemathesis.readthedocs.io": true
   },
   "diffEditor.ignoreTrimWhitespace": false,
-  "python.languageServer": "Default"
+  "python.languageServer": "Default",
+  "http.systemCertificatesNode": true
 }
