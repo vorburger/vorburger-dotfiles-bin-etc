@@ -24,7 +24,6 @@ sudo dnf install -y \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
     graphviz \
-    helm google-cloud-sdk google-cloud-sdk-skaffold \
     python3-devel portaudio-devel \
     git-delta rclone \
     gcc gcc-c++ clang-tools-extra \
@@ -33,6 +32,7 @@ sudo dnf install -y \
     openssl-devel \
     dracut-config-rescue \
     pandoc pipx rubygem-mustache zlib-devel
+# helm google-cloud-sdk google-cloud-sdk-skaffold \
 # clang-tools-extra for clang-format, gcc-c++ is used by Bazel Protobuf
 # xrandr is required by Minecraft client to fix ArrayIndexOutOfBoundsException at org.lwjgl.opengl.LinuxDisplay.getAvailableDisplayModes()
 # openssl-devel is used (only, so far) by https://github.com/swsnr/mdcat
