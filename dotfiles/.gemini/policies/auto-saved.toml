@@ -68,3 +68,10 @@ decision = "allow"
 priority = 950
 toolName = "run_shell_command"
 commandPrefix = [ "git" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"flake\.nix\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
