@@ -44,9 +44,7 @@ if [ "$EUID" -ne 0 ]; then
   echo
   echo "Enabling and starting timers..."
   systemctl --user enable --now flatpak-update.timer
-  systemctl --user enable --now gh-triage.timer
 
-  start_and_verify_oneshot_service "gh-triage.service"
   start_and_verify_oneshot_service "flatpak-update.service"
 
   echo

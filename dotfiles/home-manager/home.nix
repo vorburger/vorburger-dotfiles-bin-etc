@@ -23,8 +23,7 @@
       fish
       frogmouth
       fzf
-      gemini-cli
-      gh
+      # gemini-cli evolves so fast, it's easier to update via NPM than Nix
       git
       glow
       htop
@@ -65,6 +64,10 @@
     activation.activate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       SSH_CMD=${pkgs.openssh}/bin/ssh GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
       $DRY_RUN_CMD "$HOME/git/github.com/vorburger/dotfiles/symlink.sh"
+    '';
+
+    activation.gh-triage = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      $DRY_RUN_CMD ${pkgs.gh}/bin/gh extension install k1LoW/gh-triage || true
     '';
 
     file = {
@@ -122,6 +125,31 @@
   programs.fish.enable = true;
   programs.fzf.enable = true;
   programs.fzf.enableFishIntegration = true;
+  programs.gh.enable = true;
   programs.home-manager.enable = true; # Lets Home Manager install and manage itself.
   programs.nix-index.enable = true;
+
+  systemd.user.services.gh-triage = {
+    Unit = {
+      Description = "Run gh triage";
+      Documentation = "https://github.com/k1LoW/gh-triage";
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.gh}/bin/gh triage";
+    };
+  };
+
+  systemd.user.timers.gh-triage = {
+    Unit = {
+      Description = "Run gh triage hourly";
+    };
+    Timer = {
+      OnCalendar = "hourly";
+      Persistent = true;
+    };
+    Install = {
+      WantedBy = [ "timers.target" ];
+    };
+  };
 }
