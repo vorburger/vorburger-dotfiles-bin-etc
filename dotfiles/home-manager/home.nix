@@ -49,6 +49,10 @@
       ripgrep
       wipe
 
+      (pkgs.writeShellScriptBin "force-suspend" ''
+        ${pkgs.systemd}/bin/systemctl suspend -i
+      '')
+
       # TODO Install UI packages, but how-to only if on a machine with GUI?
       # kitty
       wl-clipboard
@@ -71,6 +75,17 @@
     '';
 
     file = {
+      ".local/share/applications/force-suspend.desktop".text = ''
+        [Desktop Entry]
+        Name=Force Suspend
+        Comment=Suspend the system ignoring inhibitors
+        Exec=force-suspend
+        Icon=system-suspend
+        Type=Application
+        Categories=System;Settings;
+        Terminal=false
+      '';
+
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a
       # # symlink to the Nix store copy.
@@ -128,6 +143,9 @@
   programs.gh.enable = true;
   programs.home-manager.enable = true; # Lets Home Manager install and manage itself.
   programs.nix-index.enable = true;
+
+  xdg.enable = true;
+  targets.genericLinux.enable = !lib.pathExists "/etc/NIXOS";
 
   systemd.user.services.gh-triage = {
     Unit = {

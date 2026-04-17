@@ -34,6 +34,9 @@ sudo dnf remove "libreoffice*"
 
 ./gnome-settings.sh
 
+sudo mkdir -p /etc/polkit-1/rules.d/
+sudo cp etc/polkit-1/rules.d/10-force-suspend.rules /etc/polkit-1/rules.d/
+
 # sudo alternatives --config java
 # sudo alternatives --config javac
 # sudo alternatives --config java_sdk_openjdk
