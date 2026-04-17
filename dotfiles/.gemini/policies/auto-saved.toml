@@ -75,3 +75,23 @@ priority = 950
 toolName = "replace"
 argsPattern = '\\0\"file_path\":\"flake\.nix\"\\0'
 modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "activate_skill"
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "wait" ]
+modes = [ "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "ps" ]
+modes = [ "autoEdit", "yolo" ]
