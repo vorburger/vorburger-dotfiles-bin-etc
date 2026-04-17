@@ -137,6 +137,7 @@ d .config/fish/conf.d/ dotfiles/fish/conf.d/
 d .config/fish/functions/ dotfiles/fish/functions/
 d .config/home-manager/ dotfiles/home-manager/
 d .config/nix dotfiles/nix
+d .config/autostart/ dotfiles/autostart/
 f .config/starship.toml dotfiles/starship.toml
 f .config/sway/config dotfiles/.config/sway/config
 f .config/weston.ini dotfiles/.config/weston.ini

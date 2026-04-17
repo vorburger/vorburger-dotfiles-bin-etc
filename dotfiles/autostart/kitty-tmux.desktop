@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Kitty Tmux
+Exec=kitty tmux new-session -A -s main
+Icon=terminal
+Categories=System;TerminalEmulator;
+Terminal=false
