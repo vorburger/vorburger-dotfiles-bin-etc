@@ -19,6 +19,14 @@ fish "$DIR"/fish-install.fish
   curl -sL https://git.io/fisher -o /tmp/fisher && \
   fish -c "source /tmp/fisher && fisher install jorgebucaran/fisher")
 
+# https://github.com/tmux-plugins/tpm/blob/master/docs/automatic_tpm_installation.md
+# Note: dotfiles/.tmux.conf also has code to install TPM if it's missing when tmux starts,
+# but installing it here ensures all plugins are pre-installed before the first run.
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ~/.tmux/plugins/tpm/bin/install_plugins
+fi
+
 # https://github.com/junegunn/fzf#using-git
 # if [ ! $(command -v fzf) ]; then
 if [ ! -d ~/.fzf ]; then
