@@ -27,6 +27,7 @@
       git
       glow
       google-cloud-sdk
+      gws
       htop
       jq
       lazygit
