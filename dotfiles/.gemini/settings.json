@@ -114,7 +114,10 @@
     }
   },
   "experimental": {
-    "modelSteering": true
+    "modelSteering": true,
+    "gemmaModelRouter": {
+      "autoStartServer": true
+    }
   },
   "billing": {
     "overageStrategy": "ask"
