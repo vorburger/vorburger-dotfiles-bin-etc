@@ -26,6 +26,7 @@
       # gemini-cli evolves so fast, it's easier to update via NPM than Nix
       git
       glow
+      google-cloud-sdk
       htop
       jq
       lazygit
